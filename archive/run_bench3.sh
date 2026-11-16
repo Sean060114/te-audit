@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # 第三版：失败后先修复命名，再续跑
 #
-# 【归因已撤回，2026-11-16 二次核查】此前写过两版解释，均被源码推翻：
-#   版本一：LTR_retriever.py:70 的 glob(genome+'.mod.*') 拼写缺陷 → 错。
-#   版本二：EDTA issue #599 的"序列名超过 rmblastn 约 50 字符上限"→ 对本场景不成立，
-#           因为 seqid 是 >Chr1 / >OsChr1（4–6 字符），水稻与 Chr1 却都稳定复现。
-# 已对着 v2.2.2 与 LTR_retriever v2.9.9 源码逐条排除 EDTA.pl、EDTA_raw.pl、
-# LTR_retriever 的 13 字符截断分支（条件均不满足），详见 run_bench_rice.sh:124-160
-# 的完整查证记录。剩余可疑项是 LTR_retriever 内置 RepeatMasker 步骤把已 mask 的
-# 输入再 mask 一次，**尚未验证**，验证命令同样记在那里。
-# 结论：改名修复已被四个基因组实证有效（col1m / alyrata / 水稻 / Chr1），
-# 但它治的是症状，成因待定，不要再引用被推翻的两版解释。
-#
+# 【归因已查明，此前两版均被推翻，2026-11-16】
+#   版本一：LTR_retriever.py:70 的 glob(genome+'.mod.*') 拼写缺陷 → 无源码支持。
+#   版本二：EDTA issue #599「序列名超过 rmblastn 约 50 字符上限」→ 与 4–6 字符的
+#           seqid（>Chr1 / >OsChr1）矛盾，套不上。
+# 真实成因：EDTA.pl 已把基因组归一化成 X.fa.mod（必要的一步），但 v2.2.2 的
+#   EDTA_raw.pl:440 调用 LTR_retriever 时没传 -convert_seq_name，后者默认 1，
+#   于是又归一化了第二次——encode_fasta 的输出路径是 "$genome.mod"，
+#   结果就是 X.fa.mod.mod。与序列名长短无关（短名也会写出该文件并被采纳）。
+#   v2.3.0:410 起调用里补了 -convert_seq_name 0，故不再出现。
+# 完整链条见 ../run_bench_rice.sh 的 repair_names 注释。改名修复仍有效，
+# 且不改动环境，是当前唯一安全做法（升级会破坏五份数据的可比性）。
 # 已确证的事实（对着 ~/te_bench2 的真实文件核对）：
 #   LTR_retriever 的产物是完整的，只是全在双前缀下：
 #     col1m.fa.mod.mod.pass.list        627 B

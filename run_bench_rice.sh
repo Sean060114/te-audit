@@ -126,29 +126,43 @@ fi
 # 落在 X.fa.mod.mod.* 前缀下，而 EDTA_raw 按 X.fa.mod.* 查找
 # → LTR.raw.fa 为空 → "Raw LTR results not found"。
 #
-# 【成因仍未定，2026-11-16 二次核查后撤回此前的归因】
-# 我先后写过两版解释，都被源码推翻，故此处只记录查证结果，不再断言原因：
+# 【成因已查明，2026-11-16 第三次核查，对着实际安装的 LTR_retriever 源码确认】
 #
-#   版本一（错）：LTR_retriever.py:70 的 glob(genome+'.mod.*') 拼写缺陷，重复追加 .mod。
-#   版本二（也不成立）：EDTA issue #599，维护者称"序列名过长超过 rmblastn 约 50 字符
-#     上限"。但本场景 seqid 是 >Chr1 / >OsChr1，只有 4–6 字符，**不可能超长**，
-#     而水稻与 Chr1 两个基因组都稳定复现，长头解释无法适用。
+# 一句话：EDTA.pl 已把基因组归一化成 X.fa.mod，LTR_retriever 又归一化了第二次，
+#         而它的输出路径正是 "$genome.mod"，于是得到 X.fa.mod.mod。
 #
-# 已排除的路径（对着 v2.2.2 与 v2.9.9 源码逐行核对）：
-#   - EDTA.pl v2.2.2:365-398 —— 生成 X.fa.mod 后无条件 $genome="$genome.mod"。
-#     但此段的 13 字符截断分支需要 $id_len>13，而 $id_len 取自 grep '>'（仅表头行），
-#     Chr1 得 4，不进分支；且 $genome 进此处时是 X.fa，只应产生单层 .mod。
-#   - EDTA_raw.pl v2.2.2:347-389 —— 同样有 13 字符分支，但 EDTA.pl 以
-#     --convert_seq_name 0 调用，整段被跳过。
-#   - LTR_retriever v2.9.9 —— 全文仅 6 处 '.mod'，全部位于 $id_len>13 分支内，
-#     同样不满足条件。
-# 剩余最可疑但**尚未验证**的一条：LTR_retriever 内置的 RepeatMasker 步骤
-# （日志里那两次 "Warning: No sequences were masked" 与 general.working 缺失同时出现）。
-# 若它把已 mask 过的 X.fa.mod 当作未 mask 输入再 mask 一次，输出正是 X.fa.mod.mod。
+# 完整链条（三处源码，逐行可复现）：
 #
-# 决定性验证只需在 WSL 里跑一行（见 README/报告 5.3 节）：
-#   grep -n '\.mod' $CONDA_PREFIX/share/LTR_retriever/LTR_retriever
-# 若出现 13 字符分支之外的 .mod 赋值，即为此路。
+#  1) EDTA.pl v2.2.2:365-398 —— 清洗 seqid、非 ATGC 转 N，写出 X.fa.mod，
+#     随后无条件 $genome = "$genome.mod"。此后 $genome 就是 X.fa.mod。
+#     这一步是必要且正确的。
+#
+#  2) EDTA_raw.pl v2.2.2:440 —— 调用 LTR_retriever 时没传 -convert_seq_name：
+#       LTR_retriever -genome $genome -inharvest ... -noanno ... -repeatmasker ...
+#     而 LTR_retriever 该变量默认为 1，于是第二次归一化被打开。
+#
+#  3) LTR_retriever Init 段（实际安装版本 402-415 行）——
+#       if ($convert_seq_name){
+#           `perl $seqid_codec encode_fasta $genome $genome.mod.seqid.map $genome.mod --prefix _J`;
+#           if (-s "$genome.mod"){ $index="$genome.mod"; $genome="$genome.mod"; ... }
+#       }
+#     encode_fasta 的输出路径是 "$genome.mod"，此时 $genome 已是 X.fa.mod，
+#     于是写出 X.fa.mod.mod；紧随的判断只检查文件存在，而 encode_fasta
+#     无论是否需要编码都会写出该文件（日志里 "Genome seq IDs cleaned
+#     (no encoding needed)" 走的就是这条），所以采纳是无条件的。
+#     后续 pass.list / defalse / LTRlib.fa 全部带双前缀。
+#
+# 为什么与序列名长短无关：对 >Chr1 这种 4 字符 ID，encode_fasta 只是"清洗"（无变化），
+# 但文件照写、照样被采纳。所以水稻(>OsChr1) 与 Chr1(>Chr1) 都复现。
+# EDTA issue #599 那句"序列名超过 rmblastn 约 50 字符上限"为何套不上：那是长名
+# 确实需要编码时暴露的**同一段代码**，成因同源、触发条件不同。
+#
+# 为什么 v2.3.0 不再出现（已核实 v2.3.0:410 与 master:419）：调用里补了
+#   -convert_seq_name 0
+# 即明确关掉这次多余的二次归一化。所以"升级可根治"方向对，但此前给的理由（长头）错。
+#
+# 为什么暂不升级、也不给 conda 里的 EDTA_raw.pl 打这一行补丁：五份对比数据全在
+# v2.2.2 下跑的，任何改变环境行为的操作都会让新旧不可比。改名修复不改环境。
 #
 # 处置：把 X.fa.mod.mod.* 复制成 X.fa.mod.*（纯改名，不改内容）。这些文件只含
 # 序列 ID 与坐标，不含文件名，改名不改语义。已验证有效：水稻 9 个文件、
