@@ -105,7 +105,67 @@ papers/                 立项时读的文献
 
 ---
 
-## 五、已知空白
+## 五、产出清单与处置
+
+根目录 40 个条目，按「还需不需要」分四类。当前全部体积 187 MB。
+
+### 保留：核心代码（改了就坏）
+
+| 条目 | 作用 |
+|---|---|
+| `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 74 条测试 |
+| `run_bench_rice.sh` | 现行 EDTA 运行脚本（参数化，含命名修复） |
+| `te-normalizer/` | 模块 0，独立可跑 |
+| `compare_araport11.py` `candidates_novel.py` `make_publication_tables.py` | 模块 2 |
+| `build_delivery_package.py` `validate_delivery.py` `make_deliverables.sh` `make_union_softmask.py` `get_dfam_lib.sh` `run_validation.sh` | 交付包与验证 |
+| `archive/` | 三版历史运行脚本，失败记录 |
+
+### 保留：分析证据（报告里每个数字的依据）
+
+| 条目 | 体积 | 为什么不能删 |
+|---|---:|---|
+| `chr1_edta_out/` | 1.7 M | TAIR10 Chr1 基准，重跑需 47 分钟 |
+| `rice/` | 66 M<br>（入库 11 M） | 水稻全量回传，重跑需 73 分钟；序列文件不入库 |
+| `bench_archive/` | 251 K | col1m / alyrata 历史运行，**仅此一份** |
+| `TE_case/` | 30 M<br>（入库 <1 M） | 报告、基线、案例；其中 `.venv` 是 classify_element.py 的环境，文档里写了重建命令 |
+| `araport11_vs_edta.txt` `.per_class.tsv` | 12 K | 模块 2 报告的逐类数字来源 |
+| `Araport11_TE_family_summary.tsv` `EDTA_B_level_candidates.tsv` `EDTA_candidate_novel.tsv` | 144 K | 模块 2 的三张成果表 |
+| `chr1_report.json` | 8 K | Chr1 六项检查结果 |
+
+### 保留：交付物与立项文档
+
+| 条目 | 说明 |
+|---|---|
+| `delivery/`（35 M）| 交付包解包版，12 文件 + MD5SUMS，可用 `make_deliverables.sh` 重建 |
+| `TAIR10.Chr1.TE_annotation_v1.tar.gz`（9.8 M）| 同一交付包的分发版 |
+| `EDTA_vs_Araport11_评估报告.md` `EDTA_交叉验证报告.md` `EDTA_LTR丢失溯源报告.md` | 模块 2 报告 |
+| `选题说明书_详细论证版.md` `附录B_anno阶段实测.md` `附录_实战记录.md` | 立项与过程记录 |
+| `papers/` `papers_digest.txt` | 立项文献与提要 |
+| `EDTA_issue_台账.csv` | 上游 issue 与 PR 记录 |
+
+### 不入库的外部数据（体积大，可重新下载）
+
+| 条目 | 体积 | 怎么回来 |
+|---|---:|---|
+| `ref/TAIR10.Chr1.fa` | 30 M | `curl` Ensembl Plants release-57（命令见第 3 节） |
+| `araport11_TE.gff3` | 9.2 M | Araport11 官方发布 |
+| `rice/*.fa` `*.fa.gz` | 55 M | 同上，Ensembl release-57 |
+
+### 已删除
+
+| 条目 | 原体积 | 为什么可以删 |
+|---|---:|---|
+| `chr1.fa.mod.union.softmasked.fa` | 30 M | EDTA ∪ Araport11 并集软屏蔽的中间产物，交付包里的 `TAIR10.Chr1.genome.softmasked.fa` 已取代它。重建方式见下 |
+| `__pycache__/` | 16 K | Python 缓存，自动重建 |
+
+重建那个软屏蔽文件（输入需先改名对齐）：
+
+```bash
+cp chr1_edta_out/Chr1.fa.mod.EDTA.TEanno.gff3 chr1.fa.mod.EDTA.TEanno.gff3
+python make_union_softmask.py    # 输出 chr1.fa.mod.union.softmasked.fa
+```
+
+## 六、已知空白
 
 1. ~~**`.mod.mod` 双前缀的成因未定。**~~ **已查明。** EDTA.pl 已把基因组归一化成
    `X.fa.mod`；v2.2.2 的 `EDTA_raw.pl:440` 调用 LTR_retriever 时未传
@@ -120,7 +180,7 @@ papers/                 立项时读的文献
    本次用 Ensembl release-57；两个计数（218 / 41）吻合，但原始文件已失。
 4. **模块 2 只做过 Chr1 一份**，未跨到水稻，也尚无独立真值集（RITE / RAP-DB）。
 
-## 六、运行环境
+## 七、运行环境
 
 | 组件 | 版本 | 说明 |
 |---|---|---|
