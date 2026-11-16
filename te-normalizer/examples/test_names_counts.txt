@@ -1,0 +1,6 @@
+# 混合格式测试：名字在前 / 数量在前 / 纯名字 / 带多余空白
+LTR/Copia/SIRE 104231
+  1461 DNA/hAT-hAT19
+PLE/Chlamys
+   2344    PLE/Chlamys
+Bel-Pao 999

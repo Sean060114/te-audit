@@ -1,0 +1,319 @@
+{
+  "dir": "//wsl.localhost/Ubuntu-26.04/home/sean/edta_run",
+  "n_elements": 218,
+  "n_classified": 67,
+  "C1_field_availability": [
+    {
+      "type": "helitron",
+      "n": 85,
+      "identity": 0,
+      "tsd": 0,
+      "tir": 0,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 3776
+    },
+    {
+      "type": "Mutator_TIR_transposon",
+      "n": 47,
+      "identity": 47,
+      "tsd": 47,
+      "tir": 47,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1812
+    },
+    {
+      "type": "Copia_LTR_retrotransposon",
+      "n": 27,
+      "identity": 27,
+      "tsd": 27,
+      "tir": 0,
+      "motif": 27,
+      "strand_ev": 27,
+      "median_len": 4789
+    },
+    {
+      "type": "PIF_Harbinger_TIR_transposon",
+      "n": 21,
+      "identity": 21,
+      "tsd": 21,
+      "tir": 21,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1330
+    },
+    {
+      "type": "CACTA_TIR_transposon",
+      "n": 21,
+      "identity": 21,
+      "tsd": 21,
+      "tir": 21,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 2512
+    },
+    {
+      "type": "Gypsy_LTR_retrotransposon",
+      "n": 13,
+      "identity": 13,
+      "tsd": 13,
+      "tir": 0,
+      "motif": 13,
+      "strand_ev": 13,
+      "median_len": 7890
+    },
+    {
+      "type": "Tc1_Mariner_TIR_transposon",
+      "n": 2,
+      "identity": 2,
+      "tsd": 2,
+      "tir": 2,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 3489.0
+    },
+    {
+      "type": "LTR_retrotransposon",
+      "n": 1,
+      "identity": 1,
+      "tsd": 1,
+      "tir": 0,
+      "motif": 1,
+      "strand_ev": 1,
+      "median_len": 7472
+    },
+    {
+      "type": "hAT_TIR_transposon",
+      "n": 1,
+      "identity": 1,
+      "tsd": 1,
+      "tir": 1,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 844
+    }
+  ],
+  "C1_no_identity_classes": [
+    "helitron"
+  ],
+  "C2_short_elements": [
+    {
+      "start": 13628530,
+      "end": 13628623,
+      "type": "Mutator_TIR_transposon",
+      "length": 94,
+      "armlen": 12,
+      "internal": 70
+    },
+    {
+      "start": 17511160,
+      "end": 17511320,
+      "type": "PIF_Harbinger_TIR_transposon",
+      "length": 161,
+      "armlen": 35,
+      "internal": 91
+    },
+    {
+      "start": 18456847,
+      "end": 18457284,
+      "type": "Mutator_TIR_transposon",
+      "length": 438,
+      "armlen": 178,
+      "internal": 82
+    },
+    {
+      "start": 18456848,
+      "end": 18457283,
+      "type": "Mutator_TIR_transposon",
+      "length": 436,
+      "armlen": 177,
+      "internal": 82
+    }
+  ],
+  "C3_ir_quality": {
+    "n": 92,
+    "perfect": 0,
+    "median_ident": 0.8182,
+    "median_armlen": 14.0
+  },
+  "C4_coverage": {
+    "helitron": {
+      "covered": 4,
+      "total": 85
+    },
+    "Mutator_TIR_transposon": {
+      "covered": 5,
+      "total": 47
+    },
+    "PIF_Harbinger_TIR_transposon": {
+      "covered": 0,
+      "total": 21
+    },
+    "Copia_LTR_retrotransposon": {
+      "covered": 27,
+      "total": 27
+    },
+    "CACTA_TIR_transposon": {
+      "covered": 3,
+      "total": 21
+    },
+    "Tc1_Mariner_TIR_transposon": {
+      "covered": 0,
+      "total": 2
+    },
+    "Gypsy_LTR_retrotransposon": {
+      "covered": 13,
+      "total": 13
+    },
+    "LTR_retrotransposon": {
+      "covered": 0,
+      "total": 1
+    },
+    "hAT_TIR_transposon": {
+      "covered": 0,
+      "total": 1
+    }
+  },
+  "C4_not_classified": [
+    {
+      "start": 17528667,
+      "end": 17536138,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    }
+  ],
+  "C5_cross_class": [
+    {
+      "start": 11782513,
+      "end": 11797701,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana"
+    },
+    {
+      "start": 12136633,
+      "end": 12155847,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|MuDR_Mutator"
+    },
+    {
+      "start": 13064080,
+      "end": 13077510,
+      "lib": "Helitron",
+      "order": "LINE",
+      "orig": "DNA/Helitron",
+      "domains": "RH|LINE"
+    },
+    {
+      "start": 13623933,
+      "end": 13636948,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|EnSpm_CACTA"
+    },
+    {
+      "start": 16746651,
+      "end": 16758926,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|EnSpm_CACTA"
+    },
+    {
+      "start": 19327238,
+      "end": 19341947,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|MuDR_Mutator"
+    },
+    {
+      "start": 12410048,
+      "end": 12412672,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "PROT|Ivana"
+    },
+    {
+      "start": 12813865,
+      "end": 12816414,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "RT|Bianca RH|Bianca"
+    },
+    {
+      "start": 15520117,
+      "end": 15522010,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|CRM"
+    },
+    {
+      "start": 16641058,
+      "end": 16643679,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTH",
+      "domains": "INT|Ale"
+    },
+    {
+      "start": 16644241,
+      "end": 16648982,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTC",
+      "domains": "GAG|Ale"
+    },
+    {
+      "start": 17072896,
+      "end": 17074656,
+      "lib": "TIR",
+      "order": "LINE",
+      "orig": "DNA/DTC",
+      "domains": "RT|LINE"
+    },
+    {
+      "start": 17204018,
+      "end": 17206062,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|Ivana PROT|Ivana RH|Ivana"
+    },
+    {
+      "start": 18013303,
+      "end": 18017811,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana"
+    },
+    {
+      "start": 3780906,
+      "end": 3785414,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana"
+    }
+  ],
+  "C6_ltr_conflict": [
+    {
+      "start": 17528667,
+      "end": 17536138,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9866,
+      "strand_evidence": "PBS",
+      "classified": false
+    }
+  ],
+  "severe_total": 5
+}

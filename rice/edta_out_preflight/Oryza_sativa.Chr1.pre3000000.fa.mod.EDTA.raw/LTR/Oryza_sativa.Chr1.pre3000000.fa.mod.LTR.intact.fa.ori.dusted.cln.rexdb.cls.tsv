@@ -1,0 +1,15 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+Oryza_sativa.:106522..118080#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+Oryza_sativa.:1481739..1463993#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+Oryza_sativa.:1608765..1617684#LTR/Copia	LTR	Copia	SIRE	yes	+	GAG|SIRE PROT|SIRE INT|SIRE RT|SIRE RH|SIRE
+Oryza_sativa.:164480..156936#LTR/Copia	LTR	Copia	Bianca	yes	+	GAG|Bianca PROT|Bianca INT|Bianca RT|Bianca RH|Bianca
+Oryza_sativa.:2335754..2341139#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand INT|Retand RH|Retand
+Oryza_sativa.:2539063..2535678#LTR/Copia	LTR	Copia	Ale	no	+	INT|Ale RT|Ale RH|Ale
+Oryza_sativa.:2908922..2917721#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand
+Oryza_sativa.:465119..477981#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+Oryza_sativa.:671468..660820#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+Oryza_sativa.:831940..815869#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+Oryza_sativa.:832967..839857#LTR/Copia	LTR	Copia	Ikeros	yes	+	GAG|Ikeros PROT|Ikeros INT|Ikeros RT|Ikeros RH|Ikeros
+Oryza_sativa.:905437..910506#LTR/Copia	LTR	Copia	Tork	yes	+	GAG|Tork PROT|Tork INT|Tork RT|Tork RH|Tork
+Oryza_sativa.:953170..944164#LTR/Gypsy	LTR	Gypsy	Ogre	yes	+	GAG|Ogre PROT|Ogre RT|Ogre RH|Ogre INT|Ogre
+Oryza_sativa.:953845..939753#LTR/Gypsy	LTR	Gypsy	mixture	no	+	GAG|Ogre PROT|Ogre INT|Ogre RT|Reina RH|Reina CHD|Reina

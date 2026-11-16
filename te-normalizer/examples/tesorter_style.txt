@@ -1,0 +1,5 @@
+ClassI/LTR/Gypsy
+ClassI/LTR/Copia
+ClassII/TIR/hAT
+ClassI/LINE/L1
+ClassI/DIRS/Ngaro

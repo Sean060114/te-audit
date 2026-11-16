@@ -1,0 +1,30 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+rnd-1_family-101#LTR/Gypsy	LTR	Gypsy	Athila	no	+	PROT|Athila
+rnd-1_family-102#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-1_family-103#LTR/Gypsy	LTR	Gypsy	Athila	no	-	GAG|Athila PROT|Athila
+rnd-1_family-108#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila
+rnd-1_family-112#LTR/Gypsy	LTR	Gypsy	Athila	no	-	GAG|Athila
+rnd-1_family-116#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-1_family-121#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+rnd-1_family-126#LTR/Gypsy	LTR	Gypsy	Athila	no	-	RT|Athila RH|Athila INT|Athila
+rnd-1_family-134#LINE/L1	LINE	unknown	unknown	unknown	+	RH|LINE
+rnd-1_family-143#LTR/Gypsy	LTR	Gypsy	Athila	no	-	PROT|Athila RT|Athila RH|Athila
+rnd-1_family-147#LTR/Gypsy	LTR	Gypsy	Tekay	no	-	INT|Tekay CHD|Tekay
+rnd-1_family-149#LTR/Gypsy	LTR	Gypsy	Tekay	no	+	RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-27#LTR/Gypsy	LTR	Gypsy	Athila	no	-	PROT|Athila
+rnd-1_family-28#LTR/Gypsy	LTR	Gypsy	Athila	no	-	GAG|Athila
+rnd-1_family-32#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+rnd-1_family-40#LTR/Gypsy	LTR	Gypsy	Athila	no	+	PROT|Athila
+rnd-1_family-45#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand
+rnd-1_family-51#LTR/ERV1	LTR	Gypsy	Athila	no	+	INT|Athila
+rnd-1_family-57#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-1_family-65#LINE/L1	LINE	unknown	unknown	unknown	+	RH|LINE
+rnd-1_family-70#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand RH|Retand
+rnd-1_family-79#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+rnd-1_family-83#LTR/Copia	LTR	Copia	Ivana	no	+	RT|Ivana RH|Ivana GAG|Ivana PROT|Ivana INT|Ivana
+rnd-1_family-88#LTR/Gypsy	LTR	Gypsy	Athila	no	-	GAG|Athila
+rnd-1_family-90#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+rnd-1_family-93#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila
+rnd-2_family-614#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+rnd-3_family-1386#LTR/Gypsy	LTR	Gypsy	Reina	no	+	GAG|Reina
+rnd-3_family-1550#DNA/PIF-Harbinger	TIR	PIF_Harbinger	unknown	unknown	+	TPase|PIF_Harbinger

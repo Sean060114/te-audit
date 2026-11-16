@@ -1,0 +1,76 @@
+##gff-version 3
+##date Mon Nov 16 17:00:32 CST 2026
+##This file contains repeats annotated by EDTA v2.2.2 based on structural features.
+##This file follows the ENSEMBL standard: https://useast.ensembl.org/info/website/upload/gff3.html
+##Column 3: Sequence Ontology of repeat features. Please refer to the SO database for more details: http://www.sequenceontology.org/. In cases where the SO database does not have the repeat feature, tentative SO names are used, with a full list included in EDTA/bin/TE_Sequence_Ontology.txt (Enhancement notes), and the sequence_ontology in Column 9 uses the closest parent SO.
+##Column 9: 
+##      ID: unique ID for this feature in the genome.
+##      classification: Same as Column 3 but formatted following the RepeatMasker naming convention.
+##      sequence_ontology: Sequence Ontology ID of the feature.
+##      identity: Sequence identity (0-1) between terminal sequences for structurally annotated TIR elements.
+##      ltr_identity: Sequence identity (0-1) between the left and right LTR regions for structurally annotated LTR elements.
+##      Name: Repeat family name. Some may be shown as coordinates, which are single-copy and structrually identified elements that are not included in the repeat library.
+##      method=structural: Indicate this entry is produced by structural annotation.
+##      motif/TSD/TIR: structural features of structurally annotated LTR and TIR elements.
+##For more details about this file, please refer to the EDTA wiki: https://github.com/oushujun/EDTA/wiki/Making-sense-of-EDTA-usage-and-outputs---Q&A
+##seqid source sequence_ontology start end score strand phase attributes
+Alyrata_2M	EDTA	Tc1_Mariner_TIR_transposon	34428	38235	.	.	.	ID=TE_struc_8;Name=TE_00000005;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TAA_TAA_100.0;TIR=CTAACTCCTTTG_AAAAGGAGTTTG
+###
+Alyrata_2M	EDTA	CACTA_TIR_transposon	196263	197776	.	.	.	ID=TE_struc_9;Name=TE_00000000;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.846;method=structural;TSD=AT_AT_100.0;TIR=CACTATGTAATAA_TTCTTACATAGAG
+###
+Alyrata_2M	EDTA	helitron	221462	221796	.	-	.	ID=TE_struc_0;Name=TE_00000001;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	repeat_region	241172	247246	.	-	.	ID=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT;strand_evidence=domain,PPT
+Alyrata_2M	EDTA	target_site_duplication	241172	241176	.	-	.	ID=lTSD_1;Parent=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT
+Alyrata_2M	EDTA	long_terminal_repeat	241177	241308	.	-	.	ID=lLTR_1;Parent=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT
+Alyrata_2M	EDTA	Copia_LTR_retrotransposon	241177	247241	.	-	.	ID=LTRRT_1;Parent=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT;strand_evidence=domain,PPT
+Alyrata_2M	EDTA	long_terminal_repeat	247110	247241	.	-	.	ID=rLTR_1;Parent=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT
+Alyrata_2M	EDTA	target_site_duplication	247242	247246	.	-	.	ID=rTSD_1;Parent=repeat_region_1;Name=TE_00000002;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATTT
+###
+Alyrata_2M	EDTA	repeat_region	253249	254593	.	-	.	ID=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000657;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC;strand_evidence=PBS
+Alyrata_2M	EDTA	target_site_duplication	253249	253253	.	-	.	ID=lTSD_2;Parent=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000434;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC
+Alyrata_2M	EDTA	long_terminal_repeat	253254	253540	.	-	.	ID=lLTR_2;Parent=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000286;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC
+Alyrata_2M	EDTA	LTR_retrotransposon	253254	254588	.	-	.	ID=LTRRT_2;Parent=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000186;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC;strand_evidence=PBS
+Alyrata_2M	EDTA	long_terminal_repeat	254302	254588	.	-	.	ID=rLTR_2;Parent=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000286;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC
+Alyrata_2M	EDTA	target_site_duplication	254589	254593	.	-	.	ID=rTSD_2;Parent=repeat_region_2;Name=Alyrata_2M:254588..253254;classification=LTR/unknown;sequence_ontology=SO:0000434;ltr_identity=0.9930;method=structural;motif=TACA;tsd=TTTCC
+###
+Alyrata_2M	EDTA	repeat_region	300192	305306	.	+	.	ID=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG;strand_evidence=domain,PBS
+Alyrata_2M	EDTA	target_site_duplication	300192	300196	.	+	.	ID=lTSD_3;Parent=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG
+Alyrata_2M	EDTA	long_terminal_repeat	300197	300543	.	+	.	ID=lLTR_3;Parent=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG
+Alyrata_2M	EDTA	Gypsy_LTR_retrotransposon	300197	305301	.	+	.	ID=LTRRT_3;Parent=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG;strand_evidence=domain,PBS
+Alyrata_2M	EDTA	long_terminal_repeat	304955	305301	.	+	.	ID=rLTR_3;Parent=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG
+Alyrata_2M	EDTA	target_site_duplication	305302	305306	.	+	.	ID=rTSD_3;Parent=repeat_region_3;Name=TE_00000004;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9913;method=structural;motif=TGTA;tsd=CGCAG
+###
+Alyrata_2M	EDTA	Mutator_TIR_transposon	447961	448677	.	.	.	ID=TE_struc_10;Name=TE_00000006;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.98;method=structural;TSD=TAAAATAAA_TAAAATAAA_100.0;TIR=GGGTTTTGTGCAAAAAAACCCTCGAAGTAACCAATTTTTGCAAGAAAACCCTCCATCTCAAATAAATGCAAGTCAATACCACCATCTCAAAAGTCACCCGCAATATAGCACTCGCGTGTATCGATGACGTGGCAGCCGTTAACTCCGT_ACGGAGTTAACGGCTGCCACGTCATCGATACACGCGAGGGCTATATTGCGGGTGACTTTTGAGATGGCGGTATTGACTTGCATTTATTTGAGATGGAGGGTTTTCTTGCAAAAATTGGCTACTTCGAGGGTTTTTTTGCACAAAACCC
+###
+Alyrata_2M	EDTA	CACTA_TIR_transposon	671191	673175	.	.	.	ID=TE_struc_11;Name=TE_00000007;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.917;method=structural;TSD=TA_TA_100.0;TIR=CACTAAATACGAAAA_TGATCGTGTTTAGTG
+###
+Alyrata_2M	EDTA	Mutator_TIR_transposon	674136	675366	.	.	.	ID=TE_struc_12;Name=TE_00000008;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.939;method=structural;TSD=TGTTATATAA_TGTTATATAA_100.0;TIR=GGGGAAAGGGGATTTTCATACCCGTACTATCTGCACTGTGGATTTTCATAACTGAACAATTTCGTAGGGTATTTTACAATCTAAACTTCAATAAAATTTGAATCTCATACATATACTTGATACAACGTGCAAAAATCAGAGTCAATTTAATGGGTGTTAGTCAACTCCATTACGGTGCTGAGTCATCGTACACCTGTACGCTGACGTGTATCAAAACGACGTCGTTTTCATACCCGTACTATCTGCGCCGTGGATTTTCATACCTGAACAATTTTGTAGGGTATTTTACAACCTAAACTTCAATAAAATCTGAATCTCATACCCTATACTTGATACAACGTGCAAAAATCGGAGTCA_TTGACTCCGATTTTTGCACGTTGTATCAAGCATAGGGTATGAGATTCAAATTTTATTGAAGTTTAGGTTGTAAAATACCTACAAAATTGTCCAGGTATGAAAATCCACGGCACATACAGTACGTGTATGAAAACGACGTCGTTTTGATACACGTCAGCGTACACGTGTACGATGACTCAGCACCGTAACGGAGTTGACTAACACCCGTTAGATTGACTCTGATTTTTGCATGTTGTATCAAGTATAGGTATGAGATTCAAATTTTATTGAAATTTAGGTTGTAAAATACCCTACGAATTTGTCCAGGTATGAAAATCCACGGTGCAGATAGTACGGGTATGAAAATCCCCTTTTCCC
+###
+Alyrata_2M	EDTA	PIF_Harbinger_TIR_transposon	679780	680052	.	.	.	ID=TE_struc_13;Name=TE_00000009;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.846;method=structural;TSD=TAA_TAA_100.0;TIR=GAGCATCTCCAAC_ATTGGAGATGGTC
+###
+Alyrata_2M	EDTA	helitron	680919	683392	.	-	.	ID=TE_struc_1;Name=TE_00000010;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	helitron	696268	715098	.	-	.	ID=TE_struc_2;Name=TE_00000011;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	helitron	733384	734160	.	-	.	ID=TE_struc_3;Name=TE_00000012;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	repeat_region	755023	761288	.	-	.	ID=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT;strand_evidence=domain,PPT
+Alyrata_2M	EDTA	target_site_duplication	755023	755027	.	-	.	ID=lTSD_4;Parent=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT
+Alyrata_2M	EDTA	long_terminal_repeat	755028	755278	.	-	.	ID=lLTR_4;Parent=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT
+Alyrata_2M	EDTA	Copia_LTR_retrotransposon	755028	761283	.	-	.	ID=LTRRT_4;Parent=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT;strand_evidence=domain,PPT
+Alyrata_2M	EDTA	long_terminal_repeat	761033	761283	.	-	.	ID=rLTR_4;Parent=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT
+Alyrata_2M	EDTA	target_site_duplication	761284	761288	.	-	.	ID=rTSD_4;Parent=repeat_region_4;Name=TE_00000013;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AATCT
+###
+Alyrata_2M	EDTA	helitron	818965	819502	.	+	.	ID=TE_struc_4;Name=TE_00000014;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	helitron	820340	822552	.	+	.	ID=TE_struc_5;Name=TE_00000015;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	Mutator_TIR_transposon	820573	821621	.	.	.	ID=TE_struc_14;Name=TE_00000016;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=TTAAAACAAT_TTAAAACAAT_100.0;TIR=GGGAAAAAACCCGAAAAAACCCGAA_ATGACGGTTTTTCGGGTTTTTTCCC
+###
+Alyrata_2M	EDTA	helitron	874755	876454	.	+	.	ID=TE_struc_6;Name=TE_00000017;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	helitron	923064	933703	.	+	.	ID=TE_struc_7;Name=TE_00000018;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Alyrata_2M	EDTA	PIF_Harbinger_TIR_transposon	968688	968935	.	.	.	ID=TE_struc_15;Name=TE_00000019;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.923;method=structural;TSD=TTA_TTA_100.0;TIR=GAGTATCTCCATTCT_CCAATGGAGATGCTC
+###

@@ -1,0 +1,176 @@
+{
+  "dir": "rice/edta_out_preflight",
+  "n_elements": 114,
+  "n_classified": 16,
+  "C1_field_availability": [
+    {
+      "type": "Tc1_Mariner_TIR_transposon",
+      "n": 56,
+      "identity": 56,
+      "tsd": 56,
+      "tir": 56,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1771.0
+    },
+    {
+      "type": "helitron",
+      "n": 18,
+      "identity": 0,
+      "tsd": 0,
+      "tir": 0,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1706.0
+    },
+    {
+      "type": "Mutator_TIR_transposon",
+      "n": 12,
+      "identity": 12,
+      "tsd": 12,
+      "tir": 12,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1746.0
+    },
+    {
+      "type": "CACTA_TIR_transposon",
+      "n": 10,
+      "identity": 10,
+      "tsd": 10,
+      "tir": 10,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1248.5
+    },
+    {
+      "type": "Gypsy_LTR_retrotransposon",
+      "n": 9,
+      "identity": 9,
+      "tsd": 9,
+      "tir": 0,
+      "motif": 9,
+      "strand_ev": 9,
+      "median_len": 11559
+    },
+    {
+      "type": "Copia_LTR_retrotransposon",
+      "n": 5,
+      "identity": 5,
+      "tsd": 5,
+      "tir": 0,
+      "motif": 5,
+      "strand_ev": 5,
+      "median_len": 6891
+    },
+    {
+      "type": "LTR_retrotransposon",
+      "n": 2,
+      "identity": 2,
+      "tsd": 2,
+      "tir": 0,
+      "motif": 2,
+      "strand_ev": 2,
+      "median_len": 7022.0
+    },
+    {
+      "type": "PIF_Harbinger_TIR_transposon",
+      "n": 2,
+      "identity": 2,
+      "tsd": 2,
+      "tir": 2,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1683.5
+    }
+  ],
+  "C1_no_identity_classes": [
+    "helitron"
+  ],
+  "C2_short_elements": [],
+  "C3_ir_quality": {
+    "n": 80,
+    "perfect": 0,
+    "median_ident": 0.8125,
+    "median_armlen": 17.0,
+    "ident_floor": 0.8,
+    "at_floor_n": 37
+  },
+  "C4_coverage": {
+    "Mutator_TIR_transposon": {
+      "covered": 0,
+      "total": 12
+    },
+    "Gypsy_LTR_retrotransposon": {
+      "covered": 9,
+      "total": 9
+    },
+    "Copia_LTR_retrotransposon": {
+      "covered": 5,
+      "total": 5
+    },
+    "Tc1_Mariner_TIR_transposon": {
+      "covered": 0,
+      "total": 56
+    },
+    "helitron": {
+      "covered": 0,
+      "total": 18
+    },
+    "CACTA_TIR_transposon": {
+      "covered": 0,
+      "total": 10
+    },
+    "LTR_retrotransposon": {
+      "covered": 0,
+      "total": 2
+    },
+    "PIF_Harbinger_TIR_transposon": {
+      "covered": 0,
+      "total": 2
+    }
+  },
+  "C4_not_classified": [
+    {
+      "start": 880801,
+      "end": 891653,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 1876688,
+      "end": 1879878,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    }
+  ],
+  "C5_cross_class": [
+    {
+      "start": 1139956,
+      "end": 1151106,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Reina"
+    },
+    {
+      "start": 1467601,
+      "end": 1472476,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTC",
+      "domains": "RT|Tekay RH|Tekay INT|Tekay CHD|Tekay"
+    }
+  ],
+  "C6_ltr_conflict": [
+    {
+      "start": 1876688,
+      "end": 1879878,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.975,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    }
+  ],
+  "severe_total": 2
+}

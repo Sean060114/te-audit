@@ -1,0 +1,975 @@
+{
+  "dir": "rice/edta_out",
+  "n_elements": 1669,
+  "n_classified": 232,
+  "C1_field_availability": [
+    {
+      "type": "Tc1_Mariner_TIR_transposon",
+      "n": 778,
+      "identity": 778,
+      "tsd": 778,
+      "tir": 778,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 2172.5
+    },
+    {
+      "type": "helitron",
+      "n": 299,
+      "identity": 0,
+      "tsd": 0,
+      "tir": 0,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 2585
+    },
+    {
+      "type": "Mutator_TIR_transposon",
+      "n": 149,
+      "identity": 149,
+      "tsd": 149,
+      "tir": 149,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1672
+    },
+    {
+      "type": "Gypsy_LTR_retrotransposon",
+      "n": 148,
+      "identity": 148,
+      "tsd": 148,
+      "tir": 0,
+      "motif": 148,
+      "strand_ev": 148,
+      "median_len": 11616.0
+    },
+    {
+      "type": "PIF_Harbinger_TIR_transposon",
+      "n": 119,
+      "identity": 119,
+      "tsd": 119,
+      "tir": 119,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 991
+    },
+    {
+      "type": "CACTA_TIR_transposon",
+      "n": 103,
+      "identity": 103,
+      "tsd": 103,
+      "tir": 103,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 1294
+    },
+    {
+      "type": "Copia_LTR_retrotransposon",
+      "n": 50,
+      "identity": 50,
+      "tsd": 50,
+      "tir": 0,
+      "motif": 50,
+      "strand_ev": 50,
+      "median_len": 6337.0
+    },
+    {
+      "type": "LTR_retrotransposon",
+      "n": 20,
+      "identity": 20,
+      "tsd": 20,
+      "tir": 0,
+      "motif": 20,
+      "strand_ev": 20,
+      "median_len": 3638.5
+    },
+    {
+      "type": "hAT_TIR_transposon",
+      "n": 3,
+      "identity": 3,
+      "tsd": 3,
+      "tir": 3,
+      "motif": 0,
+      "strand_ev": 0,
+      "median_len": 673
+    }
+  ],
+  "C1_no_identity_classes": [
+    "helitron"
+  ],
+  "C2_short_elements": [
+    {
+      "start": 3436779,
+      "end": 3436895,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 117,
+      "armlen": 51,
+      "internal": 15
+    },
+    {
+      "start": 4096860,
+      "end": 4096939,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 80,
+      "armlen": 22,
+      "internal": 36
+    },
+    {
+      "start": 4809916,
+      "end": 4810022,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 107,
+      "armlen": 11,
+      "internal": 85
+    },
+    {
+      "start": 6485979,
+      "end": 6486098,
+      "type": "Mutator_TIR_transposon",
+      "length": 120,
+      "armlen": 20,
+      "internal": 80
+    },
+    {
+      "start": 6882441,
+      "end": 6882545,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 105,
+      "armlen": 22,
+      "internal": 61
+    },
+    {
+      "start": 7257027,
+      "end": 7257175,
+      "type": "Mutator_TIR_transposon",
+      "length": 149,
+      "armlen": 62,
+      "internal": 25
+    },
+    {
+      "start": 7281120,
+      "end": 7281213,
+      "type": "PIF_Harbinger_TIR_transposon",
+      "length": 94,
+      "armlen": 11,
+      "internal": 72
+    },
+    {
+      "start": 9178193,
+      "end": 9178326,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 134,
+      "armlen": 21,
+      "internal": 92
+    },
+    {
+      "start": 11640412,
+      "end": 11640519,
+      "type": "PIF_Harbinger_TIR_transposon",
+      "length": 108,
+      "armlen": 22,
+      "internal": 64
+    },
+    {
+      "start": 15469537,
+      "end": 15469640,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 104,
+      "armlen": 35,
+      "internal": 34
+    },
+    {
+      "start": 15835767,
+      "end": 15836001,
+      "type": "Mutator_TIR_transposon",
+      "length": 235,
+      "armlen": 69,
+      "internal": 97
+    },
+    {
+      "start": 18770453,
+      "end": 18770543,
+      "type": "Mutator_TIR_transposon",
+      "length": 91,
+      "armlen": 11,
+      "internal": 69
+    },
+    {
+      "start": 19902064,
+      "end": 19902182,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 119,
+      "armlen": 47,
+      "internal": 25
+    },
+    {
+      "start": 23900403,
+      "end": 23900483,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 81,
+      "armlen": 35,
+      "internal": 11
+    },
+    {
+      "start": 26192311,
+      "end": 26192392,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 82,
+      "armlen": 35,
+      "internal": 12
+    },
+    {
+      "start": 26438788,
+      "end": 26438891,
+      "type": "Mutator_TIR_transposon",
+      "length": 104,
+      "armlen": 12,
+      "internal": 80
+    },
+    {
+      "start": 27924519,
+      "end": 27924624,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 106,
+      "armlen": 17,
+      "internal": 72
+    },
+    {
+      "start": 28687858,
+      "end": 28687960,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 103,
+      "armlen": 11,
+      "internal": 81
+    },
+    {
+      "start": 31171477,
+      "end": 31171568,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 92,
+      "armlen": 26,
+      "internal": 40
+    },
+    {
+      "start": 33188970,
+      "end": 33189109,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 140,
+      "armlen": 22,
+      "internal": 96
+    },
+    {
+      "start": 34163822,
+      "end": 34163919,
+      "type": "Mutator_TIR_transposon",
+      "length": 98,
+      "armlen": 13,
+      "internal": 72
+    },
+    {
+      "start": 40951855,
+      "end": 40951958,
+      "type": "Mutator_TIR_transposon",
+      "length": 104,
+      "armlen": 11,
+      "internal": 82
+    },
+    {
+      "start": 41705222,
+      "end": 41705333,
+      "type": "PIF_Harbinger_TIR_transposon",
+      "length": 112,
+      "armlen": 11,
+      "internal": 90
+    },
+    {
+      "start": 42146732,
+      "end": 42146812,
+      "type": "Tc1_Mariner_TIR_transposon",
+      "length": 81,
+      "armlen": 15,
+      "internal": 51
+    }
+  ],
+  "C3_ir_quality": {
+    "n": 1152,
+    "perfect": 1,
+    "median_ident": 0.8182,
+    "median_armlen": 16.0,
+    "ident_floor": 0.6244,
+    "at_floor_n": 2
+  },
+  "C4_ltr_tiers": {
+    "assigned_superfamily": {
+      "total": 198,
+      "missing": 11
+    },
+    "unassigned_superfamily": {
+      "total": 20,
+      "missing": 20
+    }
+  },
+  "C4_coverage": {
+    "Mutator_TIR_transposon": {
+      "covered": 6,
+      "total": 149
+    },
+    "Gypsy_LTR_retrotransposon": {
+      "covered": 137,
+      "total": 148
+    },
+    "Copia_LTR_retrotransposon": {
+      "covered": 50,
+      "total": 50
+    },
+    "Tc1_Mariner_TIR_transposon": {
+      "covered": 0,
+      "total": 778
+    },
+    "helitron": {
+      "covered": 7,
+      "total": 299
+    },
+    "CACTA_TIR_transposon": {
+      "covered": 0,
+      "total": 103
+    },
+    "LTR_retrotransposon": {
+      "covered": 0,
+      "total": 20
+    },
+    "PIF_Harbinger_TIR_transposon": {
+      "covered": 1,
+      "total": 119
+    },
+    "hAT_TIR_transposon": {
+      "covered": 0,
+      "total": 3
+    }
+  },
+  "C4_not_classified": [
+    {
+      "start": 880801,
+      "end": 891653,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 1876688,
+      "end": 1879878,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 9942375,
+      "end": 9944168,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 11300360,
+      "end": 11307153,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 11521734,
+      "end": 11525129,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 12791745,
+      "end": 12802322,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 13618453,
+      "end": 13622563,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 13624755,
+      "end": 13635013,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 13737089,
+      "end": 13747290,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 16040687,
+      "end": 16045652,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 16268970,
+      "end": 16278417,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 19511052,
+      "end": 19512528,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 19579601,
+      "end": 19588987,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 19651302,
+      "end": 19672535,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 19754168,
+      "end": 19764923,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 20756402,
+      "end": 20760488,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 20835064,
+      "end": 20841650,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 20998351,
+      "end": 21008555,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 23127498,
+      "end": 23137437,
+      "type": "Gypsy_LTR_retrotransposon",
+      "cls": "LTR/Gypsy"
+    },
+    {
+      "start": 23474451,
+      "end": 23483915,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 27399716,
+      "end": 27408719,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 27890406,
+      "end": 27895091,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 28305312,
+      "end": 28307064,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 29253361,
+      "end": 29262105,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 30801082,
+      "end": 30803196,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 33118232,
+      "end": 33119879,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 33138860,
+      "end": 33140507,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 34235577,
+      "end": 34238690,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 36032799,
+      "end": 36036679,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 37164038,
+      "end": 37170349,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    },
+    {
+      "start": 37822296,
+      "end": 37824258,
+      "type": "LTR_retrotransposon",
+      "cls": "LTR/unknown"
+    }
+  ],
+  "C5_cross_class": [
+    {
+      "start": 10029839,
+      "end": 10046882,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand"
+    },
+    {
+      "start": 11180609,
+      "end": 11195557,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|EnSpm_CACTA"
+    },
+    {
+      "start": 1139956,
+      "end": 1151106,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Reina"
+    },
+    {
+      "start": 11809920,
+      "end": 11827698,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|MuDR_Mutator"
+    },
+    {
+      "start": 13128600,
+      "end": 13137775,
+      "lib": "Helitron",
+      "order": "LINE",
+      "orig": "DNA/Helitron",
+      "domains": "ENDO|LINE RT|LINE"
+    },
+    {
+      "start": 13176249,
+      "end": 13191848,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Bianca PROT|Bianca INT|Bianca RT|Bianca RH|Bianca"
+    },
+    {
+      "start": 15196077,
+      "end": 15209642,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|MuDR_Mutator"
+    },
+    {
+      "start": 15222628,
+      "end": 15231301,
+      "lib": "Helitron",
+      "order": "LINE",
+      "orig": "DNA/Helitron",
+      "domains": "ENDO|LINE RT|LINE"
+    },
+    {
+      "start": 16334262,
+      "end": 16350830,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "RT|TAR RH|TAR"
+    },
+    {
+      "start": 16672023,
+      "end": 16681955,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Reina PROT|Reina RT|Reina RH|Reina INT|Reina CHD|Reina"
+    },
+    {
+      "start": 18347639,
+      "end": 18365162,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR"
+    },
+    {
+      "start": 18897925,
+      "end": 18900832,
+      "lib": "Helitron",
+      "order": "TIR",
+      "orig": "DNA/Helitron",
+      "domains": "TPase|EnSpm_CACTA"
+    },
+    {
+      "start": 19439808,
+      "end": 19453089,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay"
+    },
+    {
+      "start": 20158336,
+      "end": 20170566,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay"
+    },
+    {
+      "start": 20792681,
+      "end": 20805422,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand"
+    },
+    {
+      "start": 20914390,
+      "end": 20925374,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|CRM PROT|CRM CHDCR|CRM"
+    },
+    {
+      "start": 21287875,
+      "end": 21304912,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Tekay"
+    },
+    {
+      "start": 22311594,
+      "end": 22324694,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay"
+    },
+    {
+      "start": 29343967,
+      "end": 29358334,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Retand PROT|Retand RT|Retand aRH|Retand INT|Retand"
+    },
+    {
+      "start": 36842062,
+      "end": 36860730,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay"
+    },
+    {
+      "start": 41020044,
+      "end": 41037910,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Retand INT|Retand RH|Retand"
+    },
+    {
+      "start": 42381195,
+      "end": 42395966,
+      "lib": "Helitron",
+      "order": "LINE",
+      "orig": "DNA/Helitron",
+      "domains": "RH|LINE"
+    },
+    {
+      "start": 42401471,
+      "end": 42410495,
+      "lib": "Helitron",
+      "order": "LINE",
+      "orig": "DNA/Helitron",
+      "domains": "RH|LINE"
+    },
+    {
+      "start": 4920082,
+      "end": 4937462,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|Retand PROT|Retand RT|Retand RH|Retand"
+    },
+    {
+      "start": 9956133,
+      "end": 9975965,
+      "lib": "Helitron",
+      "order": "LTR",
+      "orig": "DNA/Helitron",
+      "domains": "GAG|CRM"
+    },
+    {
+      "start": 12907908,
+      "end": 12912208,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTC",
+      "domains": "GAG|Ale PROT|Ale"
+    },
+    {
+      "start": 12908193,
+      "end": 12911922,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|Ale"
+    },
+    {
+      "start": 14337224,
+      "end": 14340397,
+      "lib": "TIR",
+      "order": "LINE",
+      "orig": "DNA/DTC",
+      "domains": "RH|LINE"
+    },
+    {
+      "start": 3147435,
+      "end": 3148979,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTM",
+      "domains": "GAG|Ivana"
+    },
+    {
+      "start": 32123080,
+      "end": 32126437,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTH",
+      "domains": "GAG|Reina"
+    },
+    {
+      "start": 5963699,
+      "end": 5964925,
+      "lib": "TIR",
+      "order": "LTR",
+      "orig": "DNA/DTH",
+      "domains": "RT|Ale"
+    }
+  ],
+  "C6_ltr_conflict": [
+    {
+      "start": 1876688,
+      "end": 1879878,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.975,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 9942375,
+      "end": 9944168,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9826,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 11521734,
+      "end": 11525129,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9573,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 12791745,
+      "end": 12802322,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9997,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 13624755,
+      "end": 13635013,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9951,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 13737089,
+      "end": 13747290,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9978,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 16040687,
+      "end": 16045652,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9617,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 16268970,
+      "end": 16278417,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9901,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 19511052,
+      "end": 19512528,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9623,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 19579601,
+      "end": 19588987,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9984,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 19651302,
+      "end": 19672535,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9968,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 19754168,
+      "end": 19764923,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9966,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 20756402,
+      "end": 20760488,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9731,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 20998351,
+      "end": 21008555,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9933,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 23127498,
+      "end": 23137437,
+      "type": "Gypsy_LTR_retrotransposon",
+      "ltr_identity": 0.9984,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 23474451,
+      "end": 23483915,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9953,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 27399716,
+      "end": 27408719,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9964,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 29253361,
+      "end": 29262105,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 1.0,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 33118232,
+      "end": 33119879,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9839,
+      "strand_evidence": "PPT",
+      "classified": false
+    },
+    {
+      "start": 33138860,
+      "end": 33140507,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9839,
+      "strand_evidence": "PPT",
+      "classified": false
+    },
+    {
+      "start": 34235577,
+      "end": 34238690,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.961,
+      "strand_evidence": "PBS",
+      "classified": false
+    },
+    {
+      "start": 37164038,
+      "end": 37170349,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9877,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    },
+    {
+      "start": 37822296,
+      "end": 37824258,
+      "type": "LTR_retrotransposon",
+      "ltr_identity": 0.9587,
+      "strand_evidence": "PBS,PPT",
+      "classified": false
+    }
+  ],
+  "severe_total": 35
+}

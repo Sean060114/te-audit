@@ -1,0 +1,10 @@
+type	n	len_median	has_identity	has_TSD	has_TIR	perfect_IR
+helitron	85	3776	0	0	0	0
+Mutator_TIR_transposon	47	1812	47	47	47	0
+Copia_LTR_retrotransposon	27	4789	27	27	0	0
+PIF_Harbinger_TIR_transposon	21	1330	21	21	21	0
+CACTA_TIR_transposon	21	2512	21	21	21	0
+Gypsy_LTR_retrotransposon	13	7890	13	13	0	0
+Tc1_Mariner_TIR_transposon	2	3489	2	2	2	0
+LTR_retrotransposon	1	7472	1	1	0	0
+hAT_TIR_transposon	1	844	1	1	1	0

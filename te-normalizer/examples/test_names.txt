@@ -1,0 +1,11 @@
+# 测试集：每行一个名称，覆盖规范化器的四条路径
+DNA/Ginger1
+sine/alu
+LTR/Copia/SIRE
+nMITE
+DNA/MarinerTc1
+PLE/Chlamys
+Unknown//ClassI
+DNA/CMC-Chapaev
+dna/marinerTc1
+DNA/CMC_Transib

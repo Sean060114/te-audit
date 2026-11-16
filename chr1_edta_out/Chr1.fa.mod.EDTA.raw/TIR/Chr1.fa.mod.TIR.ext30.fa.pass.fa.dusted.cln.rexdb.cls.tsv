@@ -1,0 +1,18 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+Chr1:12410048..12412672#DNA/DTM	LTR	Copia	Ivana	no	-	PROT|Ivana
+Chr1:12813865..12816414#DNA/DTM	LTR	Copia	Bianca	no	+	RT|Bianca RH|Bianca
+Chr1:12942847..12947011#DNA/DTC	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+Chr1:15050780..15055791#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+Chr1:15520117..15522010#DNA/DTM	LTR	Gypsy	CRM	no	-	GAG|CRM
+Chr1:16055755..16059171#DNA/DTC	TIR	EnSpm_CACTA	unknown	unknown	-	TPase|EnSpm_CACTA
+Chr1:16641058..16643679#DNA/DTH	LTR	Copia	Ale	no	-	INT|Ale
+Chr1:16644241..16648982#DNA/DTC	LTR	Copia	Ale	no	-	GAG|Ale
+Chr1:16659832..16664179#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	-	TPase|MuDR_Mutator
+Chr1:17072896..17074656#DNA/DTC	LINE	unknown	unknown	unknown	-	RT|LINE
+Chr1:17204018..17206062#DNA/DTM	LTR	Copia	Ivana	no	+	GAG|Ivana PROT|Ivana RH|Ivana
+Chr1:17842524..17845075#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+Chr1:18013303..18017811#DNA/DTM	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:25159043..25163486#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+Chr1:29377328..29380473#DNA/DTC	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+Chr1:3780906..3785414#DNA/DTM	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:4329896..4334391#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator

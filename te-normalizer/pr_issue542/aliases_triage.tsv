@@ -1,0 +1,62 @@
+序号	被报告名称	报告人	分档	目标SO标准名	SO ID	决策	补丁分组	置信度	理由	风险
+1	TIR/Novosib	yaoxkkkkk@2026-01-13	疑难-显式决策	Novosib_TIR_transposon	SO:0000182	纳入	主补丁	高	表中已有 Novosib_TIR_transposon 行且已有 DNA/Novosib 别名，补 TIR/Novosib 属同义写法	极低；Novosib 为已描述的 TIR 家族，归属无争议
+2	DNA/CACTA/MITE	yaoxkkkkk@2026-01-13	结构后缀	CACTA_TIR_transposon	SO:0002285	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/CACTA	低；该父名已在表内，仅补结构后缀写法
+3	DNA/CACTA/nMITE	yaoxkkkkk@2026-01-13	结构后缀	CACTA_TIR_transposon	SO:0002285	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/CACTA	低；该父名已在表内，仅补结构后缀写法
+4	DNA/CACTA/unknown	yaoxkkkkk@2026-01-13	结构后缀	CACTA_TIR_transposon	SO:0002285	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/CACTA	低；该父名已在表内，仅补结构后缀写法
+5	LTR/mixture	yaoxkkkkk@2026-01-13	结构后缀	LTR_retrotransposon	SO:0000186	纳入	主补丁	高	剥离结构后缀后命中已有别名 LTR	低；该父名已在表内，仅补结构后缀写法
+6	MITE/NA	yaoxkkkkk@2026-01-13	结构后缀	MITE	SO:0000338	纳入	主补丁	高	剥离结构后缀后命中已有别名 MITE	低；该父名已在表内，仅补结构后缀写法
+7	DNA/Mutator/MITE	yaoxkkkkk@2026-01-13	结构后缀	Mutator_TIR_transposon	SO:0002280	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Mutator	低；该父名已在表内，仅补结构后缀写法
+8	DNA/Mutator/nMITE	yaoxkkkkk@2026-01-13	结构后缀	Mutator_TIR_transposon	SO:0002280	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Mutator	低；该父名已在表内，仅补结构后缀写法
+9	DNA/Mutator/unknown	yaoxkkkkk@2026-01-13	结构后缀	Mutator_TIR_transposon	SO:0002280	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Mutator	低；该父名已在表内，仅补结构后缀写法
+10	DNA/Harbinger/MITE	yaoxkkkkk@2026-01-13	结构后缀	PIF_Harbinger_TIR_transposon	SO:0002284	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Harbinger	低；该父名已在表内，仅补结构后缀写法
+11	DNA/Harbinger/nMITE	yaoxkkkkk@2026-01-13	结构后缀	PIF_Harbinger_TIR_transposon	SO:0002284	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Harbinger	低；该父名已在表内，仅补结构后缀写法
+12	DNA/Harbinger/unknown	yaoxkkkkk@2026-01-13	结构后缀	PIF_Harbinger_TIR_transposon	SO:0002284	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/Harbinger	低；该父名已在表内，仅补结构后缀写法
+13	DNA/P/nMITE	yaoxkkkkk@2026-01-13	结构后缀	P_TIR_transposon	SO:0001535	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/P	低；该父名已在表内，仅补结构后缀写法
+14	PLE/NA	yaoxkkkkk@2026-01-13	结构后缀	Penelope_retrotransposon	SO:0002290	纳入	主补丁	高	剥离结构后缀后命中已有别名 PLE	低；该父名已在表内，仅补结构后缀写法
+15	DNA/TcMar/MITE	yaoxkkkkk@2026-01-13	结构后缀	Tc1_Mariner_TIR_transposon	SO:0002278	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/TcMar	低；该父名已在表内，仅补结构后缀写法
+16	DNA/TcMar/nMITE	yaoxkkkkk@2026-01-13	结构后缀	Tc1_Mariner_TIR_transposon	SO:0002278	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/TcMar	低；该父名已在表内，仅补结构后缀写法
+17	DNA/TcMar/unknown	yaoxkkkkk@2026-01-13	结构后缀	Tc1_Mariner_TIR_transposon	SO:0002278	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/TcMar	低；该父名已在表内，仅补结构后缀写法
+18	DNA/hAT/MITE	yaoxkkkkk@2026-01-13	结构后缀	hAT_TIR_transposon	SO:0002279	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/hAT	低；该父名已在表内，仅补结构后缀写法
+19	DNA/hAT/nMITE	yaoxkkkkk@2026-01-13	结构后缀	hAT_TIR_transposon	SO:0002279	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/hAT	低；该父名已在表内，仅补结构后缀写法
+20	DNA/hAT/unknown	yaoxkkkkk@2026-01-13	结构后缀	hAT_TIR_transposon	SO:0002279	纳入	主补丁	高	剥离结构后缀后命中已有别名 DNA/hAT	低；该父名已在表内，仅补结构后缀写法
+21	Unspecified/NA	RicardFontsere@2026-04-13	结构后缀	repeat_fragment	SO:0001050	纳入	主补丁	高	剥离结构后缀后命中已有别名 Unspecified	低；该父名已在表内，仅补结构后缀写法
+22	Unknown//ClassII	yaoxkkkkk@2026-01-13	疑难-显式决策	DNA_transposon	SO:0000182	纳入	判据型	中	同上；表内 DNA_transposon 行已有 Class_II 别名	同 Unknown//ClassI
+23	nMITE	yaoxkkkkk@2026-01-13	疑难-显式决策	MITE	SO:0000338	纳入	判据型	中高	nMITE = non-autonomous MITE，而 MITE 定义本身即非自主元件，SO:0000338 即其类名	若报告方另指某一特定家族的非自主拷贝，此别名会丢一层信息；但作为名称归一化可接受
+24	nMITE/NA	yaoxkkkkk@2026-01-13	疑难-显式决策	MITE	SO:0000338	纳入	判据型	中高	同上，nMITE 的结构后缀写法	同 nMITE
+25	Unknown//ClassI	yaoxkkkkk@2026-01-13	疑难-显式决策	retrotransposon	SO:0000180	纳入	判据型	中	双斜杠是中间字段为空的解析产物；表内 retrotransposon 行已有 Class_I 别名	把字面双斜杠串写进官方表略显宽松；建议在 PR 中说明这是为兼容输出工具
+26	LTR/Copia/Ale	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+27	LTR/Copia/Alesia	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+28	LTR/Copia/Angela	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+29	LTR/Copia/Bianca	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+30	LTR/Copia/Bryco	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+31	LTR/Copia/Gymco-I	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+32	LTR/Copia/Gymco-II	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+33	LTR/Copia/Gymco-III	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+34	LTR/Copia/Ikeros	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+35	LTR/Copia/Ivana	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+36	LTR/Copia/SIRE	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+37	LTR/Copia/TAR	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+38	LTR/Copia/Tork	yaoxkkkkk@2026-01-13	亚家族	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	按前两级 LTR/Copia 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+39	LTR/Gypsy/Athila	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+40	LTR/Gypsy/CRM	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+41	LTR/Gypsy/Chlamyvir	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+42	LTR/Gypsy/Galadriel	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+43	LTR/Gypsy/Ogre	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+44	LTR/Gypsy/Phygy	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+45	LTR/Gypsy/Reina	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+46	LTR/Gypsy/Retand	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+47	LTR/Gypsy/Selgy	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+48	LTR/Gypsy/TatII	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+49	LTR/Gypsy/TatIII	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+50	LTR/Gypsy/Tcn1	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+51	LTR/Gypsy/Tekay	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+52	LTR/Gypsy/chromo-outgroup	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+53	LTR/Gypsy/non-chromo-outgroup	yaoxkkkkk@2026-01-13	亚家族	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	按前两级 LTR/Gypsy 归入所属超家族（EDTA 表内已有 LTR/Gypsy-Cigr、LINE/L1-Tx1 等亚家族别名先例）	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+54	LTR/Copia/mixture	yaoxkkkkk@2026-01-13	结构后缀	Copia_LTR_retrotransposon	SO:0002264	纳入	仅备选(clade)	高	剥离结构后缀后命中已有别名 LTR/Copia	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+55	LTR/Gypsy/mixture	yaoxkkkkk@2026-01-13	结构后缀	Gypsy_LTR_retrotransposon	SO:0002265	纳入	仅备选(clade)	高	剥离结构后缀后命中已有别名 LTR/Gypsy	维护者已表示 clade 级命名不属于 RepeatMasker 库惯例，可能被判为超出范围
+56	ARTEFACT	bioyoshoo@2025-11-18	疑难-显式决策			不纳入	—	—	维护者 2026-03-02 在 #542 原话："ARTEFACT is ambiguous to me ... the current default is probably good for now"——即维持 repeat_fragment 兜底，不新增别名	若纳入等于替维护者做他明确表示暂不做的分类决定；映射结果虽相同，但不该由 PR 推动
+57	LTR/PIF_Harbinger	z-j-r@2026-07-28;z-j-r@2026-07-28	疑难-显式决策			不纳入	—	—	PIF_Harbinger 属 TIR 超家族，报成 LTR 前缀是报告方分类错误，不应作为合法别名固化	若强行加入会合法化一条错误分类，后续统计会把 TIR 元件算进 LTR
+58	mixture	yaoxkkkkk@2026-01-13	疑难-显式决策			不纳入	—	—	mixture 是 TEsorter 对嵌合元件的标记，不是分类名；固化后会把嵌合件统一压成兜底类，掩盖真实归属	保持缺失则报告方仍能看到原始标记
+59	mixture/NA	yaoxkkkkk@2026-01-13	疑难-显式决策			不纳入	—	—	同上	同上
+60	nLTR	yaoxkkkkk@2026-01-13	疑难-显式决策			不纳入	—	—	nLTR 有歧义：可读作 non-LTR，也可读作 nested LTR，二者指向完全不同的 SO 分支	建议在 PR 中请报告方澄清后单独处理，避免猜错方向
+61	nLTR/NA	yaoxkkkkk@2026-01-13	疑难-显式决策			不纳入	—	—	同上	同上

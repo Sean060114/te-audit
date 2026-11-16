@@ -1,0 +1,1 @@
+cd "C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06"; python bench_multi.py "alyrata=C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/bench_archive/alyrata.fa.mod" "col1m=C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/bench_archive/col1m.fa.mod" "rice=C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/rice/chr1_edta_out"

@@ -1,0 +1,5 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+Col_1M:144888..138439#LTR/Copia	LTR	Copia	TAR	yes	+	GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR
+Col_1M:229496..242338#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+Col_1M:320584..331915#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+Col_1M:460608..465567#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale

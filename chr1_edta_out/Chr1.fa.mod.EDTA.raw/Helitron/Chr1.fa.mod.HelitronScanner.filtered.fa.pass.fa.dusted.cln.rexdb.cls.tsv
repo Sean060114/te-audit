@@ -1,0 +1,11 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+Chr1:11797701..11782513#DNA/Helitron	LTR	Copia	Ivana	yes	-	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:12155847..12136633#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+Chr1:13077510..13064080#DNA/Helitron	LINE	unknown	unknown	unknown	-	RH|LINE
+Chr1:13375480..13386480#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron
+Chr1:13636948..13623933#DNA/Helitron	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+Chr1:13802260..13808607#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL2|Helitron
+Chr1:16746651..16758926#DNA/Helitron	TIR	EnSpm_CACTA	unknown	unknown	-	TPase|EnSpm_CACTA
+Chr1:19341947..19327238#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	-	TPase|MuDR_Mutator
+Chr1:20322494..20311849#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron
+Chr1:23932323..23925218#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron

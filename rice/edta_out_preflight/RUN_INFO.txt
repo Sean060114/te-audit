@@ -1,0 +1,10 @@
+tag        : Oryza_sativa.Chr1.pre3000000
+species    : Rice
+parameters : --step all, then --step anno --anno 1; --overwrite 0; --threads 8
+curatedlib : 0
+input      : Ensembl Plants release-57, Oryza_sativa.IRGSP-1.0.dna.chromosome.1
+length     : 43270923 bp
+edta       : /home/sean/miniconda3/envs/edta
+outdir     : /home/sean/te_bench_rice
+win_path   : C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/rice/edta_out_preflight
+finished   : 2026-11-16 17:17:20

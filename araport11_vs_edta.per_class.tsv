@@ -1,0 +1,14 @@
+source	class	n_elements	bp	covered_bp	rate	rate_meaning
+Araport11	RC	3127	1758046	409683	0.2330	recall
+Araport11	LTR	1197	1581614	1100670	0.6959	recall
+Araport11	DNA	2382	1523168	287626	0.1888	recall
+Araport11	LINE	291	196151	79542	0.4055	recall
+Araport11	Unknown	24	44776	3521	0.0786	recall
+Araport11	Other	87	16467	3823	0.2322	recall
+Araport11	SINE	27	6202	269	0.0434	recall
+EDTA	LTR	1157	1138614	1081346	0.9497	precision
+EDTA	RC	1136	996497	406698	0.4081	precision
+EDTA	DNA	969	521879	285450	0.5470	precision
+EDTA	LINE	186	120970	92425	0.7640	precision
+EDTA	SINE	25	31149	2651	0.0851	precision
+EDTA	Unknown	29	4121	3529	0.8563	precision

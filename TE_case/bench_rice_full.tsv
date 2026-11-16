@@ -1,0 +1,5 @@
+label	n_elements	n_classified	n_cls_files	n_types	c2	c2_min	c3_n	c3_perfect	c3_median	c3_armlen	c3_short_arms	ltr_cov	ltr_tot	asg_cov	asg_tot	una_cov	una_tot	other_cov	other_tot	miss_ltr	miss_other	c5	c6	severe
+col1m	69	7	5	8	5	32	59	1	0.8182	15	33	4	4	4	4	0	0	1	65	0	64	2	0	5
+alyrata	20	3	5	8	0	—	8	0	0.8397	15	5	3	4	3	3	0	1	0	16	1	16	0	1	0
+rice_pre	114	16	5	8	0	—	80	0	0.8125	17	44	14	16	14	14	0	2	0	98	2	98	2	1	0
+rice_full	1669	232	6	9	24	11	1152	1	0.8182	16	753	187	218	187	198	0	20	14	1451	31	1437	31	23	35

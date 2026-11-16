@@ -1,0 +1,55 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+rnd-1_family-101#LINE/L1	LINE	unknown	unknown	unknown	+	RT|LINE
+rnd-1_family-112#LTR/Copia	LTR	Copia	Ikeros	no	+	RT|Ikeros RH|Ikeros
+rnd-1_family-119#LTR/Copia	LTR	Copia	SIRE	no	+	RH|SIRE
+rnd-1_family-122#LTR/Copia	LTR	Copia	SIRE	no	+	GAG|SIRE PROT|SIRE INT|SIRE
+rnd-1_family-13#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-142#LTR/Gypsy	LTR	Gypsy	CRM	no	-	GAG|CRM
+rnd-1_family-144#unknown	LTR	Gypsy	CRM	no	+	CHDCR|CRM
+rnd-1_family-174#DNA/MULE-MuDR	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+rnd-1_family-185#LTR/Gypsy	LTR	Gypsy	Ogre	yes	+	GAG|Ogre PROT|Ogre RT|Ogre RH|Ogre INT|Ogre
+rnd-1_family-19#LTR/Gypsy	LTR	Gypsy	Tekay	yes	-	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-192#LTR/Copia	LTR	Copia	SIRE	no	+	RH|SIRE
+rnd-1_family-206#DNA/MULE-MuDR	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+rnd-1_family-273#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila
+rnd-1_family-286#LINE/RTE-BovB	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+rnd-1_family-293#LTR/Copia	LTR	Copia	SIRE	yes	+	GAG|SIRE PROT|SIRE INT|SIRE RT|SIRE RH|SIRE
+rnd-1_family-299#LTR/Gypsy	LTR	Gypsy	Tekay	no	-	GAG|Tekay
+rnd-1_family-306#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	-	TPase|EnSpm_CACTA
+rnd-1_family-319#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand
+rnd-1_family-326#unknown	LTR	Gypsy	CRM	no	+	CHDCR|CRM
+rnd-1_family-327#LTR/Gypsy	LTR	Gypsy	Ogre	no	-	GAG|Ogre
+rnd-1_family-328#DNA/hAT-Ac	TIR	hAT	unknown	unknown	+	TPase|hAT
+rnd-1_family-355#LTR/Gypsy	LTR	Gypsy	CRM	no	+	RT|CRM RH|CRM INT|CRM CHDCR|CRM
+rnd-1_family-357#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-1_family-359#DNA/MULE-MuDR	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+rnd-1_family-360#LTR/Copia	LTR	Copia	SIRE	no	+	GAG|SIRE
+rnd-1_family-364#LTR/Copia	LTR	Copia	SIRE	no	+	PROT|SIRE INT|SIRE RT|SIRE RH|SIRE
+rnd-1_family-379#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand
+rnd-1_family-384#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay
+rnd-1_family-396#LTR/Copia	LTR	Copia	Ikeros	no	+	GAG|Ikeros PROT|Ikeros
+rnd-1_family-403#LTR/Gypsy	LTR	Gypsy	Tekay	yes	-	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-404#LTR/Copia	LTR	Copia	SIRE	no	+	GAG|SIRE
+rnd-1_family-405#LTR/Copia	LTR	Copia	TAR	yes	+	GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR
+rnd-1_family-406#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+rnd-1_family-416#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand
+rnd-1_family-418#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-419#DNA/MULE-MuDR	TIR	MuDR_Mutator	unknown	unknown	-	TPase|MuDR_Mutator
+rnd-1_family-42#LTR/Copia	LTR	Copia	TAR	yes	+	GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR
+rnd-1_family-422#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay
+rnd-1_family-45#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-1_family-67#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+rnd-1_family-70#LTR/Gypsy	LTR	Gypsy	Ogre	no	+	RT|Ogre RH|Ogre INT|Ogre
+rnd-1_family-71#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila
+rnd-1_family-72#LTR/Gypsy	LTR	Gypsy	Retand	no	+	PROT|Retand RT|Retand RH|Retand INT|Retand
+rnd-1_family-74#LTR/Gypsy	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+rnd-1_family-75#LTR/Gypsy	LTR	Gypsy	Tekay	yes	-	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+rnd-1_family-8#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand RH|Retand
+rnd-1_family-85#unknown	LTR	Gypsy	Tekay	no	-	GAG|Tekay
+rnd-1_family-97#LTR/Gypsy	LTR	Gypsy	Retand	no	+	aRH|Retand INT|Retand
+rnd-3_family-1813#LINE/L1	LINE	unknown	unknown	unknown	-	RH|LINE
+rnd-3_family-189#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-3_family-27#LINE/L1	LINE	unknown	unknown	unknown	+	ENDO|LINE RT|LINE
+rnd-3_family-501#LINE/L1	LINE	unknown	unknown	unknown	+	ENDO|LINE RT|LINE
+rnd-3_family-774#DNA/CMC-EnSpm	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+rnd-3_family-934#LINE/L1	LINE	unknown	unknown	unknown	+	ENDO|LINE RT|LINE

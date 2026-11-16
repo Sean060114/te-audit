@@ -1,0 +1,22 @@
+﻿编号,标题,类型,痛点簇,评论数,创建日期,标签,对本项目的影响,采纳策略
+#540,Raw SINE results not found,流程中断,SINE 稀缺,19,2025-01-27,,高：全仓互动最高的未解 issue，SINE 稀缺场景主证据,benchmark 鲁棒性场景①
+#565,EDTA crashing after not finding any SINE candidates,崩溃,SINE 稀缺/安装链,9,2025-04-30,question,高：崩溃后无可用报告,benchmark 鲁棒性场景①
+#625,EDTA stopped after finding no SINEs,流程中断,SINE 稀缺,6,2026-03-04,,高,benchmark 鲁棒性场景①
+#550,"Warning: LOC list empty / NO LTRs, SINEs or LINEs",结果缺失,SINE 稀缺,6,2025-03-05,,中高,benchmark 鲁棒性场景①
+#542,Please report XXX not found in the TE_SO database here!,命名收集帖,命名混乱,15,2025-02-18,enhancement,高：模块0 的直接需求来源；作者确认接受别名回流,命名规范化器 + 数据 PR 回流
+#651,TIR-Learner CNN 取 FASTA 崩溃 (slice indices must be integers),Bug,Python 代码缺陷,0,2026-10-20,,练手级：pandas 浮点切片+NaN 防御，TIR-Learner 为 Python,第一个 GitHub 互动（复现+修复 PR）
+#588,Input file masked not found! LTR recognition failure,中间产物缺失,流程早停,3,2025-07-07,,中高：早停后下游全部断链,鲁棒性场景②：早停后仍输出可用报告
+#636,EDTA v2.3 Compatibility Troubleshooting,版本回归,v2.3.x,1,2026-07-03,,中高,跨版本 benchmark 维度（2.2.2/2.3.0/2.3.1）
+#639,EDTA v2.3.1: --type flag not recognized,版本回归,v2.3.x,0,2026-07-12,,中高,跨版本 benchmark 维度
+#634,Inconsistent Test Output Between Apptainer and Conda,环境,容器化,0,2026-06-26,,中：同代码不同环境结果不一致,设计原则：纯 Python、零重依赖、pip 直装
+#638,TIR-Learner model cannot be loaded in BioContainers images,环境,容器化,1,2026-07-09,,中,设计原则 + 观察名单
+#654,RMblast engine is not installed in RepeatMasker,环境,安装链,0,2026-11-03,,低（DevOps 领域）,设计原则：文档化依赖清单
+#617,bug of singularity use the edta container,环境,容器化,1,2026-02-04,,低,设计原则
+#637,Repeated Aborted messages during homology-based annotation,稳定性,同源注释,0,2026-07-08,,中：Abort 后产物完整性未知,QC 报告覆盖的输入场景
+#643,LTR candidates: Could not load sequence. Empty file or bad format,Bug,中间产物,0,2026-08-22,,中,QC 输入校验模块参考
+#619,LINE and TIR detection failed on 1.20Gb tapeworm genome,崩溃,大基因组,3,2026-02-04,TIR-Learner,中,benchmark 可加大基因组场景
+#603,result error form panEDTA,Bug,panEDTA,4,2025-09-26,,中,观察名单
+#615,HelitronScanner not detected (same script works for others),环境相关,Helitron,4,2026-01-21,enhancement,低,观察名单
+#580,Time consumption about EDTA,性能,运行耗时,2,2025-06-22,TIR-Learner,中：性能非本项目主攻,不立项，仅记录
+#618,Question about divergence estimation for TIR elements,方法,TIR 方法,1,2026-02-04,TIR-Learner,低,不立项
+#578,Suggestion on CDS symlink logic in panEDTA.sh,增强,panEDTA,3,2025-06-19,enhancement,低,不立项

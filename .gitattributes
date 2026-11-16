@@ -1,0 +1,17 @@
+# 行尾策略：这些脚本在 WSL 里执行，一旦被编辑器存成 CRLF 就会
+# 报 "bad interpreter: /usr/bin/env: 'bash\r'"。
+# 显式锁 LF，比依赖 core.autocrlf 更可靠（本项目 --global 已设 false，
+# 但换机器或换编辑器时那条设置不一定跟着走）。
+*.sh    text eol=lf
+*.py    text eol=lf
+*.md    text eol=lf
+*.tsv   text eol=lf
+*.json  text eol=lf
+*.csv   text eol=lf
+*.txt   text eol=lf
+
+# 二进制，不做行尾转换
+*.gz    -text
+*.fa     -text
+*.gff3  -text
+*.tar.gz -text

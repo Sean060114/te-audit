@@ -1,0 +1,657 @@
+##gff-version 3
+##date Mon Nov 16 19:36:09 CST 2026
+##This file contains repeats annotated by EDTA v2.2.2 based on structural features.
+##This file follows the ENSEMBL standard: https://useast.ensembl.org/info/website/upload/gff3.html
+##Column 3: Sequence Ontology of repeat features. Please refer to the SO database for more details: http://www.sequenceontology.org/. In cases where the SO database does not have the repeat feature, tentative SO names are used, with a full list included in EDTA/bin/TE_Sequence_Ontology.txt (Enhancement notes), and the sequence_ontology in Column 9 uses the closest parent SO.
+##Column 9: 
+##      ID: unique ID for this feature in the genome.
+##      classification: Same as Column 3 but formatted following the RepeatMasker naming convention.
+##      sequence_ontology: Sequence Ontology ID of the feature.
+##      identity: Sequence identity (0-1) between terminal sequences for structurally annotated TIR elements.
+##      ltr_identity: Sequence identity (0-1) between the left and right LTR regions for structurally annotated LTR elements.
+##      Name: Repeat family name. Some may be shown as coordinates, which are single-copy and structrually identified elements that are not included in the repeat library.
+##      method=structural: Indicate this entry is produced by structural annotation.
+##      motif/TSD/TIR: structural features of structurally annotated LTR and TIR elements.
+##For more details about this file, please refer to the EDTA wiki: https://github.com/oushujun/EDTA/wiki/Making-sense-of-EDTA-usage-and-outputs---Q&A
+##seqid source sequence_ontology start end score strand phase attributes
+Chr1	EDTA	helitron	499374	506635	.	-	.	ID=TE_struc_0;Name=TE_00000174;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	696475	712249	.	-	.	ID=TE_struc_1;Name=TE_00000186;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	934709	935623	.	.	.	ID=TE_struc_85;Name=TE_00000196;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.812;method=structural;TSD=TGGAGAAA_TGGAGAAA_100.0;TIR=GTAAGTTTCTTTTGTT_ACCAACAGAAAATTAC
+###
+Chr1	EDTA	helitron	1362300	1371355	.	+	.	ID=TE_struc_2;Name=TE_00000043;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	1544609	1546600	.	.	.	ID=TE_struc_86;Name=TE_00000064;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=CAGTAACT_CAGTAACT_100.0;TIR=GTAAAAGTCAG_ATGACTATTAC
+###
+Chr1	EDTA	Mutator_TIR_transposon	1639733	1642230	.	.	.	ID=TE_struc_87;Name=TE_00000069;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.821;method=structural;TSD=TCCGGGA_TCCGGGA_100.0;TIR=CAAAACAATTCCCGAAAAGCTCGTTAAC_ATCCATGAGCTCTTCGGGAATTGTTTTG
+###
+Chr1	EDTA	helitron	1705402	1706438	.	+	.	ID=TE_struc_3;Name=TE_00000054;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	2029761	2031697	.	.	.	ID=TE_struc_88;Name=TE_00000116;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.812;method=structural;TSD=TAA_TAA_100.0;TIR=GACCAAGTCCAGCAAT_ATCACTGGACTTGCTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	2460037	2463771	.	.	.	ID=TE_struc_89;Name=TE_00000140;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.897;method=structural;TSD=TCTTAAGA_TCTTAAGA_100.0;TIR=GAGGGTACGTCGCCTCCAACTCCAAGGATGACCCTGCCAAGGGTGCTGCTAACTTCACCTCCCAGGTCATCATCATGAACCACCCTGGTCAGATTGGTAACGGTTACGCCCCAGTCTTGGATTGCCACACCTCTCACATTGCAGTCAAGTTCTCTGAGATCTTGACCAAGATTGACAGGCGTTCTGGTAAGGAGATTGAGAAGGAGCCCAAATTCTTGAAGAATGGTGATGCTGGTATGGTGAAGATGACTCCAACCAAGCCCATGGTTGTGGAGACCTTCTCTGAGTACCCACCACTTGGACGTTTCGCTGTTAGGGACATGAGGCAGACTGTTGCAGTCGGTGTTATCAAGAGTGTTGACAAGAAGGACCCAACCGGAGCCAAGGTTACCAAGGCTGCAGTTAAGAAGGGTGCAAAGTGAACTCGAATCCTCAAAACTCTATCCGCAGATGAATCAAAAAACAATATTAGTTTCTTTACTTTAGTTTGGTATTTGGTCGCGTGTTATAGCTTCGTTTCTTCTCCATCGGAACTCTGTTCCCGGAACTGGGTTCTTGATCGGAGGTGGCGGAGCTACTTTGCACCTATTTTGCTTTTGAATTGTTATCAATTTTGAACCTATTTGGAGATT_TCATAACACAAAACAAAAGAAATAAACAGGAAGCTCGAGTGCCAAGTACCTCCGCCACCTCCGATCAAGAACCCAATTCCGAGAATTGAGCTCCGACGGAGAATAAACGAAGCGGTAACACAAACAACCAACCAAATACCAAACTACTAAAGTAAAGAAACTAAAATAGTCCTTCATTTCATCAGCGGAAAGAGTTTTGATGTTCAGAGTTCACTTGGCACCCTTCTTGACTGCAGCCTTGGTAACCTTGGCTCCAGTTGGGTCCTTCTTGTCAACACTCTTGATAACACCGACTGCAACAGTCTGCCTCATGTCCCTCACAGCGAAACGTCCAAGTGGTGGGTACTCAGAGAAGGTCTCCACAACCATGGGCTTGGTTGGAGTCATCTTCACCATACCAGCATCACCATTCTTCAAGAATTTAGGCTCCTTCTCAATCTCCTTACCAGAACGCCTGTCAATCTTGGTCAAGATCTCAGAGAACTTGACTGCAATGTGAGAGGTGTGGCAATCCAGGACTGGGGCGTAACCGTTACCAATCTGACCAGGGTGGTTCATGATGATGACCTGGGAGGTGAAGTTAGCAGCACCCTTGGCAGGGTCATCCTTGGAGTTGGATGCGACGTACCCTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	3220130	3223047	.	.	.	ID=TE_struc_90;Name=TE_00000161;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=AAACAAT_AAACAAT_100.0;TIR=GATATCACATATC_CATATATGATATC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	3262076	3263790	.	.	.	ID=TE_struc_91;Name=TE_00000162;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.812;method=structural;TSD=TAA_TAA_100.0;TIR=GAGCAAGTCCAGTGAT_CTTACTTGACTTGCTC
+###
+Chr1	EDTA	helitron	3342446	3345397	.	-	.	ID=TE_struc_4;Name=TE_00000163;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	3406816	3414839	.	+	.	ID=TE_struc_5;Name=TE_00000164;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	3497753	3498956	.	-	.	ID=TE_struc_6;Name=TE_00000165;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	3530465	3530755	.	.	.	ID=TE_struc_92;Name=TE_00000166;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.812;method=structural;TSD=TGTATAT_TGTATAT_100.0;TIR=GCATGTGTATTTATAT_ACATATATACACATAC
+###
+Chr1	EDTA	repeat_region	3780760	3785725	.	+	.	ID=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	3780760	3780764	.	+	.	ID=lTSD_1;Parent=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT
+Chr1	EDTA	long_terminal_repeat	3780765	3781204	.	+	.	ID=lLTR_1;Parent=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT
+Chr1	EDTA	Copia_LTR_retrotransposon	3780765	3785720	.	+	.	ID=LTRRT_1;Parent=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	3785281	3785720	.	+	.	ID=rLTR_1;Parent=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT
+Chr1	EDTA	target_site_duplication	3785721	3785725	.	+	.	ID=rTSD_1;Parent=repeat_region_1;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=CTTGT
+###
+Chr1	EDTA	Mutator_TIR_transposon	4055089	4058261	.	.	.	ID=TE_struc_93;Name=TE_00000168;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.857;method=structural;TSD=AAAAAGGA_AAAAAGGA_100.0;TIR=CCAAAATCATATACG_TGGATTTGATTTTGG
+###
+Chr1	EDTA	Mutator_TIR_transposon	4329896	4334391	.	.	.	ID=TE_struc_94;Name=TE_00000169;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.859;method=structural;TSD=TTCATATTTA_TTCATATTTA_100.0;TIR=GGAAAAAATGTAGTTAAATCCCCCAACTTTCAAAAAATGGCCAATCAATACGTCAACTTAGATGGAAGCCATTTAAAACATCAACTTACAGTTGACTAACAAATAAAACATGAACTTTGCGTTGACGAGGCCACATTATACGCGTCGTTAAGTCGATTAACAGACCCAATAAACGACGTTTTCTCCCGTTAGTATCTCTCTGTTAGTCAAGAAACGGTGACGTTTAGAGGTTAATAGAAACCCAATTAGGGCTTTGTCGAGAAGAAATTCCCAAATCAAATCAAATTCATTCTTCCCCAAATTGCTTTTGTTCTTCCCCAAATCAAAAAC_GAAAAAGCAGAGAATTTGGAGAAGAAGAAGAGAATTAGGGAATTAGGGATTTAAAGTATTGGATTTGGGGTTTTTTGACAAACAATCGGGTTTCTATTAACCTATAAACGTCACCGTTTCTTGACTAACAGAGAGATACTAACGGGAGAAAACGTCGTTTATTGGGTCTGTTAATCGACTTAACGACGCGTATAATGTGGCCTCGTCAACGCAAAGTTCATGTTTTATTTGTTAGTCAATTGTAAGTTGATGTTTTAAATAGCTTCCATCTAAATTGACATATTGATTGGCCATTTTTTGAAAGTTGGGGGATTTAACGACATTTTTCCC
+###
+Chr1	EDTA	repeat_region	4406001	4411125	.	-	.	ID=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT;strand_evidence=domain
+Chr1	EDTA	target_site_duplication	4406001	4406005	.	-	.	ID=lTSD_2;Parent=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT
+Chr1	EDTA	long_terminal_repeat	4406006	4406167	.	-	.	ID=lLTR_2;Parent=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT
+Chr1	EDTA	Copia_LTR_retrotransposon	4406006	4411120	.	-	.	ID=LTRRT_2;Parent=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT;strand_evidence=domain
+Chr1	EDTA	long_terminal_repeat	4410959	4411120	.	-	.	ID=rLTR_2;Parent=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT
+Chr1	EDTA	target_site_duplication	4411121	4411125	.	-	.	ID=rTSD_2;Parent=repeat_region_2;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9683;method=structural;motif=TGCA;tsd=TTAAT
+###
+Chr1	EDTA	Mutator_TIR_transposon	4568278	4569037	.	.	.	ID=TE_struc_95;Name=TE_00000171;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=AGGTTAA_AGGTTAA_100.0;TIR=GGTACGCAGTG_AACTGTGTACC
+###
+Chr1	EDTA	CACTA_TIR_transposon	4733440	4735245	.	.	.	ID=TE_struc_96;Name=TE_00000172;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=TGGA_TGGA_100.0;TIR=CACTAGGCAAAG_ATTTGCTTAGTG
+###
+Chr1	EDTA	helitron	4770116	4770664	.	-	.	ID=TE_struc_7;Name=TE_00000141;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	5004880	5005081	.	.	.	ID=TE_struc_97;Name=TE_00000173;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=CACAAAA_CACAAAA_100.0;TIR=GAAGCATTTCATC_GTTAAAATGCTTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	5279051	5283065	.	.	.	ID=TE_struc_98;Name=TE_00000175;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=TGATGTT_TGATGTT_100.0;TIR=GTCCATATCAAC_ATTAATATGGAC
+###
+Chr1	EDTA	helitron	5436913	5454985	.	-	.	ID=TE_struc_8;Name=TE_00000176;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	6063103	6075494	.	+	.	ID=TE_struc_9;Name=TE_00000177;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	6210889	6211988	.	.	.	ID=TE_struc_99;Name=TE_00000178;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.816;method=structural;TSD=AACATTA_AACATTA_100.0;TIR=CGGAAAAACGGTCTATTTCCCCATGGGAACTATCGCATCTGGCTAGATGAAGCCCGATCTTTGACCTCTTGCTATTTACCCATGAAATGAAAGTTAAACGTCTATTTCCCCACCAATTAAAAGTTCAAGAGCTTAATGTCCCCGAATCGTGGTTACTTCGGTTTGATACGTAAACCCGAGACGAAACCATATTATCGGTCAA_GCATACAGTAAACCGACTTAATCCAGTTCATGGACATTAAGTTCTCGAAGTTTTATTTCGGGGACATTAAGCTCTTGAACTTTTAATTGGTGGGGAAATAGACGTTTAACTTTCATTTCATGGGTAAATAGCAAGAGGTCAAAGATCGGGCTTCATCTAGCCAGATGCGATAGTTCCCATGGGGAAATAGACCTTTTTTCCG
+###
+Chr1	EDTA	Mutator_TIR_transposon	6210890	6211987	.	.	.	ID=TE_struc_100;Name=TE_00000178;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.815;method=structural;TSD=GAACATTAC_GAACATTAC_100.0;TIR=GGAAAAACGGTCTATTTCCCCATGGGAACTATCGCATCTGGCTAGATGAAGCCCGATCTTTGACCTCTTGCTATTTACCCATGAAATGAAAGTTAAACGTCTATTTCCCCACCAATTAAAAGTTCAAGAGCTTAATGTCCCCGAATCGTGGTTACTTCGGTTTGATACGTAAACCCGAGACGAAACCATATTATCGGTCAA_GCATACAGTAAACCGACTTAATCCAGTTCATGGACATTAAGTTCTCGAAGTTTTATTTCGGGGACATTAAGCTCTTGAACTTTTAATTGGTGGGGAAATAGACGTTTAACTTTCATTTCATGGGTAAATAGCAAGAGGTCAAAGATCGGGCTTCATCTAGCCAGATGCGATAGTTCCCATGGGGAAATAGACCTTTTTTCC
+###
+Chr1	EDTA	CACTA_TIR_transposon	6463256	6465425	.	.	.	ID=TE_struc_101;Name=TE_00000179;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.812;method=structural;TSD=AT_AT_100.0;TIR=CACTATCAGCATTTCT_TGTGATGCTGATAGTG
+###
+Chr1	EDTA	Mutator_TIR_transposon	6498391	6498638	.	.	.	ID=TE_struc_102;Name=TE_00000180;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=TGTAAAA_TGTAAAA_100.0;TIR=GACTCTTTGTTTC_TAAACAAAAAGTC
+###
+Chr1	EDTA	repeat_region	6538407	6543540	.	+	.	ID=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA;strand_evidence=domain
+Chr1	EDTA	target_site_duplication	6538407	6538411	.	+	.	ID=lTSD_3;Parent=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA
+Chr1	EDTA	long_terminal_repeat	6538415	6538579	.	+	.	ID=lLTR_3;Parent=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA
+Chr1	EDTA	Copia_LTR_retrotransposon	6538415	6543535	.	+	.	ID=LTRRT_3;Parent=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA;strand_evidence=domain
+Chr1	EDTA	long_terminal_repeat	6543371	6543535	.	+	.	ID=rLTR_3;Parent=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA
+Chr1	EDTA	target_site_duplication	6543536	6543540	.	+	.	ID=rTSD_3;Parent=repeat_region_3;Name=TE_00000170;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGAC;tsd=AAAAA
+###
+Chr1	EDTA	CACTA_TIR_transposon	6582793	6585007	.	.	.	ID=TE_struc_103;Name=TE_00000182;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=TC_TC_100.0;TIR=CACTGAAAAAC_ATTTTTGAGTG
+###
+Chr1	EDTA	Mutator_TIR_transposon	6989157	6993580	.	.	.	ID=TE_struc_104;Name=TE_00000183;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=TCCTACA_TCCTACA_100.0;TIR=GAGCAAACAAC_ATCGTTTGCTC
+###
+Chr1	EDTA	helitron	7018912	7037289	.	+	.	ID=TE_struc_10;Name=TE_00000184;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	7023546	7024535	.	.	.	ID=TE_struc_105;Name=TE_00000185;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.891;method=structural;TSD=AAATTGGTCC_AAATTGGTCC_100.0;TIR=GGGAAAAATGTCGTTTTATACGCAAACTTTCAAAAAGTGACCATT_AAATGGTCATTTTTTAAAGTTCACGTATAAAACGACATTTTTCCC
+###
+Chr1	EDTA	CACTA_TIR_transposon	7607197	7609550	.	.	.	ID=TE_struc_106;Name=TE_00000187;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=AC_AC_100.0;TIR=CACTACTGAAGT_TTTTCAGTAGTG
+###
+Chr1	EDTA	Mutator_TIR_transposon	7714847	7717489	.	.	.	ID=TE_struc_107;Name=Chr1:7714847..7717489;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=AAATTTT_AAATTTT_100.0;TIR=CTAGAATCATCT_AAAAGATTCTAG
+###
+Chr1	EDTA	repeat_region	7717351	7722552	.	+	.	ID=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG;strand_evidence=domain,PPT
+Chr1	EDTA	target_site_duplication	7717351	7717355	.	+	.	ID=lTSD_4;Parent=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG
+Chr1	EDTA	long_terminal_repeat	7717356	7717795	.	+	.	ID=lLTR_4;Parent=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG
+Chr1	EDTA	Copia_LTR_retrotransposon	7717356	7722547	.	+	.	ID=LTRRT_4;Parent=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG;strand_evidence=domain,PPT
+Chr1	EDTA	long_terminal_repeat	7722108	7722547	.	+	.	ID=rLTR_4;Parent=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG
+Chr1	EDTA	target_site_duplication	7722548	7722552	.	+	.	ID=rTSD_4;Parent=repeat_region_4;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9722;method=structural;motif=TGCA;tsd=GACTG
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	7907734	7908499	.	.	.	ID=TE_struc_108;Name=TE_00000190;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.87;method=structural;TSD=TTA_TTA_100.0;TIR=GACCATCCTCAATGGGAGGTTATCC_TTAAATCCTCCCATTGAGGATGCTC
+###
+Chr1	EDTA	helitron	8289505	8291570	.	-	.	ID=TE_struc_11;Name=TE_00000191;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	8374553	8375150	.	-	.	ID=TE_struc_12;Name=TE_00000076;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	8662647	8662823	.	.	.	ID=TE_struc_109;Name=TE_00000192;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=ATATGTT_ATATGTT_100.0;TIR=GTCTGAAGAAA_GTTCTTCAGGC
+###
+Chr1	EDTA	helitron	8915970	8921522	.	-	.	ID=TE_struc_13;Name=TE_00000193;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	9062085	9062519	.	+	.	ID=TE_struc_14;Name=TE_00000194;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	9081644	9082919	.	.	.	ID=TE_struc_110;Name=TE_00000195;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.824;method=structural;TSD=GCTTTCTGCG_GCTTTCTGCG_100.0;TIR=GGAAAAACGGTTTATAG_AAATATACCGTTTTTCC
+###
+Chr1	EDTA	repeat_region	9475997	9480639	.	+	.	ID=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	9475997	9476001	.	+	.	ID=lTSD_5;Parent=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG
+Chr1	EDTA	long_terminal_repeat	9476002	9476121	.	+	.	ID=lLTR_5;Parent=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG
+Chr1	EDTA	Copia_LTR_retrotransposon	9476002	9480634	.	+	.	ID=LTRRT_5;Parent=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	9480515	9480634	.	+	.	ID=rLTR_5;Parent=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG
+Chr1	EDTA	target_site_duplication	9480635	9480639	.	+	.	ID=rTSD_5;Parent=repeat_region_5;Name=TE_00000197;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9831;method=structural;motif=TGTA;tsd=GTTTG
+###
+Chr1	EDTA	Mutator_TIR_transposon	9764587	9767470	.	.	.	ID=TE_struc_111;Name=TE_00000198;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=GAGAACA_GAGAACA_100.0;TIR=GTGTATGCATTT_ACATCCATACAC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	9811809	9812626	.	.	.	ID=TE_struc_112;Name=TE_00000199;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.812;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATGTCCATTGCA_ATCAATGGGCATGCTC
+###
+Chr1	EDTA	helitron	9815947	9818273	.	+	.	ID=TE_struc_15;Name=TE_00000200;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	9828869	9837580	.	+	.	ID=TE_struc_16;Name=TE_00000201;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	9865345	9880240	.	-	.	ID=TE_struc_17;Name=TE_00000202;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	9918454	9919331	.	-	.	ID=TE_struc_18;Name=TE_00000203;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	10021415	10021961	.	-	.	ID=TE_struc_19;Name=TE_00000145;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	10071132	10073820	.	.	.	ID=TE_struc_113;Name=TE_00000000;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=AGAGTTTGAG_AGAGTTTGAG_100.0;TIR=GCATTAGTTATTG_CTTTAACTAATGC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	10091430	10094634	.	.	.	ID=TE_struc_114;Name=TE_00000001;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.857;method=structural;TSD=TTA_TTA_100.0;TIR=GACCAAATGCAATGG_ACAGGGCATTTGGTC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	10173869	10178687	.	.	.	ID=TE_struc_115;Name=TE_00000002;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.846;method=structural;TSD=TAA_TAA_100.0;TIR=GGGCTTTTTTGGA_TACAAAAAAGACC
+###
+Chr1	EDTA	helitron	10208955	10222371	.	+	.	ID=TE_struc_20;Name=TE_00000003;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	10485608	10487955	.	.	.	ID=TE_struc_116;Name=TE_00000004;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=ATGCATA_ATGCATA_100.0;TIR=GACAAAACAGATG_AATCTATTTTGTC
+###
+Chr1	EDTA	helitron	10579425	10580140	.	+	.	ID=TE_struc_21;Name=TE_00000005;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	10591429	10604566	.	-	.	ID=TE_struc_22;Name=Chr1:10604566..10591429;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	10597661	10598314	.	+	.	ID=TE_struc_23;Name=TE_00000006;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	10602557	10604986	.	.	.	ID=TE_struc_117;Name=TE_00000007;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.806;method=structural;TSD=GGG_GGG_100.0;TIR=CACTACAAGAATATGGAGTATTTATAGCATT_GGCGCTACAAATGCTCCATATTCCTGTAGTG
+###
+Chr1	EDTA	repeat_region	10610324	10614188	.	+	.	ID=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	10610324	10610328	.	+	.	ID=lTSD_6;Parent=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT
+Chr1	EDTA	long_terminal_repeat	10610329	10610484	.	+	.	ID=lLTR_6;Parent=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT
+Chr1	EDTA	Copia_LTR_retrotransposon	10610329	10614183	.	+	.	ID=LTRRT_6;Parent=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	10614028	10614183	.	+	.	ID=rLTR_6;Parent=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT
+Chr1	EDTA	target_site_duplication	10614184	10614188	.	+	.	ID=rTSD_6;Parent=repeat_region_6;Name=TE_00000008;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TACA;tsd=GTTTT
+###
+Chr1	EDTA	repeat_region	11148086	11152840	.	-	.	ID=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	11148086	11148090	.	-	.	ID=lTSD_7;Parent=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT
+Chr1	EDTA	long_terminal_repeat	11148091	11148386	.	-	.	ID=lLTR_7;Parent=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT
+Chr1	EDTA	Copia_LTR_retrotransposon	11148091	11152835	.	-	.	ID=LTRRT_7;Parent=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	11152540	11152835	.	-	.	ID=rLTR_7;Parent=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT
+Chr1	EDTA	target_site_duplication	11152836	11152840	.	-	.	ID=rTSD_7;Parent=repeat_region_7;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9966;method=structural;motif=TGCA;tsd=GCAAT
+###
+Chr1	EDTA	helitron	11351515	11369659	.	-	.	ID=TE_struc_24;Name=TE_00000010;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	11407760	11416865	.	-	.	ID=TE_struc_25;Name=TE_00000011;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Tc1_Mariner_TIR_transposon	11425183	11428574	.	.	.	ID=TE_struc_118;Name=TE_00000012;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTTACACCATTC_TAATGGAGTAAG
+###
+Chr1	EDTA	helitron	11452372	11456886	.	-	.	ID=TE_struc_26;Name=TE_00000013;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	11525754	11528336	.	-	.	ID=TE_struc_27;Name=TE_00000014;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	11617493	11636943	.	-	.	ID=TE_struc_28;Name=TE_00000015;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	11641390	11646352	.	.	.	ID=TE_struc_119;Name=TE_00000016;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=ACAA_ACAA_100.0;TIR=CACTAGAATCA_AGATTCTATTG
+###
+Chr1	EDTA	helitron	11669358	11689139	.	-	.	ID=TE_struc_29;Name=TE_00000018;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	11684944	11687596	.	.	.	ID=TE_struc_120;Name=TE_00000017;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=TC_TC_100.0;TIR=CACTGACAACA_AGTTGACAGTG
+###
+Chr1	EDTA	helitron	11706451	11708831	.	+	.	ID=TE_struc_30;Name=TE_00000126;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	11789447	11794082	.	+	.	ID=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	11789447	11789451	.	+	.	ID=lTSD_8;Parent=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT
+Chr1	EDTA	long_terminal_repeat	11789452	11789722	.	+	.	ID=lLTR_8;Parent=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT
+Chr1	EDTA	Copia_LTR_retrotransposon	11789452	11794077	.	+	.	ID=LTRRT_8;Parent=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	11793807	11794077	.	+	.	ID=rLTR_8;Parent=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT
+Chr1	EDTA	target_site_duplication	11794078	11794082	.	+	.	ID=rTSD_8;Parent=repeat_region_8;Name=TE_00000019;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTCAT
+###
+Chr1	EDTA	CACTA_TIR_transposon	12003827	12007786	.	.	.	ID=TE_struc_121;Name=TE_00000020;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CACTAGAGAAAAC_CTTTTCTCTAGCG
+###
+Chr1	EDTA	helitron	12183406	12183990	.	-	.	ID=TE_struc_31;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	12218733	12218946	.	.	.	ID=TE_struc_122;Name=TE_00000021;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.821;method=structural;TSD=TAA_TAA_100.0;TIR=GAGTATCTTCATTGCATAACCCCTTGTG_TATAAGAAGTTATGCAATGAAGATGCTC
+###
+Chr1	EDTA	repeat_region	12406706	12410005	.	+	.	ID=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	12406706	12406710	.	+	.	ID=lTSD_9;Parent=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC
+Chr1	EDTA	long_terminal_repeat	12406711	12407249	.	+	.	ID=lLTR_9;Parent=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC
+Chr1	EDTA	Copia_LTR_retrotransposon	12406711	12410000	.	+	.	ID=LTRRT_9;Parent=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	12409463	12410000	.	+	.	ID=rLTR_9;Parent=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC
+Chr1	EDTA	target_site_duplication	12410001	12410005	.	+	.	ID=rTSD_9;Parent=repeat_region_9;Name=TE_00000022;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9734;method=structural;motif=TACA;tsd=GATAC
+###
+Chr1	EDTA	CACTA_TIR_transposon	12626457	12630547	.	.	.	ID=TE_struc_123;Name=TE_00000024;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.812;method=structural;TSD=ATT_ATT_100.0;TIR=CACTACAAGAAAACAATTGTTTTGGGAGGAAC_TTCCCTCGCAAATCGACTGTTTTCTTGTAGTG
+###
+Chr1	EDTA	helitron	12636451	12636691	.	+	.	ID=TE_struc_32;Name=TE_00000025;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	12712983	12715977	.	.	.	ID=TE_struc_124;Name=TE_00000026;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=TCTCCTT_TCTCCTT_100.0;TIR=CGTCCTTTGTCA_TTACAAAGGATG
+###
+Chr1	EDTA	repeat_region	12813584	12816481	.	+	.	ID=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT;strand_evidence=domain,PPT
+Chr1	EDTA	target_site_duplication	12813584	12813588	.	+	.	ID=lTSD_10;Parent=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT
+Chr1	EDTA	long_terminal_repeat	12813589	12813919	.	+	.	ID=lLTR_10;Parent=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT
+Chr1	EDTA	Copia_LTR_retrotransposon	12813589	12816476	.	+	.	ID=LTRRT_10;Parent=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT;strand_evidence=domain,PPT
+Chr1	EDTA	long_terminal_repeat	12816155	12816476	.	+	.	ID=rLTR_10;Parent=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT
+Chr1	EDTA	target_site_duplication	12816477	12816481	.	+	.	ID=rTSD_10;Parent=repeat_region_10;Name=TE_00000027;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9705;method=structural;motif=TGCA;tsd=CTAAT
+###
+Chr1	EDTA	CACTA_TIR_transposon	12942847	12947011	.	.	.	ID=TE_struc_125;Name=TE_00000028;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.812;method=structural;TSD=CTA_CTA_100.0;TIR=CACTACAAAAAAAGTC_GATATTTGTTGTAGTG
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	12972601	12973307	.	.	.	ID=TE_struc_126;Name=TE_00000029;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCTCCATTG_AAATGAAGCTC
+###
+Chr1	EDTA	helitron	12992997	12993594	.	-	.	ID=TE_struc_33;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	13019152	13023950	.	-	.	ID=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	13019152	13019156	.	-	.	ID=lTSD_11;Parent=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG
+Chr1	EDTA	long_terminal_repeat	13019157	13019304	.	-	.	ID=lLTR_11;Parent=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG
+Chr1	EDTA	Copia_LTR_retrotransposon	13019157	13023945	.	-	.	ID=LTRRT_11;Parent=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	13023798	13023945	.	-	.	ID=rLTR_11;Parent=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG
+Chr1	EDTA	target_site_duplication	13023946	13023950	.	-	.	ID=rTSD_11;Parent=repeat_region_11;Name=TE_00000031;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9864;method=structural;motif=TATA;tsd=AAAAG
+###
+Chr1	EDTA	CACTA_TIR_transposon	13131404	13132121	.	.	.	ID=TE_struc_127;Name=TE_00000032;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.846;method=structural;TSD=TAT_TAT_100.0;TIR=CACTACAAGAAAA_TGTCCTTGTAGTG
+###
+Chr1	EDTA	helitron	13211358	13211846	.	-	.	ID=TE_struc_34;Name=TE_00000033;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	13240189	13242258	.	.	.	ID=TE_struc_128;Name=TE_00000034;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TTA_TTA_100.0;TIR=GGGTTTGATTT_CAATCAAGCCC
+###
+Chr1	EDTA	Tc1_Mariner_TIR_transposon	13276549	13280134	.	.	.	ID=TE_struc_129;Name=TE_00000035;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTTCCTCTTTAT_AAAAAGAGAAAG
+###
+Chr1	EDTA	repeat_region	13334461	13339875	.	+	.	ID=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	13334461	13334465	.	+	.	ID=lTSD_12;Parent=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG
+Chr1	EDTA	long_terminal_repeat	13334466	13334860	.	+	.	ID=lLTR_12;Parent=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG
+Chr1	EDTA	Gypsy_LTR_retrotransposon	13334466	13339870	.	+	.	ID=LTRRT_12;Parent=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	13339479	13339870	.	+	.	ID=rLTR_12;Parent=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG
+Chr1	EDTA	target_site_duplication	13339871	13339875	.	+	.	ID=rTSD_12;Parent=repeat_region_12;Name=TE_00000037;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9276;method=structural;motif=TGCA;tsd=CAATG
+###
+Chr1	EDTA	helitron	13375480	13386480	.	+	.	ID=TE_struc_35;Name=TE_00000038;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	13439440	13448528	.	+	.	ID=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	13439440	13439444	.	+	.	ID=lTSD_13;Parent=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT
+Chr1	EDTA	long_terminal_repeat	13439445	13440013	.	+	.	ID=lLTR_13;Parent=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT
+Chr1	EDTA	Copia_LTR_retrotransposon	13439445	13448523	.	+	.	ID=LTRRT_13;Parent=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	13447956	13448523	.	+	.	ID=rLTR_13;Parent=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT
+Chr1	EDTA	target_site_duplication	13448524	13448528	.	+	.	ID=rTSD_13;Parent=repeat_region_13;Name=TE_00000039;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9638;method=structural;motif=TGCA;tsd=TATGT
+###
+Chr1	EDTA	helitron	13473757	13475000	.	-	.	ID=TE_struc_36;Name=TE_00000040;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	13507775	13515969	.	-	.	ID=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	13507775	13507779	.	-	.	ID=lTSD_14;Parent=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG
+Chr1	EDTA	long_terminal_repeat	13507780	13508922	.	-	.	ID=lLTR_14;Parent=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG
+Chr1	EDTA	Gypsy_LTR_retrotransposon	13507780	13515964	.	-	.	ID=LTRRT_14;Parent=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	13514817	13515964	.	-	.	ID=rLTR_14;Parent=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG
+Chr1	EDTA	target_site_duplication	13515965	13515969	.	-	.	ID=rTSD_14;Parent=repeat_region_14;Name=Chr1:13515964..13507780;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9483;method=structural;motif=TGCA;tsd=CTAGG
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	13559233	13559461	.	.	.	ID=TE_struc_130;Name=TE_00000041;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.846;method=structural;TSD=TAA_TAA_100.0;TIR=GAGCATCCTCAAC_ATTGAGGATGGTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	13628530	13628623	.	.	.	ID=TE_struc_131;Name=TE_00000044;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=CAAATTG_CAAATTG_100.0;TIR=CGAGGGACTTGC_GTAAATCCCTCG
+###
+Chr1	EDTA	repeat_region	13659268	13667562	.	+	.	ID=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	13659268	13659272	.	+	.	ID=lTSD_15;Parent=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT
+Chr1	EDTA	long_terminal_repeat	13659273	13660427	.	+	.	ID=lLTR_15;Parent=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT
+Chr1	EDTA	Gypsy_LTR_retrotransposon	13659273	13667557	.	+	.	ID=LTRRT_15;Parent=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	13666401	13667557	.	+	.	ID=rLTR_15;Parent=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT
+Chr1	EDTA	target_site_duplication	13667558	13667562	.	+	.	ID=rTSD_15;Parent=repeat_region_15;Name=Chr1:13659273..13667557;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9744;method=structural;motif=TGCA;tsd=TAAAT
+###
+Chr1	EDTA	Mutator_TIR_transposon	13737968	13738977	.	.	.	ID=TE_struc_132;Name=TE_00000047;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.9;method=structural;TSD=TAGTGAGC_TAGTGAGC_100.0;TIR=CAAATGAAGAGATTG_CAAGATCTTCAATTG
+###
+Chr1	EDTA	CACTA_TIR_transposon	13742489	13743202	.	.	.	ID=TE_struc_133;Name=TE_00000048;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CACTACAAGGACA_TTTTCTTGTAGTG
+###
+Chr1	EDTA	helitron	13802260	13808607	.	+	.	ID=TE_struc_37;Name=TE_00000049;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	13810904	13817226	.	-	.	ID=TE_struc_38;Name=TE_00000050;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	13818562	13823893	.	+	.	ID=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	13818562	13818566	.	+	.	ID=lTSD_16;Parent=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT
+Chr1	EDTA	long_terminal_repeat	13818567	13818942	.	+	.	ID=lLTR_16;Parent=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT
+Chr1	EDTA	Gypsy_LTR_retrotransposon	13818567	13823888	.	+	.	ID=LTRRT_16;Parent=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	13823513	13823888	.	+	.	ID=rLTR_16;Parent=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT
+Chr1	EDTA	target_site_duplication	13823889	13823893	.	+	.	ID=rTSD_16;Parent=repeat_region_16;Name=TE_00000051;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=ATGTT
+###
+Chr1	EDTA	helitron	13869874	13870443	.	+	.	ID=TE_struc_39;Name=TE_00000145;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	13879056	13879761	.	-	.	ID=TE_struc_40;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	13883068	13890967	.	+	.	ID=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	13883068	13883072	.	+	.	ID=lTSD_17;Parent=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC
+Chr1	EDTA	long_terminal_repeat	13883073	13884230	.	+	.	ID=lLTR_17;Parent=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC
+Chr1	EDTA	Gypsy_LTR_retrotransposon	13883073	13890962	.	+	.	ID=LTRRT_17;Parent=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	13889807	13890962	.	+	.	ID=rLTR_17;Parent=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC
+Chr1	EDTA	target_site_duplication	13890963	13890967	.	+	.	ID=rTSD_17;Parent=repeat_region_17;Name=Chr1:13883073..13890962;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9708;method=structural;motif=TGCA;tsd=TCTAC
+###
+Chr1	EDTA	helitron	14011672	14014230	.	-	.	ID=TE_struc_41;Name=TE_00000054;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	14019273	14024523	.	+	.	ID=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	14019273	14019277	.	+	.	ID=lTSD_18;Parent=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA
+Chr1	EDTA	long_terminal_repeat	14019278	14019563	.	+	.	ID=lLTR_18;Parent=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA
+Chr1	EDTA	Gypsy_LTR_retrotransposon	14019278	14024518	.	+	.	ID=LTRRT_18;Parent=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	14024233	14024518	.	+	.	ID=rLTR_18;Parent=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA
+Chr1	EDTA	target_site_duplication	14024519	14024523	.	+	.	ID=rTSD_18;Parent=repeat_region_18;Name=TE_00000055;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9750;method=structural;motif=TGCA;tsd=GAAGA
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	14042477	14043795	.	.	.	ID=TE_struc_134;Name=TE_00000056;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TAA_TAA_100.0;TIR=GAGCCATTCTT_TAGAATGACTC
+###
+Chr1	EDTA	CACTA_TIR_transposon	14073776	14075505	.	.	.	ID=TE_struc_135;Name=TE_00000057;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.857;method=structural;TSD=AG_AG_100.0;TIR=CACTGCAAGAACTAG_ATTGTTCTTGCAATG
+###
+Chr1	EDTA	repeat_region	14129666	14134856	.	-	.	ID=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	14129666	14129670	.	-	.	ID=lTSD_19;Parent=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC
+Chr1	EDTA	long_terminal_repeat	14129671	14130169	.	-	.	ID=lLTR_19;Parent=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC
+Chr1	EDTA	Copia_LTR_retrotransposon	14129671	14134851	.	-	.	ID=LTRRT_19;Parent=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	14134366	14134851	.	-	.	ID=rLTR_19;Parent=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC
+Chr1	EDTA	target_site_duplication	14134852	14134856	.	-	.	ID=rTSD_19;Parent=repeat_region_19;Name=TE_00000058;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9684;method=structural;motif=TGCA;tsd=ATCTC
+###
+Chr1	EDTA	repeat_region	14214742	14225661	.	-	.	ID=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	14214742	14214746	.	-	.	ID=lTSD_20;Parent=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT
+Chr1	EDTA	long_terminal_repeat	14214747	14216422	.	-	.	ID=lLTR_20;Parent=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT
+Chr1	EDTA	Gypsy_LTR_retrotransposon	14214747	14225656	.	-	.	ID=LTRRT_20;Parent=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	14223980	14225656	.	-	.	ID=rLTR_20;Parent=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT
+Chr1	EDTA	target_site_duplication	14225657	14225661	.	-	.	ID=rTSD_20;Parent=repeat_region_20;Name=TE_00000059;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9645;method=structural;motif=TGCA;tsd=TCTTT
+###
+Chr1	EDTA	repeat_region	14432218	14442957	.	+	.	ID=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC;strand_evidence=domain
+Chr1	EDTA	target_site_duplication	14432218	14432222	.	+	.	ID=lTSD_21;Parent=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC
+Chr1	EDTA	long_terminal_repeat	14432223	14434027	.	+	.	ID=lLTR_21;Parent=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC
+Chr1	EDTA	Gypsy_LTR_retrotransposon	14432223	14442952	.	+	.	ID=LTRRT_21;Parent=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC;strand_evidence=domain
+Chr1	EDTA	long_terminal_repeat	14441124	14442952	.	+	.	ID=rLTR_21;Parent=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC
+Chr1	EDTA	target_site_duplication	14442953	14442957	.	+	.	ID=rTSD_21;Parent=repeat_region_21;Name=TE_00000060;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9611;method=structural;motif=TGCA;tsd=TCTTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	14841979	14844013	.	.	.	ID=TE_struc_136;Name=Chr1:14841979..14844013;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=TCCTTGA_TCCTTGA_100.0;TIR=GGACGAAAATCCA_GAGATTTTCGTCC
+###
+Chr1	EDTA	Mutator_TIR_transposon	15050780	15055791	.	.	.	ID=TE_struc_137;Name=Chr1:15050780..15055791;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=TGAACAG_TGAACAG_100.0;TIR=GAGATTCTGAT_TTCAGAAACTC
+###
+Chr1	EDTA	repeat_region	15240538	15244716	.	+	.	ID=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	15240538	15240542	.	+	.	ID=lTSD_22;Parent=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	long_terminal_repeat	15240543	15241375	.	+	.	ID=lLTR_22;Parent=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	Gypsy_LTR_retrotransposon	15240543	15244711	.	+	.	ID=LTRRT_22;Parent=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	15243898	15244711	.	+	.	ID=rLTR_22;Parent=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	target_site_duplication	15244712	15244716	.	+	.	ID=rTSD_22;Parent=repeat_region_22;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+###
+Chr1	EDTA	repeat_region	15337657	15341835	.	+	.	ID=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	15337657	15337661	.	+	.	ID=lTSD_23;Parent=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	long_terminal_repeat	15337662	15338494	.	+	.	ID=lLTR_23;Parent=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	Gypsy_LTR_retrotransposon	15337662	15341830	.	+	.	ID=LTRRT_23;Parent=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	15341017	15341830	.	+	.	ID=rLTR_23;Parent=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+Chr1	EDTA	target_site_duplication	15341831	15341835	.	+	.	ID=rTSD_23;Parent=repeat_region_23;Name=TE_00000063;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9839;method=structural;motif=TGCA;tsd=TTCTT
+###
+Chr1	EDTA	Mutator_TIR_transposon	15662173	15664222	.	.	.	ID=TE_struc_138;Name=TE_00000065;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=AAAATAT_AAAATAT_100.0;TIR=GGAAAACATGTC_GTCATATTTTCC
+###
+Chr1	EDTA	helitron	15927182	15941177	.	+	.	ID=TE_struc_42;Name=TE_00000066;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	16055755	16059171	.	.	.	ID=TE_struc_139;Name=TE_00000067;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.812;method=structural;TSD=AGT_AGT_100.0;TIR=CACTACAGGAAATATGGGTATTAATAGCGGGC_TTATGCTATCAATACCCACATTTCCTGTAGTG
+###
+Chr1	EDTA	repeat_region	16117824	16124081	.	+	.	ID=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	16117824	16117828	.	+	.	ID=lTSD_24;Parent=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG
+Chr1	EDTA	long_terminal_repeat	16117829	16118379	.	+	.	ID=lLTR_24;Parent=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG
+Chr1	EDTA	Copia_LTR_retrotransposon	16117829	16124076	.	+	.	ID=LTRRT_24;Parent=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	16123526	16124076	.	+	.	ID=rLTR_24;Parent=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG
+Chr1	EDTA	target_site_duplication	16124077	16124081	.	+	.	ID=rTSD_24;Parent=repeat_region_24;Name=TE_00000068;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9853;method=structural;motif=TGCA;tsd=AGTAG
+###
+Chr1	EDTA	helitron	16400450	16401002	.	-	.	ID=TE_struc_43;Name=TE_00000114;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	16551716	16557074	.	-	.	ID=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	16551716	16551720	.	-	.	ID=lTSD_25;Parent=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC
+Chr1	EDTA	long_terminal_repeat	16551721	16552120	.	-	.	ID=lLTR_25;Parent=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC
+Chr1	EDTA	Copia_LTR_retrotransposon	16551721	16557069	.	-	.	ID=LTRRT_25;Parent=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	16556671	16557069	.	-	.	ID=rLTR_25;Parent=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC
+Chr1	EDTA	target_site_duplication	16557070	16557074	.	-	.	ID=rTSD_25;Parent=repeat_region_25;Name=TE_00000070;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9666;method=structural;motif=TACA;tsd=CAGCC
+###
+Chr1	EDTA	repeat_region	16626029	16637238	.	-	.	ID=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	16626029	16626032	.	-	.	ID=lTSD_26;Parent=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC
+Chr1	EDTA	long_terminal_repeat	16626036	16626555	.	-	.	ID=lLTR_26;Parent=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC
+Chr1	EDTA	Gypsy_LTR_retrotransposon	16626036	16637234	.	-	.	ID=LTRRT_26;Parent=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	16636715	16637234	.	-	.	ID=rLTR_26;Parent=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC
+Chr1	EDTA	target_site_duplication	16637235	16637238	.	-	.	ID=rTSD_26;Parent=repeat_region_26;Name=TE_00000071;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9703;method=structural;motif=TGCA;tsd=CATC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	16641768	16643679	.	.	.	ID=TE_struc_140;Name=TE_00000072;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.824;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATCTCCAACGGTG_AAACATTGGAGATGCTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	16659832	16664179	.	.	.	ID=TE_struc_141;Name=TE_00000074;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.835;method=structural;TSD=GACATGTC_GACATGTC_100.0;TIR=GTTAAGTTGCTTAACAGAGAATGTTAACGCTGTTTAAGTGTCGTTAGTTGCCTCTGTTATCTCAAAAACGACACAGTTTACTGTTGAAACAAAACGGCGTCGTTTTGTAACTTGAAACAAATAAAGACCTAAATCCCAAA_TTTTCGATTTGGGGGAAATGAAGTTCGATTTGGGATTTATGTGTCGTTTTGTTTCAACAGTAAACTGTGTCGTTTTTGAGATAACAGAGGCAACTAACGACACTTAAACAGCGTTAACGTTCTCTGTTAAGCAACTTAAC
+###
+Chr1	EDTA	helitron	16802824	16804169	.	+	.	ID=TE_struc_44;Name=TE_00000075;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	16822274	16822887	.	+	.	ID=TE_struc_45;Name=TE_00000076;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	16824345	16826369	.	+	.	ID=TE_struc_46;Name=TE_00000077;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	16853313	16858045	.	-	.	ID=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	16853313	16853317	.	-	.	ID=lTSD_27;Parent=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA
+Chr1	EDTA	long_terminal_repeat	16853318	16853448	.	-	.	ID=lLTR_27;Parent=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA
+Chr1	EDTA	Copia_LTR_retrotransposon	16853318	16858040	.	-	.	ID=LTRRT_27;Parent=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	16857910	16858040	.	-	.	ID=rLTR_27;Parent=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA
+Chr1	EDTA	target_site_duplication	16858041	16858045	.	-	.	ID=rTSD_27;Parent=repeat_region_27;Name=TE_00000078;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9923;method=structural;motif=TACA;tsd=TTAGA
+###
+Chr1	EDTA	helitron	16858633	16859176	.	-	.	ID=TE_struc_47;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	16965848	16968237	.	-	.	ID=TE_struc_48;Name=TE_00000126;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	17023911	17029262	.	-	.	ID=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	17023911	17023915	.	-	.	ID=lTSD_28;Parent=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG
+Chr1	EDTA	long_terminal_repeat	17023916	17024415	.	-	.	ID=lLTR_28;Parent=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG
+Chr1	EDTA	Copia_LTR_retrotransposon	17023916	17029257	.	-	.	ID=LTRRT_28;Parent=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	17028758	17029257	.	-	.	ID=rLTR_28;Parent=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG
+Chr1	EDTA	target_site_duplication	17029258	17029262	.	-	.	ID=rTSD_28;Parent=repeat_region_28;Name=TE_00000080;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9712;method=structural;motif=TACA;tsd=CAAAG
+###
+Chr1	EDTA	helitron	17102269	17111564	.	+	.	ID=TE_struc_49;Name=TE_00000081;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	17203921	17206323	.	+	.	ID=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	17203921	17203925	.	+	.	ID=lTSD_29;Parent=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC
+Chr1	EDTA	long_terminal_repeat	17203926	17204265	.	+	.	ID=lLTR_29;Parent=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC
+Chr1	EDTA	Copia_LTR_retrotransposon	17203926	17206318	.	+	.	ID=LTRRT_29;Parent=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	17205979	17206318	.	+	.	ID=rLTR_29;Parent=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC
+Chr1	EDTA	target_site_duplication	17206319	17206323	.	+	.	ID=rTSD_29;Parent=repeat_region_29;Name=TE_00000082;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9941;method=structural;motif=TGCA;tsd=TACTC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	17229971	17231982	.	.	.	ID=TE_struc_142;Name=TE_00000083;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.824;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATCTCCAACCGGA_TGTGGTTGGGGATGCTC
+###
+Chr1	EDTA	repeat_region	17255280	17265294	.	+	.	ID=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	17255280	17255284	.	+	.	ID=lTSD_30;Parent=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG
+Chr1	EDTA	long_terminal_repeat	17255285	17255698	.	+	.	ID=lLTR_30;Parent=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG
+Chr1	EDTA	Gypsy_LTR_retrotransposon	17255285	17265289	.	+	.	ID=LTRRT_30;Parent=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	17264875	17265289	.	+	.	ID=rLTR_30;Parent=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG
+Chr1	EDTA	target_site_duplication	17265290	17265294	.	+	.	ID=rTSD_30;Parent=repeat_region_30;Name=TE_00000085;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9927;method=structural;motif=TGCA;tsd=TTAAG
+###
+Chr1	EDTA	helitron	17332442	17333205	.	-	.	ID=TE_struc_50;Name=TE_00000086;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	17443076	17446795	.	+	.	ID=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	17443076	17443080	.	+	.	ID=lTSD_31;Parent=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC
+Chr1	EDTA	long_terminal_repeat	17443081	17443232	.	+	.	ID=lLTR_31;Parent=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC
+Chr1	EDTA	Copia_LTR_retrotransposon	17443081	17446790	.	+	.	ID=LTRRT_31;Parent=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	17446639	17446790	.	+	.	ID=rLTR_31;Parent=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC
+Chr1	EDTA	target_site_duplication	17446791	17446795	.	+	.	ID=rTSD_31;Parent=repeat_region_31;Name=TE_00000087;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9370;method=structural;motif=TATA;tsd=GTCCC
+###
+Chr1	EDTA	repeat_region	17473522	17476676	.	+	.	ID=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	17473522	17473526	.	+	.	ID=lTSD_32;Parent=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC
+Chr1	EDTA	long_terminal_repeat	17473527	17473884	.	+	.	ID=lLTR_32;Parent=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC
+Chr1	EDTA	Gypsy_LTR_retrotransposon	17473527	17476671	.	+	.	ID=LTRRT_32;Parent=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	17476314	17476671	.	+	.	ID=rLTR_32;Parent=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC
+Chr1	EDTA	target_site_duplication	17476672	17476676	.	+	.	ID=rTSD_32;Parent=repeat_region_32;Name=TE_00000088;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9830;method=structural;motif=TGCA;tsd=ACAGC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	17511160	17511320	.	.	.	ID=TE_struc_143;Name=TE_00000089;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TAA_TAA_100.0;TIR=GGCCCTGTTCGTTTCCTTGTCGCTGGATCCAGAGA_TTTCAGTCGCCAGCGACAGGCAAACGAACAGGGCC
+###
+Chr1	EDTA	repeat_region	17520592	17525131	.	+	.	ID=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	17520592	17520596	.	+	.	ID=lTSD_33;Parent=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA
+Chr1	EDTA	long_terminal_repeat	17520597	17520758	.	+	.	ID=lLTR_33;Parent=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA
+Chr1	EDTA	Copia_LTR_retrotransposon	17520597	17525126	.	+	.	ID=LTRRT_33;Parent=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	17524965	17525126	.	+	.	ID=rLTR_33;Parent=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA
+Chr1	EDTA	target_site_duplication	17525127	17525131	.	+	.	ID=rTSD_33;Parent=repeat_region_33;Name=TE_00000090;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9812;method=structural;motif=TATA;tsd=ATTCA
+###
+Chr1	EDTA	repeat_region	17528662	17536143	.	-	.	ID=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000657;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT;strand_evidence=PBS
+Chr1	EDTA	target_site_duplication	17528662	17528666	.	-	.	ID=lTSD_34;Parent=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000434;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT
+Chr1	EDTA	long_terminal_repeat	17528667	17529195	.	-	.	ID=lLTR_34;Parent=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000286;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT
+Chr1	EDTA	LTR_retrotransposon	17528667	17536138	.	-	.	ID=LTRRT_34;Parent=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000186;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT;strand_evidence=PBS
+Chr1	EDTA	long_terminal_repeat	17535610	17536138	.	-	.	ID=rLTR_34;Parent=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000286;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT
+Chr1	EDTA	target_site_duplication	17536139	17536143	.	-	.	ID=rTSD_34;Parent=repeat_region_34;Name=Chr1:17536138..17528667;classification=LTR/unknown;sequence_ontology=SO:0000434;ltr_identity=0.9866;method=structural;motif=TGCA;tsd=GAGAT
+###
+Chr1	EDTA	helitron	17563199	17563852	.	+	.	ID=TE_struc_51;Name=TE_00000092;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	17605551	17606134	.	+	.	ID=TE_struc_52;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	17676602	17681387	.	-	.	ID=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	17676602	17676606	.	-	.	ID=lTSD_35;Parent=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG
+Chr1	EDTA	long_terminal_repeat	17676607	17676901	.	-	.	ID=lLTR_35;Parent=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG
+Chr1	EDTA	Copia_LTR_retrotransposon	17676607	17681382	.	-	.	ID=LTRRT_35;Parent=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	17681094	17681382	.	-	.	ID=rLTR_35;Parent=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG
+Chr1	EDTA	target_site_duplication	17681383	17681387	.	-	.	ID=rTSD_35;Parent=repeat_region_35;Name=TE_00000009;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9895;method=structural;motif=TGCA;tsd=GTCGG
+###
+Chr1	EDTA	Mutator_TIR_transposon	17842524	17845075	.	.	.	ID=TE_struc_144;Name=TE_00000094;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.81;method=structural;TSD=TTTGCAAA_TTTGCAAA_100.0;TIR=CGACACAGTTTCGTTTTTAGTAAACGACGTCGTTTTATCAAAAAGACTGAACTTCCCC_AAACATAGCAAGTCGTTTTGAAAAAACGACGTCGTTTACTAAAAACGAAACTGTGTCG
+###
+Chr1	EDTA	helitron	17893655	17901941	.	+	.	ID=TE_struc_53;Name=TE_00000095;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	17936621	17940728	.	.	.	ID=TE_struc_145;Name=TE_00000096;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=GT_GT_100.0;TIR=CACTAAACTCGA_TTGAGTTTGGTG
+###
+Chr1	EDTA	Mutator_TIR_transposon	17936923	17937991	.	.	.	ID=TE_struc_146;Name=TE_00000097;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.907;method=structural;TSD=GTAAAACAA_GTAAAACAA_100.0;TIR=TGGGAAAAATGTCATTTAATCCTCCAATTTTCAAAAAATGGTCATTTTATACATCAACTTCGTATGTGGCCGTTTAAAACATGAACTAAACGTTGACTAATTTTTAAAACATGATCTTTCGTTGATCAGGCCAGAATAGACATGCCGTTGTCAGTCATTAACGGAACTTTTAACGTCCTTTATCATCCGTTAAC_GTTAACGGATGATAACGGATGTTAGAAGTTCCGTTAATGACTGATAACGGCATGTCTATTTTGGCATGGTCAACGAATAATCATGTTTTAAAAGTTAGTCAACGTTTAGTTCATGTTTTAAACGGCCGCATACGAAGTTGATGTATAAAATAGCCATTGTTTGAAAGTTGGGGGATTAATTGACATTTTTCCC
+###
+Chr1	EDTA	helitron	18007397	18008846	.	+	.	ID=TE_struc_54;Name=TE_00000098;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	18071932	18073743	.	.	.	ID=TE_struc_147;Name=TE_00000100;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=AAGAAAA_AAGAAAA_100.0;TIR=CGACTACAAGT_TCTTGTTGTCG
+###
+Chr1	EDTA	Mutator_TIR_transposon	18085824	18088248	.	.	.	ID=TE_struc_148;Name=TE_00000101;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.909;method=structural;TSD=CACAAATG_CACAAATG_100.0;TIR=CTAAATCAATGCCAT_ATAACAATGATTTAG
+###
+Chr1	EDTA	helitron	18209981	18225534	.	-	.	ID=TE_struc_55;Name=TE_00000102;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	18456779	18457351	.	.	.	ID=TE_struc_149;Name=TE_00000185;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.93;method=structural;TSD=GAAAAAAA_GAAAAAAA_100.0;TIR=GGGAAAAAATGTTGTTTAATATACCAACTTTCAAAAAGTGGCCATTTAAACTATGAACTCCATATATGGCCAAATAAAACTTAGTAAAAGCGTTGATCGGCCATTTTATATATTCCAAAACATTGATCCGGCCAAAAACCCTGCGACGTTAGCAGTCGTTAATAGAGTCGATAATAGGCGTTAGCAGACGTTAATTAATCCGTTTAAACACAAA_TTTGTGTTTAAACGGATTAATTAACGCCTGCTAACGCCTGTTATCGACTCTGTTAACGACTGCTAACGTCGCAGGATTTTTGGCCTGGTCAACGTTTTGAGATGTATAAAATGGTCGGTCAACGCTTTTACTAAGTTTTATTTGGCCATATATGGAGTTCATGGTTTAAATGGCCACTTTTTGAAAGTTGGTGTATTAAACAACATTTTTCCC
+###
+Chr1	EDTA	Mutator_TIR_transposon	18456847	18457284	.	.	.	ID=TE_struc_150;Name=TE_00000185;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.803;method=structural;TSD=CATATATG_CATATATG_100.0;TIR=GCCAAATAAAACTTAGTAAAAGCGTTGATCGGCCATTTTATATATTCCAAAACATTGATCCGGCCAAAAACCCTGCGACGTTAGCAGTCGTTAATAGAGTCGATAATAGGCGTTAGCAGACGTTAATTAATCCGTTTAAACACAAACGACGTCGTTTTGTGTTTAATCGAAACCAACA_AAAGCCTCTCCATTTTTGTTCGTTTGAAGATTTTTGTGTTTAAACGGATTAATTAACGCCTGCTAACGCCTGTTATCGACTCTGTTAACGACTGCTAACGTCGCAGGATTTTTGGCCTGGTCAACGTTTTGAGATGTATAAAATGGTCGGTCAACGCTTTTACTAAGTTTTATTTGGC
+###
+Chr1	EDTA	Mutator_TIR_transposon	18456848	18457283	.	.	.	ID=TE_struc_151;Name=TE_00000185;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.802;method=structural;TSD=CCATATATGG_CCATATATGG_100.0;TIR=CCAAATAAAACTTAGTAAAAGCGTTGATCGGCCATTTTATATATTCCAAAACATTGATCCGGCCAAAAACCCTGCGACGTTAGCAGTCGTTAATAGAGTCGATAATAGGCGTTAGCAGACGTTAATTAATCCGTTTAAACACAAACGACGTCGTTTTGTGTTTAATCGAAACCAACA_AAAGCCTCTCCATTTTTGTTCGTTTGAAGATTTTTGTGTTTAAACGGATTAATTAACGCCTGCTAACGCCTGTTATCGACTCTGTTAACGACTGCTAACGTCGCAGGATTTTTGGCCTGGTCAACGTTTTGAGATGTATAAAATGGTCGGTCAACGCTTTTACTAAGTTTTATTTGG
+###
+Chr1	EDTA	Mutator_TIR_transposon	18505109	18505237	.	.	.	ID=TE_struc_152;Name=TE_00000104;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=TCTTTTG_TCTTTTG_100.0;TIR=CCTAAACTATGTC_CACATAGTTTATG
+###
+Chr1	EDTA	helitron	18789004	18790847	.	+	.	ID=TE_struc_56;Name=TE_00000105;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	18828522	18833285	.	+	.	ID=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	18828522	18828526	.	+	.	ID=lTSD_36;Parent=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA
+Chr1	EDTA	long_terminal_repeat	18828527	18828827	.	+	.	ID=lLTR_36;Parent=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA
+Chr1	EDTA	Copia_LTR_retrotransposon	18828527	18833280	.	+	.	ID=LTRRT_36;Parent=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	18832980	18833280	.	+	.	ID=rLTR_36;Parent=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA
+Chr1	EDTA	target_site_duplication	18833281	18833285	.	+	.	ID=rTSD_36;Parent=repeat_region_36;Name=TE_00000106;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9967;method=structural;motif=TGCA;tsd=CTTAA
+###
+Chr1	EDTA	helitron	19081652	19086842	.	+	.	ID=TE_struc_57;Name=TE_00000107;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	19281587	19292780	.	+	.	ID=TE_struc_58;Name=TE_00000108;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	19496295	19498168	.	.	.	ID=TE_struc_153;Name=TE_00000109;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.824;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATCTCCAACGCTG_CTCCATTGGAGATGCTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	19532079	19534464	.	.	.	ID=TE_struc_154;Name=TE_00000110;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=TGAAATGT_TGAAATGT_100.0;TIR=GTACATAAGAAC_GATCTTATCTAC
+###
+Chr1	EDTA	CACTA_TIR_transposon	19675548	19680346	.	.	.	ID=TE_struc_155;Name=TE_00000111;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.806;method=structural;TSD=TAC_TAC_100.0;TIR=CACTACAAGAAAACAAGCGATTTGCGAGGACAATTT_AATCTTCCGTCGCAAGTCGCCTGTTTTCTTGTAGTG
+###
+Chr1	EDTA	helitron	19780301	19789068	.	-	.	ID=TE_struc_59;Name=TE_00000112;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	20166672	20172808	.	-	.	ID=TE_struc_60;Name=TE_00000113;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	20205355	20214046	.	-	.	ID=TE_struc_61;Name=TE_00000114;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	20265505	20268016	.	.	.	ID=TE_struc_156;Name=TE_00000115;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=AAAAA_AAAAA_100.0;TIR=CACTAGATTGA_ACAATATAGTG
+###
+Chr1	EDTA	helitron	20311849	20322494	.	-	.	ID=TE_struc_62;Name=TE_00000117;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	20329369	20330666	.	.	.	ID=TE_struc_157;Name=TE_00000118;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.931;method=structural;TSD=CTTTTATTA_CTTTTATTA_100.0;TIR=GGGCGAACGACCTGTGTCCCCCTCGGAAGTTTCATATAGCATTAGAACTACACAAAATTTCAACCTCGATCTTGGTCTACACAAATAAAAAGTTCTAGTCCTATTTCTCCCTAATTTGAAAGTTCGAAACCTCAAAACACATAAA_TTTATGTGTTTTGAGGTTTCGAACTTTCAAATTAGGGAGAAATAGGACTAAAACTTTTTATTTGTGTGGACCAAGATCGAGGTTGGAATTCGGTGTAGTTCTAGTGCTATATGAAACTTCCAAGGGACACACAGGTCGTTCACCC
+###
+Chr1	EDTA	helitron	20508838	20509421	.	-	.	ID=TE_struc_63;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	20552478	20553422	.	.	.	ID=TE_struc_158;Name=TE_00000119;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=AT_AT_100.0;TIR=CACTATGATCCACAA_TTTTAGATCCTAGTG
+###
+Chr1	EDTA	helitron	20559601	20572333	.	-	.	ID=TE_struc_64;Name=TE_00000120;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	20615158	20626081	.	+	.	ID=TE_struc_65;Name=TE_00000121;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	20622392	20622836	.	.	.	ID=TE_struc_159;Name=TE_00000122;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.863;method=structural;TSD=CTATCTAAAT_CTATCTAAAT_100.0;TIR=GGGAAAAATGTTATTTAATACCTGAAATTTCAAAAATGGTCAAATTAACC_ATTAATTTAGCCACTTTTTGAAAGTTCAGGTATTAAATAATATTTTTCCC
+###
+Chr1	EDTA	helitron	20694238	20704574	.	+	.	ID=TE_struc_66;Name=TE_00000123;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	20796853	20798096	.	.	.	ID=TE_struc_160;Name=TE_00000124;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TAA_TAA_100.0;TIR=GGGCTTGATAA_GTATCTAGCCC
+###
+Chr1	EDTA	CACTA_TIR_transposon	20832071	20835186	.	.	.	ID=TE_struc_161;Name=TE_00000125;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=GA_GA_100.0;TIR=CACTGATAAAAG_GTTTTATTAGTG
+###
+Chr1	EDTA	helitron	20972074	20974300	.	+	.	ID=TE_struc_67;Name=TE_00000126;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	21244319	21249203	.	-	.	ID=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	21244319	21244323	.	-	.	ID=lTSD_37;Parent=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG
+Chr1	EDTA	long_terminal_repeat	21244324	21244458	.	-	.	ID=lLTR_37;Parent=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG
+Chr1	EDTA	Copia_LTR_retrotransposon	21244324	21249198	.	-	.	ID=LTRRT_37;Parent=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	21249064	21249198	.	-	.	ID=rLTR_37;Parent=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG
+Chr1	EDTA	target_site_duplication	21249199	21249203	.	-	.	ID=rTSD_37;Parent=repeat_region_37;Name=TE_00000127;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=AGGAG
+###
+Chr1	EDTA	helitron	21260147	21261030	.	+	.	ID=TE_struc_68;Name=TE_00000128;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	21346157	21351046	.	-	.	ID=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	21346157	21346161	.	-	.	ID=lTSD_38;Parent=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT
+Chr1	EDTA	long_terminal_repeat	21346162	21346346	.	-	.	ID=lLTR_38;Parent=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT
+Chr1	EDTA	Copia_LTR_retrotransposon	21346162	21351041	.	-	.	ID=LTRRT_38;Parent=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	21350857	21351041	.	-	.	ID=rLTR_38;Parent=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT
+Chr1	EDTA	target_site_duplication	21351042	21351046	.	-	.	ID=rTSD_38;Parent=repeat_region_38;Name=TE_00000129;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9946;method=structural;motif=TGCA;tsd=GAAAT
+###
+Chr1	EDTA	helitron	21387999	21388998	.	-	.	ID=TE_struc_69;Name=TE_00000130;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	21428160	21444190	.	-	.	ID=TE_struc_70;Name=TE_00000131;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	21524990	21529855	.	-	.	ID=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	target_site_duplication	21524990	21524994	.	-	.	ID=lTSD_39;Parent=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA
+Chr1	EDTA	long_terminal_repeat	21524995	21525434	.	-	.	ID=lLTR_39;Parent=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA
+Chr1	EDTA	Copia_LTR_retrotransposon	21524995	21529850	.	-	.	ID=LTRRT_39;Parent=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA;strand_evidence=domain,PBS,PPT
+Chr1	EDTA	long_terminal_repeat	21529415	21529850	.	-	.	ID=rLTR_39;Parent=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA
+Chr1	EDTA	target_site_duplication	21529851	21529855	.	-	.	ID=rTSD_39;Parent=repeat_region_39;Name=TE_00000189;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9790;method=structural;motif=TGCA;tsd=AAATA
+###
+Chr1	EDTA	Mutator_TIR_transposon	21549279	21551020	.	.	.	ID=TE_struc_162;Name=TE_00000132;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=GAGACATGT_GAGACATGT_100.0;TIR=CAAAATAGTTG_TAACTGTTTTG
+###
+Chr1	EDTA	helitron	21918435	21918983	.	+	.	ID=TE_struc_71;Name=TE_00000141;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	22050520	22054295	.	+	.	ID=TE_struc_72;Name=TE_00000133;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	22100639	22105334	.	-	.	ID=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	22100639	22100643	.	-	.	ID=lTSD_40;Parent=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC
+Chr1	EDTA	long_terminal_repeat	22100644	22100754	.	-	.	ID=lLTR_40;Parent=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC
+Chr1	EDTA	Copia_LTR_retrotransposon	22100644	22105329	.	-	.	ID=LTRRT_40;Parent=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	22105219	22105329	.	-	.	ID=rLTR_40;Parent=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC
+Chr1	EDTA	target_site_duplication	22105330	22105334	.	-	.	ID=rTSD_40;Parent=repeat_region_40;Name=TE_00000134;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9722;method=structural;motif=TATA;tsd=TATCC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	22785446	22787055	.	.	.	ID=TE_struc_163;Name=TE_00000135;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.923;method=structural;TSD=TAA_TAA_100.0;TIR=GGGCTTTTCTCTTAA_GAAAGAGACAAGCCC
+###
+Chr1	EDTA	helitron	23166044	23175204	.	+	.	ID=TE_struc_73;Name=TE_00000136;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	23434673	23436002	.	.	.	ID=TE_struc_164;Name=TE_00000137;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.824;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATCTCCAATAGTG_ATCCATTGGAGATGCTC
+###
+Chr1	EDTA	helitron	23925218	23932323	.	-	.	ID=TE_struc_74;Name=TE_00000138;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	24533272	24534427	.	+	.	ID=TE_struc_75;Name=TE_00000139;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	24644294	24646063	.	+	.	ID=TE_struc_76;Name=TE_00000141;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	24704990	24706025	.	.	.	ID=TE_struc_165;Name=TE_00000142;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.81;method=structural;TSD=TTA_TTA_100.0;TIR=GGCCGTGTTCGTTTCATCAGT_AATGTAGAAACGAACAGGGCC
+###
+Chr1	EDTA	helitron	24707510	24719037	.	+	.	ID=TE_struc_77;Name=TE_00000143;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	25159043	25163486	.	.	.	ID=TE_struc_166;Name=TE_00000144;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.94;method=structural;TSD=CTTTAGAATC_CTTTAGAATC_100.0;TIR=GGGGAAAAAGCTTAAAAAATCCTCATTTATTTTTAATTTGGCCGTTTAATACCTGTACTTTTAAAATTGGAAGAAAAATACACAAGTTAATTTCGATTGCCTATAAAAACACTGATCTTTTAAATGTTGGTAACTTCATGCTCTCGAGTTAACGACTGTTAGTTTTGCTAACAGAATCACTAACTGTGGTTAAAATATAACCACACGTGGTTAATTAGTCCTAATGAAAGACACTGTTGCCCTTTTTCATTTTCCCCCAAATCGATTT_AAATCGATTTGGGGAGAATGAGAAAGGGCAACAGTGTCTTTAAATTGGACTAATTAACCACGTGTGGTTATGTTTTAACCACATTTAGTGGTTCTGTTAGCAAAACTAACAATCGTTAACTCGAGAGCATGAAGTTACCAACATTTAAAAAATCAGTGCTTTTATAGGCAATCGAAATTAACTTGTGTATTTTTCTTCCAATTTTAAAAGTACAGATATTAAACGACCAAATTAAAAATAAATGAGGATTTTTTAAGCTTTTTTCTC
+###
+Chr1	EDTA	helitron	25763259	25780236	.	+	.	ID=TE_struc_78;Name=TE_00000145;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	25962466	25978296	.	-	.	ID=TE_struc_79;Name=TE_00000146;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	26169396	26188731	.	-	.	ID=TE_struc_80;Name=TE_00000147;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	helitron	26306961	26307504	.	+	.	ID=TE_struc_81;Name=TE_00000030;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	repeat_region	26366602	26371673	.	+	.	ID=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT;strand_evidence=domain,PBS
+Chr1	EDTA	target_site_duplication	26366602	26366606	.	+	.	ID=lTSD_41;Parent=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT
+Chr1	EDTA	long_terminal_repeat	26366607	26366810	.	+	.	ID=lLTR_41;Parent=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT
+Chr1	EDTA	Copia_LTR_retrotransposon	26366607	26371668	.	+	.	ID=LTRRT_41;Parent=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT;strand_evidence=domain,PBS
+Chr1	EDTA	long_terminal_repeat	26371465	26371668	.	+	.	ID=rLTR_41;Parent=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT
+Chr1	EDTA	target_site_duplication	26371669	26371673	.	+	.	ID=rTSD_41;Parent=repeat_region_41;Name=TE_00000148;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9801;method=structural;motif=TATA;tsd=GTATT
+###
+Chr1	EDTA	Mutator_TIR_transposon	26693960	26695279	.	.	.	ID=TE_struc_167;Name=TE_00000149;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=CATCAAA_CATCAAA_100.0;TIR=CTTCTTTTTGA_GCAAGAAGAAG
+###
+Chr1	EDTA	helitron	27592330	27599229	.	+	.	ID=TE_struc_82;Name=TE_00000150;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	Mutator_TIR_transposon	28275839	28277181	.	.	.	ID=TE_struc_168;Name=TE_00000151;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=GTTTGGT_GTTTGGT_100.0;TIR=GGTAGAGAGTTTCTT_ACGAGACTCTCTAGC
+###
+Chr1	EDTA	Mutator_TIR_transposon	28693550	28697359	.	.	.	ID=TE_struc_169;Name=TE_00000152;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.833;method=structural;TSD=TTTGTGT_TTTGTGT_100.0;TIR=GAAGGAATCTGA_TTAGTTTCCTTC
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	28860621	28861414	.	.	.	ID=TE_struc_170;Name=TE_00000153;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.812;method=structural;TSD=TTA_TTA_100.0;TIR=GAGGAGATTAATTAGT_TGTAATTAATCTGCTC
+###
+Chr1	EDTA	CACTA_TIR_transposon	29171243	29171903	.	.	.	ID=TE_struc_171;Name=TE_00000154;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=CAT_CAT_100.0;TIR=CACTACTCAAA_ATTGACTAGTG
+###
+Chr1	EDTA	helitron	29244139	29244684	.	+	.	ID=TE_struc_83;Name=TE_00000114;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Chr1	EDTA	CACTA_TIR_transposon	29377328	29380473	.	.	.	ID=TE_struc_172;Name=TE_00000155;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.808;method=structural;TSD=GC_GC_100.0;TIR=CACTGTATGAGAAAGAGGTTTCAAATTTTCTTCTTAAAACCCAAAACAAAAT_TACTAATGATGTGTTTTTAGAAGAAAATTTGAAGCCTCTTTCTCATACAGTG
+###
+Chr1	EDTA	hAT_TIR_transposon	29611562	29612405	.	.	.	ID=TE_struc_173;Name=TE_00000156;classification=DNA/DTA;sequence_ontology=SO:0002279;identity=0.81;method=structural;TSD=TACATAGC_TACATAGC_100.0;TIR=TAGAGCTGTCAATTGGGCAGG_ACGGACCATTTGACAGCTCTA
+###
+Chr1	EDTA	PIF_Harbinger_TIR_transposon	29648408	29651840	.	.	.	ID=TE_struc_174;Name=TE_00000157;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TTA_TTA_100.0;TIR=GATCACTGTTA_GAACAGTGCTC
+###
+Chr1	EDTA	Mutator_TIR_transposon	29697354	29701766	.	.	.	ID=TE_struc_175;Name=TE_00000158;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=TGTAAAACC_TGTAAAACC_100.0;TIR=GCACAGTTTTT_GAAAACTCTGC
+###
+Chr1	EDTA	Mutator_TIR_transposon	29923615	29923939	.	.	.	ID=TE_struc_176;Name=TE_00000159;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=TAAAAGG_TAAAAGG_100.0;TIR=CGAAAGAATAG_GTATTCTTTAG
+###
+Chr1	EDTA	helitron	30382954	30397132	.	+	.	ID=TE_struc_84;Name=TE_00000160;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###

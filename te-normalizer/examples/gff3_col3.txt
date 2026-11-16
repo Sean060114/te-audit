@@ -1,0 +1,15 @@
+CACTA_TIR_transposon
+Copia_LTR_retrotransposon
+Gypsy_LTR_retrotransposon
+L1_LINE_retrotransposon
+LTR_retrotransposon
+Mutator_TIR_transposon
+PIF_Harbinger_TIR_transposon
+Tc1_Mariner_TIR_transposon
+hAT_TIR_transposon
+helitron
+long_terminal_repeat
+repeat_fragment
+repeat_region
+tRNA_SINE_retrotransposon
+target_site_duplication

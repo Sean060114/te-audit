@@ -1,0 +1,14 @@
+DNA/DTA
+DNA/DTC
+DNA/DTH
+DNA/DTM
+DNA/DTT
+DNA/Helitron
+LINE/L1
+LTR/Copia
+LTR/Gypsy
+LTR/unknown
+MITE/DTH
+MITE/DTM
+SINE/tRNA
+unknown

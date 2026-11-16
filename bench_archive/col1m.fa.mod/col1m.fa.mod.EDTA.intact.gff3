@@ -1,0 +1,174 @@
+##gff-version 3
+##date Mon Nov 16 17:00:12 CST 2026
+##This file contains repeats annotated by EDTA v2.2.2 based on structural features.
+##This file follows the ENSEMBL standard: https://useast.ensembl.org/info/website/upload/gff3.html
+##Column 3: Sequence Ontology of repeat features. Please refer to the SO database for more details: http://www.sequenceontology.org/. In cases where the SO database does not have the repeat feature, tentative SO names are used, with a full list included in EDTA/bin/TE_Sequence_Ontology.txt (Enhancement notes), and the sequence_ontology in Column 9 uses the closest parent SO.
+##Column 9: 
+##      ID: unique ID for this feature in the genome.
+##      classification: Same as Column 3 but formatted following the RepeatMasker naming convention.
+##      sequence_ontology: Sequence Ontology ID of the feature.
+##      identity: Sequence identity (0-1) between terminal sequences for structurally annotated TIR elements.
+##      ltr_identity: Sequence identity (0-1) between the left and right LTR regions for structurally annotated LTR elements.
+##      Name: Repeat family name. Some may be shown as coordinates, which are single-copy and structrually identified elements that are not included in the repeat library.
+##      method=structural: Indicate this entry is produced by structural annotation.
+##      motif/TSD/TIR: structural features of structurally annotated LTR and TIR elements.
+##For more details about this file, please refer to the EDTA wiki: https://github.com/oushujun/EDTA/wiki/Making-sense-of-EDTA-usage-and-outputs---Q&A
+##seqid source sequence_ontology start end score strand phase attributes
+Col_1M	EDTA	Mutator_TIR_transposon	39311	39451	.	.	.	ID=TE_struc_6;Name=TE_00000011;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.821;method=structural;TSD=AAAAAATAA_AAAAAATAA_100.0;TIR=GGGGCAATTGCAAATTTACCACTGCTTT_AAACTGGTGGCAAATTTGCAAATGCCCC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	41374	41660	.	.	.	ID=TE_struc_7;Name=TE_00000012;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.87;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATTCCAAAATACAATGC_TAATTATATTATGTAATGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	61604	62130	.	.	.	ID=TE_struc_8;Name=TE_00000025;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.812;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCTTCCCAAATTGATCATCATCTAAT_GGAGTATGATGATCATTTTGGGAAGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	61604	62102	.	.	.	ID=TE_struc_9;Name=TE_00000025;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCTTCCCAAATT_ATTATGGGATGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	71285	75028	.	.	.	ID=TE_struc_10;Name=Col_1M:71285..75028;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.857;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCAAC_TTTTGACAGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	71285	74969	.	.	.	ID=TE_struc_11;Name=Col_1M:71285..74969;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCC_AGACGAAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	71285	74509	.	.	.	ID=TE_struc_12;Name=Col_1M:71285..74509;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.857;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCAAC_TTTTTACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	71285	74076	.	.	.	ID=TE_struc_13;Name=Col_1M:71285..74076;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCC_TTACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	71285	71428	.	.	.	ID=TE_struc_14;Name=Col_1M:71285..71428;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.857;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCAAC_TTTTCACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	72668	74076	.	.	.	ID=TE_struc_15;Name=Col_1M:72668..74076;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTTCGTTA_TTACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	74748	77945	.	.	.	ID=TE_struc_16;Name=TE_00000032;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTC_AACGGATGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	74748	75028	.	.	.	ID=TE_struc_17;Name=TE_00000032;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCC_TGACAGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	74748	74969	.	.	.	ID=TE_struc_18;Name=TE_00000032;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.909;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCTAT_ATGAGACGAAGGGAG
+###
+Col_1M	EDTA	helitron	76566	77152	.	-	.	ID=TE_struc_0;Name=TE_00000033;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	helitron	79435	97497	.	+	.	ID=TE_struc_1;Name=TE_00000034;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	81380	85133	.	.	.	ID=TE_struc_19;Name=Col_1M:81380..85133;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATTCCAAATTGA_TTATTTTGGGACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	81380	81690	.	.	.	ID=TE_struc_20;Name=Col_1M:81380..81690;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.824;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATTCCAAATTGATCTACATATAGTTTT_TATGAAATATGTAGATCAATTTAGAACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	115930	118851	.	.	.	ID=TE_struc_21;Name=Col_1M:115930..118851;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCATCCGTAT_AAACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	116109	118851	.	.	.	ID=TE_struc_22;Name=Col_1M:116109..118851;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCCATAATAT_ATATTTAGAAACGGAGGGAG
+###
+Col_1M	EDTA	repeat_region	138434	144893	.	-	.	ID=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA;strand_evidence=domain
+Col_1M	EDTA	target_site_duplication	138434	138438	.	-	.	ID=lTSD_1;Parent=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA
+Col_1M	EDTA	long_terminal_repeat	138439	139417	.	-	.	ID=lLTR_1;Parent=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA
+Col_1M	EDTA	Copia_LTR_retrotransposon	138439	144888	.	-	.	ID=LTRRT_1;Parent=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA;strand_evidence=domain
+Col_1M	EDTA	long_terminal_repeat	143919	144888	.	-	.	ID=rLTR_1;Parent=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA
+Col_1M	EDTA	target_site_duplication	144889	144893	.	-	.	ID=rTSD_1;Parent=repeat_region_1;Name=TE_00000000;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=1.0000;method=structural;motif=TGCA;tsd=GTATA
+###
+Col_1M	EDTA	CACTA_TIR_transposon	172124	176691	.	.	.	ID=TE_struc_23;Name=TE_00000001;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.857;method=structural;TSD=GA_GA_100.0;TIR=CACTAAGAAAACAAG_GTTTTTTTCTCAGTG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	202942	203176	.	.	.	ID=TE_struc_24;Name=TE_00000040;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.804;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTTTCGAAATGTTTGACACCGTTGACTTTTTAGCACATGTTTGACCGTTCGTCTTATTCAAAAACTTTTGTGAAATATGTAAAATTATA_GAAAAGAATTAACAATTACTTAAATTTTTTAAATAAAACGAACGGTTAAACATGTGCTAAAAAGTCAACGGCGTCAAACATTTCGAAACGGAGAGAG
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	214437	214866	.	.	.	ID=TE_struc_25;Name=TE_00000026;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=1;method=structural;TSD=TAA_TAA_100.0;TIR=GGCCAGTCACAATGGGGGTT_ACTAGCCATTGTGACTGGCC
+###
+Col_1M	EDTA	repeat_region	229491	242343	.	+	.	ID=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC;strand_evidence=domain,PBS
+Col_1M	EDTA	target_site_duplication	229491	229495	.	+	.	ID=lTSD_2;Parent=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC
+Col_1M	EDTA	long_terminal_repeat	229496	230581	.	+	.	ID=lLTR_2;Parent=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC
+Col_1M	EDTA	Gypsy_LTR_retrotransposon	229496	242338	.	+	.	ID=LTRRT_2;Parent=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC;strand_evidence=domain,PBS
+Col_1M	EDTA	long_terminal_repeat	241251	242338	.	+	.	ID=rLTR_2;Parent=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC
+Col_1M	EDTA	target_site_duplication	242339	242343	.	+	.	ID=rTSD_2;Parent=repeat_region_2;Name=TE_00000002;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9935;method=structural;motif=TGCA;tsd=ATCTC
+###
+Col_1M	EDTA	CACTA_TIR_transposon	242658	243774	.	.	.	ID=TE_struc_26;Name=TE_00000003;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.818;method=structural;TSD=TTG_TTG_100.0;TIR=CACTGGTGGAGAAACCATCTTT_AAAGCCCCTTTCTCCACCAGTG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	277426	277550	.	.	.	ID=TE_struc_27;Name=TE_00000005;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.87;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTACCACAAAAAAACCG_TAGGTTTTTTATGGGACGGAGGGAG
+###
+Col_1M	EDTA	Mutator_TIR_transposon	286963	287397	.	.	.	ID=TE_struc_28;Name=TE_00000006;classification=MITE/DTM;sequence_ontology=SO:0002280;identity=0.818;method=structural;TSD=TAGATCTG_TAGATCTG_100.0;TIR=GATGCCTCATGCCATTTGGGAG_CTCTCAAAGTGCATGAGGCGTC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	309220	309331	.	.	.	ID=TE_struc_29;Name=TE_00000007;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.905;method=structural;TSD=GTA_GTA_100.0;TIR=CTCTCTCCGTCCCAAAAAAAACCCAATCCTGGGTTTGAAC_GTTCAAACCTAGGATTGGGTTTTTTTTGGGACGGAGGGAGTA
+###
+Col_1M	EDTA	repeat_region	320579	331920	.	+	.	ID=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0000657;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT;strand_evidence=domain,PBS
+Col_1M	EDTA	target_site_duplication	320579	320583	.	+	.	ID=lTSD_3;Parent=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT
+Col_1M	EDTA	long_terminal_repeat	320584	321024	.	+	.	ID=lLTR_3;Parent=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT
+Col_1M	EDTA	Gypsy_LTR_retrotransposon	320584	331915	.	+	.	ID=LTRRT_3;Parent=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0002265;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT;strand_evidence=domain,PBS
+Col_1M	EDTA	long_terminal_repeat	331475	331915	.	+	.	ID=rLTR_3;Parent=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0000286;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT
+Col_1M	EDTA	target_site_duplication	331916	331920	.	+	.	ID=rTSD_3;Parent=repeat_region_3;Name=TE_00000008;classification=LTR/Gypsy;sequence_ontology=SO:0000434;ltr_identity=0.9954;method=structural;motif=TGCA;tsd=GTTAT
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	333421	334322	.	.	.	ID=TE_struc_30;Name=TE_00000009;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TAA_TAA_100.0;TIR=GAGCATCCCAG_TGGGGATGCTC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	340242	345047	.	.	.	ID=TE_struc_31;Name=TE_00000010;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTA_GAGGGAGGGAG
+###
+Col_1M	EDTA	Mutator_TIR_transposon	424885	426434	.	.	.	ID=TE_struc_32;Name=TE_00000013;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=1;method=structural;TSD=TTGTTATTA_TTGTTATTA_100.0;TIR=GGAAAAAGTACGTTTTACCCCC_GGGGGTAAAACGTACTTTTTCC
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	437579	437862	.	.	.	ID=TE_struc_33;Name=TE_00000014;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.828;method=structural;TSD=TAA_TAA_100.0;TIR=GGGCCTATTTGGATTGCTACCAAAAACATG_AATTGTTAGGGTAACAATCCAAATAGGCCC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	439108	441720	.	.	.	ID=TE_struc_34;Name=TE_00000015;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCCCCGTT_TACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	448392	450787	.	.	.	ID=TE_struc_35;Name=Col_1M:448392..450787;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.889;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATTCCATAATAT_TCAATTTGGAATGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	450481	450787	.	.	.	ID=TE_struc_36;Name=Col_1M:450481..450787;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.816;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATTCCAAATTGATCTACATATTTCATAGGT_AAAAAAATTATATGTAGATCAATTTGGAATGGAGGGAG
+###
+Col_1M	EDTA	repeat_region	460603	465572	.	+	.	ID=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0000657;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG;strand_evidence=domain,PBS
+Col_1M	EDTA	target_site_duplication	460603	460607	.	+	.	ID=lTSD_4;Parent=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG
+Col_1M	EDTA	long_terminal_repeat	460608	460822	.	+	.	ID=lLTR_4;Parent=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG
+Col_1M	EDTA	Copia_LTR_retrotransposon	460608	465567	.	+	.	ID=LTRRT_4;Parent=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0002264;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG;strand_evidence=domain,PBS
+Col_1M	EDTA	long_terminal_repeat	465353	465567	.	+	.	ID=rLTR_4;Parent=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0000286;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG
+Col_1M	EDTA	target_site_duplication	465568	465572	.	+	.	ID=rTSD_4;Parent=repeat_region_4;Name=TE_00000016;classification=LTR/Copia;sequence_ontology=SO:0000434;ltr_identity=0.9858;method=structural;motif=TGTA;tsd=GAAGG
+###
+Col_1M	EDTA	helitron	474786	475930	.	+	.	ID=TE_struc_2;Name=TE_00000017;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	hAT_TIR_transposon	476771	481155	.	.	.	ID=TE_struc_37;Name=TE_00000018;classification=DNA/DTA;sequence_ontology=SO:0002279;identity=0.808;method=structural;TSD=TATACGAG_TATACGAG_100.0;TIR=CAGTGTTGTGGAAAACGGTGTTAACG_CCCGTATACCGTTTTCCACAACACTG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	504554	505755	.	.	.	ID=TE_struc_38;Name=TE_00000019;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTACCTCCGTCACAAAAT_ATTTTGGAACGGAGGGAG
+###
+Col_1M	EDTA	Mutator_TIR_transposon	553086	557172	.	.	.	ID=TE_struc_39;Name=TE_00000020;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.846;method=structural;TSD=AAATTTT_AAATTTT_100.0;TIR=GTAAAATTTGTGATA_TTTTACACATTTTAC
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	590919	591454	.	.	.	ID=TE_struc_40;Name=Col_1M:590919..591454;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.818;method=structural;TSD=TTA_TTA_100.0;TIR=GGGCCCCTTTGAATTGCAAGAT_TTCCTCCAAATCAAAGGGGCCC
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	593255	593651	.	.	.	ID=TE_struc_41;Name=TE_00000021;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=0.808;method=structural;TSD=TTA_TTA_100.0;TIR=GAGCATCACCAACAGTCTATCTATTC_TTATTGGTGGACTGTTGGTGATGCTC
+###
+Col_1M	EDTA	Mutator_TIR_transposon	594917	596268	.	.	.	ID=TE_struc_42;Name=TE_00000022;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.933;method=structural;TSD=TTTTCTTAA_TTTTCTTAA_100.0;TIR=GGAAAAAATACGAATTACCCCCCGAACTATCGCGG_GTTTTATGGTTCGGGGGGTAATTCGTACTTTTTCC
+###
+Col_1M	EDTA	helitron	609911	610391	.	+	.	ID=TE_struc_3;Name=TE_00000023;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	helitron	613917	615946	.	-	.	ID=TE_struc_4;Name=TE_00000024;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	617949	618378	.	.	.	ID=TE_struc_43;Name=TE_00000026;classification=MITE/DTH;sequence_ontology=SO:0002284;identity=1;method=structural;TSD=TTA_TTA_100.0;TIR=GGCCAGTCACAATGGGGGTT_ACTAGCCATTGTGACTGGCC
+###
+Col_1M	EDTA	CACTA_TIR_transposon	624582	626969	.	.	.	ID=TE_struc_44;Name=TE_00000027;classification=DNA/DTC;sequence_ontology=SO:0002285;identity=0.833;method=structural;TSD=TC_TC_100.0;TIR=CACTAGGGTAAG_CCAACCCTAGTG
+###
+Col_1M	EDTA	PIF_Harbinger_TIR_transposon	665013	666642	.	.	.	ID=TE_struc_45;Name=TE_00000028;classification=DNA/DTH;sequence_ontology=SO:0002284;identity=0.833;method=structural;TSD=TTA_TTA_100.0;TIR=GGGCATCTCCAAGAGAGG_CATCTGTTGGAGATGCTC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	703444	703577	.	.	.	ID=TE_struc_46;Name=TE_00000029;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.826;method=structural;TSD=TA_TA_100.0;TIR=CTTCCTCCGTTTCACAATATCAA_CTTACATTATGAAACGGAGGAAG
+###
+Col_1M	EDTA	Mutator_TIR_transposon	720539	721325	.	.	.	ID=TE_struc_47;Name=TE_00000031;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.816;method=structural;TSD=TATTTGCATA_TATTTGCATA_100.0;TIR=GGAATAAGTTCGCTTGAGATCCCTTAACTTGGGAATCT_TCCTTAACAAGTTAAGGGACCTCAAGTGAACTTATTCC
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	797073	801111	.	.	.	ID=TE_struc_48;Name=TE_00000037;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCATCCGTT_GACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	797073	798996	.	.	.	ID=TE_struc_49;Name=TE_00000035;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCATCCGTT_GACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	798741	800730	.	.	.	ID=TE_struc_50;Name=TE_00000037;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTC_AACGGAGGAAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	800638	805238	.	.	.	ID=TE_struc_51;Name=Col_1M:800638..805238;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCTCTCCGTT_GACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	800638	802864	.	.	.	ID=TE_struc_52;Name=Col_1M:800638..802864;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.805;method=structural;TSD=TA_TA_100.0;TIR=CTCTCTCCGTTTCACAATGTAAGTCATTCTATCATTTTCCACATT_AATATGAACAATACTAAAAAGTCTTACATTGTGAAACGGAGAAAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	800638	801111	.	.	.	ID=TE_struc_53;Name=TE_00000038;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCTCTCCGTT_GACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	800875	805238	.	.	.	ID=TE_struc_54;Name=Col_1M:800875..805238;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTCCCAAAAAAAGG_CTATATTATGGGACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	802080	806885	.	.	.	ID=TE_struc_55;Name=TE_00000040;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCTTCCGTCT_AAACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	802080	805238	.	.	.	ID=TE_struc_56;Name=TE_00000040;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CTCCTTCCGTCTC_GGGACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	802714	806885	.	.	.	ID=TE_struc_57;Name=TE_00000040;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CTCCCCCCGTTTC_AAAACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	802714	805238	.	.	.	ID=TE_struc_58;Name=TE_00000040;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCCCCGTT_GACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	805006	806885	.	.	.	ID=TE_struc_59;Name=TE_00000040;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCCTC_AACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	825676	829703	.	.	.	ID=TE_struc_60;Name=Col_1M:825676..829703;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.846;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTTTT_GAAACGGAGGAAG
+###
+Col_1M	EDTA	Mutator_TIR_transposon	837243	837855	.	.	.	ID=TE_struc_61;Name=TE_00000041;classification=DNA/DTM;sequence_ontology=SO:0002280;identity=0.9;method=structural;TSD=TTTTCTT_TTTTCTT_100.0;TIR=CTCCGAACCCTCTTG_CAAAGGGGGTCGGAG
+###
+Col_1M	EDTA	helitron	880539	880872	.	-	.	ID=TE_struc_5;Name=TE_00000042;classification=DNA/Helitron;sequence_ontology=SO:0000544;identity=NA;method=structural
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	913058	914596	.	.	.	ID=TE_struc_62;Name=TE_00000043;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.833;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTTCGTCC_GTACGGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	914168	918301	.	.	.	ID=TE_struc_63;Name=TE_00000044;classification=DNA/DTT;sequence_ontology=SO:0002278;identity=0.818;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCGTC_AACAGAGGGAG
+###
+Col_1M	EDTA	Tc1_Mariner_TIR_transposon	948412	948564	.	.	.	ID=TE_struc_64;Name=TE_00000045;classification=MITE/DTT;sequence_ontology=SO:0002278;identity=0.889;method=structural;TSD=TA_TA_100.0;TIR=CTCCCTCCATCCCACAATTT_GTATTCTGGGATGGAGGTAG
+###

@@ -1,0 +1,12 @@
+DNA/CACTA
+DNA/Mutator
+DNA/PIF_Harbinger
+DNA/Tc1_Mariner
+DNA/hAT
+LINE/L1
+LTR/Copia
+LTR/Gypsy
+LTR/unknown
+SINE/tRNA
+nonDNA/helitron
+repeat_fragment

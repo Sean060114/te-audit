@@ -1,0 +1,6 @@
+﻿名字A,A_SO名,A_SO_ID,A类别,名字B,B_SO名,B_SO_ID,B类别,判定,说明
+DNA/DTC,CACTA_TIR_transposon,SO:0002285,Class II,DNA/CACTA,CACTA_TIR_transposon,SO:0002285,Class II,等价,归一后同为 CACTA_TIR_transposon
+LTR/Copia,Copia_LTR_retrotransposon,SO:0002264,Class I,ClassI/LTR/Copia,,,unknown,无法判定,至少一方未命中 TE_SO
+DNA/hAT,hAT_TIR_transposon,SO:0002279,Class II,DNA/Mutator,Mutator_TIR_transposon,SO:0002280,Class II,同目不同科,同属 Class II，但 hAT vs Mutator（EDTA 只记录、不处置的那一类）
+LTR/Copia,Copia_LTR_retrotransposon,SO:0002264,Class I,long_terminal_repeat,long_terminal_repeat,SO:0000286,-,角色不同,element vs sub_feature（不能直接比较）
+LTR/Gypsy,Gypsy_LTR_retrotransposon,SO:0002265,Class I,DNA/Tc1_Mariner,Tc1_Mariner_TIR_transposon,SO:0002278,Class II,跨类冲突,Class I vs Class II（Class I / II 都不同，必然有一方错）

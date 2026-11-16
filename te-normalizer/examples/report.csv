@@ -1,0 +1,9 @@
+﻿输入名,格式,状态,SO 标准名,SO ID,建议
+DNA/Ginger1,standard,matched,Ginger_TIR_transposon,SO:0000182,
+sine/alu,standard,matched_ci,Alu_SINE_retrotransposon,SO:0000206,SINE/Alu
+LTR/Copia/SIRE,clade_style,matched_after_strip,Copia_LTR_retrotransposon,SO:0002264,LTR/Copia
+nMITE,standard,unknown,,,MITE(0.89); TIR/MITE(0.62); MITE/hAT(0.62)
+DNA/MarinerTc1,standard,matched,Tc1_Mariner_TIR_transposon,SO:0002278,
+PLE/Chlamys,standard,matched,Penelope_retrotransposon,SO:0002290,
+Unknown//ClassI,clade_style,unknown,,,Unknown/NA(0.64); Unknown(0.64)
+DNA/CMC-Chapaev,standard,matched,CACTA_TIR_transposon,SO:0002285,

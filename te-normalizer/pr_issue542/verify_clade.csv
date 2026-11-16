@@ -1,0 +1,62 @@
+﻿输入名,格式,状态,命中键,SO 标准名,SO ID,类别,角色,超家族,建议
+ARTEFACT,standard,unknown,,,,unknown,unknown,,MITE/CACTG(0.56) ← 低置信，最高相似度不足 0.60
+DNA/CACTA/MITE,clade_style,matched_after_strip,DNA/CACTA,CACTA_TIR_transposon,SO:0002285,Class II,element,CACTA,DNA/CACTA
+DNA/CACTA/nMITE,clade_style,matched_after_strip,DNA/CACTA,CACTA_TIR_transposon,SO:0002285,Class II,element,CACTA,DNA/CACTA
+DNA/CACTA/unknown,clade_style,matched_after_strip,DNA/CACTA,CACTA_TIR_transposon,SO:0002285,Class II,element,CACTA,DNA/CACTA
+DNA/Harbinger/MITE,clade_style,matched_after_strip,DNA/Harbinger,PIF_Harbinger_TIR_transposon,SO:0002284,Class II,element,PIF_Harbinger,DNA/Harbinger
+DNA/Harbinger/nMITE,clade_style,matched_after_strip,DNA/Harbinger,PIF_Harbinger_TIR_transposon,SO:0002284,Class II,element,PIF_Harbinger,DNA/Harbinger
+DNA/Harbinger/unknown,clade_style,matched_after_strip,DNA/Harbinger,PIF_Harbinger_TIR_transposon,SO:0002284,Class II,element,PIF_Harbinger,DNA/Harbinger
+DNA/Mutator/MITE,clade_style,matched_after_strip,DNA/Mutator,Mutator_TIR_transposon,SO:0002280,Class II,element,Mutator,DNA/Mutator
+DNA/Mutator/nMITE,clade_style,matched_after_strip,DNA/Mutator,Mutator_TIR_transposon,SO:0002280,Class II,element,Mutator,DNA/Mutator
+DNA/Mutator/unknown,clade_style,matched_after_strip,DNA/Mutator,Mutator_TIR_transposon,SO:0002280,Class II,element,Mutator,DNA/Mutator
+DNA/P/nMITE,clade_style,matched_after_strip,DNA/P,P_TIR_transposon,SO:0001535,Class II,element,P,DNA/P
+DNA/TcMar/MITE,clade_style,matched_after_strip,DNA/TcMar,Tc1_Mariner_TIR_transposon,SO:0002278,Class II,element,Tc1_Mariner,DNA/TcMar
+DNA/TcMar/nMITE,clade_style,matched_after_strip,DNA/TcMar,Tc1_Mariner_TIR_transposon,SO:0002278,Class II,element,Tc1_Mariner,DNA/TcMar
+DNA/TcMar/unknown,clade_style,matched_after_strip,DNA/TcMar,Tc1_Mariner_TIR_transposon,SO:0002278,Class II,element,Tc1_Mariner,DNA/TcMar
+DNA/hAT/MITE,clade_style,matched_after_strip,DNA/hAT,hAT_TIR_transposon,SO:0002279,Class II,element,hAT,DNA/hAT
+DNA/hAT/nMITE,clade_style,matched_after_strip,DNA/hAT,hAT_TIR_transposon,SO:0002279,Class II,element,hAT,DNA/hAT
+DNA/hAT/unknown,clade_style,matched_after_strip,DNA/hAT,hAT_TIR_transposon,SO:0002279,Class II,element,hAT,DNA/hAT
+LTR/Copia/Ale,clade_style,matched,LTR/Copia/Ale,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Alesia,clade_style,matched,LTR/Copia/Alesia,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Angela,clade_style,matched,LTR/Copia/Angela,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Bianca,clade_style,matched,LTR/Copia/Bianca,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Bryco,clade_style,matched,LTR/Copia/Bryco,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Gymco-I,clade_style,matched,LTR/Copia/Gymco-I,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Gymco-II,clade_style,matched,LTR/Copia/Gymco-II,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Gymco-III,clade_style,matched,LTR/Copia/Gymco-III,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Ikeros,clade_style,matched,LTR/Copia/Ikeros,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Ivana,clade_style,matched,LTR/Copia/Ivana,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/SIRE,clade_style,matched,LTR/Copia/SIRE,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/TAR,clade_style,matched,LTR/Copia/TAR,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/Tork,clade_style,matched,LTR/Copia/Tork,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Copia/mixture,clade_style,matched,LTR/Copia/mixture,Copia_LTR_retrotransposon,SO:0002264,Class I,element,Copia,
+LTR/Gypsy/Athila,clade_style,matched,LTR/Gypsy/Athila,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/CRM,clade_style,matched,LTR/Gypsy/CRM,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Chlamyvir,clade_style,matched,LTR/Gypsy/Chlamyvir,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Galadriel,clade_style,matched,LTR/Gypsy/Galadriel,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Ogre,clade_style,matched,LTR/Gypsy/Ogre,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Phygy,clade_style,matched,LTR/Gypsy/Phygy,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Reina,clade_style,matched,LTR/Gypsy/Reina,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Retand,clade_style,matched,LTR/Gypsy/Retand,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Selgy,clade_style,matched,LTR/Gypsy/Selgy,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/TatII,clade_style,matched,LTR/Gypsy/TatII,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/TatIII,clade_style,matched,LTR/Gypsy/TatIII,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Tcn1,clade_style,matched,LTR/Gypsy/Tcn1,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/Tekay,clade_style,matched,LTR/Gypsy/Tekay,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/chromo-outgroup,clade_style,matched,LTR/Gypsy/chromo-outgroup,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/mixture,clade_style,matched,LTR/Gypsy/mixture,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/Gypsy/non-chromo-outgroup,clade_style,matched,LTR/Gypsy/non-chromo-outgroup,Gypsy_LTR_retrotransposon,SO:0002265,Class I,element,Gypsy,
+LTR/PIF_Harbinger,standard,unknown,,,,unknown,unknown,,TIR/PIF_Harbinger(0.94); DNA/PIF_Harbinger(0.82); PIF/Harbinger(0.80)
+LTR/mixture,standard,unknown,,,,unknown,unknown,,LTR/Gypsy/mixture(0.79); LTR/Copia/mixture(0.79); LTR/Viper(0.60)
+MITE/NA,standard,unknown,,,,unknown,unknown,,MITE/hAT(0.80); MITE/DTA(0.80); MITE(0.73)
+PLE/NA,standard,unknown,,,,unknown,unknown,,LINE/NA(0.77); PLE/Naiad(0.67); PLE(0.67)
+TIR/Novosib,standard,unknown,,,,unknown,unknown,,DNA/Novosib(0.73); TIR/Kolobok(0.64)
+Unknown//ClassI,malformed,unknown,,,,unknown,unknown,,Unknown/NA(0.64); Unknown(0.64)
+Unknown//ClassII,malformed,unknown,,,,unknown,unknown,,Unknown/NA(0.62); Unknown(0.61)
+Unspecified/NA,standard,unknown,,,,unknown,unknown,,Unspecified(0.88)
+mixture,standard,unknown,,,,unknown,unknown,,LTR/Gypsy/mixture(0.58) ← 低置信，最高相似度不足 0.60
+mixture/NA,standard,unknown,,,,unknown,unknown,,Helitron/NA(0.57) ← 低置信，最高相似度不足 0.60
+nLTR,standard,unknown,,,,unknown,unknown,,LTR(0.86); non_LTR(0.73); LTR/NA(0.60)
+nLTR/NA,standard,unknown,,,,unknown,unknown,,LTR/NA(0.92); snRNA/NA(0.67); snRNA(0.67)
+nMITE,standard,unknown,,,,unknown,unknown,,MITE(0.89); TIR/MITE(0.62); MITE/hAT(0.62)
+nMITE/NA,standard,unknown,,,,unknown,unknown,,MITE/hAT(0.75); MITE/DTA(0.75); SINE/NA(0.67)

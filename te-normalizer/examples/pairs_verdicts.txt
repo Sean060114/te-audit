@@ -1,0 +1,10 @@
+# 四种判定各一个例子（人工构造，用于回归）
+# 等价：同一概念的两种写法
+DNA/DTC	DNA/CACTA
+LTR/Copia	ClassI/LTR/Copia
+# 同目不同科：都是 Class II，但超家族不同
+DNA/hAT	DNA/Mutator
+# 角色不同：一个是元件，一个是元件的零件
+LTR/Copia	long_terminal_repeat
+# 跨类冲突：Class I vs Class II
+LTR/Gypsy	DNA/Tc1_Mariner

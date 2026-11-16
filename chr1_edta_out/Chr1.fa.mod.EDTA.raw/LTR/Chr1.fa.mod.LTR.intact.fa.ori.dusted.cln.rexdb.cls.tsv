@@ -1,0 +1,41 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+Chr1:10610329..10614183#LTR/Copia	LTR	Copia	Ale	no	+	GAG|Ale PROT|Ale INT|Ale RH|Ale
+Chr1:11152835..11148091#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:11789452..11794077#LTR/Copia	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:12406711..12410000#LTR/Copia	LTR	Copia	Ale	no	+	RT|Ale RH|Ale
+Chr1:12813589..12816476#LTR/Copia	LTR	Copia	Bianca	no	+	RT|Bianca RH|Bianca
+Chr1:13023945..13019157#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:13334466..13339870#LTR/Gypsy	LTR	Gypsy	Reina	yes	+	GAG|Reina PROT|Reina RT|Reina RH|Reina INT|Reina CHD|Reina
+Chr1:13439445..13448523#LTR/Copia	LTR	Copia	SIRE	yes	+	GAG|SIRE PROT|SIRE INT|SIRE RT|SIRE RH|SIRE
+Chr1:13515964..13507780#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+Chr1:13659273..13667557#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+Chr1:13818567..13823888#LTR/Gypsy	LTR	Gypsy	Reina	yes	+	GAG|Reina PROT|Reina RT|Reina RH|Reina INT|Reina CHD|Reina
+Chr1:13883073..13890962#LTR/Gypsy	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+Chr1:14019278..14024518#LTR/Gypsy	LTR	Gypsy	Reina	yes	+	GAG|Reina PROT|Reina RT|Reina RH|Reina INT|Reina CHD|Reina
+Chr1:14134851..14129671#LTR/Copia	LTR	Copia	Tork	yes	+	GAG|Tork PROT|Tork INT|Tork RT|Tork RH|Tork
+Chr1:14225656..14214747#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+Chr1:14432223..14442952#LTR/Gypsy	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+Chr1:15240543..15244711#LTR/Gypsy	LTR	Gypsy	CRM	no	+	GAG|CRM CHDCR|CRM
+Chr1:15337662..15341830#LTR/Gypsy	LTR	Gypsy	CRM	no	+	GAG|CRM CHDCR|CRM
+Chr1:16117829..16124076#LTR/Copia	LTR	Copia	SIRE	no	+	GAG|SIRE PROT|SIRE RT|SIRE RH|SIRE
+Chr1:16557069..16551721#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:16637234..16626036#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand RH|Retand TPase|Ginger
+Chr1:16858040..16853318#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:17029257..17023916#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:17203926..17206318#LTR/Copia	LTR	Copia	Ivana	no	+	GAG|Ivana PROT|Ivana RH|Ivana
+Chr1:17255285..17265289#LTR/Gypsy	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand RT|Retand aRH|Retand INT|Retand
+Chr1:17443081..17446790#LTR/Copia	LTR	Copia	Ale	no	+	PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:17473527..17476671#LTR/Gypsy	LTR	Gypsy	Reina	no	+	GAG|Reina
+Chr1:17520597..17525126#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:17681382..17676607#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:18828527..18833280#LTR/Copia	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:21249198..21244324#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:21351041..21346162#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:21529850..21524995#LTR/Copia	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:22105329..22100644#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:26366607..26371668#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale
+Chr1:3780765..3785720#LTR/Copia	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:4411120..4406006#LTR/Copia	LTR	Copia	Bianca	no	+	RH|Bianca
+Chr1:6538415..6543535#LTR/Copia	LTR	Copia	Bianca	no	+	RH|Bianca
+Chr1:7717356..7722547#LTR/Copia	LTR	Copia	Ivana	yes	+	GAG|Ivana PROT|Ivana INT|Ivana RT|Ivana RH|Ivana
+Chr1:9476002..9480634#LTR/Copia	LTR	Copia	Ale	yes	+	GAG|Ale PROT|Ale INT|Ale RT|Ale RH|Ale

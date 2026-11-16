@@ -1,0 +1,14 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+OsChr1:12907908..12912208#DNA/DTC	LTR	Copia	Ale	no	+	GAG|Ale PROT|Ale
+OsChr1:12908193..12911922#DNA/DTM	LTR	Copia	Ale	no	+	GAG|Ale
+OsChr1:14337224..14340397#DNA/DTC	LINE	unknown	unknown	unknown	-	RH|LINE
+OsChr1:15387170..15392183#DNA/DTH	TIR	PIF_Harbinger	unknown	unknown	-	TPase|PIF_Harbinger
+OsChr1:17376368..17381207#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:17376457..17381077#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:20173144..20177695#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:3147435..3148979#DNA/DTM	LTR	Copia	Ivana	no	-	GAG|Ivana
+OsChr1:32123080..32126437#DNA/DTH	LTR	Gypsy	Reina	no	+	GAG|Reina
+OsChr1:36609926..36614941#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:36609927..36614940#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:37694047..37696711#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:5963699..5964925#DNA/DTH	LTR	Copia	Ale	no	+	RT|Ale
