@@ -20,6 +20,8 @@ tests.py —— normalize.py 的断言测试集（标准库 unittest，零依赖
     python -m unittest tests -v     # 同上
 """
 
+import contextlib
+import io
 import os
 import subprocess
 import sys
@@ -556,6 +558,106 @@ class TestDisplayHelpers(unittest.TestCase):
         self.assertLessEqual(N.disp_width(out), 25)
         # 短名字不动
         self.assertEqual(N.clip("DNA/hAT", 25), "DNA/hAT")
+
+
+# ---------------------------------------------------------------------------
+# 第 6 层：不一致率（--total / --baseline）
+#
+# 这一层要守住的只有一件事：**分母**。
+# EDTA 的 Inconsistent_rate 是 17/1593 = 1.07%，分母是"库里全部序列"；
+# 我们过去只报"分歧对占多少对、涉及多少条"，分母是"出现分歧的那部分"。
+# 两个数碰巧都在 1% 附近，最容易发生的错误就是把它们当成可比的。
+# ---------------------------------------------------------------------------
+class TestRate(unittest.TestCase):
+
+    def capture(self, wtally, total, baseline=None):
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            N.print_rate(wtally, total, baseline)
+        return buf.getvalue()
+
+    def test_real_numbers_17_of_1593(self):
+        """EDTA 实测口径：17 / 1593 = 1.07%"""
+        out = self.capture({"跨类冲突": 6, "同目不同科": 11}, 1593)
+        self.assertIn("1.07%", out)
+        self.assertIn("1593", out)
+
+    def test_all_equivalent_is_zero(self):
+        out = self.capture({"等价": 10}, 10)
+        self.assertIn("0.00%", out)
+
+    def test_role_difference_reported_separately(self):
+        """只角色不同不算判断分歧，必须单独列，否则会虚增不一致率"""
+        out = self.capture({"角色不同": 4, "同目不同科": 6}, 50)
+        self.assertIn("20.00%", out)          # 非等价 10/50
+        self.assertIn("12.00%", out)          # 真冲突 6/50
+        self.assertIn("仅角色不同", out)
+
+    def test_role_note_absent_when_zero(self):
+        out = self.capture({"跨类冲突": 5}, 100)
+        self.assertNotIn("仅角色不同", out)
+
+    def test_baseline_equal_says_consistent(self):
+        out = self.capture({"跨类冲突": 17}, 1593, 1.07)
+        self.assertIn("一致", out)
+        self.assertNotIn("-0.00", out)
+
+    def test_baseline_diff_shows_gap(self):
+        out = self.capture({"跨类冲突": 17}, 1593, 2.00)
+        self.assertIn("-0.93 pp", out)
+
+
+class TestRateCli(unittest.TestCase):
+
+    def run_cli(self, *args):
+        env = dict(os.environ, PYTHONIOENCODING="utf-8")
+        return subprocess.run([sys.executable, str(BASE / "normalize.py"), *args],
+                              cwd=str(BASE), capture_output=True, text=True,
+                              encoding="utf-8", env=env)
+
+    def test_end_to_end_matches_edta(self):
+        r = self.run_cli(str(EX / "pairs_matrix.txt"), "--pairs",
+                         "--total", "1593", "--baseline", "1.07")
+        self.assertEqual(r.returncode, 0)
+        self.assertIn("不一致率", r.stdout)
+        self.assertIn("1.07%", r.stdout)
+        self.assertIn("EDTA 自报", r.stdout)
+
+    def test_total_too_small_warns_and_skips(self):
+        """分母比分子还小 → 不输出比率（宁可不给，也不给错的）"""
+        r = self.run_cli(str(EX / "pairs_matrix.txt"), "--pairs", "--total", "5")
+        self.assertEqual(r.returncode, 0)
+        self.assertNotIn("不一致率", r.stdout)
+        self.assertIn("分母给错了", r.stderr)
+
+    def test_total_requires_pairs(self):
+        r = self.run_cli(str(EX / "test_names.txt"), "--total", "1593")
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("--total", r.stderr)
+
+    def test_baseline_requires_total(self):
+        r = self.run_cli(str(EX / "pairs_matrix.txt"), "--pairs", "--baseline", "1.07")
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("--total", r.stderr)
+
+    def test_total_must_be_positive(self):
+        r = self.run_cli(str(EX / "pairs_matrix.txt"), "--pairs", "--total", "0")
+        self.assertEqual(r.returncode, 2)
+
+
+class TestSuiteGuard(unittest.TestCase):
+    """用例数不能减少——防止"改代码顺手删掉一条断言"这种无声退化。
+
+    新增用例时把 BASELINE 一起加上；这里只做单向检查（变多不管，变少报错）。
+    """
+
+    BASELINE = 69          # 2026-11-17 加 --total 之前是 57，本轮 +12
+
+    def test_case_count_not_reduced(self):
+        n = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__]).countTestCases()
+        self.assertGreaterEqual(
+            n, self.BASELINE,
+            f"用例数从 {self.BASELINE} 降到了 {n}：有断言被删掉了？")
 
 
 if __name__ == "__main__":

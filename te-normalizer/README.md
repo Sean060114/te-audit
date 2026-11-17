@@ -46,6 +46,7 @@ te-normalizer/
     ├── counts_demo.out          # 模块 2 完整运行输出（可当报告截图用）
     ├── verbose_demo.out         # test_names.txt 跑 --verbose 的输出快照
     ├── weight_demo.out          # pairs_matrix.txt 跑 --pairs --weight 的输出快照
+    ├── rate_demo.out            # 再给 --total 1593 --baseline 1.07：17/1593 = 1.07% 与 EDTA 对齐
     └── report.csv               # 早期运行产物示例
 
     # 约定：examples/ 下的 .txt 一律是「输入」（可直接喂给 normalize.py），
@@ -69,6 +70,8 @@ python normalize.py examples/pairs_matrix.txt --pairs          # 分歧对判定
 python normalize.py examples/pairs_matrix.txt --pairs --verbose # 配对 + 归一明细
 python normalize.py examples/pairs_matrix.txt --pairs --out pairs_report.csv
 python normalize.py examples/pairs_matrix.txt --pairs --weight   # 按次数加权
+python normalize.py examples/pairs_matrix.txt --pairs --weight \
+       --total 1593 --baseline 1.07    # 再加：与 EDTA 同分母的加权不一致率
 
 # 模块 2
 python check_counts.py --gff3 chr1.fa.mod.EDTA.TEanno.gff3 \
@@ -173,6 +176,20 @@ vs 元素级 3461 行，差的 205 个正是 `sub_feature` / `region` 行——�
 
 ## 变更记录
 
+- 2026-11-17（v1.4）`--total` / `--baseline`：把不一致率放回 EDTA 的分母上。
+  1. 背景：`--weight` 报的是「分歧对占多少对 / 涉及多少条」，分母是**出现分歧的那部分**；
+     EDTA 打印的 `Inconsistent_rate` 分母是**库里全部序列**（本次 17 / 1593 = 1.07%）。
+     两个数碰巧都在 1% 附近，一旦并排引用就会得出"我们和 EDTA 一致"的错误结论。
+  2. 新增 `print_rate()`：给了 `--total N` 才算，输出 非等价条数 / 加权不一致率；
+     `--baseline X` 再与 EDTA 自报值并排，差值 < 0.005 pp 时写"一致"而不写 `-0.00`。
+  3. **分子分两档**：`全部非等价`（可比 EDTA 口径）与`只算真冲突`（剔除"角色不同"——
+     `element` vs `sub_feature` 不是判断分歧）。两个都报，读者自己选，不替他决定哪个算错。
+  4. 分母给错（`--total` 小于实际涉及的序列数）时**不输出比率**，只告警——
+     宁可少一个数，也不给一个分母错了的百分数。
+  5. `--total` / `--baseline` 不带 `--pairs`、`--baseline` 不带 `--total`、`--total <= 0`
+     三种误用均报错退出（exit 2），不静默忽略。
+  6. `tests.py` 57 → 69 条断言（新增 12 条：`print_rate` 单元 6 条 + CLI 5 条 + 用例数守卫 1 条）。
+     **守卫**：`TestSuiteGuard` 断言用例总数不少于 69，防止以后改代码时顺手删断言。
 - 2026-11-16 `load_te_so` 增加别名冲突记账；修文件句柄泄漏。
   1. 返回值改为三元组 `(alias_to_so, so_names, conflicts)`。旧实现遇到「同一别名指向不同
      SO 名」时后者静默覆盖前者，查表结果取决于文件里的行走顺序，出了问题毫无痕迹。
@@ -308,8 +325,9 @@ clade 那 30 条对 `normalize.py` **零增量**——剥结构后缀、按亚�
    `tests.py` 加"用例数不能减少"的守卫，防止以后误删断言）；
 4. ~~【半天】给 `--pairs` 加 `--weight` 参数，按混淆矩阵第 3 列加权~~
    （已完成，见上节 `rank_pairs` / `print_weighted`；顺带发现镜像对必须先合并，
-   否则同一对分歧会占两个名次。下一个练习：把 `--weight` 的分母做成 `--total`，
-   直接算出"按科级重判的加权不一致率"，与 EDTA 的 1.07% 并排放）；
+   否则同一对分歧会占两个名次。~~下一个练习：把 `--weight` 的分母做成 `--total`~~
+   已于 2026-11-17 完成，见 v1.4 与 `examples/rate_demo.out`；
+   下一个练习：让 `--total` 可以从 `TEanno.sum` / 混淆矩阵直接读出来，免去手填）；
 5. ~~【半天】从 `aliases_issue542.csv` 筛出缺失行，自动生成 PR 用的新增行文本
    （对照 TE_SO 文件中同 SO 组的现有行格式）~~
    （已完成，见 `make_alias_pr.py` 与 `pr_issue542/`；实际产出不是"61 行新条目"

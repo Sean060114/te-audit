@@ -484,6 +484,42 @@ def print_weighted(recs, tally, wtally):
 
 
 # ---------------------------------------------------------------------------
+# 函数 8b：把"加权不一致率"算出来（--total 的输出层）
+#
+# 为什么需要它：EDTA 自己会打印一个 Inconsistent_rate，分母是**库里全部序列数**
+# （本次 Chr1 实测 17 / 1593 = 1.07%）。我们的 --weight 只报"分歧对占多少对 /
+# 涉及多少条"，分母是"出现分歧的那部分"，与 EDTA 的数不可比——两个都在 1% 附近
+# 的百分数，分母差一个数量级。给了 --total 之后两边才落在同一把尺子上。
+#
+# 分子分两档，因为"不一致"有两种含义：
+#   全部非等价对     ——含"角色不同"（element vs sub_feature），可比 EDTA 的口径
+#   只算真冲突       ——去掉"角色不同"和"等价"，才是真正的判断分歧
+# 把两个都报出来，读者自己选，不要替他决定哪个才算"错"。
+# ---------------------------------------------------------------------------
+def print_rate(wtally, total, baseline=None):
+    total_w = sum(wtally.values())
+    agree = wtally.get("等价", 0)
+    all_bad = total_w - agree
+    role_only = wtally.get("角色不同", 0)
+    real_bad = all_bad - role_only
+
+    print()
+    print("不一致率（与 EDTA 同一分母）")
+    print("  " + pad("库序列总数 N", 20) + pad(total, 10))
+    print("  " + pad("其中等价", 20) + pad(agree, 10))
+    print("  " + pad("非等价", 20) + pad(all_bad, 10)
+          + f"  → {all_bad / total * 100:.2f}%")
+    print("  " + pad("只算真冲突", 20) + pad(real_bad, 10)
+          + f"  → {real_bad / total * 100:.2f}%"
+          + (f"（另有 {role_only} 条仅角色不同，不计入）" if role_only else ""))
+    if baseline is not None:
+        diff = all_bad / total * 100 - baseline
+        dtxt = "一致" if abs(diff) < 0.005 else f"差 {diff:+.2f} pp"
+        print("  " + pad("EDTA 自报", 20) + pad(f"{baseline:.2f}%", 10) + f"  {dtxt}")
+        print("  读法：两边同分母可比；差异只能来自分桶规则，不是数据。")
+
+
+# ---------------------------------------------------------------------------
 # 函数 9：主流程 —— 解析参数 -> 加载 -> 逐个查 -> 打印/写 CSV
 # ---------------------------------------------------------------------------
 def main():
@@ -500,9 +536,20 @@ def main():
     ap.add_argument("--weight", action="store_true",
                     help="配合 --pairs：把第三列的次数当权重，合并镜像对后按权重排序，"
                          "并对比未加权/加权的判定分布")
+    ap.add_argument("--total", type=int, default=None,
+                    help="配合 --pairs：库/混淆矩阵的总序列数（EDTA 报 Inconsistent_rate 的"
+                         "分母）。给了才输出「加权不一致率」，与 EDTA 自报值同分母可比")
+    ap.add_argument("--baseline", type=float, default=None,
+                    help="配合 --total：EDTA 自报的不一致率（%%），用于算差值")
     args = ap.parse_args()
     if args.weight and not args.pairs:
         ap.error("--weight 只能配合 --pairs 使用（权重来自分歧对的第三列次数）")
+    if (args.total is not None or args.baseline is not None) and not args.pairs:
+        ap.error("--total / --baseline 只能配合 --pairs 使用（分子来自配对判定）")
+    if args.baseline is not None and args.total is None:
+        ap.error("--baseline 需要同时给 --total：没有分母就算不出可比的不一致率")
+    if args.total is not None and args.total <= 0:
+        ap.error("--total 必须是正整数（它是库序列总数，不是分歧条数）")
 
     alias_to_so, so_names, conflicts = load_te_so(args.te_so)
     if conflicts:
@@ -557,6 +604,13 @@ def main():
             for r in recs:
                 if r["verdict"] != "等价":
                     print(f"  [{r['verdict']:<6}] {r['a']:<20} vs {r['b']:<20} -> {r['why']}")
+        if args.total is not None:
+            involved = sum(wtally.values())
+            if involved > args.total:
+                print(f"警告：配对记录共涉及 {involved} 条序列，超过 --total {args.total}。"
+                      "分母给错了？不一致率未输出。", file=sys.stderr)
+            else:
+                print_rate(wtally, args.total, args.baseline)
         if args.verbose and non_exact:
             print("\n" + "-" * 70)
             print("配对模式下的归一明细（--verbose）")

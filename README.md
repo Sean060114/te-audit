@@ -14,7 +14,7 @@
 
 | 模块 | 回答什么问题 | 入口 | 测试 | 文档 |
 |---|---|---|---:|---|
-| **0 名称规范化** | EDTA 的 `DNA/hAT` 和 TEsorter 的 `hAT_TIR_transposon` 到底是不是一回事？ | `te-normalizer/normalize.py` | 57 | `te-normalizer/README.md` |
+| **0 名称规范化** | EDTA 的 `DNA/hAT` 和 TEsorter 的 `hAT_TIR_transposon` 到底是不是一回事？ | `te-normalizer/normalize.py` | 69 | `te-normalizer/README.md` |
 | **1 完整性检查** | 这份注释的哪些结论站不住？ | `te_check.py`（C1–C6）<br>`bench_multi.py`（多数据集横向） | 77 | `te_check_README.md`<br>`TE_case/报表_*.md` |
 | **2 交叉验证** | EDTA 与独立注释差在哪，谁更可能对？ | `compare_araport11.py`（拟南芥 vs Araport11）<br>`compare_rice_te.py`（水稻 vs MSU RGAP7）<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`（含 k-mer 数据与发表级缺口附录）<br>`报表_水稻交叉验证与跨染色体基准.md` |
 | **交付** | 把一份注释整理成可交付、可自校验的包 | `build_delivery_package.py`<br>`validate_delivery.py` | — | `delivery/`（不入库，可由 tar 包解出） |
@@ -34,6 +34,12 @@
 ---
 
 ## 二、当前状态
+
+**模块 0 已收尾**（代码与文档层面）：809 个别名、0 冲突，69 条测试；
+能出规范化名 + 置信度 + 差异报告，并能把不一致率放回 EDTA 的分母上
+（17 / 1593 = 1.07%，与 EDTA 自报值一致，见 `te-normalizer/examples/rate_demo.out`）。
+**唯一未闭合项是上游 PR #655**（21 条别名）待维护者回复——不由我们决定，
+代码侧能做的已经做完（补丁、理由、逐条排除项都写在 PR 描述里）。
 
 判据在 **六份独立运行、两个科** 的数据上验证过（详见 `TE_case/`）：
 
@@ -131,7 +137,7 @@ papers/                 立项时读的文献
 |---|---|
 | `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 **77 条**测试 |
 | `run_bench_rice.sh` | 现行 EDTA 运行脚本（参数化，含 `.mod.mod` 修复与 tee 日志） |
-| `te-normalizer/` | 模块 0，独立可跑（57 条测试） |
+| `te-normalizer/` | 模块 0，独立可跑（69 条测试） |
 | `compare_araport11.py` `compare_rice_te.py` `candidates_novel.py` `make_publication_tables.py` | 模块 2 |
 | `build_delivery_package.py` `validate_delivery.py` `make_deliverables.sh` `make_union_softmask.py` `get_dfam_lib.sh` `run_validation.sh` | 交付包与验证 |
 | `archive/` | 三版历史运行脚本 + 一份被推翻的判据报告，失败记录 |
