@@ -39,11 +39,11 @@ EDTA 注释 vs MSU RGAP7 官方重复序列注释（水稻 IRGSP-1.0，多染色
     # 单染色体（与旧版等价）
     python compare_rice_te.py --edta rice/edta_out/Oryza_sativa.Chr1.fa.mod.EDTA.TEanno.gff3
 
-    # 多染色体
-    python compare_rice_te.py --edta rice/edta_out2/Oryza_sativa.Chr1_Chr12.fa.mod.EDTA.TEanno.gff3 \
+    # 多染色体（Chr1+Chr12 同库运行）
+    python compare_rice_te.py --edta rice/edta_out_multi/Oryza_sativa.Chr1_Chr12.fa.mod.EDTA.TEanno.gff3 \
         --fasta rice/Oryza_sativa.Chr1_Chr12.fa \
         --chrom OsChr1=Chr1 --chrom OsChr12=Chr12 \
-        --tsv rice/msu_vs_edta.multi.per_class.tsv --json rice/msu_vs_edta.multi.json
+        --tsv rice/msu_vs_edta.per_class.tsv --json rice/msu_vs_edta.json
 """
 import argparse
 import gzip
