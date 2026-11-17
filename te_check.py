@@ -106,6 +106,7 @@ def parse_intact(path):
             d = attrs(f[8])
             start, end = int(f[3]), int(f[4])
             r = dict(
+                chrom=f[0],
                 type=f[2], start=start, end=end, length=end - start + 1,
                 strand=f[6], cls=d.get("classification", ""),
                 identity=None, ltr_identity=None,
@@ -246,12 +247,20 @@ def check_coverage(recs, cls_rows):
     缺失即意味着被静默丢弃。TIR / helitron 的注释并不依赖分类器（identity
     多来自库同源匹配），分类表只覆盖建库时的一个子集，故仅作参考。
     """
-    classified = {(c["start"], c["end"]) for c in cls_rows}
+    # 按染色体分组：多序列输入（如 Chr1+Chr12）时，不同染色体可能有相同坐标，
+    # 只用 (start,end) 配对会把 A 染色体的分类结果当成 B 染色体的，静默错配。
+    by_chrom = defaultdict(list)
+    for c in cls_rows:
+        by_chrom[c.get("seqid", "")].append((c["start"], c["end"]))
+    every = [iv for v in by_chrom.values() for iv in v]
     tol = 5
 
     def covered(r):
+        # 记录没有染色体信息时退化为全表匹配（保持旧行为，也兼容手工构造的记录）
+        ch = r.get("chrom")
+        pool = by_chrom.get(ch, ()) if ch else every
         return any(abs(s - r["start"]) <= tol and abs(e - r["end"]) <= tol
-                   for s, e in classified)
+                   for s, e in pool)
 
     per_class = defaultdict(lambda: [0, 0])   # type -> [covered, total]
     missing_ltr, missing_other = [], []
@@ -301,14 +310,17 @@ def check_ltr_conflict(recs, cls_rows):
     水稻 880801..891653 就是此情形（strand_evidence=domain,PBS,PPT，
     ltr_identity=0.9976，但不在任何 cls.tsv 中）。
     """
-    cls_by_coord = {(c["start"], c["end"]): c for c in cls_rows}
+    cls_by_coord = {(c.get("seqid", ""), c["start"], c["end"]): c for c in cls_rows}
+    cls_by_pos = {(c["start"], c["end"]): c for c in cls_rows}   # 无染色体时的退化路径
     out = []
     for r in recs:
         if r["type"] not in LTR_TYPES:
             continue
         if r["ltr_identity"] is None or r["ltr_identity"] < 0.95:
             continue
-        c = cls_by_coord.get((r["start"], r["end"]))
+        ch = r.get("chrom")
+        c = (cls_by_coord.get((ch, r["start"], r["end"])) if ch
+             else cls_by_pos.get((r["start"], r["end"])))
         cls_domain = bool(c and c["domains"] and c["domains"] != "NA")
         gff_domain = "domain" in (r.get("strand_ev") or "").lower()
         if not (cls_domain or gff_domain):

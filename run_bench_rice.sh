@@ -79,12 +79,14 @@ if [ ! -s "$SRC" ]; then
     exit 1
 fi
 printf " 输入序列   : %s\n" "$SRC"
-printf " 序列总长   : %s bp\n" \
-    "$(awk 'NR>1{n+=length($0)} END{print n}' "$SRC")"
+# 注意用 !/^>/ 而不是 NR>1：多序列输入时后续表头行会被当成序列行计入长度
+SEQ_LEN=$(awk '!/^>/{n+=length($0)} END{print n}' "$SRC")
+SEQ_N=$(grep -c '^>' "$SRC")
+printf " 序列总长   : %s bp（%s 条序列）\n" "$SEQ_LEN" "$SEQ_N"
 echo
 
 AVAIL=$(df -Pk "$HOME" | awk 'NR==2{printf "%.1f", $4/1048576}')
-echo " 家目录可用 : ${AVAIL} GB（43 Mb 基因组的 EDTA 中间产物通常 < 5 GB）"
+echo " 家目录可用 : ${AVAIL} GB（${SEQ_LEN} bp 的中间产物通常 < 10 GB）"
 if [ "${AVAIL%%.*}" -lt 5 ] 2>/dev/null; then
     echo " ⚠ 空间偏紧，继续前建议清理。仍将尝试运行。"
 fi
@@ -100,6 +102,11 @@ cd "$OUT" || exit 1
 #   PREFLIGHT=1 bash run_bench_rice.sh
 if [ "${PREFLIGHT:-0}" = "1" ]; then
     SPAN="${PREFLIGHT_SPAN:-3000000}"
+    if [ "$SEQ_N" -gt 1 ]; then
+        echo "❌ 预飞模式只支持单序列输入，当前 $SEQ_N 条。"
+        echo "   多序列请直接跑全量，或先用单条染色体做预飞。"
+        exit 1
+    fi
     TAG="${TAG}.pre${SPAN}"
     G="$TAG.fa"
     DEST="${DEST}_preflight"                 # 与全量结果分开，避免 find_files 混读
@@ -115,7 +122,7 @@ if [ "${PREFLIGHT:-0}" = "1" ]; then
             awk 'NR>1' "$SRC" | tr -d '\n' | cut -c1-"$SPAN" | fold -w 60
         } > "$G" || { echo "截取失败"; exit 1; }
         printf " 已生成 %s（%s bp）\n\n" "$G" \
-            "$(awk 'NR>1{n+=length($0)} END{print n}' "$G")"
+            "$(awk '!/^>/{n+=length($0)} END{print n}' "$G")"
     fi
 fi
 
@@ -214,7 +221,8 @@ else
     echo
 
     EDTA.pl --genome "$G" --species "$SPECIES" --step all \
-            --overwrite 0 --threads "$THREADS" ${CURATED_ARGS[@]+"${CURATED_ARGS[@]}"} 2>&1 | tail -15
+            --overwrite 0 --threads "$THREADS" ${CURATED_ARGS[@]+"${CURATED_ARGS[@]}"} 2>&1 \
+            | tee -a "$OUT/edta_all.log"
 
     # 首次运行若踩到双前缀缺陷，修复后重跑一次（复用中间结果）
     if [ ! -s "$G.mod.EDTA.raw/LTR/$G.mod.LTR.raw.fa" ]; then
@@ -223,7 +231,8 @@ else
         repair_names
         echo
         EDTA.pl --genome "$G" --species "$SPECIES" --step all \
-                --overwrite 0 --threads "$THREADS" ${CURATED_ARGS[@]+"${CURATED_ARGS[@]}"} 2>&1 | tail -15
+                --overwrite 0 --threads "$THREADS" ${CURATED_ARGS[@]+"${CURATED_ARGS[@]}"} 2>&1 \
+            | tee -a "$OUT/edta_all.log"
     fi
 
     if [ ! -s "$G.mod.EDTA.raw/LTR/$G.mod.LTR.raw.fa" ]; then
@@ -244,7 +253,7 @@ else
     echo "[$(date '+%F %T')] 阶段二：--step anno（全基因组注释）"
     echo "=============================================================="
     EDTA.pl --genome "$G" --species "$SPECIES" --step anno --anno 1 \
-            --threads "$THREADS" 2>&1 | tail -12
+            --threads "$THREADS" 2>&1 | tee -a "$OUT/edta_anno.log"
 fi
 
 if [ ! -s "$G.mod.EDTA.intact.gff3" ]; then
@@ -285,7 +294,7 @@ tag        : $TAG
 species    : $SPECIES
 parameters : --step all, then --step anno --anno 1; --overwrite 0; --threads $THREADS
 curatedlib : ${USE_CURATED:-0}
-input      : Ensembl Plants release-57, Oryza_sativa.IRGSP-1.0.dna.chromosome.1
+input      : $(basename "$SRC")  ($SEQ_N 条序列, $SEQ_LEN bp)
 length     : $(awk 'NR>1{n+=length($0)} END{print n}' "$SRC") bp
 edta       : $CONDA_PREFIX
 outdir     : $OUT

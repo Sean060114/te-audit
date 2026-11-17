@@ -452,6 +452,22 @@ class TestC4(Fixture):
         per_class, missing_ltr, _ = T.check_coverage(recs, self.cls)
         self.assertEqual(missing_ltr, [])
 
+    def test_same_coord_other_chrom_not_covered(self):
+        # 多序列输入（Chr1+Chr12）时两条染色体可能有完全相同坐标的元件。
+        # 若配对键不含染色体，B 染色体的分类结果会被当成 A 染色体的，
+        # 覆盖率虚高且完全不报错。这条锁住按染色体分组。
+        recs = [dict(chrom="2", type="Copia_LTR_retrotransposon",
+                     start=20001, end=25000)]
+        per_class, missing_ltr, _ = T.check_coverage(recs, self.cls)   # cls 的 seqid 是 "1"
+        self.assertEqual(len(missing_ltr), 1)
+        self.assertEqual(per_class["Copia_LTR_retrotransposon"], [0, 1])
+
+    def test_same_coord_same_chrom_covered(self):
+        recs = [dict(chrom="1", type="Copia_LTR_retrotransposon",
+                     start=20001, end=25000)]
+        _, missing_ltr, _ = T.check_coverage(recs, self.cls)
+        self.assertEqual(missing_ltr, [])
+
     def test_tolerance_exceeded(self):
         recs = [dict(type="Copia_LTR_retrotransposon", start=20007, end=25000)]
         _, missing_ltr, _ = T.check_coverage(recs, self.cls)
@@ -489,6 +505,15 @@ class TestC5(Fixture):
 
 
 class TestC6(Fixture):
+    def test_other_chrom_not_matched(self):
+        # 与 C4 同理：坐标相同但染色体不同，不能借用另一条染色体的分类结果。
+        # 借了会把"缺域证据"误判成"有域证据"，从而漏报。
+        rec = dict(chrom="2", type="Copia_LTR_retrotransposon",
+                   start=10001, end=15000, ltr_identity=0.99, strand_ev="PBS")
+        hits = T.check_ltr_conflict([rec], self.cls)
+        self.assertEqual(len(hits), 1)
+        self.assertIsNone(hits[0]["cls"])
+
     def test_high_identity_no_domain_hits(self):
         hits = T.check_ltr_conflict(self.recs, self.cls)
         self.assertEqual([(d["element"]["start"], d["element"]["end"]) for d in hits],
