@@ -1,0 +1,58 @@
+side	bucket	bp	covered	rate	extra
+MSU	LTR/Gypsy	2322706	2254314	97.05550336547114	{"top": "LTR/Gypsy 86%；LTR/unknown 7%"}
+MSU	LTR/Copia	368549	349145	94.73502844940565	{"top": "LTR/Copia 87%；Helitron 6%"}
+MSU	LTR/unknown	3656008	3188487	87.21225445896181	{"top": "LTR/Gypsy 58%；LTR/Copia 11%"}
+MSU	DNA/MITE	2436013	2236952	91.82840978270642	{"top": "DNA/TIR 82%；Helitron 7%"}
+MSU	DNA/TIR	3032902	2443178	80.55578452584356	{"top": "DNA/TIR 38%；LTR/Gypsy 32%"}
+MSU	LINE	11598	7737	66.70977754785308	{"top": "LINE 67%"}
+MSU	SINE	175169	138468	79.04823342029697	{"top": "DNA/TIR 60%；Unclassified 10%"}
+MSU	Other/non-TE	63363	35162	55.49295330082224	{"top": "Helitron 37%；LTR/Gypsy 18%"}
+MSU	Unclassified	1124311	665098	59.15605201763569	{"top": "Helitron 36%；DNA/TIR 18%"}
+EDTA	LTR/Gypsy	5083390	4851571	95.439677065895	{"same": 39.463979745799556}
+EDTA	LTR/Copia	835888	762008	91.16149531994718	{"same": 38.19148019830408}
+EDTA	LTR/unknown	543900	418368	76.9200220628792	{"same": 39.02022430593859}
+EDTA	DNA/MITE	300930	216254	71.86189479280895	{"same": 58.29262619213771}
+EDTA	DNA/TIR	6453925	3583194	55.51961015970901	{"same": 17.788183159860086}
+EDTA	Helitron	3444069	1293900	37.56893372345328	{"same": 0.0}
+EDTA	LINE	287690	14620	5.08185894539261	{"same": 2.6893531231533943}
+EDTA	SINE	852	18	2.112676056338028	{"same": 0.0}
+EDTA	Unclassified	63584	35947	56.53466280825364	{"same": 27.80888273779567}
+coarse	LTR				{"msu_bp": 6196278, "edta_bp": 6434873, "inter": 5089422, "recall": 82.13676016473114, "precision": 79.09125790050557}
+coarse	DNA				{"msu_bp": 5360154, "edta_bp": 6649424, "inter": 3188814, "recall": 59.49108924855517, "precision": 47.95624402955805}
+coarse	其他				{"msu_bp": 1368941, "edta_bp": 3787144, "inter": 487860, "recall": 35.63776671164061, "precision": 12.882002902451028}
+MSU_elements	LTR/Gypsy				{"n": 2263, "ge50": 2096, "recall_el": 92.62041537781705, "ge10": 2124}
+MSU_elements	LTR/Copia				{"n": 677, "ge50": 540, "recall_el": 79.76366322008862, "ge10": 551}
+MSU_elements	LTR/unknown				{"n": 6389, "ge50": 5176, "recall_el": 81.01424323055251, "ge10": 5377}
+MSU_elements	DNA/MITE				{"n": 18848, "ge50": 16696, "recall_el": 88.58234295415959, "ge10": 16986}
+MSU_elements	DNA/TIR				{"n": 10682, "ge50": 9146, "recall_el": 85.62067028646321, "ge10": 9496}
+MSU_elements	LINE				{"n": 44, "ge50": 30, "recall_el": 68.18181818181817, "ge10": 30}
+MSU_elements	SINE				{"n": 1744, "ge50": 1449, "recall_el": 83.0848623853211, "ge10": 1471}
+MSU_elements	Other/non-TE				{"n": 262, "ge50": 97, "recall_el": 37.02290076335878, "ge10": 101}
+MSU_elements	Unclassified				{"n": 16225, "ge50": 6867, "recall_el": 42.32357473035439, "ge10": 7151}
+EDTA_only	Helitron				{"n": 5938, "nov": 1946, "nov_pct": 32.771977096665545}
+EDTA_only	DNA/TIR				{"n": 21206, "nov": 3874, "nov_pct": 18.26841459964161}
+EDTA_only	DNA/MITE				{"n": 1510, "nov": 243, "nov_pct": 16.09271523178808}
+EDTA_only	LTR/Gypsy				{"n": 3542, "nov": 101, "nov_pct": 2.8514963297571994}
+EDTA_only	LINE				{"n": 578, "nov": 430, "nov_pct": 74.39446366782006}
+EDTA_only	LTR/Copia				{"n": 696, "nov": 49, "nov_pct": 7.040229885057471}
+EDTA_only	LTR/unknown				{"n": 755, "nov": 140, "nov_pct": 18.543046357615893}
+EDTA_only	Unclassified				{"n": 461, "nov": 84, "nov_pct": 18.22125813449024}
+EDTA_only	SINE				{"n": 10, "nov": 9, "nov_pct": 90.0}
+EDTA_uncovered	DNA/TIR	2870731			{"pct": 50.814533645789695}
+EDTA_uncovered	Helitron	2150169			{"pct": 38.05993490669588}
+EDTA_uncovered	LINE	273070			{"pct": 4.8335858367279245}
+EDTA_uncovered	LTR/Gypsy	231819			{"pct": 4.103405848626472}
+EDTA_uncovered	LTR/unknown	125532			{"pct": 2.222029872399494}
+EDTA_uncovered	DNA/MITE	84676			{"pct": 1.4988417413512056}
+EDTA_uncovered	LTR/Copia	73880			{"pct": 1.307742782500674}
+EDTA_uncovered	Unclassified	27637			{"pct": 0.48919988197037256}
+EDTA_uncovered	SINE	834			{"pct": 0.014762553879338957}
+MSU_uncovered	DNA/TIR	589724			{"pct": 32.04013519658759}
+MSU_uncovered	LTR/unknown	467521			{"pct": 25.400757044386573}
+MSU_uncovered	Unclassified	459213			{"pct": 24.94937734267315}
+MSU_uncovered	DNA/MITE	199061			{"pct": 10.815129369616844}
+MSU_uncovered	LTR/Gypsy	68392			{"pct": 3.7157872604218567}
+MSU_uncovered	SINE	36701			{"pct": 1.993992107918215}
+MSU_uncovered	Other/non-TE	28201			{"pct": 1.5321809061170426}
+MSU_uncovered	LTR/Copia	19404			{"pct": 1.054233477617641}
+MSU_uncovered	LINE	3861			{"pct": 0.20977094707697957}

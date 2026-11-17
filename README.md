@@ -16,7 +16,7 @@
 |---|---|---|---:|---|
 | **0 名称规范化** | EDTA 的 `DNA/hAT` 和 TEsorter 的 `hAT_TIR_transposon` 到底是不是一回事？ | `te-normalizer/normalize.py` | 57 | `te-normalizer/README.md` |
 | **1 完整性检查** | 这份注释的哪些结论站不住？ | `te_check.py`（C1–C6）<br>`bench_multi.py`（多数据集横向） | 74 | `te_check_README.md`<br>`TE_case/报表_*.md` |
-| **2 交叉验证** | EDTA 与独立注释（Araport11）差在哪，谁更可能对？ | `compare_araport11.py`<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`<br>`EDTA_交叉验证报告.md` |
+| **2 交叉验证** | EDTA 与独立注释差在哪，谁更可能对？ | `compare_araport11.py`（拟南芥 vs Araport11）<br>`compare_rice_te.py`（水稻 vs MSU RGAP7）<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`<br>`报表_水稻独立真值集交叉验证.md`<br>`EDTA_交叉验证报告.md` |
 | **交付** | 把一份注释整理成可交付、可自校验的包 | `build_delivery_package.py`<br>`validate_delivery.py` | — | `delivery/`（不入库，可重建） |
 | **上游贡献** | 把工具链里发现的命名缺陷回馈给 EDTA | `te-normalizer/make_alias_pr.py` | — | PR #655 |
 
@@ -48,6 +48,11 @@
 **C1 跨科成立**（五份一致）；**C3 指标无效**（阈值投影，不可跨数据集比较）；
 **C4 分层后成立**（此前"阈值被证伪"的结论是分母算错，已推翻）；
 **C6 跨科复现**（Chr1 / alyrata / 水稻各若干例，成因需逐个区分）。
+
+**模块 2 已扩到水稻**：以 MSU RGAP7（同一 IRGSP-1.0 组装）为独立真值集，
+EDTA 覆盖其 85.3%，在两侧类别都明确的 LTR 组双向一致度 91%–97%；
+EDTA 独有的 5.65 Mb 中 89% 是 Helitron（MSU 词表无此类）与 DNA/TIR（MITE 边界不同）。
+详见 `TE_case/报表_水稻独立真值集交叉验证.md`。
 
 报告里保留了完整的自我修正记录，未删改——C3 的表述修正、C4 的分母修正、
 `.mod.mod` 归因的两次撤回，都原样留在文档里。错误的分母和它导致的错误结论，
@@ -90,6 +95,7 @@ te-normalizer/          模块 0：名称规范化（独立可跑，含自己的
 TE_case/                模块 1 的基线、案例与本项目全部判据检验报告
   报表_多基因组判据检验.md     拟南芥属内三份数据（⚠ 顶部注明 C4 结论已推翻）
   报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（现行结论以此为准）
+  报表_水稻独立真值集交叉验证.md  模块 2 跨物种：水稻 vs MSU RGAP7
   报表_结构注释质量基线.md     最早的单点基线
 archive/                已被取代的运行脚本（保留是为了留下失败记录）
 bench_archive/          col1m / alyrata 的历史运行回传（仅此一份）

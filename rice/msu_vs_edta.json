@@ -1,0 +1,544 @@
+{
+ "genome_len": 43270923,
+ "msu_bp": 12558926,
+ "ed_bp": 16367776,
+ "inter": 10718347,
+ "rows": [
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "MSU",
+   "bp": 2322706,
+   "covered": 2254314,
+   "rate": 97.05550336547114,
+   "top": "LTR/Gypsy 86%；LTR/unknown 7%"
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "MSU",
+   "bp": 368549,
+   "covered": 349145,
+   "rate": 94.73502844940565,
+   "top": "LTR/Copia 87%；Helitron 6%"
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "MSU",
+   "bp": 3656008,
+   "covered": 3188487,
+   "rate": 87.21225445896181,
+   "top": "LTR/Gypsy 58%；LTR/Copia 11%"
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "MSU",
+   "bp": 2436013,
+   "covered": 2236952,
+   "rate": 91.82840978270642,
+   "top": "DNA/TIR 82%；Helitron 7%"
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "MSU",
+   "bp": 3032902,
+   "covered": 2443178,
+   "rate": 80.55578452584356,
+   "top": "DNA/TIR 38%；LTR/Gypsy 32%"
+  },
+  {
+   "bucket": "LINE",
+   "side": "MSU",
+   "bp": 11598,
+   "covered": 7737,
+   "rate": 66.70977754785308,
+   "top": "LINE 67%"
+  },
+  {
+   "bucket": "SINE",
+   "side": "MSU",
+   "bp": 175169,
+   "covered": 138468,
+   "rate": 79.04823342029697,
+   "top": "DNA/TIR 60%；Unclassified 10%"
+  },
+  {
+   "bucket": "Other/non-TE",
+   "side": "MSU",
+   "bp": 63363,
+   "covered": 35162,
+   "rate": 55.49295330082224,
+   "top": "Helitron 37%；LTR/Gypsy 18%"
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "MSU",
+   "bp": 1124311,
+   "covered": 665098,
+   "rate": 59.15605201763569,
+   "top": "Helitron 36%；DNA/TIR 18%"
+  },
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "EDTA",
+   "bp": 5083390,
+   "covered": 4851571,
+   "rate": 95.439677065895,
+   "same": 39.463979745799556
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "EDTA",
+   "bp": 835888,
+   "covered": 762008,
+   "rate": 91.16149531994718,
+   "same": 38.19148019830408
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "EDTA",
+   "bp": 543900,
+   "covered": 418368,
+   "rate": 76.9200220628792,
+   "same": 39.02022430593859
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "EDTA",
+   "bp": 300930,
+   "covered": 216254,
+   "rate": 71.86189479280895,
+   "same": 58.29262619213771
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "EDTA",
+   "bp": 6453925,
+   "covered": 3583194,
+   "rate": 55.51961015970901,
+   "same": 17.788183159860086
+  },
+  {
+   "bucket": "Helitron",
+   "side": "EDTA",
+   "bp": 3444069,
+   "covered": 1293900,
+   "rate": 37.56893372345328,
+   "same": 0.0
+  },
+  {
+   "bucket": "LINE",
+   "side": "EDTA",
+   "bp": 287690,
+   "covered": 14620,
+   "rate": 5.08185894539261,
+   "same": 2.6893531231533943
+  },
+  {
+   "bucket": "SINE",
+   "side": "EDTA",
+   "bp": 852,
+   "covered": 18,
+   "rate": 2.112676056338028,
+   "same": 0.0
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "EDTA",
+   "bp": 63584,
+   "covered": 35947,
+   "rate": 56.53466280825364,
+   "same": 27.80888273779567
+  },
+  {
+   "bucket": "LTR",
+   "side": "coarse",
+   "msu_bp": 6196278,
+   "edta_bp": 6434873,
+   "inter": 5089422,
+   "recall": 82.13676016473114,
+   "precision": 79.09125790050557
+  },
+  {
+   "bucket": "DNA",
+   "side": "coarse",
+   "msu_bp": 5360154,
+   "edta_bp": 6649424,
+   "inter": 3188814,
+   "recall": 59.49108924855517,
+   "precision": 47.95624402955805
+  },
+  {
+   "bucket": "其他",
+   "side": "coarse",
+   "msu_bp": 1368941,
+   "edta_bp": 3787144,
+   "inter": 487860,
+   "recall": 35.63776671164061,
+   "precision": 12.882002902451028
+  },
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "MSU_elements",
+   "n": 2263,
+   "ge50": 2096,
+   "recall_el": 92.62041537781705,
+   "ge10": 2124
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "MSU_elements",
+   "n": 677,
+   "ge50": 540,
+   "recall_el": 79.76366322008862,
+   "ge10": 551
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "MSU_elements",
+   "n": 6389,
+   "ge50": 5176,
+   "recall_el": 81.01424323055251,
+   "ge10": 5377
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "MSU_elements",
+   "n": 18848,
+   "ge50": 16696,
+   "recall_el": 88.58234295415959,
+   "ge10": 16986
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "MSU_elements",
+   "n": 10682,
+   "ge50": 9146,
+   "recall_el": 85.62067028646321,
+   "ge10": 9496
+  },
+  {
+   "bucket": "LINE",
+   "side": "MSU_elements",
+   "n": 44,
+   "ge50": 30,
+   "recall_el": 68.18181818181817,
+   "ge10": 30
+  },
+  {
+   "bucket": "SINE",
+   "side": "MSU_elements",
+   "n": 1744,
+   "ge50": 1449,
+   "recall_el": 83.0848623853211,
+   "ge10": 1471
+  },
+  {
+   "bucket": "Other/non-TE",
+   "side": "MSU_elements",
+   "n": 262,
+   "ge50": 97,
+   "recall_el": 37.02290076335878,
+   "ge10": 101
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "MSU_elements",
+   "n": 16225,
+   "ge50": 6867,
+   "recall_el": 42.32357473035439,
+   "ge10": 7151
+  },
+  {
+   "bucket": "Helitron",
+   "side": "EDTA_only",
+   "n": 5938,
+   "nov": 1946,
+   "nov_pct": 32.771977096665545
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "EDTA_only",
+   "n": 21206,
+   "nov": 3874,
+   "nov_pct": 18.26841459964161
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "EDTA_only",
+   "n": 1510,
+   "nov": 243,
+   "nov_pct": 16.09271523178808
+  },
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "EDTA_only",
+   "n": 3542,
+   "nov": 101,
+   "nov_pct": 2.8514963297571994
+  },
+  {
+   "bucket": "LINE",
+   "side": "EDTA_only",
+   "n": 578,
+   "nov": 430,
+   "nov_pct": 74.39446366782006
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "EDTA_only",
+   "n": 696,
+   "nov": 49,
+   "nov_pct": 7.040229885057471
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "EDTA_only",
+   "n": 755,
+   "nov": 140,
+   "nov_pct": 18.543046357615893
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "EDTA_only",
+   "n": 461,
+   "nov": 84,
+   "nov_pct": 18.22125813449024
+  },
+  {
+   "bucket": "SINE",
+   "side": "EDTA_only",
+   "n": 10,
+   "nov": 9,
+   "nov_pct": 90.0
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "EDTA_uncovered",
+   "bp": 2870731,
+   "pct": 50.814533645789695
+  },
+  {
+   "bucket": "Helitron",
+   "side": "EDTA_uncovered",
+   "bp": 2150169,
+   "pct": 38.05993490669588
+  },
+  {
+   "bucket": "LINE",
+   "side": "EDTA_uncovered",
+   "bp": 273070,
+   "pct": 4.8335858367279245
+  },
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "EDTA_uncovered",
+   "bp": 231819,
+   "pct": 4.103405848626472
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "EDTA_uncovered",
+   "bp": 125532,
+   "pct": 2.222029872399494
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "EDTA_uncovered",
+   "bp": 84676,
+   "pct": 1.4988417413512056
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "EDTA_uncovered",
+   "bp": 73880,
+   "pct": 1.307742782500674
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "EDTA_uncovered",
+   "bp": 27637,
+   "pct": 0.48919988197037256
+  },
+  {
+   "bucket": "SINE",
+   "side": "EDTA_uncovered",
+   "bp": 834,
+   "pct": 0.014762553879338957
+  },
+  {
+   "bucket": "DNA/TIR",
+   "side": "MSU_uncovered",
+   "bp": 589724,
+   "pct": 32.04013519658759
+  },
+  {
+   "bucket": "LTR/unknown",
+   "side": "MSU_uncovered",
+   "bp": 467521,
+   "pct": 25.400757044386573
+  },
+  {
+   "bucket": "Unclassified",
+   "side": "MSU_uncovered",
+   "bp": 459213,
+   "pct": 24.94937734267315
+  },
+  {
+   "bucket": "DNA/MITE",
+   "side": "MSU_uncovered",
+   "bp": 199061,
+   "pct": 10.815129369616844
+  },
+  {
+   "bucket": "LTR/Gypsy",
+   "side": "MSU_uncovered",
+   "bp": 68392,
+   "pct": 3.7157872604218567
+  },
+  {
+   "bucket": "SINE",
+   "side": "MSU_uncovered",
+   "bp": 36701,
+   "pct": 1.993992107918215
+  },
+  {
+   "bucket": "Other/non-TE",
+   "side": "MSU_uncovered",
+   "bp": 28201,
+   "pct": 1.5321809061170426
+  },
+  {
+   "bucket": "LTR/Copia",
+   "side": "MSU_uncovered",
+   "bp": 19404,
+   "pct": 1.054233477617641
+  },
+  {
+   "bucket": "LINE",
+   "side": "MSU_uncovered",
+   "bp": 3861,
+   "pct": 0.20977094707697957
+  }
+ ],
+ "note_bp_top": [
+  [
+   "retrotransposon, putative",
+   1816951
+  ],
+  [
+   "Ty3-gypsy-like retrotransposon, putative",
+   1258808
+  ],
+  [
+   "En/Spm-like transposon, putative",
+   807165
+  ],
+  [
+   "AnacB2 transposon, putative",
+   675042
+  ],
+  [
+   "",
+   630830
+  ],
+  [
+   "Unclassified retrotransposon, putative",
+   622436
+  ],
+  [
+   "Rice chromosome 8 centromere-like LTR retrotransposon, putative",
+   621503
+  ],
+  [
+   "Unclassified repetitive sequence, putative",
+   466006
+  ],
+  [
+   "Tourist-like MITE, putative",
+   437132
+  ],
+  [
+   "Unclassified transposon, putative",
+   435754
+  ],
+  [
+   "MITE-adh, type B-like MITE, putative",
+   423920
+  ],
+  [
+   "AnacB3 transposon, putative",
+   399001
+  ],
+  [
+   "Ty3/gypsy retrotransposon, putative",
+   370548
+  ],
+  [
+   "Ty1-copia-like retrotransposon, putative",
+   324486
+  ],
+  [
+   "RIRE3_P0698G03-1 gypsy-type retrotransposon, putative",
+   312738
+  ],
+  [
+   "CRR1 retrotransposon, putative",
+   275464
+  ],
+  [
+   "noaCRR2 retrotransposon, putative",
+   242371
+  ],
+  [
+   "Ditto-like MITE, putative",
+   231252
+  ],
+  [
+   "Dagul gypsy-type retrotransposon, putative",
+   211020
+  ],
+  [
+   "noaCRR1 retrotransposon, putative",
+   174201
+  ],
+  [
+   "Ty3-Gypsy type Retrosat 2 retrotransposon, putative",
+   170628
+  ],
+  [
+   "MITE-adh, type I-like MITE, putative",
+   168711
+  ],
+  [
+   "Castaway-like MITE, putative",
+   167395
+  ],
+  [
+   "Retrotransposon, putative",
+   154488
+  ],
+  [
+   "Gaijin/Gaigin-like MITE, putative",
+   150951
+  ],
+  [
+   "MITE-adh, type D-like MITE, putative",
+   141970
+  ],
+  [
+   "MITE-adh-5-like MITE, putative",
+   141584
+  ],
+  [
+   "Pangrangja MITE, putative/",
+   132934
+  ],
+  [
+   "Cacta-like transposon, putative",
+   122059
+  ],
+  [
+   "Squiq LTR retrotransposon, putative",
+   111620
+  ]
+ ]
+}
