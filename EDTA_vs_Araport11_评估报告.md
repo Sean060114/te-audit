@@ -1,5 +1,10 @@
 # EDTA 注释质量评估：与 Araport11 官方 TE 注释逐碱基对比
 
+> 本文已合并原 `EDTA_交叉验证报告.md` 中仍然有效的四部分（k-mer 原始数据与方法学、
+> 发表级注释的缺口、RepeatMasker 库为空的处置、交付文件统计口径），作为附录 A–D。
+> 那份报告的第一节结论（"9.24% 不偏低"）已被本文第八节推翻，原文已删除，
+> 只保留其数据与可复用的方法学。
+
 - 基因组：`chr1.fa.mod`（TAIR10 第 1 号染色体），30,427,671 bp，AT 64.1%
 - 参照：Araport11 已分类转座元件注释（`Araport11_GFF3_genes_transposons.20250813_classified_transposable_element.gff3`，同 TAIR10 坐标）
 - 待评：EDTA v2.2.2 `--step anno --anno 1 --species others`（默认非 sensitive），3,502 个元件
@@ -218,3 +223,168 @@ python compare_araport11.py
 python candidates_novel.py
 # 输出：EDTA_candidate_novel.tsv
 ```
+
+---
+
+# 附录 A · k-mer 独立验证的原始数据（只作下限用）
+
+这一节的数据在没有任何外部参照时产生，**结论当时是错的**（详见第八节），
+但数据本身有效：它正确反映了"近期重复"的空间。写法与局限一并保留，供 methods 引用。
+
+## A.1 可重复碱基总量
+
+| 证据 | 碱基 | 占基因组 |
+|---|---|---|
+| 20-mer 出现 ≥2 次（可重复） | 3,943,463 | **12.96%** |
+| 20-mer 出现 ≥3 次 | 2,044,470 | 6.72% |
+| EDTA 注释 | 2,799,643 | **9.20%** |
+
+## A.2 按拷贝数分层（每碱基取覆盖它的 20-mer 最大拷贝数）
+
+| 拷贝数 | 碱基 | 占比 | 被 EDTA 覆盖 | 覆盖率 |
+|---|---|---|---|---|
+| 2 | 1,898,993 | 6.24% | 401,290 | **21.1%** |
+| 3–4 | 816,582 | 2.68% | 333,287 | **40.8%** |
+| 5–9 | 455,259 | 1.50% | 251,162 | **55.2%** |
+| 10–49 | 413,266 | 1.36% | 210,199 | **50.9%** |
+| 50–99 | 138,310 | 0.45% | 5,437 | 3.9% |
+| ≥100 | 221,053 | 0.73% | 3,642 | 1.6% |
+| **合计** | **3,943,463** | **12.96%** | **1,205,017** | **30.6%** |
+
+读法：
+
+- **3–49 拷贝 = TE 家族主战场**，覆盖 41–55%
+- **≥50 拷贝几乎不覆盖**，属串联重复/卫星，符合 EDTA 设计（它不注释卫星）
+- 恰好 2 拷贝层覆盖率仅 21%，其中混杂片段重复与多基因家族，不能全算 TE 漏注释
+
+## A.3 方法学（写 methods 时可用）
+
+- k = 20，base-4 编码（A/C/G/T → 0/1/2/3），滚动编码为 int64 整数
+- 含 N 的 k-mer（窗口内任一非 ACGT）剔除，占 0.54%
+- 唯一 k-mer 数 28,684,567（30,427,652 个窗口中）
+- 每碱基重复度 = 覆盖该碱基的所有 k-mer 的最大出现次数
+- EDTA 掩码由 `chr1.fa.mod.EDTA.TEanno.gff3` 构建，排除 `target_site_duplication`、
+  `long_terminal_repeat`、`primer_binding_site` 三类附属特征（避免重复计数）
+
+**局限（也是当初判错的根源）**：k=20 只能捕获较近期重复。两条拷贝分歧到 20% 时，
+共享精确 20-mer 的概率仅 0.8²⁰ ≈ 1.2%，因此**高分歧的古 TE 不被感知**，
+本方法对"漏注释"的判断是**保守下限**，绝不是总量上界。
+
+---
+
+# 附录 B · 发表级注释还差什么
+
+按必要性排序。
+
+## 必做
+
+**① 修 `rename_LTR_skim.pl` 的坐标顺序 bug 并重跑 LTR**
+
+影响 1/41 条 intact LTR（`1:17536138..17528667`，7,472 bp）。`intact LTR` 集会用于
+**LTR 插入年龄分布**（5'/3' LTR 差异），少一条就是数据缺失。
+完整溯源与补丁见 `TE_case/病例_001_LTR_静默丢弃.md` 第 6 节。
+
+**② 处理 Tc1_Mariner 14.89% 误分类**
+
+用 `--sensitive 1` 重跑 TIR 模块（TIR-Learner 会做更严格的末端/靶位点验证）。
+绝对数量只有 72 条，但发表时审稿人会看混淆矩阵。
+
+| 类别 | 条目 | 不一致数 | 不一致率 | 备注 |
+|---|---|---|---|---|
+| **DNA/Tc1_Mariner** | 48 | 7 | **14.89%** | 7 条被判成 PIF_Harbinger ← 需处理 |
+| DNA/CACTA（嵌套） | 13 | 2 | 15.38% | 样本小 |
+| LTR/Copia | 68 | 2 | 2.94% | 2 条被判成 Mutator |
+| LTR/Gypsy | 623 | 2 | 0.32% | 良好 |
+
+（数据来自 EDTA 自带混淆矩阵 `chr1.fa.mod.EDTA.anno/`。）
+
+**③ 产出下游交付文件**
+
+软屏蔽基因组（当前只有硬屏蔽 `MAKER.masked`）、BED12、家族级 bp/占比/拷贝数表。
+
+## 建议做
+
+**④ 用独立库（Dfam）跑一次 RepeatMasker 交叉验证**
+
+k-mer 法只能证明"总量不离谱"，不能证明"类别对"。`run_validation.sh` 已备好，
+见附录 C 的库处置。
+
+**⑤ 决定是否补注释退化片段**
+
+若要求高完整性，可在 EDTA 基础上用 `RepeatMasker -lib EDTA.TElib.fa -e ncbi` 放宽阈值
+重跑注释层（不动 TElib），把中低拷贝区覆盖率从 ~50% 提上去。代价是假阳性上升。
+
+---
+
+# 附录 C · 环境问题：conda 版 RepeatMasker 的库是空的
+
+首次执行 `run_validation.sh` 时 RepeatMasker 直接退出：
+
+```
+Using Master RepeatMasker Database: .../Libraries/RepeatMaskerLib.h5
+Title    :
+Version  :
+Date     :
+Families :
+Species "homo sapiens" is not known to RepeatMasker.
+```
+
+排查结果（`~/miniconda3/envs/edta/share/RepeatMasker/Libraries/`）：
+
+| 文件 | 实际状态 | 影响 |
+|---|---|---|
+| `Dfam.h5` | **11 字节**，内容就是字符串 `placeholder` | conda 包不附带 Dfam |
+| `RepeatMaskerLib.h5` | 权限 `?????????`，读取报 `Input/output error` | 主库不可用 → `Families:` 为空 |
+| `RepeatMasker.lib` | 32 MB / 19,768 条，但**植物类群条目 = 0** | 全是昆虫、鱼、哺乳动物，对植物无效 |
+
+因此对植物基因组，这套库**根本没法用来做交叉验证**（EDTA 自身不受影响，
+因为它用的是自己建的 `EDTA.TElib.fa`）。
+
+## 解决方案
+
+Dfam 3.9 提供 `Dfam-RepeatMasker.lib.gz`（**15.8 MB**），FASTA 格式，可直接 `-lib` 传给
+RepeatMasker 4.1.5，**无需升级版本、无需下载 GB 级 h5**：
+
+```bash
+mkdir -p ~/edta_run/dfam_lib && cd ~/edta_run/dfam_lib
+wget https://www.dfam.org/releases/Dfam_3.9/families/Dfam-RepeatMasker.lib.gz
+gunzip -k Dfam-RepeatMasker.lib.gz
+grep -c '^>' Dfam-RepeatMasker.lib        # 确认家族数
+```
+
+> 注意：Dfam 4.0 的 `dfam40.*.h5.gz` 分区格式要求 **RepeatMasker ≥ 4.2.4**，当前是 4.1.5，
+> 不要用。升级需 `conda install -c bioconda "repeatmasker=4.2.4"`，但会动到 EDTA 依赖的
+> 环境，发表阶段不建议。
+
+---
+
+# 附录 D · 交付文件的统计口径修正
+
+`make_deliverables.sh` v1 的家族表按"逐条长度相加"，嵌套元件会重复计数，合计 **10.10%**，
+与软屏蔽实测 **9.20%** 对不上——投稿时这是硬伤。v2 同时给出两种口径：
+
+| 口径 | 含义 | 合计 | 用途 |
+|---|---|---|---|
+| `bp_redun` | 逐条相加（含嵌套/重叠重复计数） | 3,073,010 bp = **10.10%** | "元件总数"描述 |
+| `bp_union` | 同类内合并去重 | — | "该类占基因组比例" |
+| 全局去重 | 所有类别合并去重 | 2,799,643 bp = **9.20%** | **与软屏蔽逐字节一致，引用此值** |
+
+修正后的家族表（`bp_union` 口径，与 `TEanno.sum` 的 `bpMasked` 基本吻合）：
+
+| 类别 | 条目 | 逐条 bp | 去重 bp |
+|---|---|---|---|
+| nonTIR/helitron | 1136 | 998,041 | 996,497 |
+| LTR/Gypsy | 885 | 942,977 | 847,763 |
+| LTR/Copia | 266 | 412,091 | 282,379 |
+| TIR/Mutator (DTM) | 296 + 25 MITE | 218,081 | 211,542 |
+| TIR/CACTA (DTC) | 235 | 170,729 | 166,576 |
+| LINE/L1 | 186 | 120,970 | 120,970 |
+| TIR/PIF_Harbinger (DTH) | 303 + 17 MITE | 121,263 | 110,342 |
+| SINE/tRNA | 25 | 31,149 | 31,149 |
+| TIR/Tc1_Mariner (DTT) | 74 | 24,376 | 24,376 |
+| LTR/unknown | 6 | 15,957 | 8,485 |
+| TIR/hAT (DTA) | 19 | 4,115 | 4,115 |
+| unknown | 29 | 4,121 | 4,121 |
+
+TEsorter 三字母代码：DTA=hAT，DTC=CACTA，DTH=PIF_Harbinger，DTM=Mutator，DTT=Tc1_Mariner
+（按条目数与 `TEanno.sum` 逐类核对）。

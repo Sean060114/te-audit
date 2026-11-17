@@ -16,7 +16,7 @@
 |---|---|---|---:|---|
 | **0 名称规范化** | EDTA 的 `DNA/hAT` 和 TEsorter 的 `hAT_TIR_transposon` 到底是不是一回事？ | `te-normalizer/normalize.py` | 57 | `te-normalizer/README.md` |
 | **1 完整性检查** | 这份注释的哪些结论站不住？ | `te_check.py`（C1–C6）<br>`bench_multi.py`（多数据集横向） | 74 | `te_check_README.md`<br>`TE_case/报表_*.md` |
-| **2 交叉验证** | EDTA 与独立注释差在哪，谁更可能对？ | `compare_araport11.py`（拟南芥 vs Araport11）<br>`compare_rice_te.py`（水稻 vs MSU RGAP7）<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`<br>`报表_水稻独立真值集交叉验证.md`<br>`EDTA_交叉验证报告.md` |
+| **2 交叉验证** | EDTA 与独立注释差在哪，谁更可能对？ | `compare_araport11.py`（拟南芥 vs Araport11）<br>`compare_rice_te.py`（水稻 vs MSU RGAP7）<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`（含 k-mer 数据与发表级缺口附录）<br>`报表_水稻独立真值集交叉验证.md` |
 | **交付** | 把一份注释整理成可交付、可自校验的包 | `build_delivery_package.py`<br>`validate_delivery.py` | — | `delivery/`（不入库，可重建） |
 | **上游贡献** | 把工具链里发现的命名缺陷回馈给 EDTA | `te-normalizer/make_alias_pr.py` | — | PR #655 |
 
@@ -93,7 +93,7 @@ EDTA 运行必须在 WSL 内发起，`run_bench_rice.sh` 只在该环境的 bash
 ```
 te-normalizer/          模块 0：名称规范化（独立可跑，含自己的测试与文档）
 TE_case/                模块 1 的基线、案例与本项目全部判据检验报告
-  报表_多基因组判据检验.md     拟南芥属内三份数据（⚠ 顶部注明 C4 结论已推翻）
+  （已移至 archive/）报表_多基因组判据检验.md   拟南芥属内三份数据，C4 结论已推翻
   报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（现行结论以此为准）
   报表_水稻独立真值集交叉验证.md  模块 2 跨物种：水稻 vs MSU RGAP7
   报表_结构注释质量基线.md     最早的单点基线
@@ -113,40 +113,42 @@ papers/                 立项时读的文献
 
 ## 五、产出清单与处置
 
-根目录 40 个条目，按「还需不需要」分四类。当前全部体积 187 MB。
+根目录 41 个条目，总体积 285 MB（其中 `rice/` 162 MB、`ref/` 37 MB、`delivery/` 35 MB
+都是序列或交付物，代码与报告合计不到 1 MB）。
 
 ### 保留：核心代码（改了就坏）
 
 | 条目 | 作用 |
 |---|---|
-| `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 74 条测试 |
-| `run_bench_rice.sh` | 现行 EDTA 运行脚本（参数化，含命名修复） |
-| `te-normalizer/` | 模块 0，独立可跑 |
-| `compare_araport11.py` `candidates_novel.py` `make_publication_tables.py` | 模块 2 |
+| `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 **77 条**测试 |
+| `run_bench_rice.sh` | 现行 EDTA 运行脚本（参数化，含 `.mod.mod` 修复与 tee 日志） |
+| `te-normalizer/` | 模块 0，独立可跑（57 条测试） |
+| `compare_araport11.py` `compare_rice_te.py` `candidates_novel.py` `make_publication_tables.py` | 模块 2 |
 | `build_delivery_package.py` `validate_delivery.py` `make_deliverables.sh` `make_union_softmask.py` `get_dfam_lib.sh` `run_validation.sh` | 交付包与验证 |
-| `archive/` | 三版历史运行脚本，失败记录 |
+| `archive/` | 三版历史运行脚本 + 一份被推翻的判据报告，失败记录 |
 
 ### 保留：分析证据（报告里每个数字的依据）
 
 | 条目 | 体积 | 为什么不能删 |
 |---|---:|---|
 | `chr1_edta_out/` | 1.7 M | TAIR10 Chr1 基准，重跑需 47 分钟 |
-| `rice/` | 66 M<br>（入库 11 M） | 水稻全量回传，重跑需 73 分钟；序列文件不入库 |
+| `rice/edta_out*` | 入库 11 M | 水稻全量与预飞回传，重跑需 73 分钟；序列文件不入库 |
 | `bench_archive/` | 251 K | col1m / alyrata 历史运行，**仅此一份** |
-| `TE_case/` | 30 M<br>（入库 <1 M） | 报告、基线、案例；其中 `.venv` 是 classify_element.py 的环境，文档里写了重建命令 |
+| `TE_case/` | 30 M<br>（入库 <1 M） | 报告、基线、病例；`.venv` 是 `classify_element.py` 的环境，文档里写了重建命令 |
 | `araport11_vs_edta.txt` `.per_class.tsv` | 12 K | 模块 2 报告的逐类数字来源 |
-| `Araport11_TE_family_summary.tsv` `EDTA_B_level_candidates.tsv` `EDTA_candidate_novel.tsv` | 144 K | 模块 2 的三张成果表 |
-| `chr1_report.json` | 8 K | Chr1 六项检查结果 |
+| `Araport11_TE_family_summary.tsv` `EDTA_B_level_candidates.tsv` `EDTA_candidate_novel.tsv` | 144 K | 模块 2 的三张成果表（家族汇总 / B 级质控 / 918 条分级） |
+| `chr1_report.json` `rice/full_report.json` `rice/preflight_report.json` | 20 K | 三次运行的六项检查原始结果 |
 
 ### 保留：交付物与立项文档
 
 | 条目 | 说明 |
 |---|---|
-| `delivery/`（35 M）| 交付包解包版，12 文件 + MD5SUMS，可用 `make_deliverables.sh` 重建 |
-| `TAIR10.Chr1.TE_annotation_v1.tar.gz`（9.8 M）| 同一交付包的分发版 |
-| `EDTA_vs_Araport11_评估报告.md` `EDTA_交叉验证报告.md` `EDTA_LTR丢失溯源报告.md` | 模块 2 报告 |
-| `选题说明书_详细论证版.md` `附录B_anno阶段实测.md` `附录_实战记录.md` | 立项与过程记录 |
-| `papers/` `papers_digest.txt` | 立项文献与提要 |
+| `delivery/`（35 M） | 交付包解包版，12 文件 + MD5SUMS，可用 `make_deliverables.sh` 重建 |
+| `TAIR10.Chr1.TE_annotation_v1.tar.gz`（9.8 M） | 同一交付包的分发版 |
+| `EDTA_vs_Araport11_评估报告.md` | 模块 2 报告（拟南芥）。含四个附录：k-mer 原始数据、发表级缺口、RepeatMasker 库处置、交付统计口径 |
+| `te_check_README.md` | 模块 1 工具文档 |
+| `选题说明书_详细论证版.md` `附录B_anno阶段实测.md` | 立项与过程记录（实战记录已作为选题说明书附录，不单独成文） |
+| `papers/` `papers_digest.txt` | 19 篇立项文献全文与提要 |
 | `EDTA_issue_台账.csv` | 上游 issue 与 PR 记录 |
 
 ### 不入库的外部数据（体积大，可重新下载）
@@ -154,22 +156,22 @@ papers/                 立项时读的文献
 | 条目 | 体积 | 怎么回来 |
 |---|---:|---|
 | `ref/TAIR10.Chr1.fa` | 30 M | `curl` Ensembl Plants release-57（命令见第 3 节） |
+| `rice/Oryza_sativa.Chr1.fa` `Chr12.fa` | 70 M | 同上，逐条下载后 `tr -d '\r'` 清行尾、改 seqid |
+| `rice/Oryza_sativa.Chr1_Chr12.fa` | 68 M | 上面两者 `cat` 即得（**与前者重复 70 M，跑完可删**） |
 | `araport11_TE.gff3` | 9.2 M | Araport11 官方发布 |
-| `rice/*.fa` `*.fa.gz` | 55 M | 同上，Ensembl release-57 |
+| `ref/msu/osa1_r7.asm.repeat_masked.gff3.gz` | 7.5 M | MSU/UGA RGAP7（服务器慢，用 `curl -C -`） |
 
-### 已删除
+### 2026-11-17 清理记录
 
-| 条目 | 原体积 | 为什么可以删 |
-|---|---:|---|
-| `chr1.fa.mod.union.softmasked.fa` | 30 M | EDTA ∪ Araport11 并集软屏蔽的中间产物，交付包里的 `TAIR10.Chr1.genome.softmasked.fa` 已取代它。重建方式见下 |
-| `__pycache__/` | 16 K | Python 缓存，自动重建 |
-
-重建那个软屏蔽文件（输入需先改名对齐）：
-
-```bash
-cp chr1_edta_out/Chr1.fa.mod.EDTA.TEanno.gff3 chr1.fa.mod.EDTA.TEanno.gff3
-python make_union_softmask.py    # 输出 chr1.fa.mod.union.softmasked.fa
-```
+| 动作 | 对象 | 依据 |
+|---|---|---|
+| 合并 | `EDTA_LTR丢失溯源报告.md` + `TE_case/病例_7472bp_LTR_unknown.md` → `TE_case/病例_001_LTR_静默丢弃.md` | 同一元件（17,528,667–17,536,138）；一个记管线链路、一个记序列证据，分开写只看到半个因果 |
+| 合并 | `EDTA_交叉验证报告.md` → `EDTA_vs_Araport11_评估报告.md` 附录 A–D | 该报告第一节结论已被推翻；其 k-mer 数据、发表级缺口、库处置、交付口径仍有效，不该随错误结论一起丢 |
+| 归档 | `TE_case/报表_多基因组判据检验.md` → `archive/` | C4 结论已推翻（分母算错）；保留为 col1m / alyrata 的数据出处 |
+| 删除 | `附录_实战记录.md` | 27/30 行已包含在 `选题说明书_详细论证版.md` 的附录中 |
+| 删除 | `TE_case/bench_rice_pre.tsv` `bench_rice_full.tsv` | 分别是 3 数据集、4 数据集版本，已被 `bench_five.tsv`（5 数据集）覆盖，零引用 |
+| 删除 | `TE_case/te_check_report.json` | 旧 schema（无 `C4_ltr_tiers`、`severe_total=5`）且 `dir` 指向已不存在的 WSL 路径；同一数据的现版本是 `chr1_report.json` |
+| 删除 | `papers/*.log`（19 个） | 抓取时的提示（"6 picture(s) were left out"），每个约 100 字节，无信息量 |
 
 ## 六、已知空白
 

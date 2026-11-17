@@ -83,7 +83,7 @@ EDTA 的 TIR 候选来自 TIR-Learner，其算法规定 **minimum similarity = 8
 ## 测试
 
 ```bash
-python test_te_check.py          # 73 条，约 4 秒
+python test_te_check.py          # 77 条，约 4 秒
 python test_te_check.py -v       # 逐条用例名
 ```
 
@@ -131,7 +131,7 @@ C6  同一元件：ltr_identity=0.9866 但无域证据
 ## 多基因组检验（判据是否可移植）
 
 单份数据上的观察不等于规则。五份独立运行的检验结果见
-**`TE_case/报表_多基因组判据检验.md`**（拟南芥属）与
+**`archive/报表_多基因组判据检验.md`**（拟南芥属，C4 结论已被推翻，仅存档）与
 **`TE_case/报表_水稻跨科判据检验.md`**（单子叶）。摘要（`TE_case/bench_five.tsv`）：
 
 | 数据集 | 物种 | 元件 | C1 | C4 已定超家族 LTR |
