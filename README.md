@@ -35,7 +35,7 @@
 
 ## 二、当前状态
 
-判据在 **五份独立运行、两个科** 的数据上验证过（详见 `TE_case/`）：
+判据在 **六份独立运行、两个科** 的数据上验证过（详见 `TE_case/`）：
 
 | 数据集 | 物种 | intact 元件 | C4 已定超家族 LTR |
 |---|---|---:|---|
@@ -43,16 +43,22 @@
 | col1m | A. thaliana Col-0 | 69 | 4/4（100%） |
 | alyrata | A. lyrata | 20 | 3/3（100%） |
 | rice_pre | O. sativa（单子叶） | 114 | 14/14（100%） |
-| rice_full | O. sativa（单子叶） | 1,669 | 187/198（94.4%） |
+| rice_full | O. sativa，Chr1 单条 | 1,669 | 187/198（94.4%） |
+| rice_multi | O. sativa，Chr1+Chr12 | 2,733 | 350/373（93.8%）<br>逐条：Chr1 94.4% / Chr12 93.1% |
 
-**C1 跨科成立**（五份一致）；**C3 指标无效**（阈值投影，不可跨数据集比较）；
+**C1 跨科成立**（六份一致）；**C3 指标无效**（阈值投影，不可跨数据集比较）；
 **C4 分层后成立**（此前"阈值被证伪"的结论是分母算错，已推翻）；
-**C6 跨科复现**（Chr1 / alyrata / 水稻各若干例，成因需逐个区分）。
+**C6 跨科复现**（Chr1 / alyrata / 水稻若干例，成因需逐个区分）。
 
-**模块 2 已扩到水稻**：以 MSU RGAP7（同一 IRGSP-1.0 组装）为独立真值集，
-EDTA 覆盖其 85.3%，在两侧类别都明确的 LTR 组双向一致度 91%–97%；
-EDTA 独有的 5.65 Mb 中 89% 是 Helitron（MSU 词表无此类）与 DNA/TIR（MITE 边界不同）。
-详见 `TE_case/报表_水稻独立真值集交叉验证.md`。
+**run-to-run 已实测**：Chr1 在单染色体库与双染色体库下各跑一次，
+六项检查逐项相同（LTR 218→218、C4 187/198、C6 23、C2 24、C3 中位 0.8182），
+但同源注释覆盖从 37.83% 升到 39.42%（召回 +1.7 pp、精确率 −1.5 pp）。
+**结构判据的噪声底≈0，召回/精确率则随库规模变动。**
+
+**模块 2 已扩到水稻两条染色体**：以 MSU RGAP7（同一 IRGSP-1.0 组装）为独立真值集，
+Chr1+Chr12 合并成一次运行（共用一套库），召回 87.0% / 87.4%——**密度升高 9.25 pp，召回没有下降**；
+LTR 组双向一致度 78–85%，细桶 Gypsy 97.9% / 98.4%。EDTA 独有部分 85–90% 是 TIR + Helitron。
+详见 `TE_case/报表_水稻跨染色体基准.md`。
 
 报告里保留了完整的自我修正记录，未删改——C3 的表述修正、C4 的分母修正、
 `.mod.mod` 归因的两次撤回，都原样留在文档里。错误的分母和它导致的错误结论，
@@ -69,7 +75,7 @@ python te_check.py --edta-dir rice/edta_out --json rice/full_report.json
 # 多数据集横向对比 + 判据检验
 python bench_multi.py \
   "chr1=chr1_edta_out" "col1m=bench_archive/col1m.fa.mod" \
-  "alyrata=bench_archive/alyrata.fa.mod" "rice_full=rice/edta_out" \
+  "alyrata=bench_archive/alyrata.fa.mod" "rice_full=rice/edta_out" "rice_multi=rice/edta_out_multi" \
   --tsv TE_case/bench_five.tsv
 
 # 模块 0：名称规范化（单列 / 混淆矩阵配对模式）
@@ -94,8 +100,9 @@ EDTA 运行必须在 WSL 内发起，`run_bench_rice.sh` 只在该环境的 bash
 te-normalizer/          模块 0：名称规范化（独立可跑，含自己的测试与文档）
 TE_case/                模块 1 的基线、案例与本项目全部判据检验报告
   （已移至 archive/）报表_多基因组判据检验.md   拟南芥属内三份数据，C4 结论已推翻
-  报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（现行结论以此为准）
-  报表_水稻独立真值集交叉验证.md  模块 2 跨物种：水稻 vs MSU RGAP7
+  报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（判据结论以此为准）
+  报表_水稻跨染色体基准.md     模块 2：Chr1+Chr12 同库对比，含 run-to-run 实测
+  报表_水稻独立真值集交叉验证.md  Chr1 单条的初版交叉验证（数字已被上一份更新）
   报表_结构注释质量基线.md     最早的单点基线
 archive/                已被取代的运行脚本（保留是为了留下失败记录）
 bench_archive/          col1m / alyrata 的历史运行回传（仅此一份）
@@ -132,12 +139,13 @@ papers/                 立项时读的文献
 | 条目 | 体积 | 为什么不能删 |
 |---|---:|---|
 | `chr1_edta_out/` | 1.7 M | TAIR10 Chr1 基准，重跑需 47 分钟 |
-| `rice/edta_out*` | 入库 11 M | 水稻全量与预飞回传，重跑需 73 分钟；序列文件不入库 |
+| `rice/edta_out*` | 入库 20 M | 水稻三条运行回传（Chr1 单条 / 预飞 / Chr1+Chr12），重跑需 73–124 分钟；序列文件不入库 |
 | `bench_archive/` | 251 K | col1m / alyrata 历史运行，**仅此一份** |
 | `TE_case/` | 30 M<br>（入库 <1 M） | 报告、基线、病例；`.venv` 是 `classify_element.py` 的环境，文档里写了重建命令 |
 | `araport11_vs_edta.txt` `.per_class.tsv` | 12 K | 模块 2 报告的逐类数字来源 |
 | `Araport11_TE_family_summary.tsv` `EDTA_B_level_candidates.tsv` `EDTA_candidate_novel.tsv` | 144 K | 模块 2 的三张成果表（家族汇总 / B 级质控 / 918 条分级） |
-| `chr1_report.json` `rice/full_report.json` `rice/preflight_report.json` | 20 K | 三次运行的六项检查原始结果 |
+| `chr1_report.json` `rice/full_report.json` `rice/preflight_report.json` `rice/multi_report.json` | 30 K | 四次运行的六项检查原始结果 |
+| `rice/msu_vs_edta.multi.*` `TE_case/bench_six.tsv` | 30 K | 跨染色体交叉验证与六数据集对比的逐类数据 |
 
 ### 保留：交付物与立项文档
 
@@ -145,6 +153,7 @@ papers/                 立项时读的文献
 |---|---|
 | `delivery/`（35 M） | 交付包解包版，12 文件 + MD5SUMS，可用 `make_deliverables.sh` 重建 |
 | `TAIR10.Chr1.TE_annotation_v1.tar.gz`（9.8 M） | 同一交付包的分发版 |
+| `TE_case/报表_水稻跨染色体基准.md` | 本轮新增：Chr1+Chr12 同库对比 + run-to-run 实测 |
 | `EDTA_vs_Araport11_评估报告.md` | 模块 2 报告（拟南芥）。含四个附录：k-mer 原始数据、发表级缺口、RepeatMasker 库处置、交付统计口径 |
 | `te_check_README.md` | 模块 1 工具文档 |
 | `选题说明书_详细论证版.md` `附录B_anno阶段实测.md` | 立项与过程记录（实战记录已作为选题说明书附录，不单独成文） |
@@ -181,12 +190,14 @@ papers/                 立项时读的文献
    `"$genome.mod"`，于是得到 `X.fa.mod.mod`。**与序列名长短无关**，
    v2.3.0 起补上该参数后不再出现。详见 `TE_case/报表_水稻跨科判据检验.md` 5.3 节。
    当前仍用改名修复而不升级——五份数据都在 v2.2.2 下跑，升级会破坏可比性。
-2. **水稻全量有 11 个已定 Gypsy 未进分类表。** 结构完整、超家族已定。
-   原先怀疑与 1 同源，但归因查实后该推论已下调（短 ID 的归一化不改变序列内容），
-   目前无解释。
+2. **水稻有已定超家族的 LTR 未进分类表**（Chr1 11 个 / Chr12 12 个，全为 Gypsy）。
+   结构完整、超家族已定。原先怀疑与 1 同源，但归因查实后该推论已下调
+   （短 ID 的归一化不改变序列内容），目前无解释。两份库下数量一致，不是随机波动。
 3. **Chr1 的输入来源与旧运行无法逐字节核对。** 旧值取自 EDTA 自带 test 集，
    本次用 Ensembl release-57；两个计数（218 / 41）吻合，但原始文件已失。
-4. **模块 2 只做过 Chr1 一份**，未跨到水稻，也尚无独立真值集（RITE / RAP-DB）。
+4. **模块 2 只覆盖水稻两条染色体（19% 基因组）**，无中间密度点，
+   且密度与组成同时变化（Chr12 的 Gypsy 份额约为 Chr1 的两倍），二因素无法分离。
+   模拟基因组真值集与跨版本对比（2.2.2 / 2.3.0）均未开始。
 
 ## 七、运行环境
 

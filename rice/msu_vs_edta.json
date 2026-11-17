@@ -1,544 +1,1146 @@
 {
- "genome_len": 43270923,
- "msu_bp": 12558926,
- "ed_bp": 16367776,
- "inter": 10718347,
- "rows": [
+ "chroms": [
   {
-   "bucket": "LTR/Gypsy",
-   "side": "MSU",
-   "bp": 2322706,
-   "covered": 2254314,
-   "rate": 97.05550336547114,
-   "top": "LTR/Gypsy 86%；LTR/unknown 7%"
+   "chrom": "OsChr1",
+   "msu_chrom": "Chr1",
+   "L": 43270923,
+   "msu_bp": 12558926,
+   "ed_bp": 17057492,
+   "inter": 10923034,
+   "recall": 86.9742683410986,
+   "precision": 64.0365770067487,
+   "ed_only_bp": 6134458,
+   "msu_only_bp": 1635892,
+   "unclassified_pct": 10.043597677062513,
+   "coarse": {
+    "LTR": {
+     "msu_bp": 6196278,
+     "edta_bp": 6433119,
+     "inter": 5038566,
+     "recall": 81.31600938498886,
+     "precision": 78.32228814669836
+    },
+    "DNA": {
+     "msu_bp": 5360154,
+     "edta_bp": 7043430,
+     "inter": 3300751,
+     "recall": 61.57940611407806,
+     "precision": 46.86283529473566
+    },
+    "其他": {
+     "msu_bp": 1368941,
+     "edta_bp": 4098325,
+     "inter": 503848,
+     "recall": 36.80567679688168,
+     "precision": 12.293998157783973
+    }
+   },
+   "ed_only": {
+    "DNA/TIR": {
+     "bp": 3198713,
+     "pct": 52.14336784113609
+    },
+    "Helitron": {
+     "bp": 2308284,
+     "pct": 37.62816535706985
+    },
+    "LINE": {
+     "bp": 235528,
+     "pct": 3.839426400832804
+    },
+    "LTR/Gypsy": {
+     "bp": 216449,
+     "pct": 3.528412779091486
+    },
+    "LTR/unknown": {
+     "bp": 184851,
+     "pct": 3.013322448372782
+    },
+    "DNA/MITE": {
+     "bp": 98976,
+     "pct": 1.6134432740431182
+    },
+    "LTR/Copia": {
+     "bp": 87875,
+     "pct": 1.4324818916357402
+    },
+    "Unclassified": {
+     "bp": 29105,
+     "pct": 0.4744510435966796
+    },
+    "SINE": {
+     "bp": 6983,
+     "pct": 0.11383238747416642
+    }
+   },
+   "msu_only": {
+    "DNA/TIR": {
+     "bp": 543213,
+     "pct": 33.20592068425055
+    },
+    "Unclassified": {
+     "bp": 443720,
+     "pct": 27.12403997329897
+    },
+    "LTR/unknown": {
+     "bp": 354613,
+     "pct": 21.677042249732867
+    },
+    "DNA/MITE": {
+     "bp": 189102,
+     "pct": 11.559565056861944
+    },
+    "LTR/Gypsy": {
+     "bp": 48153,
+     "pct": 2.943531724588176
+    },
+    "SINE": {
+     "bp": 29497,
+     "pct": 1.8031141420093748
+    },
+    "Other/non-TE": {
+     "bp": 26937,
+     "pct": 1.6466245937995907
+    },
+    "LTR/Copia": {
+     "bp": 18003,
+     "pct": 1.1005005220393522
+    },
+    "LINE": {
+     "bp": 9083,
+     "pct": 0.555232252495886
+    }
+   }
   },
   {
-   "bucket": "LTR/Copia",
-   "side": "MSU",
-   "bp": 368549,
-   "covered": 349145,
-   "rate": 94.73502844940565,
-   "top": "LTR/Copia 87%；Helitron 6%"
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "MSU",
-   "bp": 3656008,
-   "covered": 3188487,
-   "rate": 87.21225445896181,
-   "top": "LTR/Gypsy 58%；LTR/Copia 11%"
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "MSU",
-   "bp": 2436013,
-   "covered": 2236952,
-   "rate": 91.82840978270642,
-   "top": "DNA/TIR 82%；Helitron 7%"
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "MSU",
-   "bp": 3032902,
-   "covered": 2443178,
-   "rate": 80.55578452584356,
-   "top": "DNA/TIR 38%；LTR/Gypsy 32%"
-  },
-  {
-   "bucket": "LINE",
-   "side": "MSU",
-   "bp": 11598,
-   "covered": 7737,
-   "rate": 66.70977754785308,
-   "top": "LINE 67%"
-  },
-  {
-   "bucket": "SINE",
-   "side": "MSU",
-   "bp": 175169,
-   "covered": 138468,
-   "rate": 79.04823342029697,
-   "top": "DNA/TIR 60%；Unclassified 10%"
-  },
-  {
-   "bucket": "Other/non-TE",
-   "side": "MSU",
-   "bp": 63363,
-   "covered": 35162,
-   "rate": 55.49295330082224,
-   "top": "Helitron 37%；LTR/Gypsy 18%"
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "MSU",
-   "bp": 1124311,
-   "covered": 665098,
-   "rate": 59.15605201763569,
-   "top": "Helitron 36%；DNA/TIR 18%"
-  },
-  {
-   "bucket": "LTR/Gypsy",
-   "side": "EDTA",
-   "bp": 5083390,
-   "covered": 4851571,
-   "rate": 95.439677065895,
-   "same": 39.463979745799556
-  },
-  {
-   "bucket": "LTR/Copia",
-   "side": "EDTA",
-   "bp": 835888,
-   "covered": 762008,
-   "rate": 91.16149531994718,
-   "same": 38.19148019830408
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "EDTA",
-   "bp": 543900,
-   "covered": 418368,
-   "rate": 76.9200220628792,
-   "same": 39.02022430593859
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "EDTA",
-   "bp": 300930,
-   "covered": 216254,
-   "rate": 71.86189479280895,
-   "same": 58.29262619213771
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "EDTA",
-   "bp": 6453925,
-   "covered": 3583194,
-   "rate": 55.51961015970901,
-   "same": 17.788183159860086
-  },
-  {
-   "bucket": "Helitron",
-   "side": "EDTA",
-   "bp": 3444069,
-   "covered": 1293900,
-   "rate": 37.56893372345328,
-   "same": 0.0
-  },
-  {
-   "bucket": "LINE",
-   "side": "EDTA",
-   "bp": 287690,
-   "covered": 14620,
-   "rate": 5.08185894539261,
-   "same": 2.6893531231533943
-  },
-  {
-   "bucket": "SINE",
-   "side": "EDTA",
-   "bp": 852,
-   "covered": 18,
-   "rate": 2.112676056338028,
-   "same": 0.0
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "EDTA",
-   "bp": 63584,
-   "covered": 35947,
-   "rate": 56.53466280825364,
-   "same": 27.80888273779567
-  },
-  {
-   "bucket": "LTR",
-   "side": "coarse",
-   "msu_bp": 6196278,
-   "edta_bp": 6434873,
-   "inter": 5089422,
-   "recall": 82.13676016473114,
-   "precision": 79.09125790050557
-  },
-  {
-   "bucket": "DNA",
-   "side": "coarse",
-   "msu_bp": 5360154,
-   "edta_bp": 6649424,
-   "inter": 3188814,
-   "recall": 59.49108924855517,
-   "precision": 47.95624402955805
-  },
-  {
-   "bucket": "其他",
-   "side": "coarse",
-   "msu_bp": 1368941,
-   "edta_bp": 3787144,
-   "inter": 487860,
-   "recall": 35.63776671164061,
-   "precision": 12.882002902451028
-  },
-  {
-   "bucket": "LTR/Gypsy",
-   "side": "MSU_elements",
-   "n": 2263,
-   "ge50": 2096,
-   "recall_el": 92.62041537781705,
-   "ge10": 2124
-  },
-  {
-   "bucket": "LTR/Copia",
-   "side": "MSU_elements",
-   "n": 677,
-   "ge50": 540,
-   "recall_el": 79.76366322008862,
-   "ge10": 551
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "MSU_elements",
-   "n": 6389,
-   "ge50": 5176,
-   "recall_el": 81.01424323055251,
-   "ge10": 5377
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "MSU_elements",
-   "n": 18848,
-   "ge50": 16696,
-   "recall_el": 88.58234295415959,
-   "ge10": 16986
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "MSU_elements",
-   "n": 10682,
-   "ge50": 9146,
-   "recall_el": 85.62067028646321,
-   "ge10": 9496
-  },
-  {
-   "bucket": "LINE",
-   "side": "MSU_elements",
-   "n": 44,
-   "ge50": 30,
-   "recall_el": 68.18181818181817,
-   "ge10": 30
-  },
-  {
-   "bucket": "SINE",
-   "side": "MSU_elements",
-   "n": 1744,
-   "ge50": 1449,
-   "recall_el": 83.0848623853211,
-   "ge10": 1471
-  },
-  {
-   "bucket": "Other/non-TE",
-   "side": "MSU_elements",
-   "n": 262,
-   "ge50": 97,
-   "recall_el": 37.02290076335878,
-   "ge10": 101
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "MSU_elements",
-   "n": 16225,
-   "ge50": 6867,
-   "recall_el": 42.32357473035439,
-   "ge10": 7151
-  },
-  {
-   "bucket": "Helitron",
-   "side": "EDTA_only",
-   "n": 5938,
-   "nov": 1946,
-   "nov_pct": 32.771977096665545
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "EDTA_only",
-   "n": 21206,
-   "nov": 3874,
-   "nov_pct": 18.26841459964161
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "EDTA_only",
-   "n": 1510,
-   "nov": 243,
-   "nov_pct": 16.09271523178808
-  },
-  {
-   "bucket": "LTR/Gypsy",
-   "side": "EDTA_only",
-   "n": 3542,
-   "nov": 101,
-   "nov_pct": 2.8514963297571994
-  },
-  {
-   "bucket": "LINE",
-   "side": "EDTA_only",
-   "n": 578,
-   "nov": 430,
-   "nov_pct": 74.39446366782006
-  },
-  {
-   "bucket": "LTR/Copia",
-   "side": "EDTA_only",
-   "n": 696,
-   "nov": 49,
-   "nov_pct": 7.040229885057471
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "EDTA_only",
-   "n": 755,
-   "nov": 140,
-   "nov_pct": 18.543046357615893
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "EDTA_only",
-   "n": 461,
-   "nov": 84,
-   "nov_pct": 18.22125813449024
-  },
-  {
-   "bucket": "SINE",
-   "side": "EDTA_only",
-   "n": 10,
-   "nov": 9,
-   "nov_pct": 90.0
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "EDTA_uncovered",
-   "bp": 2870731,
-   "pct": 50.814533645789695
-  },
-  {
-   "bucket": "Helitron",
-   "side": "EDTA_uncovered",
-   "bp": 2150169,
-   "pct": 38.05993490669588
-  },
-  {
-   "bucket": "LINE",
-   "side": "EDTA_uncovered",
-   "bp": 273070,
-   "pct": 4.8335858367279245
-  },
-  {
-   "bucket": "LTR/Gypsy",
-   "side": "EDTA_uncovered",
-   "bp": 231819,
-   "pct": 4.103405848626472
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "EDTA_uncovered",
-   "bp": 125532,
-   "pct": 2.222029872399494
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "EDTA_uncovered",
-   "bp": 84676,
-   "pct": 1.4988417413512056
-  },
-  {
-   "bucket": "LTR/Copia",
-   "side": "EDTA_uncovered",
-   "bp": 73880,
-   "pct": 1.307742782500674
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "EDTA_uncovered",
-   "bp": 27637,
-   "pct": 0.48919988197037256
-  },
-  {
-   "bucket": "SINE",
-   "side": "EDTA_uncovered",
-   "bp": 834,
-   "pct": 0.014762553879338957
-  },
-  {
-   "bucket": "DNA/TIR",
-   "side": "MSU_uncovered",
-   "bp": 589724,
-   "pct": 32.04013519658759
-  },
-  {
-   "bucket": "LTR/unknown",
-   "side": "MSU_uncovered",
-   "bp": 467521,
-   "pct": 25.400757044386573
-  },
-  {
-   "bucket": "Unclassified",
-   "side": "MSU_uncovered",
-   "bp": 459213,
-   "pct": 24.94937734267315
-  },
-  {
-   "bucket": "DNA/MITE",
-   "side": "MSU_uncovered",
-   "bp": 199061,
-   "pct": 10.815129369616844
-  },
-  {
-   "bucket": "LTR/Gypsy",
-   "side": "MSU_uncovered",
-   "bp": 68392,
-   "pct": 3.7157872604218567
-  },
-  {
-   "bucket": "SINE",
-   "side": "MSU_uncovered",
-   "bp": 36701,
-   "pct": 1.993992107918215
-  },
-  {
-   "bucket": "Other/non-TE",
-   "side": "MSU_uncovered",
-   "bp": 28201,
-   "pct": 1.5321809061170426
-  },
-  {
-   "bucket": "LTR/Copia",
-   "side": "MSU_uncovered",
-   "bp": 19404,
-   "pct": 1.054233477617641
-  },
-  {
-   "bucket": "LINE",
-   "side": "MSU_uncovered",
-   "bp": 3861,
-   "pct": 0.20977094707697957
+   "chrom": "OsChr12",
+   "msu_chrom": "Chr12",
+   "L": 27531856,
+   "msu_bp": 10536792,
+   "ed_bp": 13353268,
+   "inter": 9206317,
+   "recall": 87.37305434139728,
+   "precision": 68.9442988787464,
+   "ed_only_bp": 4146951,
+   "msu_only_bp": 1330475,
+   "unclassified_pct": 6.58432851289083,
+   "coarse": {
+    "LTR": {
+     "msu_bp": 6716202,
+     "edta_bp": 6713555,
+     "inter": 5729963,
+     "recall": 85.31552505418986,
+     "precision": 85.34916299933492
+    },
+    "DNA": {
+     "msu_bp": 3300406,
+     "edta_bp": 4133964,
+     "inter": 1906022,
+     "recall": 57.751137284321985,
+     "precision": 46.106400539530576
+    },
+    "其他": {
+     "msu_bp": 786409,
+     "edta_bp": 2835139,
+     "inter": 223933,
+     "recall": 28.475386217604324,
+     "precision": 7.898483989673875
+    }
+   },
+   "ed_only": {
+    "DNA/TIR": {
+     "bp": 1877008,
+     "pct": 45.2623626370314
+    },
+    "Helitron": {
+     "bp": 1637853,
+     "pct": 39.495354538792476
+    },
+    "LTR/Gypsy": {
+     "bp": 234102,
+     "pct": 5.64515954010549
+    },
+    "LTR/unknown": {
+     "bp": 221818,
+     "pct": 5.348941909369076
+    },
+    "LINE": {
+     "bp": 183196,
+     "pct": 4.417607056365026
+    },
+    "LTR/Copia": {
+     "bp": 62402,
+     "pct": 1.504768201987436
+    },
+    "DNA/MITE": {
+     "bp": 55405,
+     "pct": 1.3360418292861431
+    },
+    "Unclassified": {
+     "bp": 15154,
+     "pct": 0.36542510388958055
+    },
+    "SINE": {
+     "bp": 4050,
+     "pct": 0.09766211368304085
+    }
+   },
+   "msu_only": {
+    "DNA/TIR": {
+     "bp": 536468,
+     "pct": 40.321539299874104
+    },
+    "LTR/unknown": {
+     "bp": 330277,
+     "pct": 24.82399143163156
+    },
+    "Unclassified": {
+     "bp": 268323,
+     "pct": 20.167458990210264
+    },
+    "DNA/MITE": {
+     "bp": 103337,
+     "pct": 7.7669253462109396
+    },
+    "LTR/Gypsy": {
+     "bp": 50363,
+     "pct": 3.7853398222439356
+    },
+    "SINE": {
+     "bp": 17905,
+     "pct": 1.3457599729419945
+    },
+    "LINE": {
+     "bp": 15468,
+     "pct": 1.162592307258686
+    },
+    "LTR/Copia": {
+     "bp": 13232,
+     "pct": 0.9945320280351002
+    },
+    "Other/non-TE": {
+     "bp": 12753,
+     "pct": 0.9585298483624269
+    }
+   }
   }
  ],
- "note_bp_top": [
-  [
-   "retrotransposon, putative",
-   1816951
-  ],
-  [
-   "Ty3-gypsy-like retrotransposon, putative",
-   1258808
-  ],
-  [
-   "En/Spm-like transposon, putative",
-   807165
-  ],
-  [
-   "AnacB2 transposon, putative",
-   675042
-  ],
-  [
-   "",
-   630830
-  ],
-  [
-   "Unclassified retrotransposon, putative",
-   622436
-  ],
-  [
-   "Rice chromosome 8 centromere-like LTR retrotransposon, putative",
-   621503
-  ],
-  [
-   "Unclassified repetitive sequence, putative",
-   466006
-  ],
-  [
-   "Tourist-like MITE, putative",
-   437132
-  ],
-  [
-   "Unclassified transposon, putative",
-   435754
-  ],
-  [
-   "MITE-adh, type B-like MITE, putative",
-   423920
-  ],
-  [
-   "AnacB3 transposon, putative",
-   399001
-  ],
-  [
-   "Ty3/gypsy retrotransposon, putative",
-   370548
-  ],
-  [
-   "Ty1-copia-like retrotransposon, putative",
-   324486
-  ],
-  [
-   "RIRE3_P0698G03-1 gypsy-type retrotransposon, putative",
-   312738
-  ],
-  [
-   "CRR1 retrotransposon, putative",
-   275464
-  ],
-  [
-   "noaCRR2 retrotransposon, putative",
-   242371
-  ],
-  [
-   "Ditto-like MITE, putative",
-   231252
-  ],
-  [
-   "Dagul gypsy-type retrotransposon, putative",
-   211020
-  ],
-  [
-   "noaCRR1 retrotransposon, putative",
-   174201
-  ],
-  [
-   "Ty3-Gypsy type Retrosat 2 retrotransposon, putative",
-   170628
-  ],
-  [
-   "MITE-adh, type I-like MITE, putative",
-   168711
-  ],
-  [
-   "Castaway-like MITE, putative",
-   167395
-  ],
-  [
-   "Retrotransposon, putative",
-   154488
-  ],
-  [
-   "Gaijin/Gaigin-like MITE, putative",
-   150951
-  ],
-  [
-   "MITE-adh, type D-like MITE, putative",
-   141970
-  ],
-  [
-   "MITE-adh-5-like MITE, putative",
-   141584
-  ],
-  [
-   "Pangrangja MITE, putative/",
-   132934
-  ],
-  [
-   "Cacta-like transposon, putative",
-   122059
-  ],
-  [
-   "Squiq LTR retrotransposon, putative",
-   111620
-  ]
+ "rows": [
+  {
+   "chrom": "OsChr1",
+   "side": "overall",
+   "bucket": "ALL",
+   "bp": null,
+   "covered": null,
+   "rate": null,
+   "L": 43270923,
+   "msu_bp": 12558926,
+   "ed_bp": 17057492,
+   "inter": 10923034,
+   "recall": 86.9742683410986,
+   "precision": 64.0365770067487
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "LTR/Gypsy",
+   "bp": 2322706,
+   "covered": 2274553,
+   "rate": 97.92685772542887,
+   "top": "LTR/Gypsy 78%；LTR/unknown 10%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "LTR/Copia",
+   "bp": 368549,
+   "covered": 350546,
+   "rate": 95.11516786098998,
+   "top": "LTR/Copia 88%；Helitron 4%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "LTR/unknown",
+   "bp": 3656008,
+   "covered": 3301395,
+   "rate": 90.30054091785357,
+   "top": "LTR/Gypsy 56%；LTR/Copia 14%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "DNA/MITE",
+   "bp": 2436013,
+   "covered": 2246911,
+   "rate": 92.23723354514118,
+   "top": "DNA/TIR 83%；DNA/MITE 7%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "DNA/TIR",
+   "bp": 3032902,
+   "covered": 2489689,
+   "rate": 82.08933226329107,
+   "top": "DNA/TIR 42%；LTR/Gypsy 32%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "LINE",
+   "bp": 11598,
+   "covered": 2515,
+   "rate": 21.684773236764958,
+   "top": "LINE 22%；DNA/TIR 0%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "SINE",
+   "bp": 175169,
+   "covered": 145672,
+   "rate": 83.16083325245906,
+   "top": "DNA/TIR 64%；Unclassified 11%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "Other/non-TE",
+   "bp": 63363,
+   "covered": 36426,
+   "rate": 57.48780834240803,
+   "top": "Helitron 33%；LTR/Gypsy 23%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU",
+   "bucket": "Unclassified",
+   "bp": 1124311,
+   "covered": 680591,
+   "rate": 60.53405152133173,
+   "top": "Helitron 38%；DNA/TIR 19%"
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "LTR/Gypsy",
+   "bp": 4859375,
+   "covered": 4642926,
+   "rate": 95.54574405144695,
+   "same": 37.30950996784566
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "LTR/Copia",
+   "bp": 961623,
+   "covered": 873748,
+   "rate": 90.86180343024242,
+   "same": 33.6507134292753
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "LTR/unknown",
+   "bp": 645736,
+   "covered": 460885,
+   "rate": 71.37359540121659,
+   "same": 32.12860983435955
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "DNA/MITE",
+   "bp": 309432,
+   "covered": 210456,
+   "rate": 68.01365081827349,
+   "same": 57.1527831639908
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "DNA/TIR",
+   "bp": 6844780,
+   "covered": 3646067,
+   "rate": 53.26784790745649,
+   "same": 18.441586143017012
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "Helitron",
+   "bp": 3695344,
+   "covered": 1387060,
+   "rate": 37.5353417706173,
+   "same": 0.0
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "LINE",
+   "bp": 242418,
+   "covered": 6890,
+   "rate": 2.842198186603305,
+   "same": 1.0308640447491522
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "SINE",
+   "bp": 88574,
+   "covered": 81591,
+   "rate": 92.11619662654955,
+   "same": 0.0
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA",
+   "bucket": "Unclassified",
+   "bp": 89799,
+   "covered": 60694,
+   "rate": 67.58872593236005,
+   "same": 21.991336206416552
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "coarse",
+   "bucket": "LTR",
+   "bp": 6433119,
+   "covered": 5038566,
+   "rate": 78.32228814669836,
+   "msu_bp": 6196278,
+   "edta_bp": 6433119,
+   "inter": 5038566,
+   "recall": 81.31600938498886,
+   "precision": 78.32228814669836
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "coarse",
+   "bucket": "DNA",
+   "bp": 7043430,
+   "covered": 3300751,
+   "rate": 46.86283529473566,
+   "msu_bp": 5360154,
+   "edta_bp": 7043430,
+   "inter": 3300751,
+   "recall": 61.57940611407806,
+   "precision": 46.86283529473566
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "coarse",
+   "bucket": "其他",
+   "bp": 4098325,
+   "covered": 503848,
+   "rate": 12.293998157783973,
+   "msu_bp": 1368941,
+   "edta_bp": 4098325,
+   "inter": 503848,
+   "recall": 36.80567679688168,
+   "precision": 12.293998157783973
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "LTR/Gypsy",
+   "bp": null,
+   "covered": null,
+   "rate": 93.7251436146708,
+   "n": 2263,
+   "ge50": 2121,
+   "ge10": 2148
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "LTR/Copia",
+   "bp": null,
+   "covered": null,
+   "rate": 81.53618906942393,
+   "n": 677,
+   "ge50": 552,
+   "ge10": 564
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "LTR/unknown",
+   "bp": null,
+   "covered": null,
+   "rate": 84.47331350759117,
+   "n": 6389,
+   "ge50": 5397,
+   "ge10": 5551
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "DNA/MITE",
+   "bp": null,
+   "covered": null,
+   "rate": 89.3410441426146,
+   "n": 18848,
+   "ge50": 16839,
+   "ge10": 17159
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "DNA/TIR",
+   "bp": null,
+   "covered": null,
+   "rate": 87.36191724396181,
+   "n": 10682,
+   "ge50": 9332,
+   "ge10": 9664
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "LINE",
+   "bp": null,
+   "covered": null,
+   "rate": 25.0,
+   "n": 44,
+   "ge50": 11,
+   "ge10": 12
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "SINE",
+   "bp": null,
+   "covered": null,
+   "rate": 85.77981651376146,
+   "n": 1744,
+   "ge50": 1496,
+   "ge10": 1518
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "Other/non-TE",
+   "bp": null,
+   "covered": null,
+   "rate": 38.16793893129771,
+   "n": 262,
+   "ge50": 100,
+   "ge10": 118
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_elements",
+   "bucket": "Unclassified",
+   "bp": null,
+   "covered": null,
+   "rate": 44.0924499229584,
+   "n": 16225,
+   "ge50": 7154,
+   "ge10": 7455
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "DNA/TIR",
+   "bp": 3198713,
+   "covered": null,
+   "rate": 52.14336784113609
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "Helitron",
+   "bp": 2308284,
+   "covered": null,
+   "rate": 37.62816535706985
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "LINE",
+   "bp": 235528,
+   "covered": null,
+   "rate": 3.839426400832804
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/Gypsy",
+   "bp": 216449,
+   "covered": null,
+   "rate": 3.528412779091486
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/unknown",
+   "bp": 184851,
+   "covered": null,
+   "rate": 3.013322448372782
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "DNA/MITE",
+   "bp": 98976,
+   "covered": null,
+   "rate": 1.6134432740431182
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/Copia",
+   "bp": 87875,
+   "covered": null,
+   "rate": 1.4324818916357402
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "Unclassified",
+   "bp": 29105,
+   "covered": null,
+   "rate": 0.4744510435966796
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "EDTA_uncovered",
+   "bucket": "SINE",
+   "bp": 6983,
+   "covered": null,
+   "rate": 0.11383238747416642
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "DNA/TIR",
+   "bp": 543213,
+   "covered": null,
+   "rate": 33.20592068425055
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "Unclassified",
+   "bp": 443720,
+   "covered": null,
+   "rate": 27.12403997329897
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/unknown",
+   "bp": 354613,
+   "covered": null,
+   "rate": 21.677042249732867
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "DNA/MITE",
+   "bp": 189102,
+   "covered": null,
+   "rate": 11.559565056861944
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/Gypsy",
+   "bp": 48153,
+   "covered": null,
+   "rate": 2.943531724588176
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "SINE",
+   "bp": 29497,
+   "covered": null,
+   "rate": 1.8031141420093748
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "Other/non-TE",
+   "bp": 26937,
+   "covered": null,
+   "rate": 1.6466245937995907
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/Copia",
+   "bp": 18003,
+   "covered": null,
+   "rate": 1.1005005220393522
+  },
+  {
+   "chrom": "OsChr1",
+   "side": "MSU_uncovered",
+   "bucket": "LINE",
+   "bp": 9083,
+   "covered": null,
+   "rate": 0.555232252495886
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "overall",
+   "bucket": "ALL",
+   "bp": null,
+   "covered": null,
+   "rate": null,
+   "L": 27531856,
+   "msu_bp": 10536792,
+   "ed_bp": 13353268,
+   "inter": 9206317,
+   "recall": 87.37305434139728,
+   "precision": 68.9442988787464
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "LTR/Gypsy",
+   "bp": 3144393,
+   "covered": 3094030,
+   "rate": 98.39832361921681,
+   "top": "LTR/Gypsy 82%；LTR/unknown 9%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "LTR/Copia",
+   "bp": 365321,
+   "covered": 352089,
+   "rate": 96.37797991355548,
+   "top": "LTR/Copia 92%；DNA/TIR 2%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "LTR/unknown",
+   "bp": 3393197,
+   "covered": 3062920,
+   "rate": 90.26649498982817,
+   "top": "LTR/Gypsy 56%；LTR/Copia 18%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "DNA/MITE",
+   "bp": 1225150,
+   "covered": 1121813,
+   "rate": 91.56535934375383,
+   "top": "DNA/TIR 81%；Helitron 8%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "DNA/TIR",
+   "bp": 2130453,
+   "covered": 1593985,
+   "rate": 74.81906430228689,
+   "top": "DNA/TIR 42%；LTR/Gypsy 25%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "LINE",
+   "bp": 16940,
+   "covered": 1472,
+   "rate": 8.689492325855962,
+   "top": "LINE 9%；DNA/TIR 0%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "SINE",
+   "bp": 101758,
+   "covered": 83853,
+   "rate": 82.40433184614477,
+   "top": "DNA/TIR 65%；Helitron 11%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "Other/non-TE",
+   "bp": 35349,
+   "covered": 22596,
+   "rate": 63.92260035644573,
+   "top": "LTR/Gypsy 34%；Helitron 23%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU",
+   "bucket": "Unclassified",
+   "bp": 634607,
+   "covered": 366284,
+   "rate": 57.7182413682799,
+   "top": "Helitron 29%；DNA/TIR 22%"
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "LTR/Gypsy",
+   "bp": 5027394,
+   "covered": 4793292,
+   "rate": 95.34347218459504,
+   "same": 51.32740740033505
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "LTR/Copia",
+   "bp": 1073968,
+   "covered": 1011566,
+   "rate": 94.18958479209809,
+   "same": 31.32151051055525
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "LTR/unknown",
+   "bp": 647309,
+   "covered": 425491,
+   "rate": 65.73228550815762,
+   "same": 22.482770979547634
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "DNA/MITE",
+   "bp": 160753,
+   "covered": 105348,
+   "rate": 65.53408023489453,
+   "same": 54.70193402300424
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "DNA/TIR",
+   "bp": 4031026,
+   "covered": 2154018,
+   "rate": 53.435973868687526,
+   "same": 22.255574635340977
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "Helitron",
+   "bp": 2553638,
+   "covered": 915785,
+   "rate": 35.86197417175027,
+   "same": 0.0
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "LINE",
+   "bp": 189041,
+   "covered": 5845,
+   "rate": 3.0919218582212324,
+   "same": 0.7654424172534001
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "SINE",
+   "bp": 56047,
+   "covered": 51997,
+   "rate": 92.77392188698771,
+   "same": 0.0017842168180277266
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA",
+   "bucket": "Unclassified",
+   "bp": 48843,
+   "covered": 33689,
+   "rate": 68.97405974244006,
+   "same": 26.239174497880967
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "coarse",
+   "bucket": "LTR",
+   "bp": 6713555,
+   "covered": 5729963,
+   "rate": 85.34916299933492,
+   "msu_bp": 6716202,
+   "edta_bp": 6713555,
+   "inter": 5729963,
+   "recall": 85.31552505418986,
+   "precision": 85.34916299933492
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "coarse",
+   "bucket": "DNA",
+   "bp": 4133964,
+   "covered": 1906022,
+   "rate": 46.106400539530576,
+   "msu_bp": 3300406,
+   "edta_bp": 4133964,
+   "inter": 1906022,
+   "recall": 57.751137284321985,
+   "precision": 46.106400539530576
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "coarse",
+   "bucket": "其他",
+   "bp": 2835139,
+   "covered": 223933,
+   "rate": 7.898483989673875,
+   "msu_bp": 786409,
+   "edta_bp": 2835139,
+   "inter": 223933,
+   "recall": 28.475386217604324,
+   "precision": 7.898483989673875
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "LTR/Gypsy",
+   "bp": null,
+   "covered": null,
+   "rate": 95.73712255772647,
+   "n": 2815,
+   "ge50": 2695,
+   "ge10": 2729
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "LTR/Copia",
+   "bp": null,
+   "covered": null,
+   "rate": 84.67023172905526,
+   "n": 561,
+   "ge50": 475,
+   "ge10": 484
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "LTR/unknown",
+   "bp": null,
+   "covered": null,
+   "rate": 85.6638418079096,
+   "n": 5664,
+   "ge50": 4852,
+   "ge10": 4999
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "DNA/MITE",
+   "bp": null,
+   "covered": null,
+   "rate": 88.55659397715473,
+   "n": 9630,
+   "ge50": 8528,
+   "ge10": 8696
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "DNA/TIR",
+   "bp": null,
+   "covered": null,
+   "rate": 85.2768522925591,
+   "n": 6303,
+   "ge50": 5375,
+   "ge10": 5622
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "LINE",
+   "bp": null,
+   "covered": null,
+   "rate": 14.754098360655737,
+   "n": 61,
+   "ge50": 9,
+   "ge10": 9
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "SINE",
+   "bp": null,
+   "covered": null,
+   "rate": 85.17350157728707,
+   "n": 951,
+   "ge50": 810,
+   "ge10": 823
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "Other/non-TE",
+   "bp": null,
+   "covered": null,
+   "rate": 46.58385093167702,
+   "n": 161,
+   "ge50": 75,
+   "ge10": 88
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_elements",
+   "bucket": "Unclassified",
+   "bp": null,
+   "covered": null,
+   "rate": 45.4289890925447,
+   "n": 8893,
+   "ge50": 4040,
+   "ge10": 4245
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "DNA/TIR",
+   "bp": 1877008,
+   "covered": null,
+   "rate": 45.2623626370314
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "Helitron",
+   "bp": 1637853,
+   "covered": null,
+   "rate": 39.495354538792476
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/Gypsy",
+   "bp": 234102,
+   "covered": null,
+   "rate": 5.64515954010549
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/unknown",
+   "bp": 221818,
+   "covered": null,
+   "rate": 5.348941909369076
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "LINE",
+   "bp": 183196,
+   "covered": null,
+   "rate": 4.417607056365026
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "LTR/Copia",
+   "bp": 62402,
+   "covered": null,
+   "rate": 1.504768201987436
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "DNA/MITE",
+   "bp": 55405,
+   "covered": null,
+   "rate": 1.3360418292861431
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "Unclassified",
+   "bp": 15154,
+   "covered": null,
+   "rate": 0.36542510388958055
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "EDTA_uncovered",
+   "bucket": "SINE",
+   "bp": 4050,
+   "covered": null,
+   "rate": 0.09766211368304085
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "DNA/TIR",
+   "bp": 536468,
+   "covered": null,
+   "rate": 40.321539299874104
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/unknown",
+   "bp": 330277,
+   "covered": null,
+   "rate": 24.82399143163156
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "Unclassified",
+   "bp": 268323,
+   "covered": null,
+   "rate": 20.167458990210264
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "DNA/MITE",
+   "bp": 103337,
+   "covered": null,
+   "rate": 7.7669253462109396
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/Gypsy",
+   "bp": 50363,
+   "covered": null,
+   "rate": 3.7853398222439356
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "SINE",
+   "bp": 17905,
+   "covered": null,
+   "rate": 1.3457599729419945
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "LINE",
+   "bp": 15468,
+   "covered": null,
+   "rate": 1.162592307258686
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "LTR/Copia",
+   "bp": 13232,
+   "covered": null,
+   "rate": 0.9945320280351002
+  },
+  {
+   "chrom": "OsChr12",
+   "side": "MSU_uncovered",
+   "bucket": "Other/non-TE",
+   "bp": 12753,
+   "covered": null,
+   "rate": 0.9585298483624269
+  }
  ]
 }

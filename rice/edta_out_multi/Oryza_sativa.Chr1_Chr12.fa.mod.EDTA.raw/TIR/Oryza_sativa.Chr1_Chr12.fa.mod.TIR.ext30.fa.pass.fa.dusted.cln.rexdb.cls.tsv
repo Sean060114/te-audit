@@ -1,0 +1,30 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+OsChr1:12907908..12912208#DNA/DTC	LTR	Copia	Ale	no	+	GAG|Ale PROT|Ale
+OsChr1:12908193..12911922#DNA/DTM	LTR	Copia	Ale	no	+	GAG|Ale
+OsChr1:14337224..14340397#DNA/DTC	LINE	unknown	unknown	unknown	-	RH|LINE
+OsChr1:15387170..15392183#DNA/DTH	TIR	PIF_Harbinger	unknown	unknown	-	TPase|PIF_Harbinger
+OsChr1:17376368..17381207#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:17376457..17381077#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:20173144..20177695#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:3147435..3148979#DNA/DTM	LTR	Copia	Ivana	no	-	GAG|Ivana
+OsChr1:32123080..32126437#DNA/DTH	LTR	Gypsy	Reina	no	+	GAG|Reina
+OsChr1:36609926..36614941#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:36609927..36614940#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:37694047..37696711#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:5963699..5964925#DNA/DTH	LTR	Copia	Ale	no	+	RT|Ale
+OsChr12:10975059..10978588#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:13025309..13029358#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:13025310..13029358#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:13245460..13249485#DNA/DTM	TIR	hAT	unknown	unknown	+	TPase|hAT
+OsChr12:14379772..14383860#DNA/DTM	LTR	Gypsy	Ogre	no	-	GAG|Ogre
+OsChr12:15252696..15257072#DNA/DTM	LTR	Copia	mixture	yes	-	GAG|Alesia PROT|Ale INT|Ale RT|Ale RH|Ale
+OsChr12:18962603..18967310#DNA/DTT	TIR	hAT	unknown	unknown	-	TPase|hAT
+OsChr12:19791590..19794800#DNA/DTT	TIR	Tc1_Mariner	unknown	unknown	+	TPase|Tc1_Mariner
+OsChr12:19791590..19794802#DNA/DTT	TIR	Tc1_Mariner	unknown	unknown	+	TPase|Tc1_Mariner
+OsChr12:21879213..21884188#DNA/DTH	TIR	PIF_Harbinger	unknown	unknown	+	TPase|PIF_Harbinger
+OsChr12:22350706..22354393#DNA/DTT	LINE	unknown	unknown	unknown	-	RT|LINE
+OsChr12:2628957..2633977#DNA/DTM	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:3064828..3068633#DNA/DTT	LINE	unknown	unknown	unknown	+	RT|LINE
+OsChr12:6192144..6195975#DNA/DTC	LTR	Gypsy	Retand	no	+	GAG|Retand PROT|Retand
+OsChr12:7226312..7228493#DNA/DTT	LTR	Copia	Ale	no	-	RH|Ale
+OsChr12:7226312..7229008#DNA/DTT	LTR	Copia	Ale	no	-	RH|Ale

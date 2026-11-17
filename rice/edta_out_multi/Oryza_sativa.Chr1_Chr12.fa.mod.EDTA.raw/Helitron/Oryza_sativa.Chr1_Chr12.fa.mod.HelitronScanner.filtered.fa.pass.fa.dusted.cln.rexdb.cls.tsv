@@ -1,0 +1,53 @@
+#TE	Order	Superfamily	Clade	Complete	Strand	Domains
+OsChr1:10046882..10029839#DNA/Helitron	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+OsChr1:1139956..1151106#DNA/Helitron	LTR	Gypsy	Reina	no	-	GAG|Reina
+OsChr1:11827698..11809920#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr1:13128600..13137775#DNA/Helitron	LINE	unknown	unknown	unknown	-	ENDO|LINE RT|LINE
+OsChr1:13176249..13191848#DNA/Helitron	LTR	Copia	Bianca	yes	+	GAG|Bianca PROT|Bianca INT|Bianca RT|Bianca RH|Bianca
+OsChr1:15196077..15209642#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	-	TPase|MuDR_Mutator
+OsChr1:15222628..15231301#DNA/Helitron	LINE	unknown	unknown	unknown	+	ENDO|LINE RT|LINE
+OsChr1:16334262..16350830#DNA/Helitron	LTR	Copia	TAR	no	+	RT|TAR RH|TAR
+OsChr1:16681955..16672023#DNA/Helitron	LTR	Gypsy	Reina	yes	+	GAG|Reina PROT|Reina RT|Reina RH|Reina INT|Reina CHD|Reina
+OsChr1:18365162..18347639#DNA/Helitron	LTR	Copia	TAR	yes	-	GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR
+OsChr1:18900832..18897925#DNA/Helitron	TIR	EnSpm_CACTA	unknown	unknown	-	TPase|EnSpm_CACTA
+OsChr1:19453089..19439808#DNA/Helitron	LTR	Gypsy	Tekay	yes	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+OsChr1:20170566..20158336#DNA/Helitron	LTR	Gypsy	Tekay	yes	-	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+OsChr1:20805422..20792681#DNA/Helitron	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+OsChr1:20925374..20914390#DNA/Helitron	LTR	Gypsy	CRM	no	-	GAG|CRM PROT|CRM CHDCR|CRM
+OsChr1:21304912..21287875#DNA/Helitron	LTR	Gypsy	Tekay	no	-	GAG|Tekay
+OsChr1:22304426..22308864#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL2|Helitron
+OsChr1:22324694..22311594#DNA/Helitron	LTR	Gypsy	Tekay	no	+	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay
+OsChr1:26072867..26060712#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron
+OsChr1:29358334..29343967#DNA/Helitron	LTR	Gypsy	Retand	no	-	GAG|Retand PROT|Retand RT|Retand aRH|Retand INT|Retand
+OsChr1:35952355..35935151#DNA/Helitron	Helitron	unknown	unknown	unknown	-	HEL1|Helitron HEL2|Helitron
+OsChr1:36339987..36323431#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron
+OsChr1:36842062..36860730#DNA/Helitron	LTR	Gypsy	Tekay	yes	-	GAG|Tekay PROT|Tekay RT|Tekay RH|Tekay INT|Tekay CHD|Tekay
+OsChr1:41020044..41037910#DNA/Helitron	LTR	Gypsy	Retand	no	+	GAG|Retand INT|Retand RH|Retand
+OsChr1:42381195..42395966#DNA/Helitron	LINE	unknown	unknown	unknown	-	RH|LINE
+OsChr1:42410495..42401471#DNA/Helitron	LINE	unknown	unknown	unknown	+	RH|LINE
+OsChr1:6742367..6736351#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL2|Helitron
+OsChr1:8254900..8248641#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL2|Helitron
+OsChr1:9101224..9102992#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL2|Helitron
+OsChr1:9975965..9956133#DNA/Helitron	LTR	Gypsy	CRM	no	+	GAG|CRM
+OsChr12:11289593..11303738#DNA/Helitron	LTR	Gypsy	Athila	no	+	GAG|Athila PROT|Athila
+OsChr12:13996635..13986673#DNA/Helitron	LINE	unknown	unknown	unknown	-	ENDO|LINE RT|LINE
+OsChr12:14385843..14367437#DNA/Helitron	LTR	Gypsy	Ogre	no	+	GAG|Ogre PROT|Ogre RT|Ogre aRH|Ogre INT|Ogre
+OsChr12:14915032..14932789#DNA/Helitron	LTR	Copia	Angela	yes	-	GAG|Angela PROT|Angela INT|Angela RT|Angela RH|Angela
+OsChr12:15188064..15202271#DNA/Helitron	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+OsChr12:16390664..16384736#DNA/Helitron	TIR	PIF_Harbinger	unknown	unknown	+	TPase|PIF_Harbinger
+OsChr12:16601187..16614292#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:16631066..16638261#DNA/Helitron	TIR	MuDR_Mutator	unknown	unknown	+	TPase|MuDR_Mutator
+OsChr12:17724921..17712855#DNA/Helitron	LINE	unknown	unknown	unknown	-	ENDO|LINE RT|LINE RH|LINE
+OsChr12:1814490..1834400#DNA/Helitron	LTR	Copia	TAR	yes	+	GAG|TAR PROT|TAR INT|TAR RT|TAR RH|TAR
+OsChr12:19449856..19436906#DNA/Helitron	LTR	Copia	SIRE	no	+	RH|SIRE
+OsChr12:19753399..19734425#DNA/Helitron	Helitron	unknown	unknown	unknown	+	HEL1|Helitron HEL2|Helitron
+OsChr12:19858932..19874538#DNA/Helitron	TIR	PIF_Harbinger	unknown	unknown	-	TPase|PIF_Harbinger
+OsChr12:21847463..21831670#DNA/Helitron	TIR	EnSpm_CACTA	unknown	unknown	+	TPase|EnSpm_CACTA
+OsChr12:22376078..22391559#DNA/Helitron	LTR	Gypsy	Retand	yes	+	GAG|Retand PROT|Retand RT|Retand RH|Retand INT|Retand
+OsChr12:22777480..22758038#DNA/Helitron	LTR	Gypsy	Ogre	no	?	INT|Ogre GAG|Ogre
+OsChr12:3912314..3928262#DNA/Helitron	TIR	PIF_Harbinger	unknown	unknown	+	TPase|PIF_Harbinger
+OsChr12:7548922..7536043#DNA/Helitron	LTR	Gypsy	Reina	no	+	GAG|Reina PROT|Reina
+OsChr12:8760462..8771699#DNA/Helitron	LTR	Gypsy	CRM	yes	+	GAG|CRM PROT|CRM RT|CRM RH|CRM INT|CRM CHDCR|CRM
+OsChr12:923875..937698#DNA/Helitron	LTR	Copia	TAR	no	+	GAG|TAR
+OsChr12:9597993..9606224#DNA/Helitron	LINE	unknown	unknown	unknown	+	ENDO|LINE RT|LINE RH|LINE
+OsChr12:9968577..9956719#DNA/Helitron	LTR	Copia	Ale	no	+	GAG|Ale

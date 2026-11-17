@@ -1,0 +1,10 @@
+tag        : Oryza_sativa.Chr1_Chr12
+species    : Rice
+parameters : --step all, then --step anno --anno 1; --overwrite 0; --threads 16
+curatedlib : 0
+input      : Oryza_sativa.Chr1_Chr12.fa  (2 条序列, 70802779 bp)
+length     : 70802787 bp
+edta       : /home/sean/miniconda3/envs/edta
+outdir     : /home/sean/te_bench_rice_multi
+win_path   : C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/rice/edta_out_multi
+finished   : 2026-11-17 14:05:01
