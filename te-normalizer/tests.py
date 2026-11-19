@@ -56,6 +56,16 @@ def counts_of(fname):
     return {k: v for k, v in tally.items() if v}
 
 
+def pair_rec(a, b, w):
+    """构造一条配对记录（--weight 路径的最小单元），字段与 main 里的一致"""
+    ra, rb = N.lookup(a, ALIAS, SO_NAMES), N.lookup(b, ALIAS, SO_NAMES)
+    return {"a": a, "a_id": ra["so_id"], "a_so": ra["so_name"],
+            "a_order": N.describe_so(ra["so_name"])["order"],
+            "b": b, "b_id": rb["so_id"], "b_so": rb["so_name"],
+            "b_order": N.describe_so(rb["so_name"])["order"],
+            "verdict": N.relate(ra, rb)[0], "why": "", "w": w}
+
+
 # ---------------------------------------------------------------------------
 # 第 1 层：单元测试
 # ---------------------------------------------------------------------------
@@ -263,13 +273,7 @@ class TestRankPairs(unittest.TestCase):
     """加权排序（--pairs --weight）：镜像对必须合并，方向必须保留"""
 
     def rec(self, a, b, w):
-        ra = N.lookup(a, ALIAS, SO_NAMES)
-        rb = N.lookup(b, ALIAS, SO_NAMES)
-        return {"a": a, "a_so": ra["so_name"], "a_id": ra["so_id"],
-                "a_order": N.describe_so(ra["so_name"])["order"],
-                "b": b, "b_so": rb["so_name"], "b_id": rb["so_id"],
-                "b_order": N.describe_so(rb["so_name"])["order"],
-                "verdict": N.relate(ra, rb)[0], "why": "", "w": w}
+        return pair_rec(a, b, w)
 
     def test_mirror_pairs_merged(self):
         # Tc1→PIF 7 与 PIF→Tc1 1 是同一对分歧的两个方向，合并后应为 8
@@ -334,6 +338,50 @@ class TestRankPairs(unittest.TestCase):
     def test_single_verdict_has_no_mixed_note(self):
         ranked = N.rank_pairs([self.rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 7)])
         self.assertEqual(ranked[0]["mixed"], "")
+
+    def test_single_direction_keeps_arrow(self):
+        """单向也要写箭头。"单向 2" 配上分歧对那列的 "↔"，看不出谁被判成谁"""
+        ranked = N.rank_pairs([self.rec("DNA/CACTA", "nonDNA/helitron", 2)])
+        self.assertIn("CACTA→helitron 2", ranked[0]["dirs"])
+        self.assertNotIn("单向", ranked[0]["dirs"])
+
+    def test_tie_break_is_order_independent(self):
+        """权重打平时，方向明细与 a/b 不许随行序变（旧实现会互换）"""
+        a = self.rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 1)
+        b = self.rec("DNA/PIF_Harbinger", "DNA/Tc1_Mariner", 1)
+        x, y = N.rank_pairs([a, b])[0], N.rank_pairs([b, a])[0]
+        self.assertEqual((x["a"], x["b"], x["dirs"]),
+                         (y["a"], y["b"], y["dirs"]))
+
+    def test_unresolved_name_not_shortened(self):
+        """未命中的名字不能被 split('/')[-1] 截断：会截成空串或误导片段"""
+        ranked = N.rank_pairs([self.rec("DNA/CACTA/", "DNA/Mutator", 3)])
+        self.assertIn("DNA/CACTA/→Mutator 3", ranked[0]["dirs"])
+
+
+class TestWeightedOutput(unittest.TestCase):
+    """--weight 的输出层：所有百分比必须共用同一个分母（合并后的"对"）"""
+
+    def capture(self, recs):
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            N.print_weighted(recs)
+        return buf.getvalue()
+
+    def test_total_row_is_pair_count_not_row_count(self):
+        """2 行记录合并成 1 对：合计必须是 1，不能是行数 2"""
+        out = self.capture([pair_rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 7),
+                            pair_rec("DNA/PIF_Harbinger", "DNA/Tc1_Mariner", 1)])
+        self.assertIn("共 2 行记录，合并镜像后 1 对", out)
+        self.assertRegex(out, r"合计\s+1\s+100\.0%")
+
+    def test_verdict_distribution_counts_pairs(self):
+        """判定分布按"对"算：镜像两行只贡献 1 对"""
+        out = self.capture([pair_rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 7),
+                            pair_rec("DNA/PIF_Harbinger", "DNA/Tc1_Mariner", 1),
+                            pair_rec("LTR/Gypsy", "DNA/Mutator", 2)])
+        self.assertRegex(out, r"同目不同科\s+1\s+50\.0%")
+        self.assertRegex(out, r"跨类冲突\s+1\s+50\.0%")
 
 
 class TestReadNames(unittest.TestCase):
@@ -688,7 +736,7 @@ class TestSuiteGuard(unittest.TestCase):
     新增用例时把 BASELINE 一起加上；这里只做单向检查（变多不管，变少报错）。
     """
 
-    BASELINE = 73          # 2026-11-19 修镜像组合并的判定标签，+4
+    BASELINE = 78          # 2026-11-19 统一对数口径/单向箭头/平局/短名，+5
 
     def test_case_count_not_reduced(self):
         n = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__]).countTestCases()

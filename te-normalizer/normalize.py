@@ -423,9 +423,23 @@ def _ident(side_id, side_name):
     return side_id or ("name:" + side_name)
 
 
+def _short(name, resolved):
+    """方向明细里的短名：已解析的取最后一级（LTR/Copia/Ale → Ale）。
+
+    未命中的名字**不能截**：`DNA/CACTA/` 会截成空串（箭头两边空），
+    `Unknown//ClassI` 会截成 `ClassI`——把一个"未知类"显示成一个类别名，
+    比不显示更糟。
+    """
+    if not resolved.get(name):
+        return name
+    return name.split("/")[-1] or name
+
+
 def rank_pairs(recs):
-    groups = {}
+    groups, resolved = {}, {}
     for r in recs:
+        resolved[r["a"]] = bool(r["a_id"])
+        resolved[r["b"]] = bool(r["b_id"])
         key = tuple(sorted((_ident(r["a_id"], r["a"]),
                             _ident(r["b_id"], r["b"]))))
         g = groups.setdefault(key, {"weight": 0, "verdicts": {}, "dirs": {}})
@@ -435,12 +449,13 @@ def rank_pairs(recs):
 
     out = []
     for g in groups.values():
-        dirs = sorted(g["dirs"].items(), key=lambda x: -x[1])
-        if len(dirs) == 1:
-            detail = f"单向 {dirs[0][1]}"
-        else:
-            detail = " : ".join(f"{a.split('/')[-1]}→{b.split('/')[-1]} {w}"
-                                for (a, b), w in dirs)
+        # 平局按名字兜底：只按权重排会退化成"插入顺序"（sorted 稳定），
+        # 同一份数据换个行序，a/b 就互换，报告里的行标识跟着漂。
+        dirs = sorted(g["dirs"].items(), key=lambda x: (-x[1], x[0]))
+        # 单向也写箭头：原来的 "单向 2" 配上分歧对那列的 "↔"，读者看不出
+        # 是谁被判成了谁，而这正是"该修哪一方"的依据。
+        detail = " : ".join(f"{_short(a, resolved)}→{_short(b, resolved)} {w}"
+                            for (a, b), w in dirs)
         vs = g["verdicts"]
         if len(vs) == 1:
             verdict, mixed = next(iter(vs)), ""
@@ -462,28 +477,41 @@ def rank_pairs(recs):
 #   8 行、7 对、17 条——同一份数据三个口径。这本身又是模块 2 那个教训的重演，
 #   报数的人必须说清用的是哪一个。
 # ---------------------------------------------------------------------------
-def print_weighted(recs, tally, wtally):
+def print_weighted(recs):
+    """--weight 的输出层。
+
+    口径只有一处：**一切以 rank_pairs 合并后的"对"为准**。
+    旧实现一边报"合并镜像后 6 对"、一边在表里把行数当对数（合计 8），
+    同一屏两个数打架——这是本项目第四次栽在"分母是什么"上。
+    """
     allrank = rank_pairs(recs)
     ranked = [r for r in allrank if r["verdict"] != "等价"]   # 等价对不是分歧，不进排序
-    n_row, total_w = len(recs), sum(wtally.values())
+    n_row, n_pair = len(recs), len(allrank)
 
-    print(f"共 {n_row} 行记录，合并镜像后 {len(allrank)} 对"
-          f"（其中等价 {tally.get('等价', 0)} 对），涉及序列 {total_w} 条")
+    gtally, gwtally = {}, {}
+    for g in allrank:
+        k = g["verdict"]
+        gtally[k] = gtally.get(k, 0) + 1
+        gwtally[k] = gwtally.get(k, 0) + g["weight"]
+    total_w = sum(gwtally.values())
+
+    print(f"共 {n_row} 行记录，合并镜像后 {n_pair} 对"
+          f"（其中等价 {gtally.get('等价', 0)} 对），涉及序列 {total_w} 条")
     print()
     print("判定分布：未加权（按对数） vs 加权（按次数）")
     print("  " + pad("判定", 16) + pad("对数", 6) + pad("占比", 9)
           + pad("序列数", 8) + pad("占比", 9) + "变化")
     print("  " + "-" * 54)
-    keys = sorted(tally, key=lambda k: (-wtally[k], -tally[k]))
+    keys = sorted(gtally, key=lambda k: (-gwtally[k], -gtally[k]))
     shifts = []
     for k in keys:
-        pa, pw = tally[k] / n_row * 100, wtally[k] / total_w * 100
+        pa, pw = gtally[k] / n_pair * 100, gwtally[k] / total_w * 100
         shifts.append((pw - pa, k))
         flag = f"  {pw - pa:+.1f}pp" if abs(pw - pa) >= 0.05 else ""
-        print("  " + pad(k, 16) + pad(tally[k], 6) + pad(f"{pa:.1f}%", 9)
-              + pad(wtally[k], 8) + pad(f"{pw:.1f}%", 9) + flag)
+        print("  " + pad(k, 16) + pad(gtally[k], 6) + pad(f"{pa:.1f}%", 9)
+              + pad(gwtally[k], 8) + pad(f"{pw:.1f}%", 9) + flag)
     print("  " + "-" * 54)
-    print("  " + pad("合计", 16) + pad(n_row, 6) + pad("100.0%", 9)
+    print("  " + pad("合计", 16) + pad(n_pair, 6) + pad("100.0%", 9)
           + pad(total_w, 8) + "100.0%")
 
     print()
@@ -506,8 +534,8 @@ def print_weighted(recs, tally, wtally):
     d, k = max(shifts, key=lambda x: abs(x[0]))
     if abs(d) >= 5:
         print()
-        print(f"读法：{k} 未加权时占 {tally[k] / n_row * 100:.1f}%（{tally[k]} 对），"
-              f"加权后占 {wtally[k] / total_w * 100:.1f}%（{wtally[k]} 条），差 {d:+.1f}pp。")
+        print(f"读法：{k} 未加权时占 {gtally[k] / n_pair * 100:.1f}%（{gtally[k]} 对），"
+              f"加权后占 {gwtally[k] / total_w * 100:.1f}%（{gwtally[k]} 条），差 {d:+.1f}pp。")
         print("      差异来自少数几个大格子——把每一对分歧都当成同等严重，会低估它们。")
 
 
@@ -625,7 +653,7 @@ def main():
             wtally[r["verdict"]] = wtally.get(r["verdict"], 0) + r["w"]
 
         if args.weight:
-            print_weighted(recs, tally, wtally)
+            print_weighted(recs)
         else:
             print(f"共 {len(recs)} 对名字：" +
                   " ｜ ".join(f"{k} {v}" for k, v in sorted(tally.items(), key=lambda x: -x[1])))
