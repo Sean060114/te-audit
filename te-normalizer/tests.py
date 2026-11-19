@@ -298,6 +298,43 @@ class TestRankPairs(unittest.TestCase):
         self.assertEqual(len(ranked), 1)
         self.assertEqual(ranked[0]["weight"], 4)
 
+    def test_unknown_name_does_not_collide_with_so_id(self):
+        """退化身份（未命中名）与 SO ID 必须分属两个命名空间。
+
+        旧实现用 `a_id or a` 当身份：输入里出现 "SO:0002278" 这种名字时，
+        它与真正的 SO ID 是同一个字符串，于是"等价"和"无法判定"两类记录
+        被并成一组，组标签取先进入的那条——换行序就换标签。
+        """
+        rows = [self.rec("DNA/TcMar", "DNA/TcMar_Mariner", 3),   # 同为 SO:0002278 → 等价
+                self.rec("SO:0002278", "DNA/TcMar", 2)]          # 首列未命中 → 无法判定
+        ranked = N.rank_pairs(rows)
+        self.assertEqual(len(ranked), 2, "两个命名空间被撞成一组了")
+        self.assertEqual({r["verdict"] for r in ranked}, {"等价", "无法判定"})
+
+    def test_unknown_collision_removed_is_order_independent(self):
+        """上一条的行序不应影响结果（旧实现会翻标签）"""
+        rows = [self.rec("DNA/TcMar", "DNA/TcMar_Mariner", 3),
+                self.rec("SO:0002278", "DNA/TcMar", 2)]
+        a = [(r["verdict"], r["weight"]) for r in N.rank_pairs(rows)]
+        b = [(r["verdict"], r["weight"]) for r in N.rank_pairs(list(reversed(rows)))]
+        self.assertEqual(a, b)
+
+    def test_mixed_verdict_flagged_not_first_wins(self):
+        """同一组里出现两种判定：标为"混合"并列出明细，不许静默取首条"""
+        r1 = self.rec("DNA/TcMar", "DNA/TcMar_Mariner", 3)
+        r2 = dict(r1, verdict="无法判定", w=2)
+        ranked = N.rank_pairs([r1, r2])
+        self.assertEqual(len(ranked), 1)
+        self.assertEqual(ranked[0]["verdict"], "混合")
+        self.assertIn("等价", ranked[0]["mixed"])
+        self.assertIn("无法判定", ranked[0]["mixed"])
+        # 换行序不许换结论
+        self.assertEqual(N.rank_pairs([r2, r1])[0]["verdict"], "混合")
+
+    def test_single_verdict_has_no_mixed_note(self):
+        ranked = N.rank_pairs([self.rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 7)])
+        self.assertEqual(ranked[0]["mixed"], "")
+
 
 class TestReadNames(unittest.TestCase):
     """read_names 的三种真实行格式"""
@@ -651,7 +688,7 @@ class TestSuiteGuard(unittest.TestCase):
     新增用例时把 BASELINE 一起加上；这里只做单向检查（变多不管，变少报错）。
     """
 
-    BASELINE = 69          # 2026-11-17 加 --total 之前是 57，本轮 +12
+    BASELINE = 73          # 2026-11-19 修镜像组合并的判定标签，+4
 
     def test_case_count_not_reduced(self):
         n = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__]).countTestCases()

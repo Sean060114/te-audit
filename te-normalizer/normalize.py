@@ -407,15 +407,30 @@ def relate(a, b):
 #   排行榜两个名次，把真正的第三名挤到看不见。
 #   合并后次数相加（7+1=8），但方向明细保留：方向能说明"谁在系统性地把谁
 #   吸走"，这是判断该修哪一方分类器的依据，不能丢。
+#
+# 两个坑（2026-11-19 修）：
+#   1) 身份必须分命名空间。未命中的一侧退回原始名，而 SO ID 也是一个字符串，
+#      两套东西混在一个命名空间里，输入里出现 "SO:0002278" 这种名字时就会与
+#      真正的 ID 撞成同一个键，把"等价"和"无法判定"两类记录并成一组。
+#      退回时加 "name:" 前缀，两者永不相等。
+#   2) 一个组里可能有不止一种判定（撞键、或将来 relate 引入方向性判定）。
+#      旧实现 groups.setdefault(key, {"verdict": r["verdict"]}) 只取**最先进入
+#      那一行**的判定，同一份数据换行序就换标签，且毫无痕迹。现在收集全部判定，
+#      只有一种时用那一种，多于一种时标为"混合"，不替数据选边。
 # ---------------------------------------------------------------------------
+def _ident(side_id, side_name):
+    """配对身份：优先用 SO ID；未命中时退回原始名，但加命名空间前缀"""
+    return side_id or ("name:" + side_name)
+
+
 def rank_pairs(recs):
     groups = {}
     for r in recs:
-        ka = r["a_id"] or r["a"]          # 未命中时退回原始名当身份
-        kb = r["b_id"] or r["b"]
-        key = tuple(sorted((ka, kb)))
-        g = groups.setdefault(key, {"weight": 0, "verdict": r["verdict"], "dirs": {}})
+        key = tuple(sorted((_ident(r["a_id"], r["a"]),
+                            _ident(r["b_id"], r["b"]))))
+        g = groups.setdefault(key, {"weight": 0, "verdicts": {}, "dirs": {}})
         g["weight"] += r["w"]
+        g["verdicts"][r["verdict"]] = g["verdicts"].get(r["verdict"], 0) + 1
         g["dirs"][(r["a"], r["b"])] = g["dirs"].get((r["a"], r["b"]), 0) + r["w"]
 
     out = []
@@ -426,8 +441,16 @@ def rank_pairs(recs):
         else:
             detail = " : ".join(f"{a.split('/')[-1]}→{b.split('/')[-1]} {w}"
                                 for (a, b), w in dirs)
+        vs = g["verdicts"]
+        if len(vs) == 1:
+            verdict, mixed = next(iter(vs)), ""
+        else:
+            verdict = "混合"
+            mixed = " / ".join(f"{k}×{n}" for k, n in
+                               sorted(vs.items(), key=lambda x: -x[1]))
         out.append({"a": dirs[0][0][0], "b": dirs[0][0][1],
-                    "weight": g["weight"], "verdict": g["verdict"], "dirs": detail})
+                    "weight": g["weight"], "verdict": verdict,
+                    "mixed": mixed, "dirs": detail})
     out.sort(key=lambda x: (-x["weight"], x["verdict"], x["a"]))
     return out
 
@@ -471,8 +494,13 @@ def print_weighted(recs, tally, wtally):
         print("  （没有非等价对）")
     for r in ranked:
         pair = f"{r['a']} ↔ {r['b']}"
+        tail = r["dirs"]
+        if r.get("mixed"):
+            # 组内判定不一致：不隐藏，直接写在行尾。这类行意味着"同一个键下
+            # 挤进了两种关系"，比单纯的方向明细更值得怀疑。
+            tail = f"{tail}  ｜ 判定混合：{r['mixed']}"
         print("  " + pad(r["weight"], 8) + pad(r["verdict"], 16)
-              + pad(clip(pair, 44), 46) + r["dirs"])
+              + pad(clip(pair, 44), 46) + tail)
 
     # 只在加权确实改变了结论时才多说一句，避免刷无意义的提示
     d, k = max(shifts, key=lambda x: abs(x[0]))
