@@ -257,6 +257,9 @@ def main():
     def write_patch(lines, tag, n_add, note):
         diff = difflib.unified_diff(
             raw, lines,
+            # 路径里的 bin/ 不能省：上游文件在 bin/TE_Sequence_Ontology.txt，
+            # 补丁要能 `git apply -p1` 直接打上（SUBMIT.md 第 0 节已实测）。
+            # 2026-11-19 曾把它改成 a/TE_Sequence_Ontology.txt，补丁就对不上位置了。
             fromfile="a/bin/TE_Sequence_Ontology.txt",
             tofile="b/bin/TE_Sequence_Ontology.txt",
             n=1,
