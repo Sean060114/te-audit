@@ -578,6 +578,20 @@ class TestCli(unittest.TestCase):
         self.assertIn("全部走路径1", r.stdout)
         self.assertNotIn("SO 标准名 (SO ID)", r.stdout)
 
+    def test_missing_input_suggests_close_name(self):
+        """路径打错时给建议，而不是抛 traceback（pairs.txt vs pairs_matrix.txt）"""
+        r = self.run_cli(str(EX / "pairs.txt"), "--pairs")
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("找不到输入文件", r.stderr)
+        self.assertIn("pairs_matrix.txt", r.stderr)
+        self.assertNotIn("Traceback", r.stderr)
+
+    def test_directory_as_input_rejected(self):
+        r = self.run_cli(str(EX), "--pairs")
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("是目录", r.stderr)
+        self.assertNotIn("Traceback", r.stderr)
+
     def test_csv_columns(self):
         fd, path = tempfile.mkstemp(suffix=".csv")
         os.close(fd)
@@ -736,7 +750,7 @@ class TestSuiteGuard(unittest.TestCase):
     新增用例时把 BASELINE 一起加上；这里只做单向检查（变多不管，变少报错）。
     """
 
-    BASELINE = 78          # 2026-11-19 统一对数口径/单向箭头/平局/短名，+5
+    BASELINE = 80          # 2026-11-20 输入路径友好提示，+2
 
     def test_case_count_not_reduced(self):
         n = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__]).countTestCases()

@@ -176,6 +176,17 @@ vs 元素级 3461 行，差的 205 个正是 `sub_feature` / `region` 行——�
 
 ## 变更记录
 
+- 2026-11-20（v1.7）输入路径找不到时给人话提示，不再抛 traceback。
+  1. 起因：`python normalize.py examples/pairs.txt --pairs` 直接吐八行栈，
+     最后一行才是 `No such file`；而这类错误九成是记错文件名（`pairs.txt`
+     vs `pairs_matrix.txt`）或站错目录，都不该让人去读栈。
+  2. 新增 `resolve_input()`：先判存在与是否为目录；找不到时用
+     `get_close_matches` 给 2–3 个近似文件名，并列出 `examples/` 里可用的
+     输入文件（重申"`.txt` 是输入、`.out`/`.csv` 是产物"的约定）。
+  3. 顺带发现并补上 `import os`——这个模块之前全靠相对路径，从没引用过 os。
+  4. 退出码 2（与 argparse 的用法错误一致），错误走 stderr。
+  5. `tests.py` 78 → 80（打错文件名、把目录当文件各 1 条，并断言输出里没有 Traceback）。
+
 - 2026-11-19（v1.6）`--weight` 输出层统一口径，四项修正。
   1. **判定分布的"对数"列改用组数。** 旧实现的分母是 `len(recs)`（行数），
      而它上面一行刚报过"合并镜像后 6 对"——同一屏里表内合计 8、标题写 6，

@@ -33,10 +33,11 @@ te-normalizer —— 模块 0：跨工具 TE 命名规范化器（v1）
 
 import argparse
 import csv
+import os
 import re
 import sys
 import unicodedata                  # 只为算"显示宽度"，让中文列在终端里对齐
-from difflib import SequenceMatcher   # 标准库自带的编辑相似度，无需安装任何东西
+from difflib import SequenceMatcher, get_close_matches   # 标准库自带，无需安装
 
 # 五条查找路径的编号与说明（--verbose 打印时用）
 # 之所以给每条路径编号：用户看到 "matched_ci" 不知道发生了什么，
@@ -315,6 +316,60 @@ def lookup(name, alias_to_so, so_names):
 # 模式 A（默认，每行一个名字）：支持 "名字 数量" 或 "数量 名字" 两种真实格式
 # 模式 B（--pairs，每行两个名字）：支持 "名A  名B" 或 "名A  名B  次数"
 # ---------------------------------------------------------------------------
+def resolve_input(path):
+    """把命令行给的路径解析成真实文件；失败时返回 (None, 人话提示)。
+
+    为什么要这一层：直接 open() 抛 FileNotFoundError，用户看到的是八行
+    traceback，最后一行才是 "No such file"。而这类错误九成只有两种：
+      1. 记错文件名（pairs.txt 还是 pairs_matrix.txt）
+      2. 站错目录（在仓库根目录跑，而 normalize.py 在 te-normalizer/ 下）
+    这两种都不该让人去读栈。
+    """
+    if os.path.isfile(path):
+        return path, ""
+    if os.path.isdir(path):
+        return None, (f"{path} 是目录，不是文件。\n"
+                      f"请指向具体文件，例如 {path.rstrip('/\\')}/pairs_matrix.txt")
+
+    def show(p):                       # 提示里的路径统一用正斜杠：与用户输入的习惯一致
+        return p.replace("\\", "/")
+
+    base = os.path.basename(path)
+    here = os.path.dirname(os.path.abspath(__file__))
+    probes = [os.path.dirname(path) or ".", os.path.join(here, "examples")]
+
+    lines = [f"找不到输入文件：{path}"]
+    seen, guesses, listings = set(), [], []
+    for d in probes:
+        if not os.path.isdir(d):
+            continue
+        files = sorted(n for n in os.listdir(d)
+                       if os.path.isfile(os.path.join(d, n)) and not n.startswith("."))
+        for g in get_close_matches(base, files, n=3, cutoff=0.5):
+            p2 = os.path.join(d, g)
+            if p2 not in seen:
+                seen.add(p2)
+                guesses.append(p2)
+        txts = [n for n in files if n.endswith(".txt")]
+        if txts:
+            listings.append((d, txts))
+
+    if guesses:
+        lines.append("")
+        lines.append("是不是想用：")
+        lines += [f"  {show(g)}" for g in guesses[:3]]
+    if listings:
+        d, txts = listings[0]
+        lines.append("")
+        lines.append(f"{show(d)} 里可用的输入文件（约定：.txt 是输入，.out / .csv 是产物）：")
+        lines += [f"  {n}" for n in txts[:10]]
+        if len(txts) > 10:
+            lines.append(f"  …… 其余 {len(txts) - 10} 个略")
+    lines.append("")
+    lines.append("提示：--pairs 需要两列（名字A <TAB> 名字B [次数]）；一列名字请去掉 --pairs。")
+    return None, "\n".join(lines)
+
+
 def read_names(path, pairs=False, issues=None):
     """读入一批名字。
 
@@ -618,8 +673,13 @@ def main():
             print(f"  …… 其余 {len(conflicts) - 10} 个略", file=sys.stderr)
         print("  建议在 TE_Sequence_Ontology.txt 里消除重复：否则同一条注释在两个版本间"
               "可能归到不同的 SO 名。", file=sys.stderr)
+    real_input, why = resolve_input(args.input)
+    if real_input is None:
+        print(why, file=sys.stderr)
+        sys.exit(2)
+
     read_issues = []
-    rows = read_names(args.input, pairs=args.pairs, issues=read_issues)
+    rows = read_names(real_input, pairs=args.pairs, issues=read_issues)
     if read_issues:
         mode = "配对" if args.pairs else "单列"
         print(f"警告：{len(read_issues)} 行无法按{mode}模式完整解析：", file=sys.stderr)
