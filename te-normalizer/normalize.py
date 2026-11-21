@@ -26,9 +26,10 @@ te-normalizer —— 模块 0：跨工具 TE 命名规范化器（v1）
     python normalize.py examples/test_names.txt
     python normalize.py examples/test_names.txt --verbose  # 逐条看：原始名->命中键->SO名
     python normalize.py examples/test_names.txt --out report.csv
-    python normalize.py examples/pairs_matrix.txt --pairs          # 两列名字，做冲突判定
+    python normalize.py examples/pairs_matrix.txt --pairs     # 两列名字，做冲突判定
 
-代码结构刻意保持"一个文件、六个函数"，每个函数都有中文注释。
+代码结构刻意保持单文件：每段一个编号小节（现为函数 1–9，8b 是 --total 的那层），
+每个函数都有中文注释。这里不写"共 N 个函数"——数字一改就过期，以小节标题为准。
 """
 
 import argparse

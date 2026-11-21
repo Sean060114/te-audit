@@ -15,7 +15,7 @@
 
 ```
 te-normalizer/
-├── normalize.py                 # 模块 0 核心（七个函数，全中文注释）
+├── normalize.py                 # 模块 0 核心（单文件，函数按编号分节，全中文注释）
 ├── check_counts.py              # 模块 2 核心（口径核查）
 ├── tests.py                     # 90 条断言（标准库 unittest，python tests.py 直接跑）
 ├── make_alias_pr.py             # 从 #542 缺失清单生成 PR 素材（别名补丁 + 分诊表 + PR 正文）
