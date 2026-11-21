@@ -375,6 +375,47 @@ class TestWeightedOutput(unittest.TestCase):
         self.assertIn("共 2 行记录，合并镜像后 1 对", out)
         self.assertRegex(out, r"合计\s+1\s+100\.0%")
 
+    def test_empty_recs_does_not_raise(self):
+        """空输入必须早退。旧实现在 max(shifts) 上抛 ValueError——
+        一行有效数据都没有是最常见的输入，不该给用户看栈"""
+        out = self.capture([])
+        self.assertIn("没有可合并的对", out)
+
+    def test_total_row_sums_rounded_percentages(self):
+        """三档各占 1/3 时每行显示 33.3%，相加是 99.9。合计行不许硬写 100.0%，
+        否则同一屏上三个行值与合计对不上"""
+        out = self.capture([pair_rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 1),
+                            pair_rec("LTR/Gypsy", "DNA/Mutator", 1),
+                            pair_rec("no_such_te", "DNA/CACTA", 1)])
+        self.assertRegex(out, r"合计\s+3\s+99\.9%")
+
+    def test_shift_equals_displayed_columns_difference(self):
+        """变化列必须等于「两列显示值相减」。这一行的真值差是 16.667：
+        直接取整会印 +16.7pp，而读者拿 83.3% - 66.7% 一算是 16.6"""
+        out = self.capture([pair_rec("DNA/CACTA", "DNA/Mutator", 1),
+                            pair_rec("LTR/Gypsy", "DNA/Mutator", 2),
+                            pair_rec("LTR/Copia", "DNA/Mutator", 3)])
+        self.assertRegex(out, r"跨类冲突\s+2\s+66\.7%\s+5\s+83\.3%\s+\+16\.6pp")
+        self.assertNotIn("+16.7pp", out)
+
+    def test_zero_total_weight_does_not_raise(self):
+        """权重合计为 0 时，每一处加权占比都是 0/0。命令行已不可能造出来
+        （read_names 丢弃次数 0 的行），但 print_weighted 是公开函数"""
+        out = self.capture([pair_rec("DNA/CACTA", "DNA/Mutator", 0)])
+        self.assertIn("权重合计 0 条", out)
+        self.assertNotIn("判定分布", out)
+
+    def test_read_note_never_explains_equivalent(self):
+        """读法那一段只能解释分歧。等价占比变大意味着分歧变少，
+        方向与这段结论相反——旧实现会把它当最大偏移拿出来讲"""
+        recs = ([pair_rec("DNA/Tc1_Mariner", "DNA/Tc1_Mariner", 20)]
+                + [pair_rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 1),
+                   pair_rec("LTR/Gypsy", "DNA/Mutator", 1),
+                   pair_rec("DNA/CACTA", "nonDNA/helitron", 1)])
+        out = self.capture(recs)
+        self.assertIn("等价", out)              # 分布表里必须有这一档
+        self.assertNotIn("读法：等价", out)     # 但结论段不许拿它来解释
+
     def test_verdict_distribution_counts_pairs(self):
         """判定分布按"对"算：镜像两行只贡献 1 对"""
         out = self.capture([pair_rec("DNA/Tc1_Mariner", "DNA/PIF_Harbinger", 7),
@@ -422,6 +463,40 @@ class TestReadNames(unittest.TestCase):
     def test_skip_comment_and_blank(self):
         p = self._write("# 注释\n\nDNA/hAT\n")
         self.assertEqual(N.read_names(p), ["DNA/hAT"])
+
+    def test_bom_comment_is_still_a_comment(self):
+        """带 BOM 的 UTF-8（记事本、Excel 导出的默认）里首行 "#" 前面会多出
+        U+FEFF。用 encoding="utf-8" 读时注释行不再被跳过，而是变成一个叫
+        "\ufeff# 注释" 的别名，还会被送进配对——必须用 utf-8-sig 读。"""
+        p = self._write("\ufeff# 注释\nDNA/hAT\n")
+        self.assertEqual(N.read_names(p), ["DNA/hAT"])
+
+    def test_zero_count_row_skipped(self):
+        """次数为 0 的配对行等于"这一对没有任何序列"：它不该占排行榜名次，
+        更不该把权重合计（所有加权占比的分母）拉成 0"""
+        issues = []
+        rows = N.read_names(self._write("DNA/CACTA\tDNA/Mutator\t0\n"),
+                            pairs=True, issues=issues)
+        self.assertEqual(rows, [])
+        self.assertEqual(len(issues), 1)
+        self.assertIn("次数为 0", issues[0][2])
+
+    def test_multiple_counts_skipped(self):
+        """一行里两个数字时，分不清哪一个是次数。取最后一个只是猜，
+        猜错的合计比缺一行更糟——跳过并记账"""
+        issues = []
+        rows = N.read_names(self._write("DNA/CACTA\tDNA/Mutator\t3\t4\n"),
+                            pairs=True, issues=issues)
+        self.assertEqual(rows, [])
+        self.assertIn("个数字", issues[0][2])
+
+    def test_negative_count_skipped(self):
+        """负次数会让权重合计偏低，且不会触发除零，属于纯静默错误"""
+        issues = []
+        rows = N.read_names(self._write("DNA/CACTA\tDNA/Mutator\t-3\n"),
+                            pairs=True, issues=issues)
+        self.assertEqual(rows, [])
+        self.assertIn("负数", issues[0][2])
 
     # --- 解析失败必须可见：静默丢行比读错更难查
     def test_all_digits_line_skipped(self):
@@ -610,7 +685,10 @@ class TestCli(unittest.TestCase):
         out = r.stdout
         # 8 行 → 6 对（Tc1/PIF 与 Gypsy/Mutator 各合并一次）→ 17 条
         self.assertIn("共 8 行记录，合并镜像后 6 对", out)
-        self.assertIn("涉及序列 17 条", out)
+        # 第三个数叫"权重合计"而不是"涉及序列"：它等于次数列之和，缺次数列的行
+        # 按 1 计，此时它就退化成行数。标签必须说清自己是什么，不能在两份输入
+        # 之间悄悄换单位。
+        self.assertIn("权重合计 17 条", out)
         self.assertIn("64.7%", out)          # 同目不同科加权后占比
         self.assertIn("35.3%", out)          # 跨类冲突加权后占比
         # 方向明细不能因为合并而丢失
@@ -705,6 +783,14 @@ class TestRate(unittest.TestCase):
         out = self.capture({"跨类冲突": 17}, 1593, 2.00)
         self.assertIn("-0.93 pp", out)
 
+    def test_empty_tally_prints_no_ratio(self):
+        """零数据不能印出「0.00%，差 -1.07 pp，两边同分母可比」——
+        没有分子的时候，"可比"这句话本身就是假的"""
+        out = self.capture({}, 1593, 1.07)
+        self.assertIn("不输出", out)
+        self.assertNotIn("0.00%", out)
+        self.assertNotIn("同分母可比", out)
+
 
 class TestRateCli(unittest.TestCase):
 
@@ -750,7 +836,7 @@ class TestSuiteGuard(unittest.TestCase):
     新增用例时把 BASELINE 一起加上；这里只做单向检查（变多不管，变少报错）。
     """
 
-    BASELINE = 80          # 2026-11-20 输入路径友好提示，+2
+    BASELINE = 90          # 2026-11-21 v1.8 显示口径/空输入/计数校验，+10
 
     def test_case_count_not_reduced(self):
         n = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__]).countTestCases()

@@ -16,7 +16,7 @@ te-normalizer —— 模块 0：跨工具 TE 命名规范化器（v1）
         - read_names 在配对模式下读第三列次数作为权重（缺省 1）
         - rank_pairs()：合并镜像对（Tc1→PIF 7 与 PIF→Tc1 1 是同一件事），
           权重相加、方向明细保留，再按权重排序
-        - print_weighted()：输出「行数 / 对数 / 序列数」三个口径，
+        - print_weighted()：输出「行数 / 对数 / 权重合计」三个口径，
           并对比未加权与加权的判定占比
     v1.1 新增：
         - --verbose：路径 2/3/4/5 逐条打印「原始名 -> 库内实际写法 -> SO 名+ID」，
@@ -26,7 +26,7 @@ te-normalizer —— 模块 0：跨工具 TE 命名规范化器（v1）
     python normalize.py examples/test_names.txt
     python normalize.py examples/test_names.txt --verbose  # 逐条看：原始名->命中键->SO名
     python normalize.py examples/test_names.txt --out report.csv
-    python normalize.py examples/pairs.txt --pairs          # 两列名字，做冲突判定
+    python normalize.py examples/pairs_matrix.txt --pairs          # 两列名字，做冲突判定
 
 代码结构刻意保持"一个文件、六个函数"，每个函数都有中文注释。
 """
@@ -132,7 +132,11 @@ def load_te_so(path):
     # 表只有一百多行，一次性读入即可；用 with 是为了显式关闭文件——
     # 原写法 for line in open(...) 依赖 GC 回收，会抛 ResourceWarning，
     # 在 Windows 上还可能占着文件锁。
-    with open(path, encoding="utf-8") as fh:
+    # utf-8-sig 而不是 utf-8：Windows 记事本/Excel 导出的 UTF-8 常带 BOM，
+    # 用 utf-8 读会让首行的 "#" 前面多出一个 U+FEFF，注释行不再被跳过，
+    # 而是变成一个叫 "\ufeff# 注释内容" 的别名。本程序自己写 CSV 用的就是
+    # utf-8-sig，读回来时正好踩这一脚。utf-8-sig 读无 BOM 的文件同样正常。
+    with open(path, encoding="utf-8-sig") as fh:
         lines = fh.readlines()
     for line in lines:
         # 跳过无效行
@@ -384,7 +388,9 @@ def read_names(path, pairs=False, issues=None):
     凭空消失了——比读错更难查。
     """
     names = []
-    with open(path, encoding="utf-8") as f:
+    # 同 load_te_so：带 BOM 的 UTF-8 会让首行的 "#" 前面多一个 U+FEFF，
+    # 注释行就不再是注释，而会变成一条名字进入统计。
+    with open(path, encoding="utf-8-sig") as f:
         for lineno, line in enumerate(f, 1):
             line = line.strip()
             if not line or line.startswith("#"):
@@ -410,7 +416,34 @@ def read_names(path, pairs=False, issues=None):
                     # EDTA 混淆矩阵里 Tc1→PIF 是 7 条、CACTA→Mutator 是 1 条，
                     # 两者都只是"一对分歧"，不加权就会当成同等严重。
                     # 没有次数行时权重记 1——一条分歧仍然算一条，只是最轻。
-                    weight = next((int(t) for t in reversed(tokens) if t.isdigit()), 1)
+                    #
+                    # 计数只认"恰好一个非负整数"，三种例外都不猜：
+                    #   多个数字   分不清哪一个是次数（四列导出？两个计数？）
+                    #   带负号     合计会被拉低，而错的合计比缺的合计更糟
+                    #   小数       7.5 条序列不存在，多半是混了比率列
+                    # 前两种直接跳过并记账；小数会落进 picked（不是纯数字），
+                    # 由下面"只取前两个名字"那条 issue 暴露出来。
+                    nums = [t for t in tokens if t.isdigit()]
+                    if len(nums) > 1:
+                        if issues is not None:
+                            issues.append((lineno, line,
+                                           f"本行有 {len(nums)} 个数字（{' '.join(nums)}），"
+                                           "分不清哪一个是次数，已跳过"))
+                        continue
+                    if any(t.startswith("-") and t[1:].isdigit() for t in tokens):
+                        if issues is not None:
+                            issues.append((lineno, line,
+                                           "次数为负数，不是有效的分歧条数，已跳过"))
+                        continue
+                    weight = int(nums[0]) if nums else 1
+                    if weight <= 0:
+                        # 次数 0 等于"这一对没有任何序列"。它不该占排行榜一个名次，
+                        # 更不该把权重合计（也就是所有加权占比的分母）拉成 0——
+                        # 那种输入会让 print_weighted 在除法上直接崩。
+                        if issues is not None:
+                            issues.append((lineno, line,
+                                           f"次数为 {weight}，不是有效的分歧条数，已跳过"))
+                        continue
                     names.append((picked[0], picked[1], weight))
                     if len(picked) > 2 and issues is not None:
                         issues.append((lineno, line,
@@ -528,9 +561,10 @@ def rank_pairs(recs):
 # ---------------------------------------------------------------------------
 # 函数 8：把加权结果打印出来（--weight 的输出层）
 # 三块：总量 -> 判定分布（未加权 vs 加权）-> 按权重排序的分歧对
-# 为什么第一块要报"行数 / 对数 / 序列数"三个数：
-#   8 行、7 对、17 条——同一份数据三个口径。这本身又是模块 2 那个教训的重演，
-#   报数的人必须说清用的是哪一个。
+# 为什么第一块要报"行数 / 对数 / 权重合计"三个数：
+#   8 行、6 对、17 条（examples/pairs_matrix.txt 实测）——同一份数据三个口径。
+#   8 行合并成 6 对是因为合并了两次镜像（Tc1↔PIF、Mutator↔Gypsy）。
+#   这本身又是模块 2 那个教训的重演，报数的人必须说清用的是哪一个。
 # ---------------------------------------------------------------------------
 def print_weighted(recs):
     """--weight 的输出层。
@@ -538,10 +572,28 @@ def print_weighted(recs):
     口径只有一处：**一切以 rank_pairs 合并后的"对"为准**。
     旧实现一边报"合并镜像后 6 对"、一边在表里把行数当对数（合计 8），
     同一屏两个数打架——这是本项目第四次栽在"分母是什么"上。
+
+    但"对"只修好了前两个数。第三个数是**权重合计**，不等于去重后的序列数：
+    每行都带次数时它确实等于"涉及的分歧序列条数"（一条序列只落在一个格子里，
+    合并只做同组相加、不会重复计），而缺次数列的行按 1 计，此时这个位置就
+    退化成"行数"。所以打印时写成"权重合计"并在同一行交代构成 —— 同一个位置
+    不能有两种单位。
+
+    一张表里所有算出来的数只准有**一个口径**：读者能做的验算只有"拿显示值
+    相减 / 相加"。所以变化列用 round(pw,1)-round(pa,1)（显示值相减），合计行
+    用各行显示值相加；两者都从显示值出发。旧实现合计行按显示值加、变化列按
+    真值取整，同一屏两种尺子——2/3 与 5/6 那一行会印出 +16.7pp，而两列相减
+    是 16.6。
     """
     allrank = rank_pairs(recs)
     ranked = [r for r in allrank if r["verdict"] != "等价"]   # 等价对不是分歧，不进排序
     n_row, n_pair = len(recs), len(allrank)
+
+    # 空输入必须早退：下面 max(shifts) 对空序列直接 ValueError，而"文件里
+    # 一行有效数据都没有"是最常见的输入之一，不是程序出错，不该让人读栈。
+    if not n_pair:
+        print(f"共 {n_row} 行记录，没有可合并的对（无可比数据）")
+        return
 
     gtally, gwtally = {}, {}
     for g in allrank:
@@ -550,28 +602,46 @@ def print_weighted(recs):
         gwtally[k] = gwtally.get(k, 0) + g["weight"]
     total_w = sum(gwtally.values())
 
+    # 权重合计为 0 时下面每一处加权占比都是 0/0。命令行已不可能造出来
+    # （read_names 丢弃次数 0 的行），但 print_weighted 是公开函数，
+    # 测试和下游都可能直接传 recs 进来——宁可少打一张表，不给一个除零栈。
+    if not total_w:
+        print(f"共 {n_row} 行记录，合并镜像后 {n_pair} 对"
+              f"（其中等价 {gtally.get('等价', 0)} 对），权重合计 0 条"
+              "——所有记录的权重都是 0，无法计算加权占比")
+        return
+
     print(f"共 {n_row} 行记录，合并镜像后 {n_pair} 对"
-          f"（其中等价 {gtally.get('等价', 0)} 对），涉及序列 {total_w} 条")
+          f"（其中等价 {gtally.get('等价', 0)} 对），"
+          f"权重合计 {total_w} 条（次数列之和；缺次数列的行按 1 计）")
     print()
     print("判定分布：未加权（按对数） vs 加权（按次数）")
     print("  " + pad("判定", 16) + pad("对数", 6) + pad("占比", 9)
-          + pad("序列数", 8) + pad("占比", 9) + "变化")
+          + pad("权重", 8) + pad("占比", 9) + "变化")
     print("  " + "-" * 54)
     keys = sorted(gtally, key=lambda k: (-gwtally[k], -gtally[k]))
     shifts = []
     for k in keys:
         pa, pw = gtally[k] / n_pair * 100, gwtally[k] / total_w * 100
-        shifts.append((pw - pa, k))
-        flag = f"  {pw - pa:+.1f}pp" if abs(pw - pa) >= 0.05 else ""
+        # 变化列必须等于"两列显示值相减"，否则读者一算就发现对不上。
+        # 所以从取整后的值出发，而不是先算真值差再取整：真值差 16.667 会印成
+        # +16.7pp，而 83.3% - 66.7% = 16.6。
+        dpp = round(pw, 1) - round(pa, 1)
+        shifts.append((dpp, k))
+        flag = f"  {dpp:+.1f}pp" if abs(dpp) >= 0.05 else ""
         print("  " + pad(k, 16) + pad(gtally[k], 6) + pad(f"{pa:.1f}%", 9)
               + pad(gwtally[k], 8) + pad(f"{pw:.1f}%", 9) + flag)
     print("  " + "-" * 54)
-    print("  " + pad("合计", 16) + pad(n_pair, 6) + pad("100.0%", 9)
-          + pad(total_w, 8) + "100.0%")
+    # 合计行不能硬写 100.0%：各行按 0.1 取整后相加可能是 99.9 或 100.1，
+    # 硬写就又是一处"同一屏数字互相打架"。
+    pa_sum = sum(round(gtally[k] / n_pair * 100, 1) for k in keys)
+    pw_sum = sum(round(gwtally[k] / total_w * 100, 1) for k in keys)
+    print("  " + pad("合计", 16) + pad(n_pair, 6) + pad(f"{pa_sum:.1f}%", 9)
+          + pad(total_w, 8) + f"{pw_sum:.1f}%")
 
     print()
-    print("按涉及序列数排序（只列非等价对；镜像对已合并，末列是方向明细）")
-    print("  " + pad("序列数", 8) + pad("判定", 16) + pad("分歧对", 46) + "方向")
+    print("按权重排序（只列非等价对；镜像对已合并，末列是方向明细）")
+    print("  " + pad("权重", 8) + pad("判定", 16) + pad("分歧对", 46) + "方向")
     print("  " + "-" * 76)
     if not ranked:
         print("  （没有非等价对）")
@@ -585,8 +655,11 @@ def print_weighted(recs):
         print("  " + pad(r["weight"], 8) + pad(r["verdict"], 16)
               + pad(clip(pair, 44), 46) + tail)
 
-    # 只在加权确实改变了结论时才多说一句，避免刷无意义的提示
-    d, k = max(shifts, key=lambda x: abs(x[0]))
+    # 只在加权确实改变了结论时才多说一句，避免刷无意义的提示。
+    # 比较范围必须剔掉"等价"：等价是"这两个名字其实是一回事"，它的占比变大
+    # 说明分歧变少了，与这段读法的结论方向相反（旧实现会把它当最大偏移解释）。
+    div = [s for s in shifts if s[1] != "等价"]
+    d, k = max(div, key=lambda x: abs(x[0])) if div else (0.0, "")
     if abs(d) >= 5:
         print()
         print(f"读法：{k} 未加权时占 {gtally[k] / n_pair * 100:.1f}%（{gtally[k]} 对），"
@@ -609,6 +682,14 @@ def print_weighted(recs):
 # ---------------------------------------------------------------------------
 def print_rate(wtally, total, baseline=None):
     total_w = sum(wtally.values())
+    # 没有可比对的记录时不输出比率。否则会印出"非等价 0 → 0.00%、差 -1.07 pp、
+    # 两边同分母可比"——零数据加上"可比"这句话，本身就是个假命题。
+    if not total_w:
+        print()
+        print("不一致率（与 EDTA 同一分母）")
+        print("  " + pad("库序列总数 N", 20) + pad(total, 10))
+        print("  没有配对记录，比率不输出。")
+        return
     agree = wtally.get("等价", 0)
     all_bad = total_w - agree
     role_only = wtally.get("角色不同", 0)
