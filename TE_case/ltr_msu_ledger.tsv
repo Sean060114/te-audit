@@ -1,0 +1,421 @@
+chrom	start	end	strand	length	ed_class	ltr_identity	tsd	verdict_code	msu_dominant	cov_gypsy	cov_copia	cov_unknown	n_msu_hits	msu_note	family
+OsChr1	106517	118085	+	11569	LTR/Gypsy	0.9997	ATGGT	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	156931	164485	-	7555	LTR/Copia	0.9295	GATCA	agree_superfamily	LTR/Copia	0.0	0.785	0.649	7	Ty1/copia retrotransposon, putative	TE_00000953
+OsChr1	465114	477986	+	12873	LTR/Gypsy	0.9991	AATAG	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	1	AnacB3 transposon, putative	TE_00001527
+OsChr1	660815	671473	-	10659	LTR/Gypsy	0.9977	ATATC	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	3	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	815864	831945	-	16082	LTR/Gypsy	1.0000	AACCT	msu_ltr_only	LTR/unknown	0.198	0.0	0.803	6	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	832962	839862	+	6901	LTR/Copia	0.9899	TCCAC	insufficient_cov	LTR/Copia	0.042	0.28	0.16	7	Ty1/copia retrotransposon, putative	TE_00001945
+OsChr1	880796	891658	-	10863	LTR/Gypsy	0.9976	ATAAA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.001	3	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	905432	910511	+	5080	LTR/Copia	0.9567	GCTTC	agree_superfamily	LTR/Copia	0.0	0.997	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00001972
+OsChr1	939748	953850	-	14103	LTR/Gypsy	0.9972	CTACT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	Retrotransposon, putative	TE_00000826
+OsChr1	944159	953175	-	9017	LTR/Gypsy	0.9718	GTTCC	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	3	Retrotransposon, putative	TE_00000826
+OsChr1	1463988	1481744	-	17757	LTR/Gypsy	0.9926	TGTTG	agree_superfamily	LTR/Gypsy	0.663	0.0	0.018	15	Dagul gypsy-type retrotransposon, putative	TE_00001542
+OsChr1	1608760	1617689	+	8930	LTR/Copia	0.9981	AGTTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	retrotransposon, putative	TE_00000943
+OsChr1	1876683	1879883	+	3201	LTR/unknown	0.9750	ATGTT	insufficient_cov	LTR/unknown	0.0	0.0	0.017	1	retrotransposon, putative	TE_00001021
+OsChr1	2335749	2341144	+	5396	LTR/Gypsy	0.9991	CATTT	msu_nonltr_label	DNA/TIR	0.0	0.0	0.28	5	AnacB3 transposon, putative	TE_00000302
+OsChr1	2535673	2539068	-	3396	LTR/Copia	1.0000	GAACA	msu_ltr_only	LTR/unknown	0.0	0.0	0.917	1	retrotransposon, putative	TE_00001224
+OsChr1	2908917	2917726	+	8810	LTR/Gypsy	1.0000	ATATT	msu_nonltr_label	DNA/TIR	0.001	0.0	0.0	6	AnacB3 transposon, putative	TE_00000760
+OsChr1	3154605	3172619	-	18015	LTR/Gypsy	0.9899	ATAAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.984	10	retrotransposon, putative	TE_00001426
+OsChr1	3205011	3219107	+	14097	LTR/Gypsy	0.9882	ATAGC	agree_superfamily	LTR/Gypsy	0.661	0.0	0.0	9	Ty3-gypsy-like retrotransposon, putative	TE_00001542
+OsChr1	4469006	4483877	-	14872	LTR/Gypsy	1.0000	ATGCG	agree_superfamily	LTR/Gypsy	0.959	0.0	0.219	6	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	4549576	4560490	-	10915	LTR/Copia	0.9937	TAATC	agree_superfamily	LTR/Copia	0.223	0.478	0.0	23	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr1	4598083	4611172	-	13090	LTR/Gypsy	1.0000	AATAC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	4	AnacB3 transposon, putative	TE_00001527
+OsChr1	4638953	4645057	-	6105	LTR/Copia	1.0000	CCACA	agree_superfamily	LTR/Copia	0.0	0.933	0.0	4	Ty1/copia retrotransposon, putative	TE_00001815
+OsChr1	4776234	4781945	-	5712	LTR/Copia	1.0000	CACAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.979	5	retrotransposon, putative	TE_00001820
+OsChr1	4855911	4868809	+	12899	LTR/Gypsy	1.0000	CACTT	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	4	AnacB3 transposon, putative	TE_00001527
+OsChr1	4932004	4943303	+	11300	LTR/Gypsy	0.9931	GTATC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	5736015	5741179	-	5165	LTR/Gypsy	0.9840	TGACC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001851
+OsChr1	6161928	6167723	-	5796	LTR/Copia	0.9905	CTTTA	agree_superfamily	LTR/Copia	0.0	0.998	0.0	2	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	6745807	6758688	-	12882	LTR/Gypsy	0.9944	GACGG	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	1	AnacB3 transposon, putative	OsChr1:6758683..6745812
+OsChr1	6926809	6939625	+	12817	LTR/Gypsy	0.9936	CTGTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	Unclassified retrotransposon, putative	OsChr1:6926814..6939620
+OsChr1	7749200	7754663	-	5464	LTR/Gypsy	0.9657	GAGGA	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001923
+OsChr1	7781167	7792372	+	11206	LTR/Gypsy	0.9892	GTATG	msu_ltr_only	LTR/unknown	0.0	0.0	0.996	8	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	8162772	8168198	-	5427	LTR/Gypsy	0.9991	CTGAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	4	Unclassified retrotransposon, putative	TE_00000302
+OsChr1	8508602	8519866	+	11265	LTR/Gypsy	0.9331	ATAAC	agree_superfamily	LTR/Gypsy	0.713	0.0	0.46	5	Ty3/gypsy LTR retrotransposon, putative	TE_00001957
+OsChr1	8822537	8827749	-	5213	LTR/Copia	0.9977	CAGGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	3	retrotransposon, putative	TE_00001964
+OsChr1	8862569	8875554	-	12986	LTR/Gypsy	0.9937	CCACT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	4	Unclassified retrotransposon, putative	OsChr1:8875549..8862574
+OsChr1	8973530	8977949	-	4420	LTR/Gypsy	0.9975	GAAGG	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	4	noaCRR1 retrotransposon, putative	TE_00001459
+OsChr1	9214585	9220985	+	6401	LTR/Copia	0.9979	CATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	Osr1 retrotransposon, putative	TE_00001810
+OsChr1	9409124	9416731	+	7608	LTR/Copia	0.9792	GTTTC	insufficient_cov	LTR/unknown	0.0	0.192	0.287	5	retrotransposon, putative	TE_00001992
+OsChr1	9531578	9544431	-	12854	LTR/Gypsy	0.9909	TATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	2	Hopi retrotransposon, putative	OsChr1:9544426..9531583
+OsChr1	9619041	9624788	-	5748	LTR/Copia	0.9715	AAATG	msu_ltr_only	LTR/unknown	0.0	0.0	0.956	4	retrotransposon, putative	TE_00001820
+OsChr1	9942370	9944173	+	1804	LTR/unknown	0.9826	CTGAT	both_unresolved	LTR/unknown	0.0	0.0	0.994	1	retrotransposon, putative	TE_00002013
+OsChr1	9956616	9961029	-	4414	LTR/Gypsy	0.9595	TATGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	2	noaCRR1 retrotransposon, putative	TE_00002014
+OsChr1	9989024	10001972	+	12949	LTR/Gypsy	0.9896	GGTAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.934	7	Unclassified retrotransposon, putative	TE_00000659
+OsChr1	10030391	10042897	-	12507	LTR/Gypsy	0.9848	GTATG	msu_ltr_only	LTR/unknown	0.0	0.0	0.783	9	Unclassified retrotransposon, putative	TE_00000659
+OsChr1	10070754	10077186	-	6433	LTR/Copia	0.9979	GGGGA	agree_superfamily	LTR/Copia	0.346	0.454	0.136	10	Ty1/copia retrotransposon, putative	TE_00001228
+OsChr1	10081797	10097461	-	15665	LTR/Gypsy	0.9684	GAACC	msu_ltr_only	LTR/unknown	0.206	0.0	0.612	7	retrotransposon, putative	TE_00000776
+OsChr1	10852347	10864933	+	12587	LTR/Gypsy	0.9831	CATGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.406	8	Unclassified retrotransposon, putative	TE_00000659
+OsChr1	10951368	10957828	+	6461	LTR/Copia	0.9561	TAATT	agree_superfamily	LTR/Copia	0.0	0.995	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	11123580	11128984	+	5405	LTR/Gypsy	0.9982	CATAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	6	Unclassified retrotransposon, putative	TE_00000302
+OsChr1	11300355	11307158	-	6804	LTR/Gypsy	1.0000	TCAAC	msu_ltr_only	LTR/unknown	0.102	0.0	0.9	9	retrotransposon, putative	TE_00000815
+OsChr1	11521729	11525134	-	3406	LTR/unknown	0.9573	AACTC	insufficient_cov		0.0	0.0	0.0	0		OsChr1:11525129..11521734
+OsChr1	11830911	11839793	+	8883	LTR/Gypsy	0.9575	ATATG	msu_ltr_only	LTR/unknown	0.054	0.0	0.992	2	Unclassified retrotransposon, putative	TE_00000826
+OsChr1	11947969	11951795	-	3827	LTR/Copia	0.9682	AACAA	insufficient_cov		0.0	0.0	0.0	0		TE_00000832
+OsChr1	12531209	12542835	-	11627	LTR/Gypsy	0.9991	CGGTC	agree_superfamily	LTR/Gypsy	0.72	0.0	0.13	23	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	12598064	12610978	-	12915	LTR/Gypsy	1.0000	ATGTC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.18	5	AnacB3 transposon, putative	TE_00001527
+OsChr1	12791740	12802327	-	10588	LTR/Gypsy	0.9997	TGAGC	agree_superfamily	LTR/Gypsy	0.997	0.0	0.001	8	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:12802322..12791745
+OsChr1	12860725	12867176	+	6452	LTR/Copia	0.9990	TATGC	agree_superfamily	LTR/Copia	0.0	0.995	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	12948185	12960278	+	12094	LTR/Gypsy	0.9987	CCTCG	agree_superfamily	LTR/Gypsy	0.597	0.0	0.0	9	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00000081
+OsChr1	12990577	12996760	+	6184	LTR/Copia	0.9965	GATAT	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00000859
+OsChr1	13012813	13026821	+	14009	LTR/Gypsy	0.9988	AGCAA	agree_superfamily	LTR/Gypsy	0.756	0.0	0.045	13	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	13061022	13068574	+	7553	LTR/Gypsy	0.9987	GCCAT	agree_superfamily	LTR/Gypsy	0.461	0.0	0.989	11	Ty3-gypsy-like retrotransposon, putative	TE_00000861
+OsChr1	13091662	13107116	-	15455	LTR/Gypsy	0.9653	GTGAC	agree_superfamily	LTR/Gypsy	0.313	0.0	0.61	13	RIRE8 gypsy-type retrotransposon, putative	TE_00000862
+OsChr1	13447618	13452997	-	5380	LTR/Gypsy	0.9968	GGGAA	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000871
+OsChr1	13618448	13622568	-	4121	LTR/unknown	0.9280	CACTG	both_unresolved	LTR/unknown	0.0	0.0	0.499	6	retrotransposon, putative	OsChr1:13622563..13618453
+OsChr1	13624750	13635018	+	10269	LTR/Gypsy	0.9951	GAACT	agree_superfamily	LTR/Gypsy	0.899	0.0	0.0	13	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001076
+OsChr1	13643116	13651133	+	8018	LTR/Copia	0.9448	CCCAT	agree_superfamily	LTR/Copia	0.0	0.98	0.0	8	Ty1/copia retrotransposon, putative	TE_00000132
+OsChr1	13737084	13747295	-	10212	LTR/Gypsy	0.9978	TCTAT	agree_superfamily	LTR/Gypsy	0.784	0.0	0.0	6	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:13747290..13737089
+OsChr1	13862937	13875817	-	12881	LTR/Gypsy	0.9972	CCATC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	1	AnacB3 transposon, putative	TE_00001527
+OsChr1	14490130	14502769	+	12640	LTR/Gypsy	0.9900	ATTAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	6	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	14660482	14672575	-	12094	LTR/Gypsy	1.0000	GTTTC	agree_superfamily	LTR/Gypsy	0.597	0.0	0.0	10	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	14870331	14876816	-	6486	LTR/Copia	0.9980	GTGGG	agree_superfamily	LTR/Copia	0.0	0.988	0.0	6	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	15036628	15049416	-	12789	LTR/Gypsy	0.9893	AGGTG	msu_ltr_only	LTR/unknown	0.058	0.0	0.978	10	putative retrotransposon	TE_00001527
+OsChr1	15301254	15307718	+	6465	LTR/Copia	0.9917	GAAAG	agree_superfamily	LTR/Copia	0.0	0.99	0.0	5	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	15516703	15529227	+	12525	LTR/Gypsy	0.9883	ACGAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.706	10	Unclassified retrotransposon, putative	TE_00000659
+OsChr1	15864696	15876644	+	11949	LTR/Gypsy	0.9916	ATTAG	agree_superfamily	LTR/Gypsy	0.997	0.0	0.001	11	RIRE8 gypsy-type retrotransposon, putative	TE_00001267
+OsChr1	16040682	16045657	+	4976	LTR/unknown	0.9617	AAATA	both_unresolved	LTR/unknown	0.0	0.0	0.401	7	retrotransposon, putative	TE_00001562
+OsChr1	16159379	16172135	-	12757	LTR/Gypsy	0.9928	GATGT	msu_ltr_only	LTR/unknown	0.023	0.0	0.996	4	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	16196015	16199552	+	3538	LTR/Gypsy	0.9737	CCTAA	msu_ltr_only	LTR/unknown	0.0	0.0	0.788	3	retrotransposon, putative	TE_00000776
+OsChr1	16211890	16224364	-	12475	LTR/Gypsy	0.9932	ATGTA	agree_superfamily	LTR/Gypsy	0.997	0.0	0.0	5	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00001786
+OsChr1	16268965	16278422	-	9458	LTR/Gypsy	0.9901	TGTAC	agree_superfamily	LTR/Gypsy	0.935	0.0	0.001	15	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:16278417..16268970
+OsChr1	16307562	16311968	-	4407	LTR/Gypsy	0.9883	GTATG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR1 retrotransposon, putative	TE_00000045
+OsChr1	16437145	16442441	+	5297	LTR/Gypsy	0.9612	CCAAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000952
+OsChr1	16574111	16586637	-	12527	LTR/Gypsy	0.9841	GCAGG	agree_superfamily	LTR/Gypsy	0.309	0.0	0.715	12	Ty3-gypsy-like retrotransposon, putative	TE_00000659
+OsChr1	16600426	16606826	-	6401	LTR/Copia	0.9417	AGCAA	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	16618253	16629877	-	11625	LTR/Gypsy	0.9877	GTTGT	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	6	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	16673345	16678895	-	5551	LTR/Gypsy	0.9414	CCTAA	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	2	retrotransposon, putative	TE_00000957
+OsChr1	16733778	16742204	-	8427	LTR/Copia	0.9731	GATCA	msu_ltr_only	LTR/unknown	0.0	0.0	0.916	8	retrotransposon, putative	TE_00000958
+OsChr1	16974765	16979178	+	4414	LTR/Gypsy	0.9962	AAGTA	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	3	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00000045
+OsChr1	17051361	17064292	-	12932	LTR/Gypsy	0.9871	GACGG	agree_superfamily	LTR/Gypsy	0.671	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	17311138	17318901	-	7764	LTR/Gypsy	0.9690	CCAAA	msu_ltr_only	LTR/unknown	0.0	0.0	0.753	4	retrotransposon, putative	TE_00000969
+OsChr1	17327592	17333914	-	6323	LTR/Gypsy	0.9899	GCTAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.933	6	Unclassified retrotransposon, putative	TE_00000971
+OsChr1	17436250	17442720	-	6471	LTR/Copia	1.0000	CTGGC	agree_superfamily	LTR/Copia	0.0	0.989	0.0	5	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	17524381	17531793	-	7413	LTR/Gypsy	0.9987	AAACC	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	3	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00000977
+OsChr1	17634697	17646379	-	11683	LTR/Gypsy	0.9965	ATATA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	7	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	17665568	17674796	+	9229	LTR/Copia	0.9487	TCCCA	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	4	retrotransposon, putative	TE_00000134
+OsChr1	17699910	17705447	-	5538	LTR/Copia	0.9917	GAAAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.971	6	retrotransposon, putative	TE_00000986
+OsChr1	17773913	17785533	+	11621	LTR/Gypsy	0.9716	CCGGT	msu_ltr_only	LTR/unknown	0.064	0.0	0.73	14	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00000990
+OsChr1	17887069	17892286	-	5218	LTR/Copia	0.9954	AGGTC	msu_ltr_only	LTR/unknown	0.0	0.175	0.914	8	retrotransposon, putative	TE_00000995
+OsChr1	18288211	18295926	+	7716	LTR/Gypsy	0.9945	TGGGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	3	CRR2 retrotransposon, putative	TE_00000040
+OsChr1	18308349	18319973	-	11625	LTR/Gypsy	0.9913	GAGCC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.01	4	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	18909840	18918738	+	8899	LTR/Gypsy	0.9685	ACTAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	Unclassified retrotransposon, putative	TE_00000826
+OsChr1	19015820	19020846	-	5027	LTR/Copia	0.9849	GTTCA	msu_ltr_only	LTR/unknown	0.0	0.0	0.618	2	retrotransposon, putative	TE_00001032
+OsChr1	19210366	19226268	+	15903	LTR/Gypsy	0.9944	ATTTG	msu_ltr_only	LTR/unknown	0.188	0.0	0.811	6	Retrotransposon, putative	TE_00001381
+OsChr1	19440230	19451653	-	11424	LTR/Gypsy	0.9950	ATATA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00001497
+OsChr1	19511047	19512533	+	1487	LTR/unknown	0.9623	GGTGG	msu_nonltr_label	Unclassified	0.0	0.0	0.0	4	Unclassified repeat, putative	TE_00001041
+OsChr1	19555354	19566269	-	10916	LTR/Gypsy	1.0000	GCTAT	agree_superfamily	LTR/Gypsy	0.632	0.0	0.131	20	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	19579596	19588992	-	9397	LTR/unknown	0.9984	AGAAA	ed_unknown_msu_resolved	LTR/Gypsy	0.726	0.0	0.0	10	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:19588987..19579601
+OsChr1	19623702	19635034	-	11333	LTR/Gypsy	1.0000	GGTAC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	3	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	19651297	19672540	-	21244	LTR/Gypsy	0.9968	AAAAC	agree_superfamily	LTR/Gypsy	0.868	0.0	0.056	32	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:19672535..19651302
+OsChr1	19657142	19668207	+	11066	LTR/Gypsy	0.9988	ATGAC	agree_superfamily	LTR/Gypsy	0.752	0.0	0.106	22	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	19754163	19764928	+	10766	LTR/Gypsy	0.9966	GCAAC	agree_superfamily	LTR/Gypsy	0.805	0.0	0.0	11	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	19790409	19801721	-	11313	LTR/Gypsy	1.0000	CCAAC	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	3	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	19936053	19948160	-	12108	LTR/Gypsy	0.9984	GCATC	agree_superfamily	LTR/Gypsy	0.599	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr1	19999253	20011354	+	12102	LTR/Gypsy	0.9978	GTGAT	agree_superfamily	LTR/Gypsy	0.927	0.0	0.0	13	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	20158730	20170502	+	11773	LTR/Gypsy	0.9994	AGGAT	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	6	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00001054
+OsChr1	20219976	20231325	+	11350	LTR/Gypsy	0.9653	GTTAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.997	8	retrotransposon, putative	TE_00001055
+OsChr1	20365147	20371611	+	6465	LTR/Copia	0.9979	TATTG	agree_superfamily	LTR/Copia	0.0	0.989	0.0	5	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	20470513	20475001	+	4489	LTR/Gypsy	0.9739	TGTAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR1 retrotransposon, putative	TE_00001061
+OsChr1	20611253	20617728	-	6476	LTR/Copia	1.0000	CCGGC	agree_superfamily	LTR/Copia	0.0	0.995	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	20672888	20684995	-	12108	LTR/Gypsy	0.9959	CCCTC	agree_superfamily	LTR/Gypsy	0.64	0.0	0.0	12	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	20756397	20760493	+	4097	LTR/unknown	0.9731	ATTTG	both_unresolved	LTR/unknown	0.0	0.0	0.503	7	retrotransposon, putative	TE_00001068
+OsChr1	20792818	20804147	-	11330	LTR/Gypsy	0.9838	CAGGC	agree_superfamily	LTR/Gypsy	0.864	0.0	0.312	2	RIRE2 gypsy-type retrotransposon, putative	TE_00000041
+OsChr1	20835059	20841655	-	6597	LTR/Gypsy	0.9954	TGAGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.927	5	retrotransposon, putative	TE_00001069
+OsChr1	20877052	20887352	-	10301	LTR/Copia	0.9843	GTTTC	agree_superfamily	LTR/Copia	0.524	0.457	0.003	21	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr1	20917841	20922828	+	4988	LTR/Gypsy	0.9780	ACTAA	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR2 retrotransposon, putative	TE_00001072
+OsChr1	20963441	20976307	+	12867	LTR/Gypsy	1.0000	ATATC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.001	4	AnacB3 transposon, putative	TE_00001527
+OsChr1	20998346	21008560	-	10215	LTR/Gypsy	0.9933	TTTTT	agree_superfamily	LTR/Gypsy	0.733	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:21008555..20998351
+OsChr1	21048196	21054488	-	6293	LTR/Copia	1.0000	CGTTC	agree_superfamily	LTR/Copia	0.387	0.437	0.129	11	Ty1/copia retrotransposon, putative	TE_00001228
+OsChr1	21205919	21218780	-	12862	LTR/Gypsy	1.0000	GGCAT	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	1	AnacB3 transposon, putative	TE_00001527
+OsChr1	21245230	21258133	-	12904	LTR/Gypsy	0.9991	CCGCC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	21643952	21656852	+	12901	LTR/Gypsy	1.0000	GATGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.871	6	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	21859590	21872883	-	13294	LTR/Gypsy	0.9514	CACCC	msu_ltr_only	LTR/unknown	0.054	0.0	0.682	15	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00001107
+OsChr1	21950018	21955966	-	5949	LTR/Gypsy	0.9976	GCGGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	2	retrotransposon, putative	TE_00001110
+OsChr1	22294728	22301189	+	6462	LTR/Copia	0.9969	GAAAT	agree_superfamily	LTR/Copia	0.0	0.994	0.0	4	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	22400913	22412383	+	11471	LTR/Gypsy	0.9468	CATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	5	retrotransposon, putative	TE_00001131
+OsChr1	22508715	22520668	+	11954	LTR/Gypsy	0.9967	GCGCC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr1	23127493	23137442	-	9950	LTR/Gypsy	0.9984	ATGTC	agree_superfamily	LTR/Gypsy	0.763	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr1:23137437..23127498
+OsChr1	23474446	23483920	-	9475	LTR/unknown	0.9953	AGGTA	ed_unknown_msu_resolved	LTR/Gypsy	0.413	0.0	0.86	5	Ty3-gypsy-like retrotransposon, putative	OsChr1:23483915..23474451
+OsChr1	23502314	23508739	-	6426	LTR/Copia	0.9936	GTGAG	agree_superfamily	LTR/Copia	0.0	0.993	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	23593876	23606776	+	12901	LTR/Gypsy	1.0000	GACAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.492	2	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	24742852	24748439	+	5588	LTR/Gypsy	0.9904	GGGTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	5	Unclassified retrotransposon, putative	TE_00001194
+OsChr1	24774789	24779572	+	4784	LTR/Copia	0.9952	ATCCT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001197
+OsChr1	25099687	25112581	+	12895	LTR/Gypsy	0.9933	GTAGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.649	5	putative retrotransposon	TE_00000659
+OsChr1	25566853	25573317	-	6465	LTR/Copia	1.0000	CCCAC	agree_superfamily	LTR/Copia	0.378	0.45	0.125	9	Ty1/copia retrotransposon, putative	TE_00001228
+OsChr1	25653443	25664756	+	11314	LTR/Gypsy	1.0000	CTTTG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	2	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr1	25709286	25714508	+	5223	LTR/Gypsy	1.0000	AGAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.99	6	retrotransposon, putative	TE_00001233
+OsChr1	25804386	25816373	-	11988	LTR/Gypsy	0.9983	CCGAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	4	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr1	25937886	25947357	-	9472	LTR/Gypsy	1.0000	ATCAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.795	3	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	26015183	26027996	-	12814	LTR/Gypsy	0.9971	TATCC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	6	AnacB3 transposon, putative	TE_00001527
+OsChr1	26542775	26557897	-	15123	LTR/Gypsy	0.9980	AGCCC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	11	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr1	26665881	26678731	+	12851	LTR/Gypsy	1.0000	ACCTC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	2	AnacB3 transposon, putative	TE_00001527
+OsChr1	26848656	26861536	-	12881	LTR/Gypsy	1.0000	GTTCC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	2	AnacB3 transposon, putative	TE_00001527
+OsChr1	26942846	26954870	+	12025	LTR/Gypsy	0.9997	ACGTG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.001	8	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr1	26980168	26991452	+	11285	LTR/Gypsy	0.9986	TAAAG	agree_superfamily	LTR/Gypsy	0.57	0.0	0.07	22	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	27399711	27408724	+	9014	LTR/unknown	0.9964	GTTAA	ed_unknown_msu_resolved	LTR/Gypsy	0.968	0.0	0.525	13	Ty3/gypsy retrotransposon, putative	TE_00001285
+OsChr1	27440225	27451551	-	11327	LTR/Gypsy	0.9986	CCTAG	agree_superfamily	LTR/Gypsy	0.567	0.0	0.072	20	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr1	27528951	27532837	-	3887	LTR/Copia	0.9657	ACAAA	insufficient_cov	Unclassified	0.0	0.0	0.0	1		TE_00001290
+OsChr1	27890401	27895096	-	4696	LTR/unknown	0.9456	ATATA	insufficient_cov	LTR/Gypsy	0.279	0.0	0.013	5	RIRE1 gypsy-type retrotransposon, putative	OsChr1:27895091..27890406
+OsChr1	27899246	27905687	-	6442	LTR/Copia	0.9969	TCTGA	agree_superfamily	LTR/Copia	0.0	0.995	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr1	28305308	28307068	?	1761	LTR/unknown	0.9358	TCTA	ed_unknown_msu_resolved	LTR/Copia	0.0	0.776	0.0	7	Ty1-copia-like retrotransposon, putative	TE_00001398
+OsChr1	28337716	28342910	+	5195	LTR/Copia	0.9881	GGCTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.994	3	retrotransposon, putative	TE_00001318
+OsChr1	28712396	28724802	-	12407	LTR/Gypsy	0.9894	GGTGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.781	12	Unclassified retrotransposon, putative	TE_00000971
+OsChr1	28839995	28846442	+	6448	LTR/Copia	0.9990	CTGCT	agree_superfamily	LTR/Copia	0.0	0.994	0.0	3	Houba copia-like retrotransposon, putative	TE_00000049
+OsChr1	28995845	29007338	-	11494	LTR/Gypsy	0.9921	CCGGC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	29083643	29096569	+	12927	LTR/Gypsy	0.9851	CCAAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	8	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	29253356	29262110	+	8755	LTR/unknown	1.0000	GTGTT	both_unresolved	LTR/unknown	0.221	0.0	0.826	6	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00001157
+OsChr1	29344265	29357190	+	12926	LTR/Gypsy	0.9926	GGGCT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	Unclassified retrotransposon, putative	OsChr1:29344270..29357185
+OsChr1	29789781	29800960	+	11180	LTR/Gypsy	0.9336	CATAG	agree_superfamily	LTR/Gypsy	0.925	0.0	0.031	10	Ty3-gypsy-like retrotransposon, putative	TE_00001363
+OsChr1	29881326	29886610	-	5285	LTR/Copia	0.9934	TGTTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001367
+OsChr1	30432455	30445251	-	12797	LTR/Gypsy	0.9954	TACTC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	4	Unclassified retrotransposon, putative	OsChr1:30445246..30432460
+OsChr1	30801077	30803201	+	2125	LTR/unknown	0.9199	GCTTG	ed_unknown_msu_resolved	LTR/Copia	0.0	0.649	0.0	8	Ty1-copia-like retrotransposon, putative	TE_00001398
+OsChr1	31019513	31031063	-	11551	LTR/Gypsy	0.9977	CGTCG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	2	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	31122307	31127332	+	5026	LTR/Copia	1.0000	ATAAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.616	3	retrotransposon, putative	TE_00001032
+OsChr1	31138205	31151889	-	13685	LTR/Gypsy	0.9933	AGCTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.996	9	retrotransposon, putative	TE_00000054
+OsChr1	31234271	31239068	+	4798	LTR/Copia	0.9942	AATGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001413
+OsChr1	31438707	31451545	-	12839	LTR/Gypsy	0.9916	CTCGG	msu_nonltr_label	DNA/TIR	0.0	0.0	0.278	3	AnacB3 transposon, putative	OsChr1:31451540..31438712
+OsChr1	31907041	31911766	+	4726	LTR/Gypsy	0.9864	TTCTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.997	6	retrotransposon, putative	TE_00001436
+OsChr1	32205102	32216717	+	11616	LTR/Gypsy	0.9901	GCTAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.583	8	Unclassified retrotransposon, putative	TE_00000659
+OsChr1	32517692	32522081	+	4390	LTR/Gypsy	0.9808	TGATT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR1 retrotransposon, putative	TE_00001459
+OsChr1	33118227	33119884	-	1658	LTR/unknown	0.9839	AGCTG	insufficient_cov		0.0	0.0	0.0	0		OsChr1:33119879..33118232
+OsChr1	33138855	33140512	-	1658	LTR/unknown	0.9839	AGCTG	insufficient_cov		0.0	0.0	0.0	0		OsChr1:33140507..33138860
+OsChr1	33416682	33426967	+	10286	LTR/Gypsy	0.9694	ATATT	msu_ltr_only	LTR/unknown	0.0	0.0	0.973	13	retrotransposon, putative	TE_00001486
+OsChr1	33850339	33861904	-	11566	LTR/Gypsy	0.9990	AGGCG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	5	Ty3/gypsy retrotransposon, putative	TE_00001497
+OsChr1	34235572	34238695	-	3124	LTR/unknown	0.9610	ATCTT	insufficient_cov		0.0	0.0	0.0	0		OsChr1:34238690..34235577
+OsChr1	34264462	34274856	+	10395	LTR/Copia	0.9827	CATGT	msu_nonltr_label	DNA/TIR	0.0	0.009	0.0	5	AnacB2 transposon, putative	TE_00001506
+OsChr1	34335604	34348072	+	12469	LTR/Gypsy	0.9992	CGGGG	insufficient_cov	DNA/TIR	0.153	0.0	0.0	24	AnacB2 transposon, putative	TE_00001510
+OsChr1	34821550	34831271	-	9722	LTR/Gypsy	1.0000	CACGG	msu_nonltr_label	DNA/TIR	0.0	0.0	0.023	5	AnacB3 transposon, putative	TE_00001527
+OsChr1	34970456	34976129	+	5674	LTR/Gypsy	0.9798	GAGAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001533
+OsChr1	35035887	35049054	-	13168	LTR/Gypsy	0.9934	TATTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.994	11	Unclassified retrotransposon, putative	TE_00001527
+OsChr1	35277690	35289774	+	12085	LTR/Gypsy	0.9990	CCCTC	agree_superfamily	LTR/Gypsy	0.597	0.0	0.0	13	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr1	35443193	35456625	+	13433	LTR/Gypsy	0.9994	CTGCT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	2	Dagul gypsy-type retrotransposon, putative	TE_00001542
+OsChr1	35668081	35680964	-	12884	LTR/Gypsy	0.9920	ATTAT	agree_superfamily	LTR/Gypsy	0.314	0.0	0.655	6	Ty3-gypsy-like retrotransposon, putative	TE_00001527
+OsChr1	36032794	36036684	+	3891	LTR/unknown	0.9427	GCGCG	both_unresolved	LTR/unknown	0.0	0.0	0.517	5	retrotransposon, putative	TE_00001562
+OsChr1	36545263	36557258	-	11996	LTR/Gypsy	0.9946	GTGAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr1	36572889	36585393	-	12505	LTR/Gypsy	0.9978	GACCC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.001	7	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00001786
+OsChr1	37128127	37133012	+	4886	LTR/Copia	0.9820	AACAA	agree_superfamily	LTR/Copia	0.0	0.312	0.862	5	Ty1-copia-like retrotransposon, putative	TE_00001595
+OsChr1	37164033	37170354	+	6322	LTR/unknown	0.9877	CCAAA	insufficient_cov	LTR/Copia	0.0	0.047	0.0	6	Ty1-copia-like retrotransposon, putative	TE_00001596
+OsChr1	37207134	37221290	-	14157	LTR/Gypsy	0.9954	GAAAA	agree_superfamily	LTR/Gypsy	0.855	0.0	0.0	23	Ty3-gypsy-like retrotransposon, putative	TE_00001598
+OsChr1	37489558	37502486	+	12929	LTR/Gypsy	0.9963	GCATA	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	Unclassified retrotransposon, putative	OsChr1:37489563..37502481
+OsChr1	37822291	37824263	-	1973	LTR/unknown	0.9587	ATTAT	insufficient_cov	LTR/unknown	0.0	0.0	0.035	2	retrotransposon, putative	OsChr1:37824258..37822296
+OsChr1	38172649	38174670	-	2022	LTR/Copia	1.0000	TAGCT	insufficient_cov	LTR/unknown	0.0	0.0	0.28	2	retrotransposon, putative	TE_00001625
+OsChr1	38580949	38592243	-	11295	LTR/Gypsy	0.9838	CCGAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000041
+OsChr1	38772231	38786812	-	14582	LTR/Gypsy	0.9554	ATATT	msu_ltr_only	LTR/unknown	0.051	0.0	0.784	8	retrotransposon, putative	TE_00001055
+OsChr1	39336540	39341465	-	4926	LTR/Copia	0.9881	CTCAC	agree_superfamily	LTR/Copia	0.0	0.944	0.44	3	Ty1-copia-like retrotransposon, putative	TE_00001665
+OsChr1	39403038	39407762	-	4725	LTR/Copia	1.0000	TCTGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00001666
+OsChr1	39709828	39718267	-	8440	LTR/Gypsy	0.9710	TAATA	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	retrotransposon, putative	TE_00001674
+OsChr1	40041741	40047023	+	5283	LTR/Gypsy	0.9961	CGGTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.673	6	Unclassified retrotransposon, putative	TE_00000302
+OsChr1	40374492	40378447	+	3956	LTR/Gypsy	0.9728	AAAAC	insufficient_cov	Unclassified	0.16	0.0	0.088	7	Oryza latifolia-like dispersed repeat, putative	TE_00001696
+OsChr1	40853065	40858191	+	5127	LTR/Copia	0.9860	ATTTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.983	3	retrotransposon, putative	TE_00001719
+OsChr1	41030613	41035993	+	5381	LTR/Gypsy	0.9963	GGCGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	4	Unclassified retrotransposon, putative	TE_00000302
+OsChr1	41409808	41422659	-	12852	LTR/Gypsy	0.9981	GAAAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.618	6	CRR2 retrotransposon, putative	TE_00001527
+OsChr1	41422813	41434470	+	11658	LTR/Gypsy	0.9997	GTGGT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr1	41605060	41610584	+	5525	LTR/Copia	1.0000	AATTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.985	4	retrotransposon, putative	TE_00000412
+OsChr1	41752707	41757635	-	4929	LTR/Gypsy	0.9975	ATATC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR2 retrotransposon, putative	TE_00001749
+OsChr1	42507640	42520525	+	12886	LTR/Gypsy	0.9991	ATTAA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	6	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00000235
+OsChr1	42895589	42900979	+	5391	LTR/Gypsy	1.0000	GTATA	msu_nonltr_label	DNA/TIR	0.0	0.0	0.279	6	AnacB3 transposon, putative	TE_00000302
+OsChr1	43026340	43039306	+	12967	LTR/Gypsy	0.9976	TATTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	4	putative retrotransposon	OsChr1:43026345..43039301
+OsChr1	43256443	43269336	+	12894	LTR/Gypsy	0.9888	GATCA	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	3	AnacB3 transposon, putative	OsChr1:43256448..43269331
+OsChr12	45346	50556	+	5211	LTR/Copia	0.9905	CCACT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000612
+OsChr12	282980	289646	+	6667	LTR/Copia	0.9842	GGAAG	conflict_superfamily	LTR/Gypsy	0.882	0.072	0.0	9	RIRE5 gypsy-type retrotransposon, putative	TE_00001810
+OsChr12	590075	595002	+	4928	LTR/Gypsy	0.9936	CGCTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	noaCRR2 retrotransposon, putative	TE_00001749
+OsChr12	667398	674137	+	6740	LTR/Gypsy	0.9908	CTTGG	msu_ltr_only	LTR/unknown	0.01	0.0	0.822	8	retrotransposon, putative	TE_00000672
+OsChr12	1314242	1315490	-	1249	LTR/unknown	0.9856	ATTTG	insufficient_cov		0.0	0.0	0.0	0		OsChr12:1315485..1314247
+OsChr12	1573263	1578111	+	4849	LTR/Copia	0.9949	CTGAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	3	retrotransposon, putative	TE_00000137
+OsChr12	1695628	1708473	-	12846	LTR/Gypsy	0.9954	CCTAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	1	Unclassified retrotransposon, putative	OsChr12:1708468..1695633
+OsChr12	1823249	1829688	+	6440	LTR/Copia	0.9958	ACAGT	agree_superfamily	LTR/Copia	0.0	0.995	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	1955495	1961935	+	6441	LTR/Copia	0.9927	TTTCC	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	2047602	2060127	+	12526	LTR/Gypsy	0.9890	GAGCT	agree_superfamily	LTR/Gypsy	0.989	0.0	0.074	6	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00001786
+OsChr12	2354103	2359625	-	5523	LTR/Copia	1.0000	AAAAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.984	4	retrotransposon, putative	TE_00000412
+OsChr12	2354117	2359624	-	5508	LTR/Copia	1.0000	AAAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.985	4	retrotransposon, putative	TE_00000412
+OsChr12	2370144	2375400	-	5257	LTR/Copia	1.0000	TTATA	msu_ltr_only	LTR/unknown	0.0	0.0	0.914	6	Unclassified retrotransposon, putative	TE_00000417
+OsChr12	2493255	2501372	+	8118	LTR/unknown	0.9966	TCCTT	ed_unknown_msu_resolved	LTR/Gypsy	0.999	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00000460
+OsChr12	2527367	2532300	+	4934	LTR/Copia	0.9972	AGATT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000476
+OsChr12	2552934	2562150	+	9217	LTR/Copia	0.9666	TAATC	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	4	retrotransposon, putative	TE_00000134
+OsChr12	3043392	3054773	+	11382	LTR/Gypsy	0.9574	GGTCC	msu_ltr_only	LTR/unknown	0.0	0.0	0.98	6	retrotransposon, putative	TE_00001131
+OsChr12	3256344	3271230	-	14887	LTR/Gypsy	0.9676	GGTA	msu_ltr_only	LTR/unknown	0.204	0.0	0.629	8	retrotransposon, putative	TE_00000569
+OsChr12	4011798	4017026	+	5229	LTR/Copia	0.9952	GCGAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	3	retrotransposon, putative	TE_00000597
+OsChr12	4093320	4096319	-	3000	LTR/unknown	0.9740	AAGAA	insufficient_cov	LTR/unknown	0.0	0.0	0.055	3	retrotransposon, putative	OsChr12:4096314..4093325
+OsChr12	4234129	4241449	+	7321	LTR/Copia	0.9401	AAAAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.411	6	retrotransposon, putative	TE_00000607
+OsChr12	4326120	4330683	+	4564	LTR/unknown	0.9640	TAAGT	both_unresolved	LTR/unknown	0.0	0.0	0.451	6	noaCRR2 retrotransposon, putative	TE_00001068
+OsChr12	4790760	4795140	-	4381	LTR/unknown	0.9694	CTTAT	both_unresolved	LTR/unknown	0.0	0.0	0.498	11	noaCRR2 retrotransposon, putative	OsChr12:4795135..4790765
+OsChr12	4851235	4856947	-	5713	LTR/Copia	0.9871	TATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.982	4	retrotransposon, putative	TE_00001820
+OsChr12	4889534	4891833	-	2300	LTR/unknown	0.9691	CAATG	insufficient_cov		0.0	0.0	0.0	0		TE_00000622
+OsChr12	4968252	4981972	+	13721	LTR/Gypsy	0.9715	GGCGG	agree_superfamily	LTR/Gypsy	0.94	0.0	0.017	9	Ty3-gypsy-like retrotransposon, putative	OsChr12:4968260..4981967
+OsChr12	5207089	5219930	+	12842	LTR/Gypsy	0.9910	GAGGG	agree_superfamily	LTR/Gypsy	0.314	0.0	0.654	8	Ty3-gypsy-like retrotransposon, putative	TE_00001527
+OsChr12	5226957	5238265	+	11309	LTR/Gypsy	0.9955	ACTAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	5277205	5283469	+	6265	LTR/Gypsy	0.9977	TGTCT	msu_ltr_only	LTR/unknown	0.0	0.0	0.916	6	retrotransposon, putative	TE_00000629
+OsChr12	5317615	5328485	+	10871	LTR/Gypsy	0.9943	TATGA	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	9	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	5343802	5357669	-	13868	LTR/unknown	0.9890	ACCTA	ed_unknown_msu_resolved	LTR/Gypsy	0.404	0.001	0.019	38	Ty3-gypsy-like retrotransposon, putative	OsChr12:5357664..5343807
+OsChr12	5521067	5534810	+	13744	LTR/Gypsy	0.9783	CCATG	agree_superfamily	LTR/Gypsy	0.941	0.0	0.05	7	Ty3-gypsy-like retrotransposon, putative	OsChr12:5521072..5534805
+OsChr12	5554672	5557607	-	2936	LTR/unknown	0.9674	AGTCT	insufficient_cov	LTR/unknown	0.0	0.0	0.08	4	retrotransposon, putative	OsChr12:5557602..5554677
+OsChr12	6016240	6027389	-	11150	LTR/Gypsy	0.9927	ATAAT	agree_superfamily	LTR/Gypsy	0.983	0.0	0.0	17	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:6027384..6016245
+OsChr12	6281972	6290639	+	8668	LTR/Gypsy	0.9912	GTCTC	msu_ltr_only	LTR/unknown	0.177	0.0	0.999	6	Squiq LTR retrotransposon, putative	TE_00000658
+OsChr12	6370074	6381709	-	11636	LTR/Gypsy	0.9830	CATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.926	9	Unclassified retrotransposon, putative	TE_00000659
+OsChr12	6407310	6419304	-	11995	LTR/Gypsy	0.9960	GGTGT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	6550416	6556597	+	6182	LTR/Copia	0.9953	CTAGG	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	6659627	6672481	-	12855	LTR/Gypsy	0.9981	TATAC	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	2	AnacB3 transposon, putative	TE_00001527
+OsChr12	6681167	6687614	+	6448	LTR/Copia	0.9969	CCCTC	agree_superfamily	LTR/Copia	0.0	0.993	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	6898237	6907696	+	9460	LTR/Gypsy	0.9931	GTTTG	msu_ltr_only	LTR/unknown	0.103	0.0	0.598	11	retrotransposon, putative	TE_00001069
+OsChr12	6955799	6959739	-	3941	LTR/Copia	0.9763	TCTCC	insufficient_cov		0.0	0.0	0.0	0		TE_00000689
+OsChr12	6996689	7009609	+	12921	LTR/Gypsy	0.9963	GTAGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	Unclassified retrotransposon, putative	TE_00001527
+OsChr12	7865547	7873241	-	7695	LTR/Copia	0.9867	GTCTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.996	4	retrotransposon, putative	TE_00000134
+OsChr12	8092401	8105291	-	12891	LTR/Gypsy	0.9898	ACAGT	agree_superfamily	LTR/Gypsy	0.898	0.0	0.32	5	Ty3-gypsy-like retrotransposon, putative	OsChr12:8105286..8092406
+OsChr12	8114604	8125932	+	11329	LTR/Gypsy	0.9670	AAAGT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000041
+OsChr12	8611166	8622416	+	11251	LTR/Gypsy	0.9923	TCAAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.001	7	Ty3/gypsy retrotransposon, putative	TE_00000794
+OsChr12	8634056	8640512	-	6457	LTR/Copia	0.9667	TGCGG	msu_ltr_only	LTR/unknown	0.0	0.0	0.945	8	retrotransposon, putative	TE_00000958
+OsChr12	8804694	8806187	+	1494	LTR/unknown	0.9783	CTTTC	insufficient_cov	LTR/unknown	0.0	0.0	0.083	1	retrotransposon, putative	TE_00000734
+OsChr12	8872008	8874029	+	2022	LTR/Copia	1.0000	CGGCG	msu_ltr_only	LTR/unknown	0.0	0.0	0.321	2	retrotransposon, putative	TE_00001625
+OsChr12	8964182	8976176	-	11995	LTR/Gypsy	0.9841	CACCT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	6	putative retrotransposon	TE_00000659
+OsChr12	9005218	9013704	+	8487	LTR/Gypsy	0.9489	GAAAC	agree_superfamily	LTR/Gypsy	0.349	0.0	0.643	6	Ty3-gypsy-like retrotransposon, putative	TE_00000741
+OsChr12	9031052	9042104	-	11053	LTR/Gypsy	0.9840	TTTCC	agree_superfamily	LTR/Gypsy	0.885	0.0	0.056	15	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	9048236	9059631	+	11396	LTR/Gypsy	0.9595	CTTTT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	6	retrotransposon, putative	TE_00000743
+OsChr12	9215043	9228879	-	13837	LTR/Gypsy	0.9769	GGTTT	agree_superfamily	LTR/Gypsy	0.939	0.0	0.034	8	Ty3-gypsy-like retrotransposon, putative	OsChr12:9228874..9215048
+OsChr12	9407376	9412110	-	4735	LTR/Copia	0.9901	TGACT	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	5	retrotransposon, putative	TE_00000759
+OsChr12	9413233	9427705	+	14473	LTR/Gypsy	0.9877	ATATG	msu_ltr_only	LTR/unknown	0.22	0.0	0.78	9	Unclassified retrotransposon, putative	TE_00000659
+OsChr12	9438399	9441190	+	2792	LTR/unknown	0.9828	CAAAT	insufficient_cov	LTR/unknown	0.0	0.0	0.054	5	retrotransposon, putative	TE_00000762
+OsChr12	9628810	9640750	-	11941	LTR/Gypsy	0.9836	ATGTA	agree_superfamily	LTR/Gypsy	0.997	0.0	0.0	6	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr12	9718814	9730192	+	11379	LTR/unknown	0.9786	GTCAC	ed_unknown_msu_resolved	LTR/Gypsy	0.68	0.0	0.069	19	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000768
+OsChr12	9814736	9818864	+	4129	LTR/unknown	0.9688	GTGTA	both_unresolved	LTR/unknown	0.0	0.0	0.484	5	retrotransposon, putative	TE_00000770
+OsChr12	9845576	9856890	+	11315	LTR/Gypsy	1.0000	ATAAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	2	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	9988282	9994690	-	6409	LTR/Copia	0.9695	ATTTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.942	3	retrotransposon, putative	TE_00000958
+OsChr12	9998173	10009996	+	11824	LTR/Gypsy	0.9450	TATAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.687	8	retrotransposon, putative	TE_00000774
+OsChr12	10023736	10037554	+	13819	LTR/Gypsy	0.9931	TGTAT	agree_superfamily	LTR/Gypsy	0.71	0.0	0.001	9	Dagul gypsy-type retrotransposon, putative	TE_00001542
+OsChr12	10092947	10103201	-	10255	LTR/Gypsy	0.9952	GGAGG	agree_superfamily	LTR/Gypsy	0.782	0.0	0.001	12	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:10103196..10092952
+OsChr12	10156802	10168091	+	11290	LTR/Gypsy	0.9955	CAATT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	10324965	10337276	-	12312	LTR/Gypsy	0.9719	CAAAC	agree_superfamily	LTR/Gypsy	0.997	0.0	0.0	9	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00000294
+OsChr12	10372244	10382448	-	10205	LTR/Gypsy	0.9968	GCATC	agree_superfamily	LTR/Gypsy	0.95	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:10382443..10372249
+OsChr12	10390077	10395556	+	5480	LTR/Gypsy	0.9791	GACAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000007
+OsChr12	10545784	10557645	-	11862	LTR/unknown	0.9915	CCCAA	ed_unknown_msu_resolved	LTR/Gypsy	0.673	0.0	0.0	15	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:10557640..10545789
+OsChr12	10562568	10571146	+	8579	LTR/Gypsy	0.9847	ACCGA	agree_superfamily	LTR/Gypsy	0.325	0.0	0.944	7	Ty3-gypsy-like retrotransposon, putative	TE_00000658
+OsChr12	10746401	10752830	-	6430	LTR/Copia	0.9488	CTAGC	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	10929602	10932280	-	2679	LTR/unknown	0.9376	GACAT	insufficient_cov	LTR/Copia	0.0	0.015	0.0	1	Ty1-copia-like retrotransposon, putative	OsChr12:10932275..10929607
+OsChr12	10987138	10994635	+	7498	LTR/Gypsy	0.9679	GTGTG	agree_superfamily	LTR/Gypsy	0.882	0.0	0.15	11	Ty3/gypsy retrotransposon, putative	TE_00000023
+OsChr12	11021709	11038150	+	16442	LTR/Gypsy	0.9840	GCGTC	msu_ltr_only	LTR/unknown	0.045	0.0	0.804	12	putative retrotransposon	TE_00000659
+OsChr12	11111794	11123472	+	11679	LTR/Gypsy	0.9913	TGTAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	5	Ty3-gypsy-like retrotransposon, putative	TE_00000794
+OsChr12	11474382	11486368	+	11987	LTR/Gypsy	0.9983	CTTGG	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	8	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	11551855	11561155	-	9301	LTR/Gypsy	0.9491	ACATG	msu_ltr_only	LTR/unknown	0.164	0.0	0.836	4	CRR2 retrotransposon, putative	TE_00000040
+OsChr12	11604471	11616562	-	12092	LTR/Gypsy	0.9952	TGAAT	agree_superfamily	LTR/Gypsy	0.666	0.0	0.0	5	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr12	11778775	11788990	-	10216	LTR/Gypsy	0.9815	CTCCA	agree_superfamily	LTR/Gypsy	0.998	0.0	0.079	5	Ty3-gypsy-like retrotransposon, putative	TE_00000041
+OsChr12	11848658	11860215	-	11558	LTR/Gypsy	0.9777	ACATC	msu_ltr_only	LTR/unknown	0.0	0.0	0.986	13	retrotransposon, putative	TE_00000990
+OsChr12	12107670	12112084	+	4415	LTR/Gypsy	0.9974	AGGGA	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	3	Rice chromosome 8 centromere-like LTR retrotransposon, putative	TE_00000045
+OsChr12	12154396	12165813	-	11418	LTR/Gypsy	0.9924	GTGCC	agree_superfamily	LTR/Gypsy	0.995	0.0	0.001	9	Ty3/gypsy retrotransposon, putative	TE_00001497
+OsChr12	12284701	12293918	-	9218	LTR/Copia	0.9487	GCTGC	agree_superfamily	LTR/Copia	0.312	0.684	0.0	8	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	12331518	12336262	-	4745	LTR/Gypsy	0.9990	GAGGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	6	Unclassified retrotransposon, putative	TE_00000302
+OsChr12	12496315	12505017	+	8703	LTR/Gypsy	0.9382	AGAGG	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	6	Unclassified retrotransposon, putative	TE_00000826
+OsChr12	12510171	12524025	+	13855	LTR/Gypsy	0.9919	AAGAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.995	16	retrotransposon, putative	TE_00000054
+OsChr12	12534035	12546122	+	12088	LTR/Gypsy	0.9843	CGGAG	agree_superfamily	LTR/Gypsy	0.995	0.0	0.001	12	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	12635766	12644093	-	8328	LTR/Gypsy	0.9629	ATGTT	agree_superfamily	LTR/Gypsy	0.997	0.0	0.0	8	Ty3-gypsy-like retrotransposon, putative	TE_00000162
+OsChr12	12681666	12688099	+	6434	LTR/Copia	0.9595	TTTTC	agree_superfamily	LTR/Copia	0.306	0.451	0.136	12	Ty1/copia retrotransposon, putative	TE_00001228
+OsChr12	12993084	13005181	-	12098	LTR/Gypsy	0.9907	GCCCG	agree_superfamily	LTR/Gypsy	0.996	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	13031152	13048281	-	17130	LTR/Gypsy	0.9746	AGCTG	agree_superfamily	LTR/Gypsy	0.916	0.0	0.0	21	Ty3-gypsy-like retrotransposon, putative	TE_00000072
+OsChr12	13128655	13139948	-	11294	LTR/Gypsy	1.0000	ATACT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	13250936	13262934	-	11999	LTR/Gypsy	0.9746	ATGAC	agree_superfamily	LTR/Gypsy	0.603	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr12	13358620	13370730	+	12111	LTR/Gypsy	0.9930	ATCGG	agree_superfamily	LTR/Gypsy	0.599	0.0	0.0	5	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	13588410	13599703	-	11294	LTR/Gypsy	1.0000	ATAAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	13666173	13671655	-	5483	LTR/Gypsy	0.9969	GATTA	msu_ltr_only	LTR/unknown	0.0	0.0	0.984	6	retrotransposon, putative	TE_00000086
+OsChr12	13802039	13807518	-	5480	LTR/Copia	0.9880	ATTAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.926	6	retrotransposon, putative	TE_00000093
+OsChr12	13893109	13904984	+	11876	LTR/Gypsy	0.9881	ATCAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	5	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	13938301	13943459	+	5159	LTR/Gypsy	0.9977	CGGCT	agree_superfamily	LTR/Gypsy	0.998	0.0	0.0	3	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	14167499	14172156	+	4658	LTR/Copia	0.9828	CCCAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.98	6	retrotransposon, putative	TE_00000103
+OsChr12	14211593	14216626	+	5034	LTR/Gypsy	0.9669	GCCTC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	4	Retrotransposon, putative	TE_00000105
+OsChr12	14339362	14344678	-	5317	LTR/Gypsy	0.9256	GGTAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.511	9	retrotransposon, putative	TE_00000107
+OsChr12	14471210	14477658	-	6449	LTR/Copia	0.9529	GGCCA	agree_superfamily	LTR/Copia	0.353	0.454	0.136	8	Ty1/copia retrotransposon, putative	TE_00001228
+OsChr12	15069395	15074825	-	5431	LTR/Gypsy	0.9890	CTCGG	msu_ltr_only	LTR/unknown	0.001	0.0	0.996	8	Unclassified retrotransposon, putative	TE_00000302
+OsChr12	15252799	15257873	-	5075	LTR/Copia	0.9938	GTCTG	agree_superfamily	LTR/Copia	0.0	0.926	0.0	6	Ty1-copia-like retrotransposon, putative	TE_00000123
+OsChr12	15291098	15303942	+	12845	LTR/Gypsy	0.9916	TAGCC	msu_nonltr_label	DNA/TIR	0.001	0.0	0.256	4	AnacB3 transposon, putative	OsChr12:15291103..15303937
+OsChr12	15499995	15506402	+	6408	LTR/Copia	0.9917	GTGGA	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	15508549	15516631	+	8083	LTR/Copia	0.9786	GCGTT	agree_superfamily	LTR/Copia	0.0	0.446	0.595	11	Ty1/copia retrotransposon, putative	TE_00000132
+OsChr12	15544967	15557247	-	12281	LTR/Copia	0.9509	TTTAA	msu_ltr_only	LTR/unknown	0.059	0.0	0.744	10	retrotransposon, putative	TE_00000134
+OsChr12	15578493	15590492	-	12000	LTR/Gypsy	0.9862	GCTGC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	8	RIRE8 gypsy-type retrotransposon, putative	TE_00000630
+OsChr12	15604295	15616569	+	12275	LTR/Copia	0.9528	TTTAA	msu_ltr_only	LTR/unknown	0.059	0.0	0.744	9	retrotransposon, putative	TE_00000134
+OsChr12	15708145	15719190	+	11046	LTR/Gypsy	0.9907	GTTGT	agree_superfamily	LTR/Gypsy	0.805	0.0	0.0	10	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	15929335	15941425	+	12091	LTR/Gypsy	0.9962	CCTGC	agree_superfamily	LTR/Gypsy	0.896	0.0	0.0	14	RIRE3 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	16146522	16151655	-	5134	LTR/Copia	0.9457	CAAAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.966	8	retrotransposon, putative	TE_00000134
+OsChr12	16331960	16343320	-	11361	LTR/Gypsy	0.9977	CTCTG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	16350858	16357304	-	6447	LTR/Copia	0.9905	TCAAC	agree_superfamily	LTR/Copia	0.0	0.994	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	16435210	16446411	-	11202	LTR/Gypsy	0.9936	TGCCG	agree_superfamily	LTR/Gypsy	0.908	0.0	0.0	10	Ty3-gypsy-like retrotransposon, putative	TE_00000162
+OsChr12	16512005	16516674	?	4670	LTR/unknown	0.9490	CTCAG	both_unresolved	LTR/unknown	0.0	0.0	0.41	7	noaCRR2 retrotransposon, putative	TE_00001562
+OsChr12	16526990	16530077	+	3088	LTR/unknown	0.9644	CAAGG	insufficient_cov	LTR/unknown	0.0	0.0	0.038	3	retrotransposon, putative	TE_00000165
+OsChr12	16558772	16565122	-	6351	LTR/unknown	0.9417	GTGTC	insufficient_cov	LTR/Copia	0.0	0.07	0.0	6	Ty1-copia-like retrotransposon, putative	OsChr12:16565117..16558777
+OsChr12	16642615	16653921	+	11307	LTR/Gypsy	1.0000	ATATG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	16665092	16676820	+	11729	LTR/Gypsy	0.9862	TTGTT	agree_superfamily	LTR/Gypsy	0.997	0.0	0.002	10	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr12	16719199	16733716	-	14518	LTR/Gypsy	0.9715	GTTCT	agree_superfamily	LTR/Gypsy	0.605	0.0	0.395	5	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000041
+OsChr12	16778145	16789430	+	11286	LTR/Gypsy	0.9990	GGCAC	agree_superfamily	LTR/Gypsy	0.547	0.0	0.148	19	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	16802736	16812635	+	9900	LTR/Gypsy	0.9968	CGTAC	agree_superfamily	LTR/Gypsy	0.701	0.0	0.056	14	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	16938639	16948900	-	10262	LTR/Gypsy	0.9993	TTGCC	agree_superfamily	LTR/Gypsy	0.592	0.0	0.048	20	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	17090056	17102159	+	12104	LTR/Gypsy	0.9997	CGGCT	agree_superfamily	LTR/Gypsy	0.626	0.0	0.0	9	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000081
+OsChr12	17109408	17119990	+	10583	LTR/unknown	0.9978	AAAAC	ed_unknown_msu_resolved	LTR/Gypsy	0.992	0.0	0.001	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	17183942	17194336	-	10395	LTR/Gypsy	0.9994	TCCCA	agree_superfamily	LTR/Gypsy	0.797	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:17194331..17183947
+OsChr12	17201815	17212405	-	10591	LTR/Gypsy	0.9991	TAAAC	agree_superfamily	LTR/Gypsy	0.992	0.0	0.0	11	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:17212400..17201820
+OsChr12	17222141	17235016	+	12876	LTR/Gypsy	0.9994	ATCAG	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	5	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00000235
+OsChr12	17241563	17253325	-	11763	LTR/Gypsy	0.9975	ATGGA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	5	Ty3/gypsy retrotransposon, putative	TE_00001054
+OsChr12	17283310	17294626	+	11317	LTR/Gypsy	1.0000	CAGCT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	17450412	17461649	-	11238	LTR/Gypsy	0.9948	CGAAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	8	Ty3/gypsy retrotransposon, putative	TE_00000190
+OsChr12	18026218	18036767	+	10550	LTR/unknown	0.9984	GTTCA	ed_unknown_msu_resolved	LTR/Gypsy	0.997	0.0	0.0	7	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	18141591	18151362	-	9772	LTR/Gypsy	0.9991	CGACC	agree_superfamily	LTR/Gypsy	0.882	0.0	0.064	9	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	18159401	18170244	-	10844	LTR/Gypsy	0.9316	TTATG	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	retrotransposon, putative	TE_00000213
+OsChr12	18184423	18190865	+	6443	LTR/Copia	0.9895	CTTTG	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	18220368	18233215	-	12848	LTR/Gypsy	0.9982	CCCTG	msu_nonltr_label	DNA/TIR	0.001	0.0	0.0	4	AnacB3 transposon, putative	TE_00001527
+OsChr12	18240859	18253017	-	12159	LTR/Gypsy	0.9990	GTCCC	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	10	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	18375471	18380539	-	5069	LTR/Copia	0.9969	GTTTC	agree_superfamily	LTR/Copia	0.0	0.949	0.0	3	Ty1-copia-like retrotransposon, putative	TE_00000123
+OsChr12	18547649	18558744	+	11096	LTR/Gypsy	0.9993	ATCGC	agree_superfamily	LTR/Gypsy	0.697	0.0	0.111	17	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	18625990	18627894	-	1905	LTR/unknown	0.9910	ACCAT	insufficient_cov	LTR/unknown	0.0	0.0	0.02	1	retrotransposon, putative	OsChr12:18627889..18625995
+OsChr12	18670143	18684206	+	14064	LTR/Gypsy	0.9778	TCTTG	agree_superfamily	LTR/Gypsy	0.933	0.0	0.0	10	Dagul gypsy-type retrotransposon, putative	TE_00001542
+OsChr12	18771925	18783254	-	11330	LTR/Gypsy	0.9977	GATAG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	2	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	18808294	18820293	+	12000	LTR/Gypsy	0.9946	ATTCC	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	8	Ty3-gypsy-like retrotransposon, putative	TE_00001267
+OsChr12	18923529	18928982	+	5454	LTR/Gypsy	0.9933	AGCAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	3	retrotransposon, putative	TE_00000231
+OsChr12	18994240	19006828	-	12589	LTR/Gypsy	0.9984	CCTAT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.001	6	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	TE_00001786
+OsChr12	19232974	19237693	+	4720	LTR/Copia	0.9779	ATTTG	agree_superfamily	LTR/Copia	0.0	0.92	0.0	8	Ty1-copia-like retrotransposon, putative	TE_00000250
+OsChr12	20128224	20133682	+	5459	LTR/Gypsy	0.9907	GCGGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000288
+OsChr12	20158956	20170261	+	11306	LTR/Gypsy	1.0000	AAGTT	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	20316312	20326897	+	10586	LTR/Gypsy	0.9946	GTGAA	agree_superfamily	LTR/Gypsy	0.93	0.0	0.002	13	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:20316317..20326892
+OsChr12	20332560	20344122	+	11563	LTR/Gypsy	0.9692	TCAGG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	4	Ty3/gypsy retrotransposon, putative	TE_00001497
+OsChr12	20382153	20393931	+	11779	LTR/unknown	0.9986	CTTCG	ed_unknown_msu_resolved	LTR/Gypsy	0.711	0.0	0.044	22	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	20412302	20424871	+	12570	LTR/unknown	0.9993	GTGGC	ed_unknown_msu_resolved	LTR/Gypsy	0.679	0.0	0.042	19	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	20437889	20449855	-	11967	LTR/Gypsy	0.9987	GGCAA	agree_superfamily	LTR/Gypsy	1.0	0.0	0.0	7	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr12	20487120	20497850	-	10731	LTR/Gypsy	1.0000	TTTTC	agree_superfamily	LTR/Gypsy	0.777	0.0	0.161	18	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00001969
+OsChr12	20560734	20572060	-	11327	LTR/unknown	0.9991	TTTGG	ed_unknown_msu_resolved	LTR/Gypsy	0.794	0.0	0.044	20	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	OsChr12:20572055..20560739
+OsChr12	20590725	20602812	-	12088	LTR/Gypsy	0.9997	ATATC	agree_superfamily	LTR/Gypsy	0.673	0.0	0.0	11	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr12	20715981	20728074	-	12094	LTR/Gypsy	0.9987	AGAAT	agree_superfamily	LTR/Gypsy	0.674	0.0	0.0	12	Ty3-gypsy-like retrotransposon, putative	TE_00000081
+OsChr12	20957962	20964351	+	6390	LTR/Copia	0.9885	GAAGT	agree_superfamily	LTR/Copia	0.0	0.998	0.0	1	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	20985567	20991019	-	5453	LTR/Gypsy	0.9954	ACAAC	msu_ltr_only	LTR/unknown	0.0	0.0	0.997	6	Unclassified retrotransposon, putative	TE_00000302
+OsChr12	21026710	21038750	-	12041	LTR/Gypsy	0.9583	TTATG	agree_superfamily	LTR/Gypsy	0.943	0.0	0.238	7	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr12	21085543	21100096	-	14554	LTR/Gypsy	0.9737	CCCTT	agree_superfamily	LTR/Gypsy	0.88	0.0	0.09	9	Ty3-gypsy-like retrotransposon, putative	OsChr12:21100091..21085548
+OsChr12	21105486	21110208	+	4723	LTR/Copia	1.0000	AAGTG	agree_superfamily	LTR/Copia	0.0	0.978	0.0	6	Ty1-copia-like retrotransposon, putative	TE_00000250
+OsChr12	21273148	21278686	-	5539	LTR/Copia	0.9574	TTCAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.941	6	retrotransposon, putative	TE_00001820
+OsChr12	21302664	21307875	-	5212	LTR/Copia	0.9849	AGATC	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	2	retrotransposon, putative	TE_00000311
+OsChr12	21379739	21391243	-	11505	LTR/Gypsy	0.9986	TTGTC	agree_superfamily	LTR/Gypsy	0.617	0.0	0.107	23	RIRE3_P0698G03-1 gypsy-type retrotransposon, putative	TE_00000314
+OsChr12	21433257	21439884	+	6628	LTR/Gypsy	0.9991	GAGTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	2	Unclassified retrotransposon, putative	TE_00001527
+OsChr12	21824817	21829901	+	5085	LTR/Copia	0.9402	CATGG	agree_superfamily	LTR/Copia	0.0	0.969	0.042	4	Ty1-copia-like retrotransposon, putative	TE_00001972
+OsChr12	21975888	21989877	-	13990	LTR/unknown	0.9972	TCACC	ed_unknown_msu_resolved	LTR/Gypsy	0.411	0.0	0.026	38	Ty3-gypsy-like retrotransposon, putative	OsChr12:21989872..21975893
+OsChr12	22142687	22157994	-	15308	LTR/Gypsy	0.9641	TAGGT	msu_ltr_only	LTR/unknown	0.183	0.0	0.744	16	retrotransposon, putative	TE_00001055
+OsChr12	22206323	22212747	-	6425	LTR/Copia	0.9905	CGGTC	agree_superfamily	LTR/Copia	0.177	0.793	0.0	14	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	22377874	22390601	+	12728	LTR/Gypsy	0.9856	AGGAG	msu_ltr_only	LTR/unknown	0.0	0.0	0.644	6	Unclassified retrotransposon, putative	TE_00001527
+OsChr12	22547238	22560191	+	12954	LTR/Gypsy	0.9872	CCCGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	Unclassified retrotransposon, putative	OsChr12:22547243..22560186
+OsChr12	22677255	22690164	-	12910	LTR/Gypsy	1.0000	AGCTG	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	3	Unclassified retrotransposon, putative	TE_00001527
+OsChr12	22887601	22901595	+	13995	LTR/Gypsy	0.9863	GGGTA	agree_superfamily	LTR/Gypsy	0.7	0.001	0.0	12	Dagul gypsy-type retrotransposon, putative	TE_00001542
+OsChr12	22923436	22934767	-	11332	LTR/Gypsy	0.9977	CCTGG	agree_superfamily	LTR/Gypsy	0.999	0.0	0.0	1	Ty3-gypsy-like retrotransposon, putative	TE_00000381
+OsChr12	22982947	22995823	-	12877	LTR/Gypsy	1.0000	GATGG	msu_nonltr_label	DNA/TIR	0.0	0.0	0.0	1	AnacB3 transposon, putative	TE_00001527
+OsChr12	23149355	23155107	-	5753	LTR/Copia	0.9921	AATTC	msu_ltr_only	LTR/unknown	0.0	0.0	0.953	4	retrotransposon, putative	TE_00001820
+OsChr12	23365354	23376421	-	11068	LTR/Gypsy	0.9945	CGTCG	agree_superfamily	LTR/Gypsy	0.998	0.0	0.0	5	Dagul gypsy-type retrotransposon, putative	TE_00000399
+OsChr12	23582354	23587706	?	5353	LTR/unknown	1.0000	CTAT	insufficient_cov	DNA/MITE	0.0	0.0	0.0	5	MITE-adh, type B-like MITE, putative	TE_00000411
+OsChr12	23838084	23840039	-	1956	LTR/unknown	1.0000	TTCAC	insufficient_cov		0.0	0.0	0.0	0		OsChr12:23840034..23838089
+OsChr12	24129676	24136102	+	6427	LTR/Copia	0.9835	TAAAC	agree_superfamily	LTR/Copia	0.0	0.998	0.0	2	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	24162741	24172526	+	9786	LTR/Gypsy	0.9762	ATATT	msu_ltr_only	LTR/unknown	0.0	0.0	0.786	4	retrotransposon, putative	TE_00000430
+OsChr12	24438549	24449847	-	11299	LTR/Gypsy	0.9790	ATGGA	agree_superfamily	LTR/Gypsy	0.999	0.0	0.574	2	Ty3-gypsy-like retrotransposon, putative	TE_00000041
+OsChr12	24577726	24584171	-	6446	LTR/Copia	0.9938	AGTAC	agree_superfamily	LTR/Copia	0.0	0.999	0.0	2	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	24767165	24772928	-	5764	LTR/Copia	0.9949	CATGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.968	4	retrotransposon, putative	TE_00001820
+OsChr12	25027017	25030142	-	3126	LTR/Gypsy	0.9888	CCTTC	insufficient_cov	LTR/unknown	0.0	0.0	0.037	5	retrotransposon, putative	TE_00000462
+OsChr12	25177225	25193555	-	16331	LTR/Gypsy	0.9932	AAGGG	msu_ltr_only	LTR/unknown	0.182	0.0	0.721	23	Unclassified retrotransposon, putative	TE_00000659
+OsChr12	25258499	25271174	+	12676	LTR/Gypsy	0.9881	CACGC	msu_ltr_only	LTR/unknown	0.0	0.0	0.999	2	Unclassified retrotransposon, putative	OsChr12:25258504..25271169
+OsChr12	25369607	25382447	+	12841	LTR/Gypsy	0.9899	CTGAG	msu_ltr_only	LTR/unknown	0.0	0.0	1.0	2	Unclassified retrotransposon, putative	OsChr12:25369612..25382442
+OsChr12	25433593	25439982	+	6390	LTR/Copia	0.9990	TCTTT	agree_superfamily	LTR/Copia	0.156	0.8	0.0	13	Ty1-copia-like retrotransposon, putative	TE_00001810
+OsChr12	25597930	25604365	-	6436	LTR/Copia	0.9927	GGCTG	agree_superfamily	LTR/Copia	0.0	0.992	0.0	5	Ty1-copia-like retrotransposon, putative	TE_00000049
+OsChr12	25857875	25864273	-	6399	LTR/Gypsy	0.9673	GCACT	msu_ltr_only	LTR/unknown	0.0	0.0	0.877	9	retrotransposon, putative	TE_00000496
+OsChr12	26357319	26360462	-	3144	LTR/unknown	0.9516	AGAGA	insufficient_cov	SINE	0.0	0.0	0.0	1	p-SINE1-r432 retrotransposon, putative	OsChr12:26360457..26357324
+OsChr12	26516516	26529470	+	12955	LTR/Gypsy	0.9884	ACTGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.502	5	putative retrotransposon	TE_00000659
+OsChr12	26732672	26744822	-	12151	LTR/Gypsy	0.9737	CCCTG	agree_superfamily	LTR/Gypsy	0.974	0.0	0.023	10	Ty3-gypsy-like retrotransposon, putative	TE_00000630
+OsChr12	27219924	27225582	+	5659	LTR/Gypsy	0.9840	ATTAT	msu_ltr_only	LTR/unknown	0.0	0.0	0.982	3	retrotransposon, putative	TE_00000540
+OsChr12	27417637	27422567	+	4931	LTR/Copia	0.9774	ACCGT	msu_ltr_only	LTR/unknown	0.0	0.0	0.998	1	retrotransposon, putative	TE_00000476
