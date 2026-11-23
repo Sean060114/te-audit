@@ -82,7 +82,7 @@ python te_check.py --edta-dir chr1_edta_out
 python te_check.py --edta-dir chr1_edta_out --fasta TAIR10.Chr1.fa --json report.json
 
 # 测试
-python test_te_check.py          # 99 条，约 4 秒
+python test_te_check.py          # 104 条，约 4 秒
 ```
 
 `chr1_edta_out/` 是仓库内保留的一份完整 EDTA 运行（TAIR10 Chr1，218 个元件），
@@ -203,9 +203,10 @@ C 集里再分"标签冲突 / 无第二来源 / 边界不可定位"——归因�
 
 ```
 te_check.py              十三项检查（C1-C6 文件级 + C7-C13 结构与语义）
-test_te_check.py         99 条测试，含 2 处判据回归锁 + 22 条坐标/方向锁
+test_te_check.py         104 条测试，含 2 处判据回归锁 + 22 条坐标/方向锁 + 5 条 SO 表对齐锁
 bench_multi.py           多数据集横向对比
-te-normalizer/           名称规范化器（809 个别名，90 条测试）
+te-normalizer/           模块 0：名称规范化（809 别名，90 测试），独立 CLI
+                         C1–C13 不依赖它；两者靠 SO 表对齐锁共用同一份词表
 TE_case/                 建基准五步、逐元件台账、方法学对照（见其 README）
 docs/维护记录.md          产出处置与清理决策（内部账本，非对外文档）
 chr1_edta_out/           TAIR10 Chr1 的完整 EDTA 运行（保证克隆即可跑）
@@ -225,6 +226,10 @@ run_bench_rice.sh        参数化的 EDTA 运行脚本
 4. **只覆盖水稻两条染色体**（70.8 Mb = 18.9% 基因组），不能外推为"水稻基因组"。
 5. **C7-C11 需要 FASTA**，且 gff 与 FASTA 的染色体名要能对上（`OsChr1` ↔ `Chr1`
    有内建解析，其他命名需自行统一）。
+6. **`te-normalizer/` 不在 C1–C13 的调用链里。** 它是上游的口径工具（名字 → SO 名），
+   而 `te_check.py` 自带一份九类映射，两份实现各自维护。两者靠
+   `test_te_check.py` 的五条 SO 表对齐测试共用词表：SO 表换了、`ELEMENT_TYPES`
+   写错了、或有新的元件类型没被登记，测试会失败而不是静默跳过。换工具词表时两处都要改。
 
 ---
 

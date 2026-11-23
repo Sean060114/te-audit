@@ -120,7 +120,7 @@ EDTA 的 TIR 候选来自 TIR-Learner，其算法规定 **minimum similarity = 8
 ## 测试
 
 ```bash
-python test_te_check.py          # 99 条，约 4 秒
+python test_te_check.py          # 104 条，约 4 秒
 python test_te_check.py -v       # 逐条用例名
 ```
 
@@ -225,7 +225,7 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 | 脚本 | 定位 |
 |---|---|
 | `te_check.py` | 一次跑全集，出结构化报告（本工具） |
-| `test_te_check.py` | 本工具的测试集，99 条，含两处判据回归锁 |
+| `test_te_check.py` | 本工具的测试集，104 条，含两处判据回归锁 + 五条 SO 表对齐锁 |
 | `TE_case/classify_element.py` | 单个元件的深度判读（HMM 域比对，需 pyhmmer） |
 | `TE_case/intact_baseline.py` | 本工具 C1–C3 的原始实现，用于生成基线报表 |
-| `te-normalizer/normalize.py` | 命名规范化（模块 0），与本工具互补 |
+| `te-normalizer/normalize.py` | 上游口径工具（模块 0）：名字 → SO 名 + 角色。**不在本工具的调用链里**，C1–C13 自带九类映射；两者靠 SO 表对齐测试共用词表 |

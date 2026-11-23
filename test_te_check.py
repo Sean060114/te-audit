@@ -11,12 +11,13 @@ test_te_check.py —— te_check.py 的断言测试集（标准库 unittest，�
     这两处当时只靠肉眼看了一次输出，没有锁。之后改动任何一行都可能悄悄退回去。
     本文件把两处都写成"回归锁"：谁把判据改宽或改窄，测试立刻失败。
 
-测试分五层：
+测试分六层：
     1. 单元     rc / attrs / ir_identity
     2. 解析     parse_intact / parse_cls（在临时目录里合成 EDTA 输出树）
     3. 判据     六项检查各自的边界，含两处回归锁
     4. CLI      端到端：JSON 结构、--strict 退出码、缺文件时的行为
     5. 真实数据 Chr1 实测值回归（目录不可达时自动跳过，约 1 秒）
+    6. 词表     SO 别名表对齐：九类映射与权威词表不允许各自漂移
 
 怎么跑：
     python test_te_check.py           # 简洁
@@ -201,6 +202,96 @@ class TestUnits(unittest.TestCase):
         d = T.attrs("note=a=b;ID=z")
         self.assertEqual(d["note"], "a=b")
         self.assertEqual(d["ID"], "z")
+
+
+# ------------------------------------------------------- SO 别名表对齐锁
+#
+# 为什么需要这一层：te_check.py 自带一份 9 类的硬编码映射（ELEMENT_TYPES），
+# 而 SO 的权威词表放在 te-normalizer/data/ 里。两份实现各自维护就会漂移，
+# 而漂移的表现恰恰是"新类型被当成非元件静默跳过"——本工具要抓的就是这类失效，
+# 不能自己先犯一次。下面几条测试把"漂移"变成一次显式决定：要么建模，要么登记。
+SO_TABLE = BASE / "te-normalizer" / "data" / "TE_Sequence_Ontology.txt"
+
+# SO 表里合法、但本工具的十三项判据未在其上校准过的元件类型。
+# 现状：解析时按"非元件"跳过（六份实测数据里一条都没出现，实际影响 0 条）。
+# 显式列出来而不是留在暗处：SO 表一旦新增 TIR/LTR 类型，对应用例会失败，
+# 逼一次显式判断。改这张表时请连同原因一起改，别只加名字。
+UNMODELED_SO_TYPES = {
+    # ① TIR 的非 CACTA/hAT/Mutator/PIF/Tc1 家族：六份实测数据里未出现，
+    #    且 TIR 判据（臂长 + 相似度阈值）只在实测过的那五个家族上订过。
+    "Sola_TIR_transposon", "PILE_TIR_transposon", "POLE_TIR_transposon",
+    "Ginger_TIR_transposon", "Kolobok_TIR_transposon", "Dada_TIR_transposon",
+    "IS3EU_TIR_transposon", "Zator_TIR_transposon", "KDZ_TIR_transposon",
+    "Academ_TIR_transposon", "Novosib_TIR_transposon", "P_TIR_transposon",
+    "piggyBac_TIR_transposon", "Transib_TIR_transposon", "Merlin_TIR_transposon",
+    # ② LTR 的非 Copia/Gypsy 支系：结构与 Copia/Gypsy 同法（同样两套坐标、同样
+    #    motif/TSD 语义），但本工具没有实测样本，不假装已校准。
+    "Bel_Pao_LTR_retrotransposon", "Retrovirus_LTR_retrotransposon",
+    "Endogenous_Retrovirus_LTR_retrotransposon",
+}
+
+
+def so_element_names(names):
+    """从 SO 表第一列里挑出"元件级"的名字：LTR/TIR 转座子与 helitron。
+
+    刻意不用 `"LTR" in name` 判断：`non_LTR_retrotransposon` 含 LTR 却是非 LTR
+    元件，正是 `TIR_TYPES`/`LTR_TYPES` 用子串派生时的坑（见 test_non_ltr_...）。
+    """
+    out = set()
+    for n in names:
+        if n == "helitron":
+            out.add(n)
+        elif n.startswith("non_"):
+            continue        # 非 LTR 反转座子（LINE 一类），不在本工具的 LTR 判据范围内
+        elif n.endswith("_TIR_transposon") or n.endswith("_LTR_retrotransposon"):
+            out.add(n)
+    return out
+
+
+def read_so_names():
+    names = set()
+    for line in SO_TABLE.read_text(encoding="utf-8", errors="ignore").splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        first = line.split("\t")[0].strip()
+        if first:
+            names.add(first)        # 第一列：SO 大小写敏感的正式名
+    return names
+
+
+@unittest.skipUnless(SO_TABLE.is_file(), f"SO 别名表不可达: {SO_TABLE}")
+class TestSOTableAlignment(unittest.TestCase):
+    """te_check 的九类映射必须与 SO 权威词表对得上——对不上就报，不静默。"""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.names = read_so_names()
+
+    def test_every_modeled_type_exists_in_so_table(self):
+        # 反向也查：ELEMENT_TYPES 里若写错一个字母，解析层会把它整类丢掉
+        missing = T.ELEMENT_TYPES - self.names
+        self.assertFalse(missing, f"ELEMENT_TYPES 在 SO 表里查不到: {sorted(missing)}")
+
+    def test_no_so_element_type_is_silently_ignored(self):
+        unaccounted = so_element_names(self.names) - T.ELEMENT_TYPES - UNMODELED_SO_TYPES
+        self.assertFalse(
+            unaccounted,
+            "这些 SO 元件类型既未建模、也未登记为排除项: "
+            f"{sorted(unaccounted)}。要么加进 ELEMENT_TYPES 并补判据测试，"
+            "要么写进 UNMODELED_SO_TYPES 说明为什么跳过。")
+
+    def test_exclusion_list_is_current(self):
+        stale = UNMODELED_SO_TYPES - self.names
+        self.assertFalse(stale, f"排除项在 SO 表里已不存在（改名了？）: {sorted(stale)}")
+        overlap = UNMODELED_SO_TYPES & T.ELEMENT_TYPES
+        self.assertFalse(overlap, f"既建模又排除，自相矛盾: {sorted(overlap)}")
+
+    def test_non_ltr_is_not_treated_as_ltr(self):
+        # 子串派生的经典坑：non_LTR_retrotransposon 含 "LTR"，但它是 LINE 一类
+        self.assertNotIn("non_LTR_retrotransposon", T.LTR_TYPES)
+
+    def test_tir_and_ltr_sets_are_disjoint(self):
+        self.assertFalse(T.TIR_TYPES & T.LTR_TYPES)
 
 
 class TestIrIdentity(unittest.TestCase):
