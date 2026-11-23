@@ -715,6 +715,31 @@ class TestCli(Fixture):
         finally:
             shutil.rmtree(empty, ignore_errors=True)
 
+    def test_unmodeled_type_is_reported_not_silent(self):
+        # 把元件换成 SO 表里有、但本工具没建模的类型：必须"跳过但报出来"，
+        # 不能像旧版那样静默丢弃（那正是十三项检查要抓的失效模式）
+        (self.root / "t.EDTA.intact.gff3").write_text(
+            "\n".join([
+                gff_line("1", "hAT_TIR_transposon", 1001, 2000, "+",
+                         f"ID=e1;classification=DNA/hAT;identity=0.92;TIR={ARM_L}_{ARM_R}"),
+                gff_line("1", "P_TIR_transposon", 3001, 4000, "+",
+                         "ID=e2;classification=DNA/P;identity=0.90"),
+            ]) + "\n", encoding="utf-8")
+        out = self.root / "u.json"
+        p = self.run_cli("--edta-dir", str(self.root), "--json", str(out))
+        self.assertEqual(p.returncode, 0, msg=p.stderr)
+        self.assertIn("未建模类型", p.stdout)
+        self.assertIn("P_TIR_transposon 1 条", p.stdout)
+        d = json.loads(out.read_text(encoding="utf-8"))
+        self.assertEqual(d["unmodeled_types"], {"P_TIR_transposon": 1})
+        # 未建模的元件不进任何一项检查，但元素总数必须只剩真正参与分析的那条
+        self.assertEqual(d["n_elements"], 1)
+
+    def test_no_unmodeled_notice_on_clean_data(self):
+        # LTR / TSD / repeat_region 是子特征，不算"未建模"：干净数据的报告不能被这行污染
+        p = self.run_cli("--edta-dir", str(self.root))
+        self.assertNotIn("未建模类型", p.stdout)
+
 
 # ------------------------------------------------------------------ 5. 真实数据
 

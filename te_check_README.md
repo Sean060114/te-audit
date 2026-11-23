@@ -120,7 +120,7 @@ EDTA 的 TIR 候选来自 TIR-Learner，其算法规定 **minimum similarity = 8
 ## 测试
 
 ```bash
-python test_te_check.py          # 104 条，约 4 秒
+python test_te_check.py          # 106 条，约 4 秒
 python test_te_check.py -v       # 逐条用例名
 ```
 
@@ -217,6 +217,12 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 3. **默认不做 HMM 比对。** C6 依据的是分类表里已有的 `Domains` 列，而不是重新比对。
    需要独立复核某个元件的域组成，用 `TE_case/classify_element.py`（需 pyhmmer）。
 4. **helitron 无法用本工具校验。** 文件里没有任何可用于自校验的字段，必须回到序列层面。
+5. **只认九类元件类型。** `ELEMENT_TYPES` 是硬编码的九个 SO 名（EDTA 实测输出过的那些）。
+   SO 表里还有 18 个合法但未校准的元件类型（`P_TIR`、`piggyBac`、`Bel_Pao` 等），
+   以及 `L1_LINE` 这类非 LTR 元件，它们不进任何一项检查。好在不会静默吞掉：
+   报告会多出一行"另有 N 条元件属于未建模类型，已跳过"，`--json` 里对应
+   `unmodeled_types`（干净数据下该键不出现，老报告逐字节不变）。要真正覆盖，
+   先补判据与测试，不要只往 `ELEMENT_TYPES` 里加名字。
 
 ---
 
@@ -225,7 +231,7 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 | 脚本 | 定位 |
 |---|---|
 | `te_check.py` | 一次跑全集，出结构化报告（本工具） |
-| `test_te_check.py` | 本工具的测试集，104 条，含两处判据回归锁 + 五条 SO 表对齐锁 |
+| `test_te_check.py` | 本工具的测试集，106 条，含两处判据回归锁 + 五条 SO 表对齐锁 |
 | `TE_case/classify_element.py` | 单个元件的深度判读（HMM 域比对，需 pyhmmer） |
 | `TE_case/intact_baseline.py` | 本工具 C1–C3 的原始实现，用于生成基线报表 |
 | `te-normalizer/normalize.py` | 上游口径工具（模块 0）：名字 → SO 名 + 角色。**不在本工具的调用链里**，C1–C13 自带九类映射；两者靠 SO 表对齐测试共用词表 |

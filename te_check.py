@@ -53,6 +53,16 @@ TIR_TYPES = {t for t in ELEMENT_TYPES if "TIR" in t}
 LTR_TYPES = {t for t in ELEMENT_TYPES if "LTR" in t}
 HELITRON = {"helitron"}
 
+# intact.gff3 里"是零件的行"，不是元件本身：解析时按设计跳过，不算漏检。
+# 与"未建模的元件类型"分开——后者要计数并报出来，否则就是静默丢弃。
+SUBFEATURE_TYPES = {
+    "repeat_region",            # 元件容器，坐标含 TSD；另挂在 pstart/pend 上
+    "long_terminal_repeat",     # LTR 本身
+    "target_site_duplication",  # TSD 本身
+    "primer_binding_site",
+    "repeat_fragment",          # 碎片注释，不是 intact 元件
+}
+
 # 这个 SO 类型本身就是"LTR 但超家族未知"。TEsorter 无法为它定超家族，
 # 因此它不进分类表属预期行为，不能与已定超家族的缺失混为一谈。
 # 水稻 218 个 LTR 里 20 个属此类、且 100% 未分类；若混算，会让总覆盖率
@@ -115,8 +125,13 @@ def find_files(edta_dir, prefix=None):
     return out
 
 
-def parse_intact(path):
+def parse_intact(path, unmodeled=None):
     """返回元素级记录列表（排除 LTR/TSD/repeat_region 等子特征）。
+
+    `unmodeled` 传入一个 dict 时，会把"既不是子特征、也不在 ELEMENT_TYPES 里"的
+    类型计数写进去（类型 -> 条数）。这类行没有判据可用，只能跳过；但跳过必须被
+    报出来——否则 EDTA 哪天多输出一种合法 SO 类型，元件会无声消失，这正是本
+    工具在别处反复抓的失效模式。传 None 时行为与旧版完全一致。
 
     **同时收集 repeat_region 行的坐标**，挂到 pstart/pend。原因：同一元件在这里
     有**两套坐标**，差值恰好等于 TSD 长度（水稻 410/420 条为 5,5）。repeat_region
@@ -139,6 +154,8 @@ def parse_intact(path):
                 parents[p.get("ID", "")] = (int(f[3]), int(f[4]))
                 continue
             if f[2] not in ELEMENT_TYPES:
+                if unmodeled is not None and f[2] not in SUBFEATURE_TYPES:
+                    unmodeled[f[2]] = unmodeled.get(f[2], 0) + 1
                 continue
             d = attrs(f[8])
             start, end = int(f[3]), int(f[4])
@@ -654,11 +671,18 @@ def main():
     for p in files["cls"]:
         print(f"           {os.path.basename(p)}")
 
-    recs = parse_intact(files["intact"])
+    unmodeled = {}
+    recs = parse_intact(files["intact"], unmodeled=unmodeled)
     cls_rows = []
     for p in files["cls"]:
         cls_rows.extend(parse_cls(p))
     print(f"\n元素级记录: {len(recs)}   分类器条目: {len(cls_rows)}")
+    if unmodeled:
+        detail = "、".join(f"{t} {n} 条" for t, n in
+                           sorted(unmodeled.items(), key=lambda kv: (-kv[1], kv[0])))
+        print(f"  ⚠ 另有 {sum(unmodeled.values())} 条元件属于未建模类型，已跳过：{detail}")
+        print(f"     这些类型不在 ELEMENT_TYPES 的九类里，十三项检查不覆盖它们；"
+              f"要纳入就得先补判据与测试（清单见 test_te_check.UNMODELED_SO_TYPES）。")
     if args.fasta:
         # 路径写错时给一句人话，不要 traceback。公开仓库的第一个访客最容易撞这里。
         missing = [p for p in args.fasta if not os.path.exists(p)]
@@ -669,6 +693,9 @@ def main():
         print(f"基因组序列: {len(seq)} 条（{', '.join(sorted(seq))[:60]}）")
 
     report = {"dir": args.edta_dir, "n_elements": len(recs), "n_classified": len(cls_rows)}
+    if unmodeled:
+        # 只在真的出现未建模类型时写这个键，保证老数据的 JSON 逐字节不变
+        report["unmodeled_types"] = dict(sorted(unmodeled.items()))
     severe = 0
     notice = 0                     # C7-C13 的提示数，不进退出码
 
