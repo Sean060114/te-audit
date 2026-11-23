@@ -295,11 +295,19 @@ WWIN=$(wslpath -w "$WINDIR" 2>/dev/null | sed 's#\\#/#g')
 # 决定的（见 TE_case/基准_字段语义校准.md）。缺了这一行，跨数据集的比较就
 # 只能靠"大概同一环境"来推断。
 get_ver () {
-    local p
+    local p v real
     p=$(command -v "$1" 2>/dev/null) || { echo "unknown"; return; }
     [ -n "$p" ] || { echo "unknown"; return; }
-    local v
     v=$(sed -n 's/.*my \$version *= *"\([^"]*\)".*/\1/p' "$p" 2>/dev/null | head -1)
+    # conda 装的 LTR_retriever 是 100 字节的包装脚本，内容是
+    #   perl $CONDA_PREFIX/share/LTR_retriever/${NAME} $@
+    # 直接 grep 包装脚本只会得到 unknown，要顺着它找到真正的 Perl 主程序。
+    if [ -z "$v" ]; then
+        real=$(sed -n 's|^perl \([^ ]*\).*|\1|p' "$p" 2>/dev/null | head -1)
+        real=${real//\$\{NAME\}/$1}
+        [ -n "$real" ] && [ -r "$real" ] && \
+            v=$(sed -n 's/.*my \$version *= *"\([^"]*\)".*/\1/p' "$real" 2>/dev/null | head -1)
+    fi
     echo "${v:-unknown}"
 }
 
