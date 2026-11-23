@@ -112,6 +112,8 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
   报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（判据结论以此为准）
   报表_水稻交叉验证与跨染色体基准.md  模块 2：单条库 → 双条同库，含库大小效应与 run-to-run 实测
   报表_结构注释质量基线.md     最早的单点基线
+  基准_字段语义校准.md         建基准第 1 步：LTR 字段语义 + TSD/motif 独立复算
+                              （配套 verify_ltr_structure.py，复算率 99.0%）
 archive/                已被取代的运行脚本（保留是为了留下失败记录）
 bench_archive/          col1m / alyrata 的历史运行回传（仅此一份）
 chr1_edta_out/          TAIR10 Chr1 基准运行回传
