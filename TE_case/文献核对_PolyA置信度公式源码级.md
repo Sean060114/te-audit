@@ -62,31 +62,79 @@
 
 ## 五、关键发现：PolyA 与 Carey 的置信度不在同一尺度
 
-两篇用同一套概率逻辑，但 λ 的处理不同：
+### 5.1 差异的根源是"λ 除不除"
+
+两篇的 Eq 7 都写 `score(a,b) = int(λ · log[P(a,b)/(P(a)P(b))])`，即整数比对分是
+**log-odds 乘 λ 再取整**。于是：
 
 ```
-PolyA （confidence_cm）  : conf_i = 2^(s_i)      / Σ_j 2^(s_j)
-Carey （Eq 10）          : conf_i = 2^(s_i / λ)  / Σ_j 2^(s_j / λ)      λ ≈ 0.1227
+PolyA （confidence_cm.py）  : conf_i = 2^(s_i)      / Σ_j 2^(s_j)      = 归一化后的 odds^λ
+Carey （Eq 10）             : conf_i = 2^(s_i / λ)  / Σ_j 2^(s_j / λ)  = 归一化后的 odds
 ```
 
-两个候选、分数差 `d` 时：
+**PolyA 报的是 `odds^λ`，Carey 报的是 `odds`。** λ 在 0.1–0.3 量级，这相当于把 odds
+开 3–10 次方根——分布被大幅压平。所以 **PolyA 的 0.98 在统计上不能读作"98% 概率"，
+它只是一个压缩过的相对优势表示。**
 
-| 分数差 d | PolyA 置信度 | Carey 置信度（λ=0.1227） |
-|---:|---:|---:|
-| 1 | 0.667 | 0.996 |
-| 2 | 0.800 | 0.9999 |
-| 3 | 0.889 | ≈1.000 |
+### 5.2 λ 是区域特异的，而且 Carey 没给数值
 
-**所以两篇报出的"73%""95%"不是同一个东西。** Carey 的尺度极敏感：把置信度 0.734 反解
-回原始分数差是 `λ·log2(0.734/0.266) = 0.1227 × 1.464 ≈ 0.18` 分；0.528 对应
-`≈ 0.02` 分。
+核对原文（`doi.org/10.1186/s13100-021-00232-4`，BMC 主站 Application Unavailable，
+经 DOI 重定向可达）得到三条：
 
-**这意味着 Carey 的"concordant 中位 73.4%"其实对应"最佳与次佳几乎打平"**（差 0.18 分）。
-同一个分数差若用 PolyA 的尺度算，只有 `2^0.18/(1+2^0.18) ≈ 0.53`。
+> "Alignments used for annotation with RepeatMasker are produced using cross_match with
+> custom scoring matrices based on **regional GC content**. For each segmental duplicate
+> Alu pair (t1,t2), we first infer the **λ** value for the **region-specific scoring
+> matrix** using the `esl_scorematrix` executable..."
 
-→ 引用时的两条硬规矩：
-1. **不要把 PolyA 的置信度与 Carey 的置信度放在同一张图或同一个阈值上。**
-2. **引用 73.4% / 52.8% 时必须同时给 λ**，否则这两个百分数无法被复现。
+1. **λ 不是全局值**，按区域 GC 含量定制的打分矩阵逐个推断。
+2. **论文没有给出任何 λ 数值**。我上一轮引用的 `0.1227` 是 **25p41g 矩阵**的值
+   （PolyA 默认用的矩阵），**不是 Carey 报告的值**——这里更正。
+3. 指数确实是 `score/λ`（Eq 9、Eq 10 逐字如此），不是乘。
+
+顺带一处符号不一致：Eq 7 的 `log` 未标底数，Eq 9 用 `2^(score/λ)`，二者只有在
+`log` 取 log2 时自洽。引用时若照抄 Eq 7，需要自己补一句底数。
+
+### 5.3 换算：结论不依赖 λ 的精确值
+
+λ 未知，但可以给区间。取 λ ∈ [0.1, 0.3]（常用 DNA 矩阵的量级）：
+
+| 分数差 d | PolyA | Carey, λ=0.1 | λ=0.2 | λ=0.3 |
+|---:|---:|---:|---:|---:|
+| 0.5 | 0.586 | 0.970 | 0.850 | 0.761 |
+| 1 | 0.667 | 0.999 | 0.970 | 0.910 |
+| 2 | 0.800 | 1.000 | 0.999 | 0.990 |
+| 3 | 0.889 | 1.000 | 1.000 | 0.999 |
+
+反解 Carey 的两个关键数：
+
+| Carey 置信度 | log2(odds) | 对应的分数差 d（λ=0.1 / 0.2 / 0.3） |
+|---:|---:|---|
+| 0.734（concordant 中位） | 1.464 | 0.146 / 0.293 / 0.439 |
+| 0.528（discordant 中位） | 0.162 | 0.016 / 0.032 / 0.049 |
+
+把同一个分数差放回 PolyA 的尺度：
+
+| λ | d | PolyA 会给 | Carey 给 |
+|---:|---:|---:|---:|
+| 0.1 | 0.146 | **0.525** | 0.734 |
+| 0.2 | 0.293 | **0.551** | 0.734 |
+| 0.3 | 0.439 | **0.576** | 0.734 |
+
+**结论：Carey 报 73.4% 的位点，用 PolyA 的尺度只有 53–58%。** 而且这个结论**不依赖
+λ 的精确值**——λ 从 0.1 变到 0.3，PolyA 侧只从 0.525 动到 0.576。这是本次核对里最
+稳的一条。
+
+### 5.4 由此带来的一条批评（温和表述）
+
+Carey 报告了 73.4% 与 52.8% 两个百分数，但**没给 λ**。而 λ 是复现这两个数所必需的
+参数，且逐区域不同。所以严格说，**这两个数无法被第三方独立复现**。
+
+写论文时可以这样用：
+
+> Carey 等的置信度定义依赖区域特异的 λ（逐区由 `esl_scorematrix` 推断），原文未报告
+> 该值，故其 73.4% / 52.8% 只能作定性参考，不宜作为阈值或与其它工具的置信度并列。
+
+这是事实陈述，不是指责——他们的重点是可复现性问题本身，不是给一个可用阈值。
 
 ## 六、引用怎么写（可复制）
 
@@ -97,8 +145,9 @@ Carey （Eq 10）          : conf_i = 2^(s_i / λ)  / Σ_j 2^(s_j / λ)      λ 
 
 > Carey KM, Patterson G, Wheeler TJ. Transposable element subfamily annotation has a
 > reproducibility problem. Mob DNA. 2021;12:4. doi:10.1186/s13100-021-00232-4.
-> （置信度为 `2^(s/λ)/Σ2^(s/λ)`，λ 由 `esl_scorematrix` 从打分矩阵推断，
-> 本文 λ≈0.1227；concordant/discordant 中位置信度 73.4% / 52.8%。）
+> （置信度为 `2^(s/λ)/Σ2^(s/λ)`；λ 逐区域由 `esl_scorematrix` 从按 GC 含量定制的
+> 打分矩阵推断，**原文未报告具体数值**；concordant/discordant 中位置信度
+> 73.4% / 52.8%。）
 
 作者名以原文为准：PolyA 的第一作者在正文首页，核对时请照抄，本文档未逐字核对该字段。
 
@@ -117,11 +166,12 @@ curl -s "https://raw.githubusercontent.com/TravisWheelerLab/PolyA/master/polyA/c
 curl -s "https://raw.githubusercontent.com/TravisWheelerLab/PolyA/master/polyA/constants.py"
 curl -s "https://raw.githubusercontent.com/TravisWheelerLab/PolyA/master/polyA/calculate_score.py"
 
-# 4. 在本地把两套公式算一遍，验证尺度差异
+# 4. 在本地把两套公式算一遍，验证尺度差异（λ 取区间，不假设具体值）
 python -c "
-for d in (1,2,3):
-    poly = 2**d/(1+2**d); carey = 2**(d/0.1227)/(1+2**(d/0.1227))
-    print(d, round(poly,4), round(carey,4))
+import math
+for lam in (0.1, 0.2, 0.3):
+    d = math.log2(0.734/0.266) * lam
+    print('lam=%.1f  d=%.3f  PolyA=%.3f  (Carey=0.734)' % (lam, d, 2**d/(1+2**d)))
 "
 ```
 
@@ -129,6 +179,9 @@ for d in (1,2,3):
 
 - PolyA 的 Eq 2/3/4 具体符号仍未逐字核对（PDF 不可得）。但**实现已给出等价物**，且
   本文档所有公式性陈述均来自源码，不是转述。
-- Carey 的 λ 是否对所有区域用同一个值：论文说按 GC 含量做区域特异矩阵，λ 因此逐区域
-  不同；本文引用的 0.1227 是 25p41g 矩阵的值，与 PolyA 默认矩阵相同，所以两篇的 λ 可
-  放在一起比。**若换矩阵，第五节那张换算表要重算。**
+- ~~Carey 的 λ 是否对所有区域用同一个值~~ → **已核对：区域特异，且原文未给任何数值**。
+  `0.1227` 是 25p41g 矩阵（PolyA 默认）的值，**不是 Carey 报告的值**，不能当作它的 λ。
+  第五节因此改用 λ ∈ [0.1, 0.3] 的区间，并验证了结论对 λ 不敏感（0.525→0.576）。
+- 仍未知：Carey 的实际 λ 分布。若将来要用它的百分数做阈值，必须从补充材料脚本
+  （`wheelerlab.org/publications/2020-CareyPatterson/`，当前 404）或作者处取回。
+- 第一节的作者名仍未逐字核对（正文首页字段未抓到）。
