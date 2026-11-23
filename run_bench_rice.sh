@@ -289,6 +289,20 @@ WIN_HOME=$(wslpath -w "$HOME"   2>/dev/null | sed 's#\\#/#g')
 WWIN=$(wslpath -w "$WINDIR" 2>/dev/null | sed 's#\\#/#g')
 
 # 把物种信息一并留档，防止日后忘记这份数据用的什么参数
+#
+# 版本号必须留：v2.2.2 的 gff 头部只有 EDTA 的版本，没有 LTR_retriever 的——
+# 而产物里的 strand_evidence / strand_conflict 字段是 LTR_retriever 的写出器
+# 决定的（见 TE_case/基准_字段语义校准.md）。缺了这一行，跨数据集的比较就
+# 只能靠"大概同一环境"来推断。
+get_ver () {
+    local p
+    p=$(command -v "$1" 2>/dev/null) || { echo "unknown"; return; }
+    [ -n "$p" ] || { echo "unknown"; return; }
+    local v
+    v=$(sed -n 's/.*my \$version *= *"\([^"]*\)".*/\1/p' "$p" 2>/dev/null | head -1)
+    echo "${v:-unknown}"
+}
+
 cat > "$DEST/RUN_INFO.txt" <<EOF
 tag        : $TAG
 species    : $SPECIES
@@ -297,6 +311,8 @@ curatedlib : ${USE_CURATED:-0}
 input      : $(basename "$SRC")  ($SEQ_N 条序列, $SEQ_LEN bp)
 length     : $(awk 'NR>1{n+=length($0)} END{print n}' "$SRC") bp
 edta       : $CONDA_PREFIX
+edta_ver   : $(get_ver EDTA.pl)
+ltrr_ver   : $(get_ver LTR_retriever)
 outdir     : $OUT
 win_path   : $WWIN/rice/$(basename "$DEST")
 finished   : $(date '+%F %T')
