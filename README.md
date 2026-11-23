@@ -121,6 +121,9 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
                                A/B/C = 183/178/59，结构门槛落在逐条而非批次数，
                                配套 grade_ltr_abc.py + ltr_abc.tsv；
                                §11 用 MSU 基因流程做第三票，配套 gene_arbitration.py）
+  方法学_已有QC工具与自建基准的分工.md  HiTE/TE_Bench/Earl Grey/LAI 各自能做什么、
+                              为什么不能替代位点级仲裁（含"LTR 侧与 EDTA 共用
+                              LTR_retriever"的源码证据）
   基准_TIR字段语义校准.md      建基准第 3 步：TIR/MITE 字段约定 + 结构证据强度
                               （配套 verify_tir_structure.py；1,824 条里仅 62 条硬证据）
   基准_TIR与MSU逐元件对账.md   建基准第 4 步：62 条 TIR 锚与 MSU 对账
