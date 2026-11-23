@@ -115,7 +115,8 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
   基准_字段语义校准.md         建基准第 1 步：LTR 字段语义 + TSD/motif 独立复算
                               （配套 verify_ltr_structure.py，复算率 99.0%）
   基准_LTR逐元件台账.md        建基准第 2 步：420 条结构 LTR 与 MSU 逐元件对账
-                              （配套 link_msu.py + ltr_msu_ledger.tsv，A/B/C = 185/181/54）
+                              （配套 link_msu.py + ltr_msu_ledger.tsv，A/B/C = 185/181/54；
+                               §11 用 MSU 基因流程做第三票，配套 gene_arbitration.py）
   基准_TIR字段语义校准.md      建基准第 3 步：TIR/MITE 字段约定 + 结构证据强度
                               （配套 verify_tir_structure.py；1,824 条里仅 62 条硬证据）
   基准_TIR与MSU逐元件对账.md   建基准第 4 步：62 条 TIR 锚与 MSU 对账
