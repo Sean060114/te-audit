@@ -327,5 +327,572 @@
       "classified": false
     }
   ],
-  "severe_total": 4
+  "C7_ltr_two_coords": {
+    "checked": 41,
+    "ok": 39,
+    "seq5": 39,
+    "seq3": 41,
+    "bad": [
+      {
+        "chrom": "Chr1",
+        "start": 6538415,
+        "end": 6543535,
+        "parent": [
+          6538407,
+          6543540
+        ],
+        "d5": 8,
+        "d3": 5,
+        "tsd": "AAAAA"
+      },
+      {
+        "chrom": "Chr1",
+        "start": 16626036,
+        "end": 16637234,
+        "parent": [
+          16626029,
+          16637238
+        ],
+        "d5": 7,
+        "d3": 4,
+        "tsd": "CATC"
+      }
+    ]
+  },
+  "C8_ltr_motif": {
+    "checked": 41,
+    "ok": 39,
+    "bad": [
+      {
+        "chrom": "Chr1",
+        "start": 6538415,
+        "strand": "+",
+        "motif": "TGAC",
+        "head": "AA",
+        "tail": "AC"
+      },
+      {
+        "chrom": "Chr1",
+        "start": 16626036,
+        "strand": "-",
+        "motif": "TGCA",
+        "head": "TG",
+        "tail": "AT"
+      }
+    ]
+  },
+  "C9_tir_tsd_outside": {
+    "checked": 92,
+    "ok5": 92,
+    "ok3": 92,
+    "bad": []
+  },
+  "C10_tir_identity_inflation": {
+    "checked": 92,
+    "median_delta": -0.0002,
+    "inflated": 2,
+    "worst": [
+      {
+        "chrom": "Chr1",
+        "start": 18456779,
+        "end": 18457351,
+        "field": 0.93,
+        "measured": 0.3615,
+        "delta": 0.5685
+      },
+      {
+        "chrom": "Chr1",
+        "start": 17936923,
+        "end": 17937991,
+        "field": 0.907,
+        "measured": 0.3627,
+        "delta": 0.5443
+      },
+      {
+        "chrom": "Chr1",
+        "start": 22785446,
+        "end": 22787055,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "Chr1",
+        "start": 18085824,
+        "end": 18088248,
+        "field": 0.909,
+        "measured": 0.8,
+        "delta": 0.109
+      },
+      {
+        "chrom": "Chr1",
+        "start": 13737968,
+        "end": 13738977,
+        "field": 0.9,
+        "measured": 0.8,
+        "delta": 0.1
+      },
+      {
+        "chrom": "Chr1",
+        "start": 2460037,
+        "end": 2463771,
+        "field": 0.897,
+        "measured": 0.8006,
+        "delta": 0.0964
+      },
+      {
+        "chrom": "Chr1",
+        "start": 7023546,
+        "end": 7024535,
+        "field": 0.891,
+        "measured": 0.8,
+        "delta": 0.091
+      },
+      {
+        "chrom": "Chr1",
+        "start": 7907734,
+        "end": 7908499,
+        "field": 0.87,
+        "measured": 0.8,
+        "delta": 0.07
+      },
+      {
+        "chrom": "Chr1",
+        "start": 20622392,
+        "end": 20622836,
+        "field": 0.863,
+        "measured": 0.8,
+        "delta": 0.063
+      },
+      {
+        "chrom": "Chr1",
+        "start": 4329896,
+        "end": 4334391,
+        "field": 0.859,
+        "measured": 0.8,
+        "delta": 0.059
+      },
+      {
+        "chrom": "Chr1",
+        "start": 4055089,
+        "end": 4058261,
+        "field": 0.857,
+        "measured": 0.8,
+        "delta": 0.057
+      },
+      {
+        "chrom": "Chr1",
+        "start": 10091430,
+        "end": 10094634,
+        "field": 0.857,
+        "measured": 0.8,
+        "delta": 0.057
+      },
+      {
+        "chrom": "Chr1",
+        "start": 14073776,
+        "end": 14075505,
+        "field": 0.857,
+        "measured": 0.8,
+        "delta": 0.057
+      },
+      {
+        "chrom": "Chr1",
+        "start": 28275839,
+        "end": 28277181,
+        "field": 0.846,
+        "measured": 0.8,
+        "delta": 0.046
+      },
+      {
+        "chrom": "Chr1",
+        "start": 16659832,
+        "end": 16664179,
+        "field": 0.835,
+        "measured": 0.8,
+        "delta": 0.035
+      },
+      {
+        "chrom": "Chr1",
+        "start": 20552478,
+        "end": 20553422,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Chr1",
+        "start": 25159043,
+        "end": 25163486,
+        "field": 0.94,
+        "measured": 0.9213,
+        "delta": 0.0187
+      },
+      {
+        "chrom": "Chr1",
+        "start": 17511160,
+        "end": 17511320,
+        "field": 0.818,
+        "measured": 0.8,
+        "delta": 0.018
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6210889,
+        "end": 6211988,
+        "field": 0.816,
+        "measured": 0.802,
+        "delta": 0.014
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6210890,
+        "end": 6211987,
+        "field": 0.815,
+        "measured": 0.801,
+        "delta": 0.014
+      },
+      {
+        "chrom": "Chr1",
+        "start": 24704990,
+        "end": 24706025,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 29611562,
+        "end": 29612405,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 9081644,
+        "end": 9082919,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 16641768,
+        "end": 16643679,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 17229971,
+        "end": 17231982,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 19496295,
+        "end": 19498168,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 23434673,
+        "end": 23436002,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Chr1",
+        "start": 19675548,
+        "end": 19680346,
+        "field": 0.806,
+        "measured": 0.8056,
+        "delta": 0.0004
+      },
+      {
+        "chrom": "Chr1",
+        "start": 29377328,
+        "end": 29380473,
+        "field": 0.808,
+        "measured": 0.8077,
+        "delta": 0.0003
+      },
+      {
+        "chrom": "Chr1",
+        "start": 20329369,
+        "end": 20330666,
+        "field": 0.931,
+        "measured": 0.931,
+        "delta": -0.0
+      },
+      {
+        "chrom": "Chr1",
+        "start": 3220130,
+        "end": 3223047,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 5004880,
+        "end": 5005081,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6498391,
+        "end": 6498638,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 10071132,
+        "end": 10073820,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 10173869,
+        "end": 10178687,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 10485608,
+        "end": 10487955,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 12003827,
+        "end": 12007786,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 13131404,
+        "end": 13132121,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 13559233,
+        "end": 13559461,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 13742489,
+        "end": 13743202,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 14841979,
+        "end": 14844013,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 18505109,
+        "end": 18505237,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 1544609,
+        "end": 1546600,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 4568278,
+        "end": 4569037,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6582793,
+        "end": 6585007,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6989157,
+        "end": 6993580,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 8662647,
+        "end": 8662823,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 11641390,
+        "end": 11646352,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 11684944,
+        "end": 11687596,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Chr1",
+        "start": 12972601,
+        "end": 12973307,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      }
+    ]
+  },
+  "C11_tir_arm_extrapolation": {
+    "long_arms": 11,
+    "suspicious": 7,
+    "rows": [
+      {
+        "chrom": "Chr1",
+        "start": 2460037,
+        "end": 2463771,
+        "arm": 632,
+        "outer": 0.0166,
+        "inner": 0.564
+      },
+      {
+        "chrom": "Chr1",
+        "start": 4329896,
+        "end": 4334391,
+        "arm": 330,
+        "outer": 0.0273,
+        "inner": 0.5455
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6210889,
+        "end": 6211988,
+        "arm": 202,
+        "outer": 0.0075,
+        "inner": 0.5735
+      },
+      {
+        "chrom": "Chr1",
+        "start": 6210890,
+        "end": 6211987,
+        "arm": 201,
+        "outer": 0.0075,
+        "inner": 0.5821
+      },
+      {
+        "chrom": "Chr1",
+        "start": 16659832,
+        "end": 16664179,
+        "arm": 140,
+        "outer": 0.0108,
+        "inner": 0.5745
+      },
+      {
+        "chrom": "Chr1",
+        "start": 18456847,
+        "end": 18457284,
+        "arm": 178,
+        "outer": 0.0932,
+        "inner": 0.4
+      },
+      {
+        "chrom": "Chr1",
+        "start": 18456848,
+        "end": 18457283,
+        "arm": 177,
+        "outer": 0.0932,
+        "inner": 0.4068
+      }
+    ]
+  },
+  "C12_near_duplicates": [
+    {
+      "chrom": "Chr1",
+      "a": [
+        6210889,
+        6211988
+      ],
+      "b": [
+        6210890,
+        6211987
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "Chr1",
+      "a": [
+        18456847,
+        18457284
+      ],
+      "b": [
+        18456848,
+        18457283
+      ],
+      "type": "Mutator_TIR_transposon"
+    }
+  ],
+  "C13_family_label_spread": [
+    {
+      "name": "TE_00000185",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTM": 1,
+        "MITE/DTM": 3
+      }
+    }
+  ],
+  "severe_total": 4,
+  "note_total": 15
 }

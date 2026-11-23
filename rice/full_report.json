@@ -971,5 +971,996 @@
       "classified": false
     }
   ],
-  "severe_total": 35
+  "C7_ltr_two_coords": {
+    "checked": 218,
+    "ok": 216,
+    "seq5": 216,
+    "seq3": 218,
+    "bad": [
+      {
+        "chrom": "OsChr1",
+        "start": 19440237,
+        "end": 19451648,
+        "parent": [
+          19440230,
+          19451653
+        ],
+        "d5": 7,
+        "d3": 5,
+        "tsd": "ATATA"
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 34970463,
+        "end": 34976124,
+        "parent": [
+          34970456,
+          34976129
+        ],
+        "d5": 7,
+        "d3": 5,
+        "tsd": "GAGAG"
+      }
+    ]
+  },
+  "C8_ltr_motif": {
+    "checked": 218,
+    "ok": 216,
+    "bad": [
+      {
+        "chrom": "OsChr1",
+        "start": 19440237,
+        "strand": "-",
+        "motif": "TGCA",
+        "head": "TG",
+        "tail": "AT"
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 34970463,
+        "strand": "+",
+        "motif": "TGCA",
+        "head": "AG",
+        "tail": "CA"
+      }
+    ]
+  },
+  "C9_tir_tsd_outside": {
+    "checked": 1152,
+    "ok5": 1152,
+    "ok3": 1152,
+    "bad": []
+  },
+  "C10_tir_identity_inflation": {
+    "checked": 1152,
+    "median_delta": -0.0002,
+    "inflated": 10,
+    "worst": [
+      {
+        "chrom": "OsChr1",
+        "start": 26711707,
+        "end": 26714796,
+        "field": 0.923,
+        "measured": 0.28,
+        "delta": 0.643
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 7526893,
+        "end": 7528236,
+        "field": 0.958,
+        "measured": 0.3678,
+        "delta": 0.5902
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 4929076,
+        "end": 4929370,
+        "field": 0.839,
+        "measured": 0.2593,
+        "delta": 0.5797
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 29178747,
+        "end": 29182854,
+        "field": 0.906,
+        "measured": 0.3546,
+        "delta": 0.5514
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 26894113,
+        "end": 26894504,
+        "field": 0.857,
+        "measured": 0.3514,
+        "delta": 0.5056
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 39586040,
+        "end": 39588004,
+        "field": 0.886,
+        "measured": 0.4025,
+        "delta": 0.4835
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 35592592,
+        "end": 35596012,
+        "field": 0.864,
+        "measured": 0.3984,
+        "delta": 0.4656
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 20526037,
+        "end": 20526211,
+        "field": 0.829,
+        "measured": 0.4167,
+        "delta": 0.4123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 15835767,
+        "end": 15836001,
+        "field": 0.855,
+        "measured": 0.4706,
+        "delta": 0.3844
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 38708497,
+        "end": 38709383,
+        "field": 0.921,
+        "measured": 0.7133,
+        "delta": 0.2077
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 2533056,
+        "end": 2534311,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 7988747,
+        "end": 7989946,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 8169713,
+        "end": 8170173,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 36185863,
+        "end": 36188336,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 39193940,
+        "end": 39198466,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 13050968,
+        "end": 13052320,
+        "field": 0.954,
+        "measured": 0.8017,
+        "delta": 0.1523
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 14359149,
+        "end": 14360137,
+        "field": 0.952,
+        "measured": 0.8,
+        "delta": 0.152
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 18984858,
+        "end": 18987531,
+        "field": 0.952,
+        "measured": 0.8,
+        "delta": 0.152
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 39320381,
+        "end": 39324964,
+        "field": 0.947,
+        "measured": 0.8,
+        "delta": 0.147
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 27369132,
+        "end": 27369573,
+        "field": 0.941,
+        "measured": 0.8,
+        "delta": 0.141
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 35852378,
+        "end": 35855120,
+        "field": 0.941,
+        "measured": 0.8,
+        "delta": 0.141
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 37053001,
+        "end": 37054037,
+        "field": 0.933,
+        "measured": 0.8,
+        "delta": 0.133
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 29178747,
+        "end": 29182855,
+        "field": 0.936,
+        "measured": 0.8056,
+        "delta": 0.1304
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 9851856,
+        "end": 9853293,
+        "field": 0.929,
+        "measured": 0.8,
+        "delta": 0.129
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 40721080,
+        "end": 40723347,
+        "field": 0.929,
+        "measured": 0.8,
+        "delta": 0.129
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 41705810,
+        "end": 41708813,
+        "field": 0.929,
+        "measured": 0.8,
+        "delta": 0.129
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 29178746,
+        "end": 29182856,
+        "field": 0.928,
+        "measured": 0.8,
+        "delta": 0.128
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 5450978,
+        "end": 5452033,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 9616220,
+        "end": 9617121,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 12142142,
+        "end": 12146243,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 12352232,
+        "end": 12353309,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 14203448,
+        "end": 14204486,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 14206751,
+        "end": 14209411,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 14322103,
+        "end": 14324118,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 19976813,
+        "end": 19977950,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 20067512,
+        "end": 20068642,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 21415771,
+        "end": 21416792,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 24645526,
+        "end": 24646763,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 24848209,
+        "end": 24848417,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 24881824,
+        "end": 24883000,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 24881905,
+        "end": 24883000,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 26192311,
+        "end": 26195883,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 28253477,
+        "end": 28256044,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 35222018,
+        "end": 35223458,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 36506157,
+        "end": 36507360,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 37100238,
+        "end": 37104955,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 40291005,
+        "end": 40291593,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 40418759,
+        "end": 40422153,
+        "field": 0.923,
+        "measured": 0.8,
+        "delta": 0.123
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 1036838,
+        "end": 1038369,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 1785470,
+        "end": 1789043,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      }
+    ]
+  },
+  "C11_tir_arm_extrapolation": {
+    "long_arms": 35,
+    "suspicious": 25,
+    "rows": [
+      {
+        "chrom": "OsChr1",
+        "start": 176177,
+        "end": 178552,
+        "arm": 156,
+        "outer": 0.0769,
+        "inner": 0.4423
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 1487491,
+        "end": 1492394,
+        "arm": 222,
+        "outer": 0.1149,
+        "inner": 0.3649
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 4586706,
+        "end": 4590758,
+        "arm": 181,
+        "outer": 0.0167,
+        "inner": 0.5574
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 5864954,
+        "end": 5866795,
+        "arm": 179,
+        "outer": 0.0672,
+        "inner": 0.4
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 6788136,
+        "end": 6792353,
+        "arm": 1556,
+        "outer": 0.1302,
+        "inner": 0.3391
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 8727296,
+        "end": 8727763,
+        "arm": 143,
+        "outer": 0.1158,
+        "inner": 0.3542
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 10984498,
+        "end": 10985870,
+        "arm": 153,
+        "outer": 0.1176,
+        "inner": 0.3529
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 13050968,
+        "end": 13052320,
+        "arm": 363,
+        "outer": 0.0289,
+        "inner": 0.5372
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 14593567,
+        "end": 14594373,
+        "arm": 121,
+        "outer": 0.1,
+        "inner": 0.3902
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 20173144,
+        "end": 20177695,
+        "arm": 265,
+        "outer": 0.0284,
+        "inner": 0.5393
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 22800738,
+        "end": 22802147,
+        "arm": 225,
+        "outer": 0.1267,
+        "inner": 0.3467
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 24360720,
+        "end": 24362468,
+        "arm": 298,
+        "outer": 0.0859,
+        "inner": 0.42
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 28104463,
+        "end": 28106211,
+        "arm": 372,
+        "outer": 0.0645,
+        "inner": 0.4677
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 29178746,
+        "end": 29182856,
+        "arm": 110,
+        "outer": 0.0685,
+        "inner": 0.4595
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 29178747,
+        "end": 29182855,
+        "arm": 108,
+        "outer": 0.0694,
+        "inner": 0.4444
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 30113531,
+        "end": 30114816,
+        "arm": 145,
+        "outer": 0.1042,
+        "inner": 0.3878
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 36609926,
+        "end": 36614941,
+        "arm": 156,
+        "outer": 0.0385,
+        "inner": 0.5192
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 36609927,
+        "end": 36614940,
+        "arm": 155,
+        "outer": 0.0388,
+        "inner": 0.5192
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 37694047,
+        "end": 37696711,
+        "arm": 101,
+        "outer": 0.0299,
+        "inner": 0.7647
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 38316065,
+        "end": 38317268,
+        "arm": 111,
+        "outer": 0.0676,
+        "inner": 0.4595
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 38671310,
+        "end": 38672187,
+        "arm": 346,
+        "outer": 0.0957,
+        "inner": 0.4052
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 38708497,
+        "end": 38709383,
+        "arm": 150,
+        "outer": 0.13,
+        "inner": 0.6
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 38942493,
+        "end": 38944644,
+        "arm": 226,
+        "outer": 0.1133,
+        "inner": 0.3684
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 39320381,
+        "end": 39324964,
+        "arm": 840,
+        "outer": 0.0196,
+        "inner": 0.5607
+      },
+      {
+        "chrom": "OsChr1",
+        "start": 39321160,
+        "end": 39324198,
+        "arm": 112,
+        "outer": 0.027,
+        "inner": 0.5263
+      }
+    ]
+  },
+  "C12_near_duplicates": [
+    {
+      "chrom": "OsChr1",
+      "a": [
+        2415496,
+        2416034
+      ],
+      "b": [
+        2415497,
+        2416033
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        4929076,
+        4929370
+      ],
+      "b": [
+        4929078,
+        4929370
+      ],
+      "type": "Tc1_Mariner_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        26161386,
+        26163374
+      ],
+      "b": [
+        26161387,
+        26163373
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        29178746,
+        29182856
+      ],
+      "b": [
+        29178747,
+        29182854
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        29178746,
+        29182856
+      ],
+      "b": [
+        29178747,
+        29182855
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        29178747,
+        29182854
+      ],
+      "b": [
+        29178747,
+        29182855
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        34037136,
+        34041700
+      ],
+      "b": [
+        34037137,
+        34041699
+      ],
+      "type": "Mutator_TIR_transposon"
+    },
+    {
+      "chrom": "OsChr1",
+      "a": [
+        36609926,
+        36614941
+      ],
+      "b": [
+        36609927,
+        36614940
+      ],
+      "type": "Mutator_TIR_transposon"
+    }
+  ],
+  "C13_family_label_spread": [
+    {
+      "name": "TE_00000451",
+      "n": 4,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTT": 1,
+        "DNA/DTC": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00001241",
+      "n": 4,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTH": 1,
+        "DNA/DTT": 3
+      }
+    },
+    {
+      "name": "TE_00000220",
+      "n": 4,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTH": 1,
+        "DNA/DTT": 3
+      }
+    },
+    {
+      "name": "TE_00000012",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTC": 2,
+        "DNA/DTM": 1
+      }
+    },
+    {
+      "name": "TE_00000118",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTH": 1,
+        "DNA/DTT": 2
+      }
+    },
+    {
+      "name": "TE_00000662",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "MITE/DTH": 2,
+        "DNA/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000184",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTH": 1
+      }
+    },
+    {
+      "name": "TE_00000865",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTT": 2,
+        "DNA/DTH": 1
+      }
+    },
+    {
+      "name": "TE_00000989",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "MITE/DTM": 1,
+        "DNA/DTT": 2
+      }
+    },
+    {
+      "name": "TE_00000922",
+      "n": 3,
+      "kind": "真冲突",
+      "labels": {
+        "DNA/DTT": 2,
+        "DNA/DTM": 1
+      }
+    },
+    {
+      "name": "TE_00000337",
+      "n": 6,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 5,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000454",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 3,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00001271",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 3,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000714",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 3,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000750",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 3,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00001155",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000083",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00001217",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000156",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000388",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000523",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000676",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00000975",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    },
+    {
+      "name": "TE_00001059",
+      "n": 3,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 1
+      }
+    }
+  ],
+  "severe_total": 35,
+  "note_total": 57
 }

@@ -2,9 +2,11 @@ tag        : Chr1
 species    : others
 parameters : --step all, then --step anno --anno 1; --overwrite 0; --threads 16
 curatedlib : 0
-input      : Ensembl Plants release-57, Oryza_sativa.IRGSP-1.0.dna.chromosome.1
+input      : Ensembl Plants release-57, Arabidopsis_thaliana.TAIR10.dna.chromosome.1
 length     : 30427671 bp
 edta       : /home/sean/miniconda3/envs/edta
 outdir     : /home/sean/te_bench_chr1
-win_path   : C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/rice/chr1_edta_out
+win_path   : C:/Users/Sean/WorkBuddy/2026-11-13-13-40-06/chr1_edta_out
 finished   : 2026-11-16 19:37:13
+corrected  : 2026-11-24  input 原误写为 Oryza_sativa（长度 30,427,671 bp 即 TAIR10 Chr1）；
+             win_path 原多写一级 rice/。只改这两行，其余为运行时的原始记录。

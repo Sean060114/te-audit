@@ -96,6 +96,16 @@
     "ident_floor": 0.8,
     "at_floor_n": 37
   },
+  "C4_ltr_tiers": {
+    "assigned_superfamily": {
+      "total": 14,
+      "missing": 0
+    },
+    "unassigned_superfamily": {
+      "total": 2,
+      "missing": 2
+    }
+  },
   "C4_coverage": {
     "Mutator_TIR_transposon": {
       "covered": 0,
@@ -172,5 +182,494 @@
       "classified": false
     }
   ],
-  "severe_total": 2
+  "C7_ltr_two_coords": {
+    "checked": 16,
+    "ok": 16,
+    "seq5": 0,
+    "seq3": 0,
+    "bad": []
+  },
+  "C8_ltr_motif": {
+    "checked": 0,
+    "ok": 0,
+    "bad": []
+  },
+  "C9_tir_tsd_outside": {
+    "checked": 0,
+    "ok5": 0,
+    "ok3": 0,
+    "bad": []
+  },
+  "C10_tir_identity_inflation": {
+    "checked": 80,
+    "median_delta": 0.0001,
+    "inflated": 0,
+    "worst": [
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2533056,
+        "end": 2534311,
+        "field": 1.0,
+        "measured": 0.8,
+        "delta": 0.2
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1036838,
+        "end": 1038369,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1785470,
+        "end": 1789043,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1991316,
+        "end": 1993029,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2423562,
+        "end": 2425112,
+        "field": 0.917,
+        "measured": 0.8,
+        "delta": 0.117
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 176177,
+        "end": 178552,
+        "field": 0.911,
+        "measured": 0.8013,
+        "delta": 0.1097
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2241885,
+        "end": 2243935,
+        "field": 0.905,
+        "measured": 0.8,
+        "delta": 0.105
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1649902,
+        "end": 1653907,
+        "field": 0.889,
+        "measured": 0.8,
+        "delta": 0.089
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2697915,
+        "end": 2701863,
+        "field": 0.886,
+        "measured": 0.8,
+        "delta": 0.086
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 25167,
+        "end": 25718,
+        "field": 0.857,
+        "measured": 0.8,
+        "delta": 0.057
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2239342,
+        "end": 2242016,
+        "field": 0.857,
+        "measured": 0.8,
+        "delta": 0.057
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 271695,
+        "end": 274014,
+        "field": 0.846,
+        "measured": 0.8,
+        "delta": 0.046
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1061820,
+        "end": 1062763,
+        "field": 0.846,
+        "measured": 0.8,
+        "delta": 0.046
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1349286,
+        "end": 1351730,
+        "field": 0.846,
+        "measured": 0.8,
+        "delta": 0.046
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2289178,
+        "end": 2291141,
+        "field": 0.842,
+        "measured": 0.8,
+        "delta": 0.042
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 292573,
+        "end": 294383,
+        "field": 0.84,
+        "measured": 0.8025,
+        "delta": 0.0375
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1605901,
+        "end": 1607679,
+        "field": 0.912,
+        "measured": 0.8788,
+        "delta": 0.0332
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 80322,
+        "end": 84001,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 211234,
+        "end": 211469,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 614248,
+        "end": 616203,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1286244,
+        "end": 1290963,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2624662,
+        "end": 2625765,
+        "field": 0.833,
+        "measured": 0.8,
+        "delta": 0.033
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1487491,
+        "end": 1492394,
+        "field": 0.831,
+        "measured": 0.8018,
+        "delta": 0.0292
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 547507,
+        "end": 548737,
+        "field": 0.823,
+        "measured": 0.8036,
+        "delta": 0.0194
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2415497,
+        "end": 2416033,
+        "field": 0.816,
+        "measured": 0.8,
+        "delta": 0.016
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2415496,
+        "end": 2416034,
+        "field": 0.818,
+        "measured": 0.8023,
+        "delta": 0.0157
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2479398,
+        "end": 2480521,
+        "field": 0.81,
+        "measured": 0.8,
+        "delta": 0.01
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 407622,
+        "end": 407833,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 614248,
+        "end": 615899,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1286244,
+        "end": 1288002,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2495249,
+        "end": 2496602,
+        "field": 0.81,
+        "measured": 0.8095,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 266933,
+        "end": 270291,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 877870,
+        "end": 881894,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1618832,
+        "end": 1619015,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2548080,
+        "end": 2549474,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2859272,
+        "end": 2861682,
+        "field": 0.824,
+        "measured": 0.8235,
+        "delta": 0.0005
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 970829,
+        "end": 972094,
+        "field": 0.808,
+        "measured": 0.8077,
+        "delta": 0.0003
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2111714,
+        "end": 2112669,
+        "field": 0.808,
+        "measured": 0.8077,
+        "delta": 0.0003
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2005867,
+        "end": 2007404,
+        "field": 0.815,
+        "measured": 0.8148,
+        "delta": 0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1788444,
+        "end": 1789043,
+        "field": 0.805,
+        "measured": 0.8049,
+        "delta": 0.0001
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2125977,
+        "end": 2128541,
+        "field": 0.805,
+        "measured": 0.8049,
+        "delta": 0.0001
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 547417,
+        "end": 548737,
+        "field": 0.805,
+        "measured": 0.8051,
+        "delta": -0.0001
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 336603,
+        "end": 339901,
+        "field": 0.826,
+        "measured": 0.8261,
+        "delta": -0.0001
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2495249,
+        "end": 2495825,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 2697105,
+        "end": 2698072,
+        "field": 0.846,
+        "measured": 0.8462,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 21741,
+        "end": 24965,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 177419,
+        "end": 178552,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 211234,
+        "end": 215470,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 871104,
+        "end": 872325,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1034334,
+        "end": 1037727,
+        "field": 0.818,
+        "measured": 0.8182,
+        "delta": -0.0002
+      }
+    ]
+  },
+  "C11_tir_arm_extrapolation": {
+    "long_arms": 5,
+    "suspicious": 4,
+    "rows": [
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 176177,
+        "end": 178552,
+        "arm": 156,
+        "outer": 0.0769,
+        "inner": 0.4423
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 547417,
+        "end": 548737,
+        "arm": 118,
+        "outer": 0.0513,
+        "inner": 0.475
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 547507,
+        "end": 548737,
+        "arm": 112,
+        "outer": 0.0405,
+        "inner": 0.5
+      },
+      {
+        "chrom": "Oryza_sativa.",
+        "start": 1487491,
+        "end": 1492394,
+        "arm": 222,
+        "outer": 0.1149,
+        "inner": 0.3649
+      }
+    ]
+  },
+  "C12_near_duplicates": [
+    {
+      "chrom": "Oryza_sativa.",
+      "a": [
+        2415496,
+        2416034
+      ],
+      "b": [
+        2415497,
+        2416033
+      ],
+      "type": "Mutator_TIR_transposon"
+    }
+  ],
+  "C13_family_label_spread": [
+    {
+      "name": "TE_00000026",
+      "n": 4,
+      "kind": "仅自主性",
+      "labels": {
+        "DNA/DTT": 2,
+        "MITE/DTT": 2
+      }
+    }
+  ],
+  "severe_total": 0,
+  "note_total": 5
 }
