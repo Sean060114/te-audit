@@ -1,0 +1,63 @@
+chrom	start	end	strand	length	ed_class	ed_superfamily	tier	identity	tsd	verdict_code	msu_dominant	msu_superfamily	mixed	cov_gypsy	cov_copia	cov_ltr_unknown	cov_tir	cov_mite	cov_dna_unknown	cov_sine	cov_line	cov_helitron	cov_nonte	n_msu_hits	msu_note	bd_ds	bd_de	bd90_ds	bd90_de	family
+OsChr1	176177	178552	.	2376	DNA/DTT	DTT	强	0.911	TA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	0.599	0.0	0.0	0.0	0.0	0.0	10	MITE-adh, type B-like MITE, putative					TE_00000988
+OsChr1	292573	294383	.	1811	DNA/DTM	DTM	强	0.84	TTTTGTTTG	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.459	0.0	0.0	0.0	0.0	0.0	0.0	3	AnacB12 transposon, putative					TE_00001346
+OsChr1	1487491	1492394	.	4904	DNA/DTM	DTM	强	0.831	GGCGTCG	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.034	0.0	0.0	0.0	0.0	0.016	4	Wanderer-like MITE, putative					TE_00000914
+OsChr1	1605901	1607679	.	1779	DNA/DTT	DTT	中	0.912	TA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	0.395	0.0	0.0	0.0	0.0	0.0	8	MITE-adh, type J, putative					TE_00000941
+OsChr1	4586706	4590758	.	4053	DNA/DTT	DTT	强	0.83	CGGCCGGCCG	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.05	0.074	0.0	0.061	0.0	0.0	0.007	11	MITE-adh, type B, putative					TE_00001813
+OsChr1	5864954	5866795	.	1842	DNA/DTM	DTM	强	0.89	AACGGAATA	agree_class	DNA/TIR		0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	1	AnacC2 transposon, putative	-100	100	-100	100	TE_00001853
+OsChr1	6306368	6307716	.	1349	DNA/DTM	DTM	强	0.918	TTGGTAGTA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.649	0.0	0.0	0.0	0.0	0.0	0.0	6	AnacB1 transposon, putative					TE_00001878
+OsChr1	6788136	6792353	.	4218	DNA/DTM	DTM	强	0.84	CGTCGACG	insufficient_cov	LTR/unknown		0	0.0	0.0	0.012	0.0	0.0	0.0	0.0	0.0	0.0	0.0	1	Karma DNA retrotransposon, putative					TE_00001892
+OsChr1	8727296	8727763	.	468	MITE/DTH	DTH	强	0.834	TTA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	1	Ditto-like MITE, putative	0	1	0	1	TE_00001399
+OsChr1	10984498	10985870	.	1373	DNA/DTM	DTM	强	0.838	ATTCTGATT	agree_class	DNA/TIR		0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	6	AnacB12 transposon, putative	0	0	0	0	TE_00001853
+OsChr1	11493155	11494425	.	1271	DNA/DTC	DTC	强	1	GAA	agree_superfamily	DNA/TIR	DTC	0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	4	Cacta-like transposon, putative	132	-168			TE_00000817
+OsChr1	13989508	13990236	.	729	DNA/DTH	DTH	强	0.827	TTA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	0.984	0.0	0.0	0.0	0.0	0.0	3	Ditto-like MITE, putative					TE_00000888
+OsChr1	14593567	14594373	.	807	DNA/DTM	DTM	强	0.816	GGGATTTGG	insufficient_cov			0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0						TE_00000910
+OsChr1	20173144	20177695	.	4552	DNA/DTM	DTM	强	0.804	TAATTTTCA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.312	0.0	0.0	0.0	0.0	0.0	0.005	2	Mu-like transposon, putative					OsChr1:20173144..20177695
+OsChr1	22800738	22802147	.	1410	DNA/DTM	DTM	强	0.846	GGATATCC	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.146	0.0	0.0	0.0	0.0	0.018	3	Crackle-like MITE, putative					OsChr1:22800738..22802147
+OsChr1	23900403	23900483	.	81	MITE/DTT	DTT	强	0.914	TA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	4	MITE-adh, type D-like MITE, putative	19	2			OsChr1:23900403..23900483
+OsChr1	24360720	24362468	.	1749	DNA/DTM	DTM	强	0.815	AACTCCCCA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.501	0.0	0.0	0.0	0.0	0.0	0.0	6	AnacB12 transposon, putative					TE_00001183
+OsChr1	26192311	26192392	.	82	MITE/DTT	DTT	中	0.857	TA	conflict_class	SINE		0	0.0	0.0	0.0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	1	p-SINE2-r2010 retrotransposon, putative	-2	3	-2	3	TE_00001246
+OsChr1	27372572	27373852	.	1281	DNA/DTM	DTM	强	0.933	TAACATAAA	conflict_class	LTR/unknown		0	0.0	0.0	0.638	0.0	0.0	0.0	0.0	0.0	0.0	0.0	2	noaCRR1 retrotransposon, putative	396	-80			TE_00001284
+OsChr1	28104463	28106211	.	1749	DNA/DTT	DTT	强	0.832	TA	insufficient_cov	SINE		0	0.0	0.0	0.0	0.0	0.069	0.0	0.105	0.0	0.0	0.0	4	p-SINE1-r445 retrotransposon, putative					TE_00001311
+OsChr1	29178746	29182856	.	4111	DNA/DTM	DTM	强	0.928	CACACGA	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.01	1						TE_00001343
+OsChr1	29178747	29182855	.	4109	DNA/DTM	DTM	强	0.936	CCACACGAG	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.01	1						TE_00001343
+OsChr1	30113531	30114816	.	1286	DNA/DTC	DTC	强	0.805	ACTAGT	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.274	3						TE_00001372
+OsChr1	30325927	30330382	.	4456	DNA/DTM	DTM	强	0.805	CGTCCTGTG	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.022	0.013	0.0	0.0	0.0	0.036	6						OsChr1:30325927..30330382
+OsChr1	36609926	36614941	.	5016	DNA/DTM	DTM	强	0.84	TTGGCTT	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.009	1						TE_00001578
+OsChr1	36609927	36614940	.	5014	DNA/DTM	DTM	强	0.84	GTTGGCTTC	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.009	1						TE_00001578
+OsChr1	36993086	36995524	.	2439	DNA/DTH	DTH	强	0.823	TAA	agree_class	DNA/MITE		0	0.0	0.0	0.0	0.0	0.387	0.082	0.027	0.0	0.0	0.0	7	Ditto-like MITE, putative					TE_00001586
+OsChr1	37013709	37014952	.	1244	DNA/DTM	DTM	强	0.874	CGTAGTAG	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.047	2						TE_00001587
+OsChr1	37694047	37696711	.	2665	DNA/DTM	DTM	强	0.835	CTTTTCCAG	insufficient_cov	DNA/TIR		0	0.0	0.0	0.0	0.203	0.0	0.0	0.0	0.0	0.0	0.0	1	AnacB14 transposon, putative					TE_00001613
+OsChr1	38316065	38317268	.	1204	DNA/DTM	DTM	强	0.884	TTTTTTTTT	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.704	0.0	0.0	0.0	0.0	0.0	0.0	4	adh1-adh2 region transposon, putative					TE_00001629
+OsChr1	38671310	38672187	.	878	DNA/DTT	DTT	强	0.825	TA	insufficient_cov			0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0						TE_00000176
+OsChr1	38708497	38709383	.	887	DNA/DTM	DTM	强	0.921	GTTTGGAGG	insufficient_cov			0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0						TE_00001641
+OsChr1	38942493	38944644	.	2152	DNA/DTM	DTM	强	0.83	AGCAAAATT	conflict_class	LTR/unknown		0	0.0	0.0	0.337	0.26	0.0	0.0	0.0	0.0	0.0	0.0	11	noaCRR2 retrotransposon, putative					TE_00001651
+OsChr1	39320381	39324964	.	4584	DNA/DTM	DTM	强	0.947	GCGTACGC	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.094	0.0	0.0	0.0	0.0	0.0	3	MITE-adh-11-like MITE, putative					TE_00001664
+OsChr1	39321160	39324198	.	3039	DNA/DTC	DTC	强	0.895	GCC	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.141	0.0	0.0	0.0	0.0	0.0	3	MITE-adh-11-like MITE, putative					TE_00001664
+OsChr1	41688639	41690953	.	2315	DNA/DTM	DTM	中	0.886	TTTTCTGGT	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.363	0.178	0.0	0.0	0.0	0.0	0.01	11	AnacB1 transposon, putative					TE_00001743
+OsChr1	42693281	42694799	.	1519	DNA/DTM	DTM	强	0.943	TGGCTTTAT	insufficient_cov			0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0						TE_00001790
+OsChr12	1202488	1206553	.	4066	DNA/DTM	DTM	强	0.919	AGATTGC	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.014	0.0	0.0	0.0	0.0	0.058	6						TE_00000044
+OsChr12	1202489	1206552	.	4064	DNA/DTM	DTM	强	0.943	CAGATTGCG	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.013	0.0	0.0	0.0	0.0	0.058	5						TE_00000044
+OsChr12	1911859	1913786	.	1928	DNA/DTM	DTM	强	0.811	ACGTGCGTG	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.527	0.0	0.0	0.0	0.0	0.0	0.031	4	adh1-adh2 region transposon, putative					TE_00000242
+OsChr12	2628957	2633977	.	5021	DNA/DTM	DTM	强	0.948	GCCTTGATC	insufficient_cov	DNA/TIR		0	0.0	0.0	0.0	0.299	0.0	0.0	0.0	0.0	0.0	0.024	2	MULE-like transposon, putative					TE_00000512
+OsChr12	2991521	2992329	.	809	DNA/DTM	DTM	强	0.816	ATAAAGAAA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.466	0.0	0.0	0.0	0.0	0.0	0.0	2	iDart3-1 transposon, putative					TE_00000559
+OsChr12	3974999	3976864	.	1866	DNA/DTM	DTM	强	0.836	GACTCGGAA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.476	0.0	0.0	0.0	0.0	0.0	0.075	6	AnacB2 transposon, putative					TE_00000596
+OsChr12	7035384	7039486	.	4103	DNA/DTT	DTT	中	0.867	TA	conflict_class	LTR/unknown		0	0.0	0.0	0.829	0.0	0.174	0.0	0.0	0.0	0.0	0.0	7	Squiq LTR retrotransposon, putative	406	-296			OsChr12:7035384..7039486
+OsChr12	7363704	7366711	.	3008	DNA/DTM	DTM	强	0.894	TCGAGACAA	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.022	1						TE_00000701
+OsChr12	9455054	9456711	.	1658	DNA/DTM	DTM	强	0.946	TAAAGAACG	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.55	0.0	0.0	0.0	0.0	0.0	0.0	5	AnacB1 transposon, putative					TE_00000764
+OsChr12	13025309	13029358	.	4050	DNA/DTM	DTM	强	0.931	GGAGCGAGG	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.324	0.0	0.0	0.0	0.0	0.0	0.026	4	Mu-like transposon, putative					TE_00000071
+OsChr12	14536623	14539410	.	2788	DNA/DTM	DTM	强	0.911	TAAATTTA	insufficient_cov			0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0						TE_00000111
+OsChr12	16397757	16397865	.	109	MITE/DTT	DTT	强	0.923	TA	agree_class	DNA/MITE		1	0.0	0.0	0.0	0.0	0.972	0.0	0.349	0.0	0.0	0.0	2	MITE-adh, type J-like MITE, putative	-2	-3	-2	-3	TE_00000159
+OsChr12	17525680	17528819	.	3140	DNA/DTT	DTT	强	0.882	TA	insufficient_cov	DNA/unknown		0	0.0	0.0	0.0	0.0	0.0	0.164	0.034	0.0	0.0	0.0	3	Unclassified transposon, putative					TE_00000192
+OsChr12	18356315	18357587	.	1273	DNA/DTM	DTM	强	0.804	GTCCGTG	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.79	0.0	0.0	0.0	0.0	0.0	0.0	7	AnacA11 transposon, putative					TE_00000218
+OsChr12	19308304	19309498	.	1195	DNA/DTC	DTC	强	1	TTA	agree_superfamily	DNA/TIR	DTC	0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	4	En/Spm-like transposon, putative	0	-263			TE_00001919
+OsChr12	19744829	19747260	.	2432	DNA/DTM	DTM	强	0.843	AAAATTTT	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.154	0.0	0.0	0.0	0.0	0.0	1	Amy/LTP-like MITE, putative					TE_00000269
+OsChr12	23229436	23233352	.	3917	DNA/DTM	DTM	强	0.802	TTAAATTAA	conflict_class	LTR/Gypsy		0	0.809	0.0	0.0	0.029	0.0	0.0	0.0	0.0	0.0	0.008	4	Ty3-Gypsy type Retrosat 2 retrotransposon, putative	147	-1547			OsChr12:23229436..23233352
+OsChr12	23975707	23980289	.	4583	DNA/DTM	DTM	强	0.842	TATTTAAAA	agree_class	DNA/TIR		0	0.182	0.0	0.0	0.769	0.0	0.0	0.0	0.0	0.0	0.005	6	AnacA3 transposon, putative	888	-693			OsChr12:23975707..23980289
+OsChr12	24529363	24530813	.	1451	DNA/DTM	DTM	强	0.843	CATGCATG	conflict_class	LTR/unknown		0	0.0	0.0	0.989	0.0	0.0	0.0	0.0	0.0	0.0	0.0	3	retrotransposon, putative	270	266			TE_00000441
+OsChr12	24690229	24693264	.	3036	DNA/DTM	DTM	强	0.981	AAGAATAAC	insufficient_cov	Other/non-TE		0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.035	1						TE_00000449
+OsChr12	25569749	25574349	.	4601	DNA/DTM	DTM	强	0.886	ATTATTGAA	conflict_class	LTR/Gypsy		0	0.731	0.0	0.0	0.033	0.0	0.0	0.0	0.0	0.0	0.0	2	Ty3/gypsy retrotransposon, putative	745	-494			TE_00000492
+OsChr12	26231315	26234438	.	3124	DNA/DTT	DTT	强	0.802	TA	insufficient_cov	DNA/MITE		0	0.0	0.0	0.0	0.0	0.228	0.0	0.0	0.0	0.0	0.017	5	MITE-adh, type B-like MITE, putative					TE_00000506
+OsChr12	26448223	26449934	.	1712	DNA/DTM	DTM	强	0.905	AAGAATCGA	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.789	0.0	0.0	0.0	0.0	0.0	0.0	4	AnacB12 transposon, putative					TE_00000516
+OsChr12	26898991	26900453	.	1463	DNA/DTM	DTM	强	0.98	CCTCTCTCT	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.658	0.0	0.0	0.0	0.0	0.0	0.118	7	AnacB14 transposon, putative					TE_00001825
+OsChr12	27162162	27163424	.	1263	DNA/DTM	DTM	强	0.875	TTTAAACTC	agree_class	DNA/TIR		0	0.0	0.0	0.0	0.564	0.0	0.0	0.0	0.0	0.0	0.0	4	AnacA2 transposon, putative					TE_00000537
