@@ -659,6 +659,11 @@ def main():
     for p in files["cls"]:
         cls_rows.extend(parse_cls(p))
     print(f"\n元素级记录: {len(recs)}   分类器条目: {len(cls_rows)}")
+    if args.fasta:
+        # 路径写错时给一句人话，不要 traceback。公开仓库的第一个访客最容易撞这里。
+        missing = [p for p in args.fasta if not os.path.exists(p)]
+        if missing:
+            sys.exit("找不到 FASTA 文件：" + ", ".join(missing))
     seq = read_fasta(args.fasta) if args.fasta else {}
     if args.fasta:
         print(f"基因组序列: {len(seq)} 条（{', '.join(sorted(seq))[:60]}）")
