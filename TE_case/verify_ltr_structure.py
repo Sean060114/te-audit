@@ -19,7 +19,8 @@
      5′LTR 起点与 3′LTR 终点，**不是**边界处连续出现的 4 个碱基。
   5. 一个 LTR 元件在 intact.gff3 里占 6 行（repeat_region / lTSD / lLTR /
      LTRRT / rLTR / rTSD），**只有 repeat_region 行代表元件**。
-  6. **两翼 LTR 都按基因组正向书写，负链元件也不做反向互补。** 实测负链元件
+  6. **两翼 LTR 都按基因组正向书写，负链元件也不做反向互补。**（仅指 LTR 相似度；
+     `tsd=` 与 `motif=` 两个字段仍按元件方向书写，负链要 rc。这两条方向约定相反。） 实测负链元件
      `lLTR` 与 `rLTR` 的前 30 bp 完全相同；取 rc 反而把相似度打到 0.23。
      （这一条与 TIR 侧相反：TIR 的右翼判反向重复要拿左翼比 rc(右翼)。）
 
@@ -30,6 +31,7 @@
 """
 
 import argparse
+import csv
 import difflib
 import sys
 
@@ -128,6 +130,7 @@ def main():
     ap.add_argument("--tol", type=int, default=1, help="3′TSD 允许的错配数（默认 1）")
     ap.add_argument("--ident-def", choices=("A", "B", "C"), default="C",
                     help="ltr_identity 的复算定义，默认 C（扣掉 indel 列的逐位一致率）")
+    ap.add_argument("--tsv", help="输出逐元件结构判定（供 A/B/C 分级直接引用）")
     args = ap.parse_args()
 
     seqs = read_fasta(args.fasta)
@@ -138,6 +141,8 @@ def main():
     n = ok5 = ok3 = ok3tol = okboth = okmot = 0
     idents = []
     id_rows = []
+    # 逐元件判定：A/B/C 分级要用"每一条都过"，不能用批量百分比当门槛
+    per = {}
     for e in elems:
         chrom = e["chrom"]
         if chrom not in seqs:
@@ -153,24 +158,45 @@ def main():
             continue
         n += 1
         L = len(t)
+        rec = {"chrom": e["chrom"], "start": s, "end": en, "id": e["id"],
+               "strand": e["strand"], "tsd_len": L,
+               "tsd_seq": t, "motif": e["motif"],
+               "tsd5": 0, "tsd3": 0, "tsd3_tol": 0, "motif_ok": 0,
+               "ident_field": "", "ident_calc": "", "ident_diff": ""}
         left = sq[s - 1:s - 1 + L]
         right = sq[en - L:en]
         if e["strand"] == "-":            # tsd 按元件方向书写
             left, right = rc(left), rc(right)
         if left == t:
             ok5 += 1
+            rec["tsd5"] = 1
         if right == t:
             ok3 += 1
+            rec["tsd3"] = 1
         if hamming(right, t) <= args.tol:
             ok3tol += 1
+            rec["tsd3_tol"] = 1
         if left == t and hamming(right, t) <= args.tol:
             okboth += 1
         m = e["motif"]
         if len(m) == 4:
-            # 前 2 nt 在 5′LTR 起点（紧接 5′TSD），后 2 nt 在 3′LTR 终点（紧邻 3′TSD）
-            if (sq[s - 1 + L:s + 1 + L] == m[:2]
-                    and sq[en - L - 2:en - L] == m[2:]):
+            # 前 2 nt 在 5′LTR 起点（紧接 5′TSD），后 2 nt 在 3′LTR 终点（紧邻 3′TSD）。
+            #
+            # **motif 也按元件方向书写**，与 tsd= 一致。负链元件必须先取反向互补再比：
+            # 基因组小坐标端是它的 3′ 端，所以还要交叉（rc(尾)==m[:2]、rc(头)==m[2:]）。
+            # 初版漏了这一步，靠"末端 2 nt 常相同或回文"蒙对了 410/420——420 条里
+            # 有 406 条正反两种读法同时成立，把 5 条负链元件的错读掩盖掉了。
+            # 修完后 415/420。
+            h = sq[s - 1 + L:s + 1 + L]
+            t = sq[en - L - 2:en - L]
+            if e["strand"] == "-":
+                h, t = rc(t), rc(h)
+                hit = (h == m[:2] and t == m[2:])
+            else:
+                hit = (h == m[:2] and t == m[2:])
+            if hit:
                 okmot += 1
+                rec["motif_ok"] = 1
         if e["ident"]:
             try:
                 idents.append(float(e["ident"]))
@@ -189,6 +215,10 @@ def main():
                 id_rows.append({"id": e["id"], "strand": e["strand"],
                                 "la": len(a), "lb": len(b), "field": f,
                                 "A": d["A"], "B": d["B"], "C": d["C"]})
+                rec["ident_field"] = round(f, 4)
+                rec["ident_calc"] = round(d[args.ident_def], 4)
+                rec["ident_diff"] = round(abs(d[args.ident_def] - f), 4)
+        per[(e["chrom"], s, en)] = rec
 
     pct = lambda k: f"{k}/{n} ({k / n * 100:.1f}%)" if n else "n/a"
     print(f"LTR 元件（repeat_region 行）: {len(elems)}；带 TSD 可复算: {n}")
@@ -213,6 +243,27 @@ def main():
         for r in d[:5]:
             print(f"    {r['id']:<20}{r['strand']}  {r['la']}/{r['lb']} bp  "
                   f"复算 {r[sel]:.4f}  字段 {r['field']:.4f}  差 {abs(r[sel]-r['field']):.4f}")
+
+
+    if args.tsv:
+        # tsd_seq / motif 一并带出来：判定失败时要能就地看末端实际序列，
+        # 不然复核还得重读 gff。两列不影响判定，只是证据留档。
+        cols = ["chrom", "start", "end", "id", "strand", "tsd_len", "tsd_seq",
+                "motif", "tsd5", "tsd3", "tsd3_tol", "motif_ok",
+                "ident_field", "ident_calc", "ident_diff"]
+        with open(args.tsv, "w", encoding="utf-8", newline="") as fh:
+            # 项目 .gitattributes 锁 LF：csv 默认写 \r\n，必须显式指定，
+            # 否则 WSL 里的下游脚本会读到行尾多余的 \r。
+            w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t",
+                               extrasaction="ignore", lineterminator="\n")
+            w.writeheader()
+            for k in sorted(per, key=lambda k: (k[0], k[1])):
+                w.writerow(per[k])
+        print(f"\n逐元件判定已写入 {args.tsv}（{len(per)} 行）")
+        full = sum(1 for r in per.values()
+                   if r["tsd5"] and r["tsd3_tol"] and r["motif_ok"]
+                   and r["ident_diff"] != "" and r["ident_diff"] <= 0.01)
+        print(f"  三项（TSD/motif/ident）逐条全过: {full}/{len(per)} = {full/len(per)*100:.1f}%")
 
 
 if __name__ == "__main__":

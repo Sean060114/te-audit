@@ -112,11 +112,14 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
   报表_水稻跨科判据检验.md     水稻跨科 + Chr1 重跑验证（判据结论以此为准）
   报表_水稻交叉验证与跨染色体基准.md  模块 2：单条库 → 双条同库，含库大小效应与 run-to-run 实测
   报表_结构注释质量基线.md     最早的单点基线
-  基准_字段语义校准.md         建基准第 1 步：LTR 字段语义 + 三项独立复算
-                              （配套 verify_ltr_structure.py；TSD 99.0%、
-                               末端基序 97.6%、两翼 LTR 相似度 95.0%）
+  基准_字段语义校准.md         建基准第 1 步：LTR 七条字段语义 + 三项独立复算
+                              （配套 verify_ltr_structure.py，--tsv 输出逐元件判定；
+                               TSD 99.0%、末端基序 98.8%、两翼相似度 95.0%）
+  ltr_structure.tsv            420 条逐元件结构复算（四项门槛 + 失败项）
   基准_LTR逐元件台账.md        建基准第 2 步：420 条结构 LTR 与 MSU 逐元件对账
-                              （配套 link_msu.py + ltr_msu_ledger.tsv，A/B/C = 185/181/54；
+                              （配套 link_msu.py + ltr_msu_ledger.tsv；
+                               A/B/C = 183/178/59，结构门槛落在逐条而非批次数，
+                               配套 grade_ltr_abc.py + ltr_abc.tsv；
                                §11 用 MSU 基因流程做第三票，配套 gene_arbitration.py）
   基准_TIR字段语义校准.md      建基准第 3 步：TIR/MITE 字段约定 + 结构证据强度
                               （配套 verify_tir_structure.py；1,824 条里仅 62 条硬证据）
