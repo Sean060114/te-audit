@@ -116,6 +116,8 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
                               （配套 verify_ltr_structure.py，复算率 99.0%）
   基准_LTR逐元件台账.md        建基准第 2 步：420 条结构 LTR 与 MSU 逐元件对账
                               （配套 link_msu.py + ltr_msu_ledger.tsv，A/B/C = 185/181/54）
+  基准_TIR字段语义校准.md      建基准第 3 步：TIR/MITE 字段约定 + 结构证据强度
+                              （配套 verify_tir_structure.py；1,824 条里仅 64 条硬证据）
 archive/                已被取代的运行脚本（保留是为了留下失败记录）
 bench_archive/          col1m / alyrata 的历史运行回传（仅此一份）
 chr1_edta_out/          TAIR10 Chr1 基准运行回传
