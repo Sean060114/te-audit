@@ -15,8 +15,9 @@
 2. **右翼 TIR 是基因组正向写的，不是反向互补。** 字段里
    `TIR=GAGAAGAGAAG_ATTCTCTTCGC` 的两段都是 5'→3'（正链）序列；
    判断"是不是反向重复"要拿左翼和 **rc(右翼)** 比。
-3. **`identity=` 不是"两翼逐位相似度"的精确值。** 它是 TIR-Learner 的比对结果，
-   与逐位 hamming 平均差 1.8 pp（含 indel 时更多）。
+3. **`identity=` 不是"两翼逐位相似度"的精确值**，也**不是 TIR-Learner 的 TIR identity**
+   （后者在官方样例里只有 90.0 / 100.0 两档）。它是 EDTA 从 bed 第 6 列写进来的值，
+   与逐位 hamming 平均差 1.8 pp，个别差到 0.6——见报告 5.2 的 6 条例外。
 
 分级不拍阈值，用随机命中期望
 ----------------------------
@@ -28,13 +29,8 @@ TIR 只有 11–20 bp，而 2 bp 的 TSD 随机出现概率是 1/16。所以"有
 
 L 为臂长、m 为错配数、N_pos 取两染色体总长。E 越小越不可能是巧合：
 
-    E < 0.01     强   （全基因组范围内预期不到 0.01 次）
-    0.01 ≤ E < 10 中
-    E ≥ 10       弱
-
-这个判据比"TIR≥20 bp 且 identity≥90%"更站得住：后者是拍的，前者能算给评审看，
-而且自动照顾到"1,556 bp、84% 相似"这类长臂——它们的错配数多，但长度足以把
-期望压到极低。
+分级最后并没有用 E 当唯一判据（见 tier_of 的注释）：E 只做参考列。理由是
+"1,556 bp、84% 相似"这类长臂按 E 排序靠后，却显然是硬证据。
 
 用法
 ----
@@ -135,12 +131,15 @@ def tier_of(arm, sim):
     十几次（71e6 / 4^11 ≈ 17）。短臂必须靠"错配少 + TSD 长"补。
 
     规则（可对评审逐条解释）：
-      强  臂长 ≥100（长反向重复本身就极难偶然出现）
+      强  臂长 ≥100 且相似度 ≥0.70（长反向重复本身就极难偶然出现）
           或 臂长 ≥20 且相似度 ≥0.90（20 bp 内错配 ≤2）
       中  臂长 ≥16 且相似度 ≥0.85
       弱  其余
     """
-    if arm >= 100 or (arm >= 20 and sim >= 0.90):
+    # 长臂还要求实测相似度 ≥0.70：57 条长臂里有 6 条的实测只有 0.35–0.51
+    # （接近随机的 0.25），而 identity 字段写着 0.86–0.96 —— 只看长度会把这 6 条
+    # 放进"强"。实测分布在此处是断开的（0.51 → 0.71），0.70 落在空洞里。
+    if (arm >= 100 and sim >= 0.70) or (arm >= 20 and sim >= 0.90):
         return "强"
     if arm >= 16 and sim >= 0.85:
         return "中"
@@ -189,6 +188,8 @@ def main():
             "ir_ident_measured": round(sim, 3),
             "ident_field": e["ident"],
             "ir_mismatch": miss,
+            "field_gap": round(float(e["ident"]) - sim, 3) + 0.0
+                         if e["ident"] not in ("NA", "") else "",
             "chance_log10": round(log_e, 2),
             "tier": tier_of(n, sim),
             "left_tir_ok": int(left_ok), "right_tir_ok": int(right_ok),
@@ -209,17 +210,24 @@ def main():
     if diffs:
         print(f"逐位相似度 vs identity 字段: 平均 |差| {sum(diffs) / len(diffs):.3f}"
               f"，>0.05 的 {sum(1 for d in diffs if d > 0.05)} 条")
+        gap = [r for r in rows if r["field_gap"] != "" and r["field_gap"] > 0.20]
+        print(f"  其中字段比实测高 >0.20 的 {len(gap)} 条 —— 这些行的 identity 不可信，"
+              f"分级一律以实测为准")
+        for r in gap:
+            print(f"    {r['chrom']}:{r['start']}-{r['end']} 臂长 {r['tir_l']} "
+                  f"实测 {r['ir_ident_measured']:.3f} 字段 {r['ident_field']}")
 
-    print("\n按臂长 + 相似度分级（强：臂≥100 或 臂≥20 且相似度≥0.90）：")
+    print("\n按臂长 + 相似度分级（强：臂≥100 且相似度≥0.70，或 臂≥20 且≥0.90）：")
     tier = Counter(r["tier"] for r in rows)
     for t in ("强", "中", "弱"):
         print(f"  {t}: {tier.get(t, 0):5}  {tier.get(t, 0) / n * 100:5.1f}%")
-    print("  注：分级只看反向重复本身；TSD 是另一条独立证据，见下表。")
+    print("  注：分级只看反向重复本身。TSD 不作证据位——1,824/1,824 的两臂完全相同，")
+    print("      它是 TIR-Learner 的接受条件（v3 只收无 indel 的 TIR/TSD），用它当证据是循环。")
     lg = sorted(r["chance_log10"] for r in rows)
     print(f"  参考：随机命中期望的中位 log10 E = {lg[len(lg) // 2]:.1f}"
           f"（E 越负越难偶然出现；该模型只做单对位比较，未校正搜索全部间距）")
 
-    print("\n强/中档里 TSD 长度的分布：")
+    print("\n强/中档的 TSD 长度（描述性，不作证据）：")
     for t in ("强", "中"):
         sub = [r for r in rows if r["tier"] == t]
         if not sub:
@@ -237,7 +245,7 @@ def main():
 
     if args.tsv:
         cols = ["chrom", "start", "end", "length", "cls", "tir_l", "tir_r",
-                "ir_ident_measured", "ident_field", "ir_mismatch",
+                "ir_ident_measured", "ident_field", "field_gap", "ir_mismatch",
                 "chance_log10", "tier", "left_tir_ok", "right_tir_ok",
                 "tsd_len", "tsd_left_ok", "tsd_right_ok", "tsd_score"]
         with open(args.tsv, "w", encoding="utf-8", newline="") as fh:
