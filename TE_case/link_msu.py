@@ -77,6 +77,17 @@ from urllib.parse import unquote
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import compare_rice_te as C          # noqa: E402  只取映射与区间工具
 
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 # 台账里写 ASCII 码、控制台里印中文：数据文件要能被下游直接读（本仓库既有 TSV
 # 一律无 BOM、无中文表头），而人看的是屏幕。
 VERDICT_LTR = {

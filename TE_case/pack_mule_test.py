@@ -39,6 +39,18 @@ import statistics as st
 import sys
 from collections import defaultdict
 
+import os
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 MSU_GFF = None          # 由 --models 传入
 # 种子长度定 20 而不是 40。40-mer 在 71 Mb 里期望命中 0 次，看着很干净，但对
 # 90% 相似度的旁系拷贝几乎必然漏检（需要连续 40 bp 全同，概率 0.9^40 = 1.5%）；

@@ -35,6 +35,18 @@ import sys
 from bisect import bisect_left
 from collections import defaultdict
 
+import os
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 
 def parse_genes(path, chroms):
     """返回 chrom -> (gene_starts, genes, exon_starts, exons)，均 0-based 半开。"""

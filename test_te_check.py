@@ -41,6 +41,17 @@ sys.path.insert(0, str(BASE))
 
 import te_check as T                                     # noqa: E402
 
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 SCRIPT = BASE / "te_check.py"
 
 # 真实数据目录（WSL 内）。不可达时第 5 层自动跳过，其余四层照常跑。

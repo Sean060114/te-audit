@@ -15,6 +15,12 @@
 set -uo pipefail
 cd "$(dirname "$0")" || exit 1
 
+# Windows 上 Python 默认按系统代码页（cp936）写 stdout，中文断言与前缀解析都会失真；
+# 文件读写也默认跟随 locale。这里统一成 UTF-8，保证换机器后行为一致。
+# 入口脚本自身也做了兜底（见各文件的「控制台编码」段），此处是第二道。
+export PYTHONUTF8=1
+export PYTHONIOENCODING=utf-8
+
 PY=${PYTHON:-python}
 OUT=_repro
 mkdir -p "$OUT"
@@ -48,7 +54,7 @@ step () { printf "\n== %s\n" "$1"; }
 # ---------------------------------------------------------------- 0. 冒烟
 step "0/3  te_check 能否直接跑（不需要 FASTA）"
 if $PY te_check.py --edta-dir chr1_edta_out > "$OUT/smoke.log" 2>&1 \
-   && grep -q "C1 字段可得性" "$OUT/smoke.log"; then
+   && grep -q "^C1 " "$OUT/smoke.log"; then
     printf "  [ OK ] %-26s 输出正常（%s 行）\n" "chr1 无 FASTA 模式" \
         "$(wc -l < "$OUT/smoke.log")"
     PASS=$((PASS + 1))

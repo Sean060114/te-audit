@@ -50,6 +50,18 @@ import csv
 import sys
 from collections import Counter, defaultdict
 
+import os
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 # 判定码 → 所属档位。新增判定码时必须在这里显式归类，不允许静默落进 B。
 TIER_OF = {
     "agree_superfamily": "A",

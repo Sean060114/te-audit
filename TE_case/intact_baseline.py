@@ -16,6 +16,17 @@ import os
 import statistics
 from collections import Counter, defaultdict
 
+
+# --- 控制台编码：Windows 默认 cp936，⚠ / → 编不出来会抛 UnicodeEncodeError，
+#     报告打到一半就断；而 Git Bash 的终端是 UTF-8，按 cp936 写又是乱码。
+#     按终端分两种处理，都不允许因编码中断（不可编码字符降级为 ?）。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8" if os.environ.get("MSYSTEM") else None,
+                       errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 GFF = "//wsl.localhost/Ubuntu-26.04/home/sean/edta_run/chr1.fa.mod.EDTA.intact.gff3"
 OUT_TSV = "intact_quality_baseline.tsv"
 OUT_SUM = "intact_quality_summary.tsv"
