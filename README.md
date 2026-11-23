@@ -15,7 +15,7 @@
 | 模块 | 回答什么问题 | 入口 | 测试 | 文档 |
 |---|---|---|---:|---|
 | **0 名称规范化** | EDTA 的 `DNA/hAT` 和 TEsorter 的 `hAT_TIR_transposon` 到底是不是一回事？ | `te-normalizer/normalize.py` | 90 | `te-normalizer/README.md` |
-| **1 完整性检查** | 这份注释的哪些结论站不住？ | `te_check.py`（C1–C6）<br>`bench_multi.py`（多数据集横向） | 77 | `te_check_README.md`<br>`TE_case/报表_*.md` |
+| **1 完整性检查** | 这份注释的哪些结论站不住？ | `te_check.py`（C1–C13）<br>`bench_multi.py`（多数据集横向） | 99 | `te_check_README.md`<br>`TE_case/报表_*.md` |
 | **2 交叉验证** | EDTA 与独立注释差在哪，谁更可能对？ | `compare_araport11.py`（拟南芥 vs Araport11）<br>`compare_rice_te.py`（水稻 vs MSU RGAP7）<br>`candidates_novel.py` | — | `EDTA_vs_Araport11_评估报告.md`（含 k-mer 数据与发表级缺口附录）<br>`报表_水稻交叉验证与跨染色体基准.md` |
 | **交付** | 把一份注释整理成可交付、可自校验的包 | `build_delivery_package.py`<br>`validate_delivery.py` | — | `delivery/`（不入库，可由 tar 包解出） |
 | **上游贡献** | 把工具链里发现的命名缺陷回馈给 EDTA | `te-normalizer/make_alias_pr.py` | — | PR #655 |
@@ -162,7 +162,7 @@ papers/                 立项时读的文献
 
 | 条目 | 作用 |
 |---|---|
-| `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 **77 条**测试 |
+| `te_check.py` `test_te_check.py` `bench_multi.py` | 模块 1 全部逻辑与 **99 条**测试（C1-C6 文件级 + C7-C13 结构与语义） |
 | `run_bench_rice.sh` | 现行 EDTA 运行脚本（参数化，含 `.mod.mod` 修复与 tee 日志） |
 | `te-normalizer/` | 模块 0，独立可跑（90 条测试） |
 | `compare_araport11.py` `compare_rice_te.py` `candidates_novel.py` `make_publication_tables.py` | 模块 2 |

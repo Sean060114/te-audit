@@ -8,6 +8,7 @@ python te_check.py --edta-dir /path/to/edta_run
 python te_check.py --edta-dir ... --json report.json     # 同时写结构化结果
 python te_check.py --edta-dir ... --strict               # 有严重问题则退出码 1
 python te_check.py --edta-dir ... --prefix col1m.fa      # 同目录有多份运行时指定目标
+python te_check.py --edta-dir ... --fasta genome.fa      # 启用 C7-C11（序列级五项）
 ```
 
 自动发现：`*.EDTA.intact.gff3`、`*.EDTA.TEanno.gff3`、`*.EDTA.TEanno.sum`、
@@ -18,7 +19,9 @@ python te_check.py --edta-dir ... --prefix col1m.fa      # 同目录有多份运
 
 ---
 
-## 六项检查
+## 十三项检查
+
+### 文件级六项（只需 EDTA 输出目录）
 
 | 检查 | 问的问题 | 判据来源 |
 |---|---|---|
@@ -30,6 +33,40 @@ python te_check.py --edta-dir ... --prefix col1m.fa      # 同目录有多份运
 | **C6** 一致性与域证据 | 高 LTR 一致性但无域证据？ | ltr_identity ≥ 0.95 且分类表无 domains |
 
 **严重项**（影响退出码）：C2 与 C4 中 LTR 部分的命中数。
+
+### 结构与语义七项（C7-C11 需 `--fasta`，C12/C13 不需要）
+
+| 检查 | 问的问题 | 判据来源 |
+|---|---|---|
+| **C7** 两套坐标 | 同一元件两行的坐标差是否等于 TSD 长度？ | `repeat_region`（含 TSD）与分类行（不含）的 Δstart / Δend |
+| **C8** motif 位置 | `motif=` 前后 2 nt 真在 LTR 末端？ | 负链取 rc 且**交叉**（小坐标端是它的 3′ 端） |
+| **C9** TIR 坐标 | TIR 的 TSD 在元件外侧还是内侧？ | 取元件**外部** L bp 比 `tsd=`（与 LTR 相反） |
+| **C10** identity 虚高 | `identity=` 与两臂实测差多少？ | 严格逐位对位（**不滑移**），差 ≥0.20 告警 |
+| **C11** 长臂内侧外推 | 长臂的错配是否全挤在内侧？ | 外侧 2/3 与内侧 1/3 的错配率对比 |
+| **C12** 近重复记录 | 同一元件被输出了两次？ | 起止相差 ≤2 bp 且同类别 |
+| **C13** 家族标签分散 | 同一家族在不同位点被标成不同超家族？ | 按 `Name` 聚合，分真冲突 / 含未定 / 仅自主性 |
+
+**这七项不计入退出码**，汇总里单列"结构级提示"。它们输出的是"你需要知道的事实"，
+不是"文件有错"：C9 的 100% 通过率说明不了什么，C11 的 75% 也不代表假阳性。
+
+### 三处最容易读反的地方
+
+**一、同一元件有两套坐标。** `repeat_region` 含两侧 TSD，分类行
+（`Gypsy_LTR_retrotransposon` 等）不含，差值恰好等于 `len(tsd)`。所以 TSD 只能在
+父行上查，motif 只能在分类行上查。用错一套的后果：C7 从 98.8% 掉到 0%，C8 从
+98.8% 掉到 1.0%，**两个结果都不报错**。
+
+**二、链方向在这份文件里是反的。** 两翼 LTR 的**序列**按基因组正向书写（相似度不取
+rc），但 `tsd=` 与 `motif=` 两个**字段**按元件方向书写（负链要 rc，且因为小坐标端是
+3′ 端还要交叉）。混用会让一侧永远差 2 nt。
+
+**三、总体通过率会掩盖整类缺陷。** `motif` 错读时仍有 97.6% 通过，因为 420 条里
+406 条的正读与 rc 读同时成立（末端 2 nt 常相同或回文）。**查错要看预期会失败的那
+小子集，不看总体。**
+
+**C10 与 C3 的对齐口径刻意不同**：C3 滑移 ±10 bp（判"是不是反向重复"，臂边界可能差
+几 bp），C10 不滑移（判"字段是否虚高"，滑移会抬高短臂相似度、正好把虚高掩盖）。
+同一批数据两种口径，是刻意的，不是不一致。
 
 ---
 
@@ -83,17 +120,18 @@ EDTA 的 TIR 候选来自 TIR-Learner，其算法规定 **minimum similarity = 8
 ## 测试
 
 ```bash
-python test_te_check.py          # 77 条，约 4 秒
+python test_te_check.py          # 99 条，约 4 秒
 python test_te_check.py -v       # 逐条用例名
 ```
 
-零依赖（标准库 unittest），共五层：
+零依赖（标准库 unittest），共六层：
 
 | 层 | 内容 | 数量 |
 |---|---|---|
 | 单元 | `rc` / `attrs` / `ir_identity` | 13 |
 | 解析 | `parse_intact` / `parse_cls` / `find_files`，在临时目录合成 EDTA 输出树 | 15 |
-| 判据 | C1–C6 各自的边界与反例，含 2 处**回归锁** | 26 |
+| 判据 | C1–C6 各自的边界与反例，含 2 处**回归锁** | 34 |
+| 语义 | C7–C13 的"完美元件 + 只错一处"两版，锁住坐标来源、链方向、对齐口径 | 22 |
 | CLI | `--json` 结构、`--strict` 退出码、缺文件行为 | 6 |
 | 真实数据 | Chr1 实测值逐项回归（目录不可达时自动跳过） | 9 |
 
@@ -187,7 +225,7 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 | 脚本 | 定位 |
 |---|---|
 | `te_check.py` | 一次跑全集，出结构化报告（本工具） |
-| `test_te_check.py` | 本工具的测试集，69 条，含两处判据回归锁 |
+| `test_te_check.py` | 本工具的测试集，99 条，含两处判据回归锁 |
 | `TE_case/classify_element.py` | 单个元件的深度判读（HMM 域比对，需 pyhmmer） |
 | `TE_case/intact_baseline.py` | 本工具 C1–C3 的原始实现，用于生成基线报表 |
 | `te-normalizer/normalize.py` | 命名规范化（模块 0），与本工具互补 |

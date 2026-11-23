@@ -628,6 +628,182 @@ class TestCli(Fixture):
 # ------------------------------------------------------------------ 5. 真实数据
 
 @unittest.skipUnless(REAL_EDTA.is_dir(), f"真实数据目录不可达: {REAL_EDTA}")
+class TestSemantics(unittest.TestCase):
+    """C7-C13：字段语义与结构自证。
+
+    这批判据的共同点：**用错一套坐标或方向，结果不报错，只是全错**。所以每条
+    都写"完美元件"与"只错一处"两版；锁的是"改错会失败"，不是"能跑通"。
+    """
+
+    # 完美元件：父行 97..204（含 TSD），分类行 101..200（不含）
+    #   96..99   = ACGT  父行左 TSD
+    #   100..101 = AA    motif 前 2 nt（5'LTR 起点）
+    #   198..199 = CC    motif 后 2 nt（3'LTR 末端）
+    #   200..203 = ACGT  父行右 TSD
+    POS = {96: "ACGT", 100: "AA", 198: "CC", 200: "ACGT"}
+
+    @staticmethod
+    def seq(fills=None, n=300, chrom="Chr1"):
+        s = ["A"] * n
+        for pos, text in (fills or {}).items():
+            s[pos:pos + len(text)] = list(text)
+        return {chrom: "".join(s)}
+
+    @staticmethod
+    def rec(**kw):
+        base = dict(
+            chrom="Chr1", type="Copia_LTR_retrotransposon",
+            start=101, end=200, length=100, strand="+", cls="LTR/Copia",
+            identity=None, ltr_identity=0.99, tsd="ACGT", tsd_pct=None,
+            tir=("", ""), ir_ident=None, ir_shift=None, armlen=0,
+            motif="AACC", strand_ev=None, method=None,
+            sid="LTRRT_1", name="TE_1", parent="rr_1", pstart=97, pend=204)
+        base.update(kw)
+        return base
+
+    # ---- C7 两套坐标
+    def test_c7_two_coords_ok(self):
+        r = T.check_ltr_two_coords([self.rec()], self.seq(self.POS))
+        self.assertTrue(r[0]["coord_ok"])
+        self.assertTrue(r[0]["seq5"] and r[0]["seq3"])
+
+    def test_c7_mismatch_when_delta_ne_tsd_len(self):
+        # 父行只比分类行多 3 bp，而 tsd 长 4 → 不自洽
+        r = T.check_ltr_two_coords([self.rec(pstart=98)], self.seq(self.POS))
+        self.assertFalse(r[0]["coord_ok"])
+        self.assertEqual(r[0]["d5"], 3)
+
+    def test_c7_without_parent_is_skipped(self):
+        self.assertEqual(
+            T.check_ltr_two_coords([self.rec(pstart=None)], self.seq(self.POS)), [])
+
+    # ---- C8 motif 方向
+    def test_c8_plus_strand(self):
+        r = T.check_ltr_motif([self.rec()], self.seq(self.POS))
+        self.assertTrue(r[0]["motif_ok"])
+
+    def test_c8_minus_strand_needs_rc_and_cross(self):
+        # 负链的正确布局：小端 GG、大端 TT（rc 后才是 motif 的前/后 2 nt）
+        pos = {96: "ACGT", 100: "GG", 198: "TT", 200: "ACGT"}
+        r = T.check_ltr_motif([self.rec(strand="-")], self.seq(pos))
+        self.assertTrue(r[0]["motif_ok"], "负链要 rc 且交叉：小坐标端是它的 3' 端")
+
+    def test_c8_minus_strand_fails_on_plus_layout(self):
+        # 把正链布局套在负链上必须失败——这条锁住"忘了 rc/交叉"的回归
+        r = T.check_ltr_motif([self.rec(strand="-")], self.seq(self.POS))
+        self.assertFalse(r[0]["motif_ok"])
+
+    def test_c8_uses_class_row_not_parent(self):
+        # 若误用父行坐标（多算 len(tsd)），会取到 104..105 而非 100..101
+        pos = dict(self.POS)
+        pos[104] = "GG"
+        r = T.check_ltr_motif([self.rec()], self.seq(pos))
+        self.assertTrue(r[0]["motif_ok"], "必须用分类行坐标；多偏移一个 L 会失败")
+
+    # ---- C9 TIR 的 TSD 在坐标外
+    def test_c9_tir_tsd_outside(self):
+        pos = {98: "AC", 200: "AC"}
+        r = T.check_tir_tsd_outside(
+            [self.rec(type="Tc1_Mariner_TIR_transposon", tsd="AC")], self.seq(pos))
+        self.assertTrue(r[0]["out5"] and r[0]["out3"])
+
+    def test_c9_tir_tsd_inside_fails(self):
+        # 按 LTR 约定把 TSD 放进坐标内 → 外侧取不到
+        pos = {100: "AC", 198: "AC"}
+        r = T.check_tir_tsd_outside(
+            [self.rec(type="Tc1_Mariner_TIR_transposon", tsd="AC")], self.seq(pos))
+        self.assertFalse(r[0]["out5"] and r[0]["out3"])
+
+    # ---- C10 identity 虚高（严格对位，不滑移）
+    def test_c10_inflation_detected(self):
+        r = T.check_tir_identity_inflation([self.rec(
+            type="Tc1_Mariner_TIR_transposon", identity=0.9,
+            tir=("AAAAAAAAAA", "AAAAAAAAAA"))])
+        self.assertAlmostEqual(r[0]["measured"], 0.0)
+        self.assertAlmostEqual(r[0]["inflation"], 0.9)
+
+    def test_c10_no_slide_means_strict(self):
+        # 右臂整体错一位：滑移 ±10 能对齐成 1.0，严格对位是 0.0。
+        # 这条锁住 C10 **不滑移**的选择（滑移会把虚高掩盖掉）。
+        a, b = "ACGTACGTAC", "TACGTACGTA"
+        r = T.check_tir_identity_inflation([self.rec(
+            type="Tc1_Mariner_TIR_transposon", identity=1.0, tir=(a, b))])
+        self.assertAlmostEqual(r[0]["measured"], 0.0)
+        # 滑移口径取最大值，必然不低于严格对位，两边口径确实不同。但别断言具体
+        # 数值：10 bp 的臂滑移后长度 < MIN_ARM_BP 会被跳过，此例两边同为 0.0。
+        self.assertGreaterEqual(T.ir_identity(a, b)[0], r[0]["measured"])
+
+    # ---- C11 长臂内侧外推
+    def test_c11_inner_extrapolation(self):
+        a = "A" * 100
+        b = "A" * 34 + "T" * 66          # rc(b) = A*66 + T*34
+        r = T.check_tir_arm_extrapolation([self.rec(
+            type="Mutator_TIR_transposon", tir=(a, b))])
+        self.assertEqual(len(r), 1)
+        self.assertLess(r[0]["mismatch_outer"], 0.01)
+        self.assertGreater(r[0]["mismatch_inner"], 0.9)
+
+    def test_c11_uniform_arm_not_flagged(self):
+        self.assertEqual(T.check_tir_arm_extrapolation([self.rec(
+            type="Mutator_TIR_transposon", tir=("A" * 100, "T" * 100))]), [])
+
+    # ---- C12 近重复
+    def test_c12_near_duplicate(self):
+        p = T.check_near_duplicates([self.rec(start=101, end=200),
+                                     self.rec(start=102, end=199)])
+        self.assertEqual(len(p), 1)
+
+    def test_c12_three_bp_apart_is_not_duplicate(self):
+        self.assertEqual(T.check_near_duplicates(
+            [self.rec(start=101, end=200), self.rec(start=104, end=200)]), [])
+
+    def test_c12_different_type_not_duplicate(self):
+        self.assertEqual(T.check_near_duplicates(
+            [self.rec(start=101, end=200),
+             self.rec(start=101, end=200, type="Gypsy_LTR_retrotransposon")]), [])
+
+    # ---- C13 家族标签三层
+    @staticmethod
+    def _fam(cls_list, name="TE_x"):
+        return [TestSemantics.rec(name=name, cls=c) for c in cls_list]
+
+    def test_c13_true_conflict(self):
+        r = T.check_family_label_spread(self._fam(["DNA/DTT", "DNA/DTH", "DNA/DTT"]))
+        self.assertEqual(len(r), 1)
+        self.assertEqual(r[0]["kind"], "真冲突")
+
+    def test_c13_unknown_is_not_conflict(self):
+        r = T.check_family_label_spread(self._fam(["DNA/DTT", "DNA/DTT", "LTR/unknown"]))
+        self.assertEqual(r[0]["kind"], "含未定")
+
+    def test_c13_mite_vs_dna_is_autonomy_only(self):
+        r = T.check_family_label_spread(self._fam(["DNA/DTT", "DNA/DTT", "MITE/DTT"]))
+        self.assertEqual(r[0]["kind"], "仅自主性")
+
+    def test_c13_coord_name_excluded(self):
+        # 反写坐标串是缺家族名时的占位，不能当家族聚合
+        self.assertEqual(T.check_family_label_spread(
+            self._fam(["DNA/DTT", "DNA/DTH", "DNA/DTM"], name="Chr1:100..200")), [])
+
+    def test_c13_single_label_not_reported(self):
+        self.assertEqual(T.check_family_label_spread(self._fam(["DNA/DTT"] * 3)), [])
+
+    # ---- 解析：父坐标挂载
+    def test_parse_attaches_parent_coords(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "x.EDTA.intact.gff3"
+            p.write_text(
+                "Chr1\tEDTA\trepeat_region\t97\t204\t.\t+\t.\t"
+                "ID=rr_1;classification=LTR/Copia\n"
+                "Chr1\tEDTA\tCopia_LTR_retrotransposon\t101\t200\t.\t+\t.\t"
+                "ID=LTRRT_1;Parent=rr_1;Name=TE_1;classification=LTR/Copia\n",
+                encoding="utf-8")
+            recs = T.parse_intact(str(p))
+        self.assertEqual(len(recs), 1, "repeat_region 行本身不能算作元件")
+        self.assertEqual(recs[0]["pstart"], 97)
+        self.assertEqual(recs[0]["pend"], 204)
+
+
 class TestChr1Regression(unittest.TestCase):
     """Chr1 实测值回归。这些数字是 README 里公布的基线，不能悄悄漂移。"""
 
