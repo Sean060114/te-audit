@@ -121,6 +121,9 @@ TE_case/                模块 1 的基线、案例与本项目全部判据检�
   基准_TIR与MSU逐元件对账.md   建基准第 4 步：62 条 TIR 锚与 MSU 对账
                               （配套 link_msu.py --kind tir + tir_msu_ledger.tsv；
                                34 条可判、27 条一致 = 79.4%，28 条 MSU 无整段对应）
+  基准_TIR身份核查_28条无对应元件.md  建基准第 5 步：那 28 条的定性
+                              （Repbase/Dfam 双路排除 + 家族聚类 + MSU 基因模型；
+                               3 条可命名，A 集 27 → 30）
 archive/                已被取代的运行脚本（保留是为了留下失败记录）
 bench_archive/          col1m / alyrata 的历史运行回传（仅此一份）
 chr1_edta_out/          TAIR10 Chr1 基准运行回传
