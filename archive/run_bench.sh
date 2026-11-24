@@ -10,7 +10,7 @@
 # 否则差异无法归因。
 #
 # 用法（在你的 WSL 终端里）：
-#   bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_bench.sh
+#   bash archive/run_bench.sh
 #
 # 可重复执行：已完成的任务会自动跳过。
 

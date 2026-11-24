@@ -15,7 +15,7 @@
 # 直到出现单层的 X.fa.mod.pass.list 为止（最多 3 次），再跑 anno。
 #
 # 用法：
-#   bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_bench2.sh
+#   bash archive/run_bench2.sh
 #
 # 输出落在 ~/te_bench2（全新目录，不复用上次失败的中间文件）。
 

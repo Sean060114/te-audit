@@ -36,7 +36,7 @@ echo "=== [1/4] 检查 / 下载 Dfam 共识库（15.8 MB）===" | tee "$LOG"
 mkdir -p "$LIBDIR"
 if [ ! -s "$LIBDIR/Dfam-RepeatMasker.lib" ]; then
     echo "库未就绪，调用 get_dfam_lib.sh（带超时与多源回退）..." | tee -a "$LOG"
-    bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/get_dfam_lib.sh 2>&1 | tee -a "$LOG"
+    bash "$(dirname "$0")/get_dfam_lib.sh" 2>&1 | tee -a "$LOG"
 fi
 N=$(grep -c '^>' "$LIBDIR/Dfam-RepeatMasker.lib" 2>/dev/null || true)
 N=${N:-0}

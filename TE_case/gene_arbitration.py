@@ -38,7 +38,7 @@ MSU RGAP7 有两套互不通气的产物：
 用法
 ----
   python TE_case/gene_arbitration.py --ledger TE_case/ltr_msu_ledger.tsv \
-    --models C:/Users/Sean/AppData/Local/Temp/msu/all_models.gff3.gz --detail
+    --models /path/to/all_models.gff3.gz --detail
 """
 import argparse
 import gzip

@@ -193,10 +193,16 @@ def loci_of(exons, genome, self_locus):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--models", default="C:/Users/Sean/AppData/Local/Temp/msu/all_models.gff3.gz")
+    ap.add_argument("--models", default=os.environ.get("MSU_MODELS"),
+                    help="MSU 基因模型 gff3(.gz)，也可用环境变量 MSU_MODELS 指定")
     ap.add_argument("--fasta", nargs="+", required=True)
     ap.add_argument("--controls", type=int, default=10)
     args = ap.parse_args()
+
+    if not args.models:
+        sys.exit("缺少 --models：需要 MSU（RGAP osa1_r7）的 all_models.gff3.gz。\n"
+                 "可用 --models 指定，或设环境变量 MSU_MODELS。该文件体量大且受发布条款约束，\n"
+                 "不入库，需自行从 MSU/RGAP 下载。")
 
     print("读基因组 …")
     genome = read_fasta(args.fasta)

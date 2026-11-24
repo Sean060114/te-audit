@@ -18,17 +18,17 @@
 # 但那份结果不能和前三份放同一张表里比较。
 #
 # 用法（在 WSL 的终端里执行，不要在 Windows 侧跑）：
-#   bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_bench_rice.sh
+#   bash run_bench_rice.sh
 #   THREADS=16 bash ...                       # 指定线程
 #   PREFLIGHT=1 bash ...                      # 先截 3 Mb 试跑
 #
 # 脚本已参数化，可跑任意基因组（默认值 = 水稻 Chr1）：
 #   GENOME= TAG= SPECIES= OUTDIR= DEST= THREADS=
 # 例如重跑拟南芥 TAIR10 Chr1 作为基准：
-#   GENOME=/mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/ref/TAIR10.Chr1.fa \
+#   GENOME=$PWD/ref/TAIR10.Chr1.fa \
 #   TAG=Chr1 SPECIES=others OUTDIR=$HOME/te_bench_chr1 \
-#   DEST=/mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/chr1_edta_out \
-#   THREADS=16 bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_bench_rice.sh
+#   DEST=$PWD/chr1_edta_out \
+#   THREADS=16 bash run_bench_rice.sh
 #
 # 耗时预期：比拟南芥 Chr1（30.4 Mb）慢，主要慢在 TEsorter 与 RepeatMasker——
 # 水稻 TE 密度高，进入分类的候选序列数量远多于拟南芥。脚本每一阶段都会打时间戳。
@@ -38,7 +38,9 @@ set -uo pipefail
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate edta || { echo "无法激活 conda 环境 edta"; exit 1; }
 
-WINDIR="/mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06"
+# 仓库根目录 = 本脚本所在目录。WSL 下解析成 /mnt/c/…，Git Bash 下解析成 /c/…，
+# 两种环境都能直接用；换机器、改目录名都不用改这里。
+WINDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # 以下五项均可用环境变量覆盖，默认值即水稻 Chr1 的已验证配置。
 SRC="${GENOME:-$WINDIR/rice/Oryza_sativa.Chr1.fa}"
 OUT="${OUTDIR:-$HOME/te_bench_rice}"

@@ -27,7 +27,7 @@
 # 这些文件的内容只含序列 ID 与坐标，不含文件名，改名是安全的。
 #
 # 用法：
-#   bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_bench3.sh
+#   bash archive/run_bench3.sh
 
 set -uo pipefail
 

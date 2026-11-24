@@ -87,7 +87,7 @@ VP=$(grep -c "@Viridiplantae" Dfam-RepeatMasker.lib || true)
 say ""
 if [ "$VP" -gt 0 ]; then
     say "OK: 库中有 $VP 条植物类群记录，可以用于交叉验证。"
-    say "下一步：cd ~/edta_run && bash /mnt/c/Users/Sean/WorkBuddy/2026-11-13-13-40-06/run_validation.sh"
+    say "下一步：cd ~/edta_run && bash /path/to/te-audit/run_validation.sh"
 else
     say "WARN: 未发现 @Viridiplantae 标注。Dfam 的类群标注格式可能不同，"
     say "      可以先用下面的命令看看实际标注长什么样："
