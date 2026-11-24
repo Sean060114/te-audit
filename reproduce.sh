@@ -3,7 +3,7 @@
 # reproduce.sh —— 从仓库内的 EDTA 输出重建全部分析产物，并与已入库版本逐字节比对
 #
 # 用法（在仓库根目录）：
-#   bash reproduce.sh                  # 台账 + 六数据集表，约 1.5 分钟
+#   bash reproduce.sh                  # 六张台账 + 横向对比；缺 FASTA/MSU 时自动跳过台账
 #   bash reproduce.sh --with-reports   # 另加四份 te_check JSON，需基因组 FASTA
 #
 # 退出码：全部一致 → 0；任一不一致 → 1。产物写进 _repro/（已被 .gitignore 忽略），
@@ -63,7 +63,17 @@ else
     FAIL=$((FAIL + 1))
 fi
 
-# ---------------------------------------------------------------- 1. 结构台账
+# ---------------------------------------------------------------- 1+2. 台账
+# 六张台账还需要两样**不入库**的输入：基因组 FASTA（70 Mb）与 MSU 注释（7.5 Mb）。
+# 干净克隆里两者都不在，所以必须"跳过并说清楚"，不能报成"产物不一致"——
+# 否则第一次克隆的人会以为仓库坏了（2026-11-24 在干净克隆里实测踩到）。
+MISSING=()
+[ -s "$FA1" ]  || MISSING+=("$FA1")
+[ -s "$FA12" ] || MISSING+=("$FA12")
+[ -s "$MSU" ]  || MISSING+=("$MSU")
+
+if [ ${#MISSING[@]} -eq 0 ]; then
+
 step "1/3  LTR 结构 → MSU 台账 → A/B/C 分级"
 $PY TE_case/verify_ltr_structure.py --gff "$GFF" --fasta "$FA1" "$FA12" \
     --tsv "$OUT/ltr_structure.tsv" > "$OUT/verify_ltr.log" 2>&1
@@ -91,6 +101,16 @@ check TE_case/tir_msu_ledger.tsv "$OUT/tir_msu_ledger.tsv"
 $PY TE_case/tir_family_cluster.py --gff "$GFF" --ledger "$OUT/tir_msu_ledger.tsv" \
     --tsv "$OUT/tir_family.tsv" > "$OUT/family.log" 2>&1
 check TE_case/tir_family.tsv "$OUT/tir_family.tsv"
+
+else
+
+step "1-2/3  六张台账：跳过"
+printf "  [SKIP] 缺 %d 个输入文件（体积原因不入库）：\n" "${#MISSING[@]}"
+for _m in "${MISSING[@]}"; do printf "         - %s\n" "$_m"; done
+printf "         获取方式见 docs/复现指南.md 第二节；放回原位后重跑本脚本即可比对。\n"
+SKIP=$((SKIP + 6))
+
+fi
 
 # ---------------------------------------------------------------- 3. 横向对比
 step "3/3  六数据集横向对比"
@@ -138,11 +158,13 @@ fi
 # ---------------------------------------------------------------- 汇总
 printf "\n%s\n" "------------------------------------------------------------"
 printf "一致 %d 项   不一致 %d 项   跳过 %d 项\n" "$PASS" "$FAIL" "$SKIP"
-if [ "$FAIL" -eq 0 ]; then
-    printf "全部可复现。\n"
-else
+if [ "$FAIL" -gt 0 ]; then
     printf "有产物对不上：先看 diff，再确认这是判据变更还是数据变更。\n"
+elif [ "$SKIP" -gt 0 ]; then
+    printf "已跑的部分全部一致；跳过 %d 项，缺的是不入库的大文件，补上后重跑即全量比对。\n" "$SKIP"
+else
+    printf "全部可复现。\n"
 fi
-[ "$SKIP" -gt 0 ] && printf "（跳过项需要基因组 FASTA，见 docs/复现指南.md）\n"
+[ "$SKIP" -gt 0 ] && printf "获取方式见 docs/复现指南.md 第二节（基因组 FASTA 与 MSU 注释）。\n"
 printf "%s\n" "------------------------------------------------------------"
 [ "$FAIL" -eq 0 ]
