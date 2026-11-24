@@ -347,3 +347,7 @@ ORF 是 retro 聚合蛋白（gag-pol）的量级。**一个 12.8 kb、两端各 
 python TE_case/gene_arbitration.py --ledger TE_case/ltr_msu_ledger.tsv \
   --models osa1_r7.all_models.gff3.gz --detail
 ```
+
+---
+
+> 路径说明：本文引用的 `*.tsv`、`*.py` 都在上一级 `TE_case/` 下，不在本目录。

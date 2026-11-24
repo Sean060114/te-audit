@@ -208,7 +208,7 @@ C6  同一元件：ltr_identity=0.9866 但无域证据
 
 单份数据上的观察不等于规则。六份独立运行的检验结果见
 **`archive/报表_多基因组判据检验.md`**（拟南芥属，C4 结论已被推翻，仅存档）与
-**`TE_case/报表_水稻跨科判据检验.md`**（单子叶）。摘要（`TE_case/bench_six.tsv`）：
+**`TE_case/报表/报表_水稻跨科判据检验.md`**（单子叶）。摘要（`TE_case/bench_six.tsv`）：
 
 | 数据集 | 物种 | 元件 | C1 | C4 已定超家族 LTR |
 |---|---|---:|---|---|
@@ -243,7 +243,7 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 `archive/run_bench3.sh`（最终可用，含命名修复）——三者已被 `run_bench_rice.sh` 取代，
 保留在 `archive/` 是为了留下失败记录；现行脚本已参数化，可跑任意基因组。
 对比工具为 `bench_multi.py`。**注意 `archive/` 里的注释对 `.mod.mod` 成因的解释已被推翻**，
-正确记录见 `archive/README.md` 与 `TE_case/报表_水稻跨科判据检验.md` 5.3 节。
+正确记录见 `archive/README.md` 与 `TE_case/报表/报表_水稻跨科判据检验.md` 5.3 节。
 
 ---
 

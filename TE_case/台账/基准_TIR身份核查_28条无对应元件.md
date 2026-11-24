@@ -261,3 +261,7 @@ python TE_case/gene_occupancy.py --gff osa1_r7.all_models.gff3.gz \
 
 `osa1_r7.all_models.gff3.gz` 与 `ref/` 下的序列一样**不入库**（8.9 MB，rice.uga.edu
 可直接下）。`gene_occupancy.py` 对截断的 gz 会警告而不是崩，便于边下边跑。
+
+---
+
+> 路径说明：本文引用的 `*.tsv`、`*.py` 都在上一级 `TE_case/` 下，不在本目录。

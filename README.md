@@ -56,7 +56,7 @@ Earl Grey 2024 自己列出了三大质量问题（碎片化、consensus 末端�
 **位点级有人做过，本项目不声称首创。** PolyA（2021）做逐碱基置信度与动态规划裁决，
 Carey 等（2021）证明 subfamily 标签有 >10% 不可复现并主张报告不确定性。
 差别只剩三条，逐项对照写在
-[TE_case/方法学_与PolyA与Carey的判据逐项对照.md](TE_case/方法学_与PolyA与Carey的判据逐项对照.md)：
+[TE_case/方法/方法学_与PolyA与Carey的判据逐项对照.md](TE_case/方法/方法学_与PolyA与Carey的判据逐项对照.md)：
 
 1. **跨来源、跨证据类型的登记**（PolyA 裁决的是同一个库内部的竞争）
 2. **解析层作为评测前置**（前两者默认标签读入正确；而 `intact.gff3` 一个元件 6 行、语义反直觉）
@@ -65,7 +65,7 @@ Carey 等（2021）证明 subfamily 标签有 >10% 不可复现并主张报告�
 还有一条更硬的限制：**LTR 侧没有独立实现可比**。HiTE 的 LTR 结构判定与 EDTA 共用
 LTR_retriever（`judge_LTR_transposons.py` → `run_LTR_retriever`；`EDTA.pl` L290 直接
 `command -v LTR_retriever`），所以拿 HiTE 质检 EDTA 的 LTR 是**同源自证**。源码证据见
-[TE_case/方法学_已有QC工具与自建基准的分工.md](TE_case/方法学_已有QC工具与自建基准的分工.md)。
+[TE_case/方法/方法学_已有QC工具与自建基准的分工.md](TE_case/方法/方法学_已有QC工具与自建基准的分工.md)。
 
 ---
 

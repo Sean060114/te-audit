@@ -177,3 +177,7 @@ python TE_case/verify_tir_structure.py \
   --fasta rice/Oryza_sativa.Chr1.fa rice/Oryza_sativa.Chr12.fa \
   --tsv TE_case/tir_structure.tsv
 ```
+
+---
+
+> 路径说明：本文引用的 `*.tsv`、`*.py` 都在上一级 `TE_case/` 下，不在本目录。

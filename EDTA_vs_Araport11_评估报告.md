@@ -282,7 +282,7 @@ python candidates_novel.py
 
 影响 1/41 条 intact LTR（`1:17536138..17528667`，7,472 bp）。`intact LTR` 集会用于
 **LTR 插入年龄分布**（5'/3' LTR 差异），少一条就是数据缺失。
-完整溯源与补丁见 `TE_case/病例_001_LTR_静默丢弃.md` 第 6 节。
+完整溯源与补丁见 `TE_case/病例/病例_001_LTR_静默丢弃.md` 第 6 节。
 
 **② 处理 Tc1_Mariner 14.89% 误分类**
 
