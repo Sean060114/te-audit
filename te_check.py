@@ -239,10 +239,15 @@ def ir_identity(left, right, max_shift=10):
     return (best if best >= 0 else None), best_shift
 
 
-def parse_cls(path):
-    """解析 *.rexdb.cls.tsv，返回条目列表。"""
+def parse_cls(path, skipped=None):
+    """解析 *.rexdb.cls.tsv，返回条目列表。
+
+    `skipped` 传入 dict 时，会把"没有基因组坐标"的条目按库目录（LINE/TIR/…）计数
+    写进去。这类条目是 RepeatModeler2 的库层 consensus（`rnd-1_family-103#LTR/Gypsy`），
+    描述的是库序列、不落在染色体上，无法参与 C4 的覆盖比对——跳过是对的，
+    但必须报出来：6 个分类表 125 行、条目只有 67 条，不解释就像在对不上账。
+    """
     rows = []
-    lib = os.path.basename(path).split(".")[0:1]
     libname = os.path.basename(os.path.dirname(path))
     with open(path, encoding="utf-8", errors="ignore") as fh:
         for line in fh:
@@ -253,6 +258,8 @@ def parse_cls(path):
                 continue
             m = re.match(r"(.+?):(\d+)\.\.(\d+)#(.+)", f[0])
             if not m:
+                if skipped is not None:
+                    skipped[libname] = skipped.get(libname, 0) + 1
                 continue
             a, b = int(m.group(2)), int(m.group(3))
             rows.append(dict(
@@ -685,9 +692,14 @@ def main():
     unmodeled = {}
     recs = parse_intact(files["intact"], unmodeled=unmodeled)
     cls_rows = []
+    cls_skipped = {}
     for p in files["cls"]:
-        cls_rows.extend(parse_cls(p))
+        cls_rows.extend(parse_cls(p, skipped=cls_skipped))
     print(f"\n元素级记录: {len(recs)}   分类器条目: {len(cls_rows)}")
+    if cls_skipped:
+        print(f"  另有 {sum(cls_skipped.values())} 条库层条目无基因组坐标"
+              f"（RepeatModeler2 的 rnd-* consensus），未计入：它们不在染色体上，"
+              f"无法参与 C4 的覆盖比对")
     if unmodeled:
         detail = "、".join(f"{t} {n} 条" for t, n in
                            sorted(unmodeled.items(), key=lambda kv: (-kv[1], kv[0])))
@@ -704,6 +716,9 @@ def main():
         print(f"基因组序列: {len(seq)} 条（{', '.join(sorted(seq))[:60]}）")
 
     report = {"dir": args.edta_dir, "n_elements": len(recs), "n_classified": len(cls_rows)}
+    if cls_skipped:
+        # 同上：只在真有库层条目时写这个键，干净数据的 JSON 逐字节不变
+        report["cls_no_coord"] = sum(cls_skipped.values())
     if unmodeled:
         # 只在真的出现未建模类型时写这个键，保证老数据的 JSON 逐字节不变
         report["unmodeled_types"] = dict(sorted(unmodeled.items()))

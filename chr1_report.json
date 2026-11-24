@@ -2,6 +2,7 @@
   "dir": "chr1_edta_out",
   "n_elements": 218,
   "n_classified": 67,
+  "cls_no_coord": 58,
   "C1_field_availability": [
     {
       "type": "helitron",

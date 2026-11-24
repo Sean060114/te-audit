@@ -2,6 +2,7 @@
   "dir": "rice/edta_out_preflight",
   "n_elements": 114,
   "n_classified": 16,
+  "cls_no_coord": 4,
   "C1_field_availability": [
     {
       "type": "Tc1_Mariner_TIR_transposon",

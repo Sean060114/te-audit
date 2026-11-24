@@ -398,6 +398,20 @@ class TestParsing(Fixture):
         p.write_text("no-coord-here\tTIR\tMutator\tX\tcomplete\t+\tNA\n", encoding="utf-8")
         self.assertEqual(T.parse_cls(str(p)), [])
 
+    def test_cls_no_coord_rows_are_counted_when_asked(self):
+        # 同一类行：默认不进分析（行为不变），但传了计数器就必须记账——
+        # 否则"6 个分类表 125 行、条目只有 67"会像对不上账
+        p = self.root / "t.EDTA.raw" / "TIR" / "lib.rexdb.cls.tsv"
+        p.write_text(
+            "#TE\tOrder\tSuperfamily\tClade\tComplete\tStrand\tDomains\n"
+            "1:100..200#DNA/hAT\tTIR\thAT\thAT\tcomplete\t+\tTPase\n"
+            "rnd-1_family-7#LTR/Gypsy\tLTR\tGypsy\tAthila\tno\t+\tRT\n",
+            encoding="utf-8")
+        skipped = {}
+        rows = T.parse_cls(str(p), skipped=skipped)
+        self.assertEqual(len(rows), 1)          # 只有带坐标的那条参与覆盖比对
+        self.assertEqual(skipped, {"TIR": 1})   # 库层条目按所在目录计数
+
     def test_find_files(self):
         f = T.find_files(str(self.root))
         self.assertTrue(f["intact"].endswith("t.EDTA.intact.gff3"))

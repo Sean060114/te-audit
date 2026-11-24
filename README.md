@@ -82,7 +82,7 @@ python te_check.py --edta-dir chr1_edta_out
 python te_check.py --edta-dir chr1_edta_out --fasta TAIR10.Chr1.fa --json report.json
 
 # 测试
-python test_te_check.py          # 106 条，约 4 秒
+python test_te_check.py          # 107 条，约 4 秒
 ```
 
 `chr1_edta_out/` 是仓库内保留的一份完整 EDTA 运行（TAIR10 Chr1，218 个元件），
@@ -221,7 +221,7 @@ C 集里再分"标签冲突 / 无第二来源 / 边界不可定位"——归因�
 
 ```
 te_check.py              十三项检查（C1-C6 文件级 + C7-C13 结构与语义）
-test_te_check.py         106 条测试，含 2 处判据回归锁 + 22 条坐标/方向锁 + 5 条 SO 表对齐锁
+test_te_check.py         107 条测试，含 2 处判据回归锁 + 22 条坐标/方向锁 + 5 条 SO 表对齐锁
 bench_multi.py           多数据集横向对比
 te-normalizer/           模块 0：名称规范化（809 别名，90 测试），独立 CLI
                          C1–C13 不依赖它；两者靠 SO 表对齐锁共用同一份词表

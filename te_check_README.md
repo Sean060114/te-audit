@@ -108,6 +108,12 @@ rc），但 `tsd=` 与 `motif=` 两个**字段**按元件方向书写（负链�
 而 TIR / helitron 的 `identity` 多来自库同源匹配，注释并不依赖分类器——实测覆盖率只有
 Mutator 10.6%、CACTA 14.3%、helitron 4.7%，若一并告警会产生 165 个假阳性。
 
+**"分类器条目"只数有坐标的那些。** 六个 `*.rexdb.cls.tsv` 共 125 行数据，条目只报 67，
+差额是 RepeatModeler2 的库层 consensus（`rnd-1_family-103#LTR/Gypsy` 这类，没有
+`seqid:start..end`）。它们描述的是库序列、不落在染色体上，无法参与覆盖比对，跳过是对的；
+报告会另起一行写明 "另有 58 条库层条目无基因组坐标，未计入"，`--json` 里对应 `cls_no_coord`。
+不写这一行，125 与 67 就像对不上账。
+
 **C4 的 LTR 必须按超家族分层，不能混算。** 这条曾经写错过两次，水稻数据才纠正过来。
 
 `LTR_retrotransposon` 是"超家族未知"的 SO 类型，TEsorter 无法为它定超家族，
@@ -152,7 +158,7 @@ EDTA 的 TIR 候选来自 TIR-Learner，其算法规定 **minimum similarity = 8
 ## 测试
 
 ```bash
-python test_te_check.py          # 106 条，约 4 秒
+python test_te_check.py          # 107 条，约 4 秒
 python test_te_check.py -v       # 逐条用例名
 ```
 
@@ -263,7 +269,7 @@ Chr1 是"够长但退化"，alyrata 是"长度不足"，水稻 1876688..1879878 
 | 脚本 | 定位 |
 |---|---|
 | `te_check.py` | 一次跑全集，出结构化报告（本工具） |
-| `test_te_check.py` | 本工具的测试集，106 条，含两处判据回归锁 + 五条 SO 表对齐锁 |
+| `test_te_check.py` | 本工具的测试集，107 条，含两处判据回归锁 + 五条 SO 表对齐锁 |
 | `TE_case/classify_element.py` | 单个元件的深度判读（HMM 域比对，需 pyhmmer） |
 | `TE_case/intact_baseline.py` | 本工具 C1–C3 的原始实现，用于生成基线报表 |
 | `te-normalizer/normalize.py` | 上游口径工具（模块 0）：名字 → SO 名 + 角色。**不在本工具的调用链里**，C1–C13 自带九类映射；两者靠 SO 表对齐测试共用词表 |
